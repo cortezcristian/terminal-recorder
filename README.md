@@ -1,0 +1,4 @@
+terminal-rec
+============
+
+Terminal recorder
