@@ -1,0 +1,24 @@
+{
+  "name": "terminal-rec",
+  "version": "0.0.0",
+  "description": "Terminal Recorder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cortezcristian/terminal-rec.git"
+  },
+  "keywords": [
+    "terminal",
+    "tty",
+    "recorder",
+    "rec"
+  ],
+  "author": "Cristian Cortez <cortez.cristian@gmail.com> (http://cortezcristian.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cortezcristian/terminal-rec/issues"
+  }
+}
