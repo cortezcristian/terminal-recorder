@@ -1,16 +1,16 @@
 {
   "name": "terminal-recorder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Terminal Recorder allows you to record your bash session, and export it to html so then you can share it with your friends.",
-  "main": "index.js",
+  "main": "terminal-recorder.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node terminal-recorder.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "homepage": "http://cortezcristian.com/terminal-recorder/",
   "preferGlobal": true,
   "bin": {
-    "terminal-recorder": "./index.js"
+    "terminal-recorder": "./terminal-recorder.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,8 @@
   "dependencies": {
     "keypress": "~0.2.1",
     "pty.js": "~0.2.4",
-    "handlebars": "~2.0.0"
+    "handlebars": "~2.0.0",
+    "commander": "~2.5.1",
+    "ncp": "~1.0.1"
   }
 }

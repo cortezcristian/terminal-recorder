@@ -1,6 +1,34 @@
 #!/usr/bin/env node
+var program = require('commander');
+var pack = require('./package.json');
+var fs = require('fs');
+var ncp = require('ncp').ncp;
+
+program
+  .version(pack.version)
+  .option('-o, --outpath [path]', 'Add the specified [path] to place the folder that will contain the recorded html files')
+  .parse(process.argv);
+
+
+if (!program.outpath){
+    console.log('You should specify the output path first. In example:');
+    console.log('\n   $ terminal-recorder -o ./your-path/should-be-here/ \n');
+    console.log('terminal-recorder existing now!');
+    process.exit();
+}
+
+var fname = 'terminal-recorder-html';
+var folderout = program.outpath;
+var folderdest = folderout+'/'+fname;
+
+fs.mkdir(folderout+'/'+fname, function(err){
+    ncp('./template/', folderdest, function (err) {
+        //console.log('copied');
+    
+    });
+});
+
 var stdin = process.stdin,
-    fs = require('fs'),
     keypress = require('keypress'),
     Handlebars = require('handlebars'),
     pty = require('pty.js');
@@ -25,10 +53,10 @@ var createMilestone = function(data, cb){
 }
 
 var createTemplate = function(cb){
-  var tplpath = './template/js/events.js.hbs';
-  var tpldest = './template/js/events.js';
+  var tplpath = folderdest+'/js/events.js.hbs';
+  var tpldest = folderdest+'/js/events.js';
   fs.readFile(tplpath, 'utf8', function (err, source) {
-    console.log("file read");
+    //console.log("file read");
     var template = Handlebars.compile(source);
     var data = {
         totaltime: milestones[milestones.length-1]['time'],
@@ -36,8 +64,8 @@ var createTemplate = function(cb){
     }
     var result = template(data);
     fs.writeFile(tpldest, result, function(err){
-        console.log("file write");
-        console.log(result);
+        //console.log("file write");
+        //console.log(result);
         if(cb) { cb(); }
     });
   });
@@ -48,9 +76,10 @@ process.on('uncaughtException', function(err) {
 });
 
 
-console.log("----------------- Welcome ----------------------");
+console.log("----------------- Welcome to terminal-recorder ----------------------");
 console.log("Warning: We are saving keystrokes, donnot enter any password");
-console.log("------------------------------------------------");
+console.log("Remember: Hit ctrl+c to quit");
+console.log("---------------------------------------------------------------------");
 console.log("title", process.title);
 
 var term = pty.spawn('bash', [], {
@@ -90,17 +119,21 @@ keypress(process.stdin);
 stdin.on( 'keypress', function( ch, key ){
   // ctrl-c ( end of text )
   if ( ch === '\u0003' ) {
-    console.log("\n----------------- Bye :P ----------------------\n");
-    console.log(milestones);
+    //console.log(milestones);
     // save envents
     createTemplate(function(){
+        console.log("\n----------------- See the exported files in ----------------------\n");
+        console.log("Destination folder: "+folderdest+"\n");
+        console.log("Credits: @cortezcristian www.cortezcristian.com\n");
+        console.log("\n----------------- Bye :P ----------------------\n");
         process.exit();
     });
-  }
+  } else {
   //if ( ch !== null ) {
   //log('c-keypress: > '+ch+'\r', function (err) {
     //createMilestone(ch); 
     term.write( ch );
+  }
   //});
   //}
 });
