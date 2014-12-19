@@ -13,7 +13,7 @@ var logAction = function(data, cb){
   fs.appendFile('./actions.txt', data, cb);
 }
 
-var createMilestone = function(data){
+var createMilestone = function(data, cb){
   end = new Date();
   milestones.push({
     time: (end - start),
@@ -21,6 +21,7 @@ var createMilestone = function(data){
     forward: function(){ console.log("Do action: "+data); },    
     backward: function(){ console.log("Undo action: "+data); }
   });
+  if(cb) { cb(); }
 }
 
 process.on('uncaughtException', function(err) {
@@ -56,7 +57,9 @@ stdin.setEncoding( 'utf8' );
 term.on('data', function(data) {
   //log('c-out: '+data+'\r', function (err) {
   log(data, function (err) {
-    process.stdout.write(data);
+    createMilestone(data, function(){
+        process.stdout.write(data);
+    }); 
   });
 });
 
@@ -74,7 +77,7 @@ stdin.on( 'keypress', function( ch, key ){
   }
   //if ( ch !== null ) {
   //log('c-keypress: > '+ch+'\r', function (err) {
-    createMilestone(ch); 
+    //createMilestone(ch); 
     term.write( ch );
   //});
   //}
