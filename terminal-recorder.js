@@ -49,7 +49,7 @@ var createMilestone = function(data, cb){
   end = new Date();
   milestones.push({
     time: (end - start),
-    content: data.replace('"','\\"','g').replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/\r/g, '\\r')
+    content: data.replace(/\\/g, '\\\\').replace('"','\\"','g').replace(/\n/g, '\\n').replace(/\r/g, '\\r')
   });
   if(cb) { cb(); }
 }
