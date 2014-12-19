@@ -18,7 +18,7 @@ var createMilestone = function(data, cb){
   end = new Date();
   milestones.push({
     time: (end - start),
-    content: data.replace(/\n$/, '').replace(/\r$/, '')
+    content: data.replace(/\n/g, '\\n').replace(/\r/g, '\\r')
   });
   if(cb) { cb(); }
 }
@@ -43,7 +43,7 @@ var createTemplate = function(cb){
 }
 
 process.on('uncaughtException', function(err) {
-    console.log('Caught exception: ' + err);
+    //console.log('Caught exception: ' + err);
 });
 
 

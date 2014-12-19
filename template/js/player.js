@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
     term.on('data', function(data) {
       //socket.emit('data', data);
       console.log("typed data:", data);
-      term.write(data);
+      //term.write(data);
     });
 
     term.on('title', function(title) {
