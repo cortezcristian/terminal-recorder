@@ -1,7 +1,7 @@
 terminal-recorder
 ============
 
-Terminal recorder allow you to record your bash session, and export it to html so then you can share it with your friends.
+Terminal recorder allows you to record your bash session, and export it to html so then you can share it with your friends.
 
 [See the demo](http://cortezcristian.com/terminal-recorder/)
 
@@ -32,7 +32,7 @@ $ tail -f logs.txt
 
 Open a second terminal:
 ```bash
-$ npm start
+$ terminal-recorder
 ```
 
 Start typing in the second console, and look how the first one is mimicking your moves.
@@ -43,3 +43,15 @@ Start typing in the second console, and look how the first one is mimicking your
 
 * Record all keys, including passwords. So be careful with that.
 * Doesn't support arrow keys yet.
+
+## Cool Stuff
+Cool things that you can do:
+
+```bash
+$ filget awesomeness # Impress your friends
+$ nethack # Play nethack
+$ vim # Teach your friends with vim
+$ htop # Show server state
+```
+## Credits
+[@cortezcristian](https://twitter.com/cortezcristian)

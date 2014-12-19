@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var stdin = process.stdin,
     fs = require('fs'),
     keypress = require('keypress'),
