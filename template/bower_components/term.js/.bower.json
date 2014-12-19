@@ -1,0 +1,15 @@
+{
+  "name": "term.js",
+  "homepage": "https://github.com/vahe/term.js",
+  "version": "0.0.3",
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.3",
+    "commit": "04198dc09acc0276983619d68a2ef697c6a509be"
+  },
+  "_source": "git://github.com/vahe/term.js.git",
+  "_target": "~0.0.3",
+  "_originalSource": "term.js",
+  "_direct": true
+}
