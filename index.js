@@ -7,7 +7,13 @@ var log = function(data, cb){
   fs.appendFile('./logs.txt', data, cb);
 }
 
+process.on('uncaughtException', function(err) {
+    //console.log('Caught exception: ' + err);
+});
+
 console.log("----------------- Welcome ----------------------");
+console.log("Warning: We are saving keystrokes, donnot enter any password");
+console.log("------------------------------------------------");
 console.log("title", process.title);
 
 var term = pty.spawn('bash', [], {
@@ -31,7 +37,8 @@ stdin.resume();
 stdin.setEncoding( 'utf8' );
 
 term.on('data', function(data) {
-  log('c-out: '+data+'\r', function (err) {
+  //log('c-out: '+data+'\r', function (err) {
+  log(data, function (err) {
     process.stdout.write(data);
   });
 });
@@ -47,7 +54,9 @@ stdin.on( 'keypress', function( ch, key ){
     console.log("\n----------------- Bye :P ----------------------\n");
     process.exit();
   }
-  log('c-keypress: > '+ch+'\r', function (err) {
+  //if ( ch !== null ) {
+  //log('c-keypress: > '+ch+'\r', function (err) {
     term.write( ch );
-  });
+  //});
+  //}
 });
