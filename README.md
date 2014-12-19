@@ -23,7 +23,8 @@ $ terminal-recorder --help
 
     -h, --help            output usage information
     -V, --version         output the version number
-    -o, --outpath [path]  Add the specified [path] to place the folder that will contain the recorded html files
+    -o, --outpath [path]  Add the specified [path] to place the folder 
+                            that will contain the recorded html files
 
 $ terminal-recorder -o .
 

@@ -2,6 +2,7 @@
 var program = require('commander');
 var pack = require('./package.json');
 var fs = require('fs');
+var path = require('path');
 var ncp = require('ncp').ncp;
 
 program
@@ -20,9 +21,10 @@ if (!program.outpath){
 var fname = 'terminal-recorder-html';
 var folderout = program.outpath;
 var folderdest = folderout+'/'+fname;
+var dirString = path.dirname(fs.realpathSync(__filename));
 
 fs.mkdir(folderout+'/'+fname, function(err){
-    ncp('./template/', folderdest, function (err) {
+    ncp(dirString+'/template/', folderdest, function (err) {
         //console.log('copied');
     
     });
