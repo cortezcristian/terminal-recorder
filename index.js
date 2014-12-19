@@ -3,13 +3,30 @@ var stdin = process.stdin,
     keypress = require('keypress'),
     pty = require('pty.js');
 
+var end, start = new Date(), milestones = [];
+
 var log = function(data, cb){
   fs.appendFile('./logs.txt', data, cb);
+}
+
+var logAction = function(data, cb){
+  fs.appendFile('./actions.txt', data, cb);
+}
+
+var createMilestone = function(data){
+  end = new Date();
+  milestones.push({
+    time: (end - start),
+    letter: data,
+    forward: function(){ console.log("Do action: "+data); },    
+    backward: function(){ console.log("Undo action: "+data); }
+  });
 }
 
 process.on('uncaughtException', function(err) {
     //console.log('Caught exception: ' + err);
 });
+
 
 console.log("----------------- Welcome ----------------------");
 console.log("Warning: We are saving keystrokes, donnot enter any password");
@@ -52,10 +69,12 @@ stdin.on( 'keypress', function( ch, key ){
   // ctrl-c ( end of text )
   if ( ch === '\u0003' ) {
     console.log("\n----------------- Bye :P ----------------------\n");
+    console.log(milestones);
     process.exit();
   }
   //if ( ch !== null ) {
   //log('c-keypress: > '+ch+'\r', function (err) {
+    createMilestone(ch); 
     term.write( ch );
   //});
   //}
