@@ -20,5 +20,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cortezcristian/terminal-rec/issues"
+  },
+  "dependencies": {
+    "keypress": "~0.2.1",
+    "pty.js": "~0.2.4"
   }
 }
