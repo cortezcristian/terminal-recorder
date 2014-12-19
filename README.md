@@ -5,6 +5,46 @@ Terminal recorder allows you to record your bash session, and export it to html 
 
 [See the demo](http://cortezcristian.com/terminal-recorder/)
 
+
+## Installation
+
+```bash
+$ [sudo] npm install -g terminal-recorder 
+```
+
+## Usage
+
+```bash
+$ terminal-recorder --help
+
+  Usage: terminal-recorder [options]
+
+  Options:
+
+    -h, --help            output usage information
+    -V, --version         output the version number
+    -o, --outpath [path]  Add the specified [path] to place the folder that will contain the recorded html files
+
+$ terminal-recorder -o .
+
+[type your stuff and then hit Ctrl+c]
+
+# Notice a new folder was created
+
+$ tree terminal-recorder-html/ -L 1
+terminal-recorder-html/
+├── bower_components
+├── bower.json
+├── css
+├── index.html
+└── js
+
+# Just open the index.html with your favourite browser
+$ firefox terminal-recorder-html/index.html &
+
+# See the magic ;)
+```
+
 Final output looks like this
 ![Demo Pic](https://raw.githubusercontent.com/cortezcristian/terminal-recorder/master/pics/demo.png)
 
@@ -13,10 +53,6 @@ Final output looks like this
 * Records all keystrokes sent to stdin
 * Saves stdout in a log file `logs.txt`
 * Export actions to html
-
-```bash
-$ npm install -g terminal-recorder 
-```
 
 ## Comming soon
 * Timeline indicator
