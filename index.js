@@ -1,18 +1,11 @@
 var stdin = process.stdin,
     fs = require('fs'),
+    keypress = require('keypress'),
     pty = require('pty.js');
 
 var log = function(data, cb){
   fs.appendFile('./logs.txt', data, cb);
 }
-
-/*
-var readline = require('readline');
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-*/
 
 console.log("----------------- Welcome ----------------------");
 console.log("title", process.title);
@@ -27,17 +20,6 @@ var term = pty.spawn('bash', [], {
   env: process.env
 });
 
-/*
-rl.on('line', function(line){
-  log('c-line-in: '+line+'\r', function (err) {
-    //term.write(line+'\r');
-    //console.log(term.process);
-    //console.log(line);
-  });
-});
-*/
-
-
 // without this, we would only get streams once enter is pressed
 stdin.setRawMode( true );
 
@@ -51,12 +33,10 @@ stdin.setEncoding( 'utf8' );
 term.on('data', function(data) {
   log('c-out: '+data+'\r', function (err) {
     process.stdout.write(data);
-    //console.log(data);
   });
 });
 
 
-var keypress = require('keypress');
 
 keypress(process.stdin);
 
@@ -64,22 +44,10 @@ keypress(process.stdin);
 stdin.on( 'keypress', function( ch, key ){
   // ctrl-c ( end of text )
   if ( ch === '\u0003' ) {
-    console.log("\n----------------- Bye ----------------------\n");
+    console.log("\n----------------- Bye :P ----------------------\n");
     process.exit();
   }
-  log('c-keypress: '+key+" > "+ch+'\r', function (err) {
+  log('c-keypress: > '+ch+'\r', function (err) {
     term.write( ch );
   });
-  // write the key to stdout all normal like
-  //process.stdout.write( key );
-});
-
-// on any data into stdin
-stdin.on('data', function( data ){
-  // ctrl-c ( end of text )
-  if ( data === '\u0003' ) {
-    console.log("\n----------------- Bye ----------------------\n");
-    process.exit();
-  }
-  //term.write(data);
 });
