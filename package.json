@@ -1,5 +1,5 @@
 {
-  "name": "terminal-rec",
+  "name": "terminal-recorder",
   "version": "0.0.0",
   "description": "Terminal Recorder",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/cortezcristian/terminal-rec.git"
+    "url": "git://github.com/cortezcristian/terminal-recorder.git"
   },
   "keywords": [
     "terminal",
@@ -20,7 +20,7 @@
   "author": "Cristian Cortez <cortez.cristian@gmail.com> (http://cortezcristian.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cortezcristian/terminal-rec/issues"
+    "url": "https://github.com/cortezcristian/terminal-recorder/issues"
   },
   "dependencies": {
     "keypress": "~0.2.1",
