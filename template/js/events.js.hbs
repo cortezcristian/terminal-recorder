@@ -1,0 +1,30 @@
+//Timeline
+var timeTotal = {{totaltime}}+10;
+
+var t = window.t = new Timeline({length: timeTotal, frequency:10 });
+
+var stdouts = [
+    { time: 0, content: '     terminal-recorder by @cortezcristian\r\n'}
+    {{#each marks}}
+    , { time: {{time}}, content: "{{content}}"}
+    {{/each}}
+];
+
+//Markers
+var m1;
+
+for(var i=0; i<stdouts.length; i++) {
+    m1 = {
+        time: stdouts[i]['time'],
+        content: stdouts[i]['content'],
+        forward: function(){
+          console.log("do action");
+          term.write(this.content);
+        },    
+        backward: function(){ console.log("Undo action"); },    
+    }
+
+    t.markers.push(m1);
+}
+
+t.play();

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "keypress": "~0.2.1",
-    "pty.js": "~0.2.4"
+    "pty.js": "~0.2.4",
+    "handlebars": "~2.0.0"
   }
 }

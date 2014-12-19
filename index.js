@@ -1,6 +1,7 @@
 var stdin = process.stdin,
     fs = require('fs'),
     keypress = require('keypress'),
+    Handlebars = require('handlebars'),
     pty = require('pty.js');
 
 var end, start = new Date(), milestones = [];
@@ -17,15 +18,32 @@ var createMilestone = function(data, cb){
   end = new Date();
   milestones.push({
     time: (end - start),
-    letter: data,
-    forward: function(){ console.log("Do action: "+data); },    
-    backward: function(){ console.log("Undo action: "+data); }
+    content: data.replace(/\n$/, '').replace(/\r$/, '')
   });
   if(cb) { cb(); }
 }
 
+var createTemplate = function(cb){
+  var tplpath = './template/js/events.js.hbs';
+  var tpldest = './template/js/events.js';
+  fs.readFile(tplpath, 'utf8', function (err, source) {
+    console.log("file read");
+    var template = Handlebars.compile(source);
+    var data = {
+        totaltime: milestones[milestones.length-1]['time'],
+        marks: milestones    
+    }
+    var result = template(data);
+    fs.writeFile(tpldest, result, function(err){
+        console.log("file write");
+        console.log(result);
+        if(cb) { cb(); }
+    });
+  });
+}
+
 process.on('uncaughtException', function(err) {
-    //console.log('Caught exception: ' + err);
+    console.log('Caught exception: ' + err);
 });
 
 
@@ -73,7 +91,10 @@ stdin.on( 'keypress', function( ch, key ){
   if ( ch === '\u0003' ) {
     console.log("\n----------------- Bye :P ----------------------\n");
     console.log(milestones);
-    process.exit();
+    // save envents
+    createTemplate(function(){
+        process.exit();
+    });
   }
   //if ( ch !== null ) {
   //log('c-keypress: > '+ch+'\r', function (err) {
