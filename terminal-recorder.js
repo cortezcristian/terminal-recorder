@@ -3,19 +3,19 @@ var program = require('commander');
 var pack = require('./package.json');
 var fs = require('fs');
 var path = require('path');
+var colors = require('colors');
 var ncp = require('ncp').ncp;
 
 program
   .version(pack.version)
-  .option('-o, --outpath [path]', 'Add the specified [path] to place the folder that will contain the recorded html files')
+  .option('-o, --outpath [path]', 'Add the specified [path] to place the recorded html', '.')
   .parse(process.argv);
 
 
-if (!program.outpath){
-    console.log('You should specify the output path first. In example:');
-    console.log('\n   $ terminal-recorder -o ./your-path/should-be-here/ \n');
-    console.log('terminal-recorder existing now!');
-    process.exit();
+if (program.outpath === '.'){
+    console.log('[Info] Using current path as default'.yellow);
+    console.log('Remember you can specify the output path. In example:'.yellow);
+    console.log('\n   $ terminal-recorder -o ./your-path/should-be-here/ \n'.yellow);
 }
 
 var fname = 'terminal-recorder-html';
@@ -78,11 +78,11 @@ process.on('uncaughtException', function(err) {
 });
 
 
-console.log("----------------- Welcome to terminal-recorder ----------------------");
-console.log("Warning: We are saving keystrokes, donnot enter any password");
-console.log("Remember: Hit ctrl+c to quit");
-console.log("---------------------------------------------------------------------");
-console.log("title", process.title);
+console.log("----------------- Welcome to terminal-recorder ----------------------".grey);
+console.log("[Warning] We are saving all your keystrokes, donnot enter any password".red);
+console.log("Remember: Hit ctrl+c to quit".grey);
+console.log("---------------------------------------------------------------------".grey);
+//console.log("title", process.title);
 
 var term = pty.spawn('bash', [], {
   name: 'xterm-color',
@@ -124,10 +124,10 @@ stdin.on( 'keypress', function( ch, key ){
     //console.log(milestones);
     // save envents
     createTemplate(function(){
-        console.log("\n----------------- See the exported files in ----------------------\n");
-        console.log("Destination folder: "+folderdest+"\n");
-        console.log("Credits: @cortezcristian www.cortezcristian.com\n");
-        console.log("\n----------------- Bye :P ----------------------\n");
+        console.log("\n----------------- See the exported files in ----------------------".grey);
+        console.log(("[Info] Destination folder: "+folderdest+" ").yellow);
+        console.log("Credits: @cortezcristian www.cortezcristian.com".grey);
+        console.log("------------------------- Bye :P ---------------------------------\n".grey);
         process.exit();
     });
   } else {
