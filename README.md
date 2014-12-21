@@ -3,7 +3,9 @@ terminal-recorder
 
 Terminal recorder allows you to record your bash session, and export it to html so then you can share it with your friends.
 
-[See the demo](http://cortezcristian.com/terminal-recorder/)
+- [Latest Demo (with TimeLine)](http://cortezcristian.github.io/terminal-recorder/terminal-recorder-html/)
+
+- [Basic Demo](http://cortezcristian.com/terminal-recorder/)
 
 
 ## Installation
