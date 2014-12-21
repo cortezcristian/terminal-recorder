@@ -49,7 +49,7 @@ $ firefox terminal-recorder-html/index.html &
 ```
 
 Final output looks like this
-![Demo Pic](https://raw.githubusercontent.com/cortezcristian/terminal-recorder/master/pics/demo.png)
+![Demo Pic](https://raw.githubusercontent.com/cortezcristian/terminal-recorder/master/pics/demo-htop.png)
 
 ## Features
 
@@ -99,6 +99,7 @@ $ nethack # Play nethack
 $ vim # Teach your friends with vim
 $ htop # Show server state
 $ tmux # Open the terminal multiplexor
+$ cmatrix # feel like neo :)
 ```
 ## Credits
 [@cortezcristian](https://twitter.com/cortezcristian)
