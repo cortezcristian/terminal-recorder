@@ -49,7 +49,7 @@ var createMilestone = function(data, cb){
   end = new Date();
   milestones.push({
     time: (end - start),
-    content: data.replace(/\\/g, '\\\\').replace('"','\\"','g').replace(/\n/g, '\\n').replace(/\r/g, '\\r')
+    content: data.replace(/\\/g, '\\\\').replace(/\"/g,'\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r')
   });
   if(cb) { cb(); }
 }
@@ -131,10 +131,11 @@ stdin.on( 'keypress', function( ch, key ){
         process.exit();
     });
   } else {
-  //if ( ch !== null ) {
-  //log('c-keypress: > '+ch+'\r', function (err) {
-    //createMilestone(ch); 
-    term.write( ch );
+    if (typeof ch !== 'undefined' ) {
+      term.write( ch );
+    } else {
+      term.write( key.sequence );
+    }
   }
   //});
   //}
