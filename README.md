@@ -26,8 +26,10 @@ $ terminal-recorder --help
     -o, --outpath [path]  Add the specified [path] to place the folder 
                             that will contain the recorded html files
 
-$ terminal-recorder -o .
+# Start recording
+$ terminal-recorder
 
+# recording...
 [type your stuff and then hit Ctrl+c]
 
 # Notice a new folder was created
@@ -79,7 +81,10 @@ Start typing in the second console, and look how the first one is mimicking your
 ## Know issues
 
 * Record all keys, including passwords. So be careful with that.
-* Doesn't support arrow keys yet.
+* OSX `pty.js` is not working ok on Mac because of a header misconfiguration. More info:
+  - https://github.com/chjj/pty.js#todo
+  - http://stackoverflow.com/a/24981514/467034
+  - https://github.com/chjj/pty.js/issues/93
 
 ## Cool Stuff
 Cool things that you can do:
@@ -89,6 +94,7 @@ $ filget awesomeness # Impress your friends
 $ nethack # Play nethack
 $ vim # Teach your friends with vim
 $ htop # Show server state
+$ tmux # Open the terminal multiplexor
 ```
 ## Credits
 [@cortezcristian](https://twitter.com/cortezcristian)
