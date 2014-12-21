@@ -2,21 +2,32 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Terminal-rec</title>
+  <title>Terminal-recorder</title>
   <meta name="description" content="The terminal-rec reproducer">
   <meta name="author" content="@cortezcristian">
 
+  <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.js"></script>
   <script src="bower_components/term.js/src/term.js"></script>
   <script src="js/timeline.js"></script>
   <script src="js/player.js"></script>
   <script src="js/events.js"></script>
+  <script src="js/slider.js"></script>
 </head>
 
 <body>
+  <div id="terminal"></div>
+  <ul id="controls" class="ui-widget ui-helper-clearfix">
+    <li class="ui-state-default ui-corner-all" title=".ui-icon-play"><a class="ui-icon ui-icon-play"></a></li>
+    <li class="ui-state-default ui-corner-all" title=".ui-icon-pause"><a class="ui-icon ui-icon-pause"></a></li>
+    <li class="ui-state-default ui-corner-all" title=".ui-icon-stop"><a class="ui-icon ui-icon-stop"></a></li>
+    <li class="slide-con"><div id="slider"></div></li>
+  </ul>
 </body>
 </html>

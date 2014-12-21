@@ -14,3 +14,28 @@ span.terminal-cursor {
   color: #f0f0f0;
   background: #000;
 }
+
+#controls {
+    margin: 0;
+    padding: 0;
+}
+
+#controls li.ui-state-default {
+    margin: 2px;
+    position: relative;
+    padding: 4px 0;
+    cursor: pointer;
+    float: left;
+    list-style: none;
+}
+
+#controls li.slide-con {
+    width: 580px;
+    float: left;
+    padding: 8px 0 8px 14px;
+}
+
+#controls a.ui-icon {
+    float: left;
+    margin: 0 4px;
+}

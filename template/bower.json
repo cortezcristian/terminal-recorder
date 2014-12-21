@@ -17,6 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "term.js": "~0.0.3"
+    "term.js": "~0.0.3",
+    "jquery-ui": "~1.11.2",
+    "jquery": "~2.1.3"
   }
 }
