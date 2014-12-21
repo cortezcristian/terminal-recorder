@@ -1,6 +1,6 @@
 {
   "name": "terminal-recorder",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Record your terminal session into HTML. Terminal Recorder allows you to record your bash session, and export it to html so then you can share it with your friends.",
   "main": "terminal-recorder.js",
   "scripts": {
