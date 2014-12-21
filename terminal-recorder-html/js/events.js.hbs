@@ -10,21 +10,31 @@ var stdouts = [
     {{/each}}
 ];
 
+var terminalText = "";
+
 //Markers
-var m1;
+var m1, c = "", regexRollback;
 
 for(var i=0; i<stdouts.length; i++) {
     m1 = {
         time: stdouts[i]['time'],
         content: stdouts[i]['content'],
         forward: function(){
-          console.log("do action");
+          console.log("do action Time: "+this.time);
           term.write(this.content);
+          terminalText += this.content;
         },    
-        backward: function(){ console.log("Undo action"); },    
+        backward: function(){ 
+          console.log("Undo action Time: "+this.time);
+          c = this.content.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+          regexRollback = new RegExp(c+'$');
+          terminalText = terminalText.replace(regexRollback,'');
+          term.reset();
+          term.write(terminalText);
+        }
     }
 
     t.markers.push(m1);
 }
 
-t.play();
+//t.play();

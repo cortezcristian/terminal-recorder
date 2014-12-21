@@ -14,3 +14,38 @@ span.terminal-cursor {
   color: #f0f0f0;
   background: #000;
 }
+
+#controls {
+    margin: 0;
+    padding: 0;
+}
+
+#controls li.ui-state-default {
+    margin: 2px;
+    position: relative;
+    cursor: pointer;
+    float: left;
+    list-style: none;
+}
+
+#controls li.slide-con {
+    width: 580px;
+    float: left;
+    padding: 10px 0 10px 14px;
+}
+
+#controls li.slide-con .ui-slider-horizontal {
+    height: 8px;
+}
+
+#controls li.slide-con .ui-slider-horizontal .ui-slider-handle {
+    border-radius: 100px;
+    top: -8px;
+}
+
+
+#controls a.ui-icon {
+    float: left;
+    margin: 4px;
+}
+

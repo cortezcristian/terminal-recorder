@@ -1,750 +1,674 @@
 //Timeline
-var timeTotal = 182984+10;
+var timeTotal = 181441+10;
 
 var t = window.t = new Timeline({length: timeTotal, frequency:10 });
 
 var stdouts = [
     { time: 0, content: '  terminal-recorder by @cortezcristian\r\n'}
-    , { time: 313, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 321, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 945, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 1877, content: "h"}
-    , { time: 1950, content: "i"}
-    , { time: 2111, content: " "}
-    , { time: 2228, content: "t"}
-    , { time: 2328, content: "h"}
-    , { time: 2431, content: "e"}
-    , { time: 2541, content: "r"}
-    , { time: 2631, content: "e"}
-    , { time: 3852, content: "[K"}
-    , { time: 4352, content: "[K"}
-    , { time: 4383, content: "[K"}
-    , { time: 4416, content: "[K"}
-    , { time: 4446, content: "[K"}
-    , { time: 4478, content: "[K"}
-    , { time: 4507, content: "[K"}
-    , { time: 4539, content: "[K"}
-    , { time: 4569, content: ""}
-    , { time: 5241, content: "i"}
-    , { time: 5923, content: "'"}
-    , { time: 6412, content: "m"}
-    , { time: 6586, content: " "}
-    , { time: 7526, content: "@"}
-    , { time: 7780, content: "c"}
-    , { time: 7906, content: "o"}
-    , { time: 8066, content: "r"}
-    , { time: 8282, content: "t"}
-    , { time: 8361, content: "e"}
-    , { time: 8602, content: "z"}
-    , { time: 8782, content: "c"}
-    , { time: 8983, content: "r"}
-    , { time: 9098, content: "i"}
-    , { time: 9239, content: "s"}
-    , { time: 9363, content: "t"}
-    , { time: 9597, content: "i"}
-    , { time: 9836, content: "a"}
-    , { time: 9955, content: "n"}
-    , { time: 11188, content: "[K"}
-    , { time: 11689, content: "[K"}
-    , { time: 11721, content: "[K"}
-    , { time: 11751, content: "[K"}
-    , { time: 11782, content: "[K"}
-    , { time: 11814, content: "[K"}
-    , { time: 11844, content: "[K"}
-    , { time: 11875, content: "[K"}
-    , { time: 11907, content: "[K"}
-    , { time: 11935, content: "[K"}
-    , { time: 11966, content: "[K"}
-    , { time: 11998, content: "[K"}
-    , { time: 12029, content: "[K"}
-    , { time: 12059, content: "[K"}
-    , { time: 12091, content: "[K"}
-    , { time: 12128, content: "[K"}
-    , { time: 12154, content: "[K"}
-    , { time: 12183, content: "[K"}
-    , { time: 12213, content: "[K"}
-    , { time: 12244, content: ""}
-    , { time: 12274, content: ""}
-    , { time: 12307, content: ""}
-    , { time: 12337, content: ""}
-    , { time: 12417, content: "a"}
-    , { time: 12709, content: "n"}
-    , { time: 12888, content: "d"}
-    , { time: 13030, content: " "}
-    , { time: 13197, content: "t"}
-    , { time: 13289, content: "h"}
-    , { time: 13366, content: "i"}
-    , { time: 13517, content: "s"}
-    , { time: 13577, content: " "}
-    , { time: 13977, content: "i"}
-    , { time: 14097, content: "s"}
-    , { time: 14186, content: " "}
-    , { time: 14371, content: "t"}
-    , { time: 14469, content: "e"}
-    , { time: 14596, content: "r"}
-    , { time: 14688, content: "m"}
-    , { time: 14852, content: "i"}
-    , { time: 14930, content: "n"}
-    , { time: 15010, content: "a"}
-    , { time: 15157, content: "l"}
-    , { time: 15450, content: "-"}
-    , { time: 15608, content: "r"}
-    , { time: 15663, content: "e"}
-    , { time: 16009, content: "c"}
-    , { time: 16147, content: "o"}
-    , { time: 16275, content: "r"}
-    , { time: 16527, content: "d"}
-    , { time: 16589, content: "e"}
-    , { time: 16729, content: "r"}
-    , { time: 17639, content: "[K"}
-    , { time: 18140, content: "[K"}
-    , { time: 18171, content: "[K"}
-    , { time: 18201, content: "[K"}
-    , { time: 18235, content: "[K"}
-    , { time: 18266, content: "[K"}
-    , { time: 18298, content: "[K"}
-    , { time: 18327, content: "[K"}
-    , { time: 18357, content: "[K"}
-    , { time: 18389, content: "[K"}
-    , { time: 18420, content: "[K"}
-    , { time: 18450, content: "[K"}
-    , { time: 18481, content: "[K"}
-    , { time: 18511, content: "[K"}
-    , { time: 18542, content: "[K"}
-    , { time: 18574, content: "[K"}
-    , { time: 18605, content: "[K"}
-    , { time: 18636, content: "[K"}
-    , { time: 18667, content: "[K"}
-    , { time: 18698, content: "[K"}
-    , { time: 18729, content: "[K"}
-    , { time: 18761, content: "[K"}
-    , { time: 18790, content: "[K"}
-    , { time: 18821, content: "[K"}
-    , { time: 18852, content: "[K"}
-    , { time: 18884, content: "[K"}
-    , { time: 18915, content: "[K"}
-    , { time: 18945, content: "[K"}
-    , { time: 18977, content: "[K"}
-    , { time: 19010, content: ""}
-    , { time: 19039, content: ""}
-    , { time: 19070, content: ""}
-    , { time: 19101, content: ""}
-    , { time: 19882, content: "w"}
-    , { time: 20177, content: "h"}
-    , { time: 20270, content: "a"}
-    , { time: 20370, content: "t"}
-    , { time: 20483, content: " "}
-    , { time: 20686, content: "y"}
-    , { time: 20793, content: "o"}
-    , { time: 20875, content: "u"}
-    , { time: 21017, content: " "}
-    , { time: 21163, content: "c"}
-    , { time: 21241, content: "a"}
-    , { time: 21274, content: "n"}
-    , { time: 21489, content: " "}
-    , { time: 21612, content: "d"}
-    , { time: 21717, content: "o"}
-    , { time: 21870, content: " "}
-    , { time: 22140, content: "w"}
-    , { time: 22314, content: "i"}
-    , { time: 22746, content: "t"}
-    , { time: 23015, content: "h"}
-    , { time: 23157, content: " "}
-    , { time: 23361, content: "i"}
-    , { time: 23480, content: "t"}
-    , { time: 24066, content: "?"}
-    , { time: 25169, content: "[K"}
-    , { time: 25672, content: "[K"}
-    , { time: 25702, content: "[K"}
-    , { time: 25734, content: "[K"}
-    , { time: 25765, content: "[K"}
-    , { time: 25795, content: "[K"}
-    , { time: 25827, content: "[K"}
-    , { time: 25857, content: "[K"}
-    , { time: 25888, content: "[K"}
-    , { time: 25918, content: "[K"}
-    , { time: 25951, content: "[K"}
-    , { time: 25981, content: "[K"}
-    , { time: 26012, content: "[K"}
-    , { time: 26044, content: "[K"}
-    , { time: 26074, content: "[K"}
-    , { time: 26106, content: "[K"}
-    , { time: 26137, content: "[K"}
-    , { time: 26167, content: "[K"}
-    , { time: 26198, content: "[K"}
-    , { time: 26228, content: "[K"}
-    , { time: 26257, content: "[K"}
-    , { time: 26290, content: "[K"}
-    , { time: 26321, content: "[K"}
-    , { time: 26351, content: "[K"}
-    , { time: 26382, content: ""}
-    , { time: 26414, content: ""}
-    , { time: 27218, content: "p"}
-    , { time: 27323, content: "l"}
-    , { time: 27461, content: "a"}
-    , { time: 28525, content: "y"}
-    , { time: 28769, content: " "}
-    , { time: 28958, content: "w"}
-    , { time: 29153, content: "i"}
-    , { time: 29448, content: "t"}
-    , { time: 29742, content: "h"}
-    , { time: 29886, content: " "}
-    , { time: 30324, content: "f"}
-    , { time: 30438, content: "i"}
-    , { time: 30741, content: "g"}
-    , { time: 30857, content: "l"}
-    , { time: 31001, content: "e"}
-    , { time: 31187, content: "t"}
-    , { time: 31913, content: "[K"}
-    , { time: 32414, content: "[K"}
-    , { time: 32445, content: "[K"}
-    , { time: 32477, content: "[K"}
-    , { time: 32509, content: "[K"}
-    , { time: 32539, content: "[K"}
-    , { time: 32569, content: "[K"}
-    , { time: 32604, content: "[K"}
-    , { time: 32632, content: "[K"}
-    , { time: 32662, content: "[K"}
-    , { time: 32695, content: "[K"}
-    , { time: 32724, content: "[K"}
-    , { time: 32755, content: "[K"}
-    , { time: 32786, content: "[K"}
-    , { time: 32817, content: "[K"}
-    , { time: 32847, content: "[K"}
-    , { time: 32878, content: ""}
-    , { time: 32908, content: ""}
-    , { time: 32940, content: ""}
-    , { time: 32971, content: ""}
-    , { time: 33284, content: "g"}
-    , { time: 33741, content: "[K"}
-    , { time: 33885, content: "f"}
-    , { time: 34099, content: "i"}
-    , { time: 34534, content: "g"}
-    , { time: 34666, content: "l"}
-    , { time: 34805, content: "e"}
-    , { time: 34983, content: "t"}
-    , { time: 35403, content: " "}
-    , { time: 37153, content: "r"}
-    , { time: 37213, content: "o"}
-    , { time: 37396, content: "c"}
-    , { time: 37514, content: "k"}
-    , { time: 37625, content: "s"}
-    , { time: 37941, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  figlet rocks"}
-    , { time: 37945, content: "                _        \r\n _ __ ___   ___| | _____ \r\n| '__/ _ \\ / __| |/ / __|\r\n"}
-    , { time: 37945, content: "| | | (_) | (__|   <\\__ \\\r\n|_|  \\___/ \\___|_|\\_\\___/\r\n                         \r\n"}
-    , { time: 37947, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 37960, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 40053, content: "o"}
-    , { time: 40181, content: "p"}
-    , { time: 40248, content: "e"}
-    , { time: 40421, content: "n"}
-    , { time: 40535, content: " "}
-    , { time: 40666, content: "v"}
-    , { time: 40766, content: "i"}
-    , { time: 40835, content: "m"}
-    , { time: 41402, content: "?"}
-    , { time: 41904, content: "[K"}
-    , { time: 42405, content: "[K"}
-    , { time: 42436, content: "[K"}
-    , { time: 42468, content: "[K"}
-    , { time: 42499, content: "[K"}
-    , { time: 42530, content: "[K"}
-    , { time: 42562, content: "[K"}
-    , { time: 42592, content: "[K"}
-    , { time: 42623, content: "[K"}
-    , { time: 42653, content: ""}
-    , { time: 42683, content: ""}
-    , { time: 42714, content: ""}
-    , { time: 42744, content: ""}
-    , { time: 42789, content: "v"}
-    , { time: 43067, content: "i"}
-    , { time: 43177, content: "m"}
-    , { time: 43612, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  vim"}
-    , { time: 43697, content: "7[?47h[?1h="}
-    , { time: 43698, content: "[1;24r[m[H[2J[>c"}
-    , { time: 43700, content: "[1;1H[33m  1 [m[4m                                                                            [m[2;1H[1m[34m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H0,0-1"}
-    , { time: 43700, content: "[9CAll[6;32HVIM - Vi IMproved[8;33Hversion 7.3.547[9;29Hby Bram Moolenaar et al.[10;13HModified by pkg-vim-maintainers@lists.alioth.debian.org[11;19HVim is open source and freely distributable[13;26HBecome a registered Vim user![14;18Htype  :help register[34m<Enter>[m   for information [16;18Htype  :q[34m<Enter>[m               to exit         [17;18Htype  :help[34m<Enter>[m  or  [34m<F1>[m  for on-line help[18;18Htype  :help version7[34m<Enter>[m   for version info[1;5H"}
-    , { time: 45436, content: "[24;63H[K[24;1H:"}
-    , { time: 45941, content: "."}
-    , { time: 46270, content: "!"}
-    , { time: 46977, content: "f"}
-    , { time: 47095, content: "i"}
-    , { time: 47251, content: "g"}
-    , { time: 47422, content: "l"}
-    , { time: 47581, content: "e"}
-    , { time: 47677, content: "t"}
-    , { time: 48277, content: " "}
-    , { time: 48428, content: "t"}
-    , { time: 48553, content: "e"}
-    , { time: 48662, content: "r"}
-    , { time: 48762, content: "m"}
-    , { time: 48914, content: "i"}
-    , { time: 49057, content: "n"}
-    , { time: 49253, content: "a"}
-    , { time: 49395, content: "l"}
-    , { time: 49741, content: "\r"}
-    , { time: 49795, content: "[1;5H[4m _[21C _[12C _[m\r\n[33m  2 [m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[2;45H[K[3;1H[33m  3 [m| __/ _ \\ '__| '_ ` _ \\| | '_ \\ / _` | |[3;45H[K[4;1H[33m  4 [m| ||  __/ |  | | | | | | | | | | (_| | |[4;45H[K[5;1H[33m  5 [m \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|[5;45H[K[6;1H[33m  6 [m                                        [6;45H[K[8;33H[1m[34m               [9;29H                        [10;13H                                                       [11;19H                                           [13;26H                             [14;18H                                              [16;18H                                              [17;18H                                              [18;18H                                              [m[24;63H1,2[11CAll[1;6H"}
-    , { time: 54197, content: " _                      _             _ [1;45H[K[2;5H[4m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |                                    [m[24;63H2[2;6H"}
-    , { time: 54498, content: "| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[2;45H[K[3;5H[4m| __/ _ \\ '__| '_ ` _ \\| | '_ \\ / _` | |                                    [m[24;63H3[3;6H"}
-    , { time: 54660, content: "| __/ _ \\ '__| '_ ` _ \\| | '_ \\ / _` | |[3;45H[K[4;5H[4m| ||  __/ |  | | | | | | | | | | (_| | |                                    [m[24;63H4[4;6H"}
-    , { time: 54774, content: "| ||  __/ |  | | | | | | | | | | (_| | |[4;45H[K[5;5H[4m \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|                                    [m[24;63H5[5;6H"}
-    , { time: 54919, content: " \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|[5;45H[K[6;5H[4m                                                                            [m[24;63H6[6;6H"}
-    , { time: 55070, content: ""}
-    , { time: 56978, content: "[24;1H[K[24;1H:"}
-    , { time: 59286, content: "."}
-    , { time: 59466, content: "!"}
-    , { time: 60193, content: "f"}
-    , { time: 60316, content: "i"}
-    , { time: 60481, content: "g"}
-    , { time: 60651, content: "l"}
-    , { time: 60943, content: "e"}
-    , { time: 61077, content: "t"}
-    , { time: 61296, content: " "}
-    , { time: 61845, content: "r"}
-    , { time: 61922, content: "e"}
-    , { time: 62151, content: "c"}
-    , { time: 62270, content: "o"}
-    , { time: 62439, content: "r"}
-    , { time: 62674, content: "d"}
-    , { time: 62743, content: "e"}
-    , { time: 62882, content: "r"}
-    , { time: 63778, content: "\r"}
-    , { time: 63839, content: "[6;32H[4m _[m\r\n[33m  7 [m _ __ ___  ___ ___  _ __ __| | ___ _ __ [7;45H[K[8;1H[33m  8 [m| '__/ _ \\/ __/ _ \\| '__/ _` |/ _ \\ '__|[8;45H[K[9;1H[33m  9 [m| | |  __/ (_| (_) | | | (_| |  __/ |   [9;45H[K[10;1H[33m 10 [m|_|  \\___|\\___\\___/|_|  \\__,_|\\___|_|   [10;45H[K[11;1H[33m 11 [m                                        [11;45H[K[24;63H6,29[10CAll[6;33H"}
-    , { time: 65680, content: "[24;1H[K[24;1H:"}
-    , { time: 66698, content: "w"}
-    , { time: 67344, content: "[24;2H[K[24;2H"}
-    , { time: 67457, content: "q"}
-    , { time: 67768, content: "!"}
-    , { time: 68052, content: "\r[24;1H[K[24;1H[?1l>[2J[?47l8"}
-    , { time: 68053, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 68065, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 68792, content: "i"}
-    , { time: 68869, content: "t"}
-    , { time: 69367, content: "'"}
-    , { time: 69486, content: "s"}
-    , { time: 69653, content: " "}
-    , { time: 70069, content: "j"}
-    , { time: 70268, content: "u"}
-    , { time: 70378, content: "s"}
-    , { time: 70509, content: "t"}
-    , { time: 70690, content: " "}
-    , { time: 71106, content: "a"}
-    , { time: 71342, content: "w"}
-    , { time: 71547, content: "e"}
-    , { time: 71808, content: "s"}
-    , { time: 71911, content: "o"}
-    , { time: 72061, content: "m"}
-    , { time: 72216, content: "e"}
-    , { time: 72417, content: " "}
-    , { time: 73276, content: "m"}
-    , { time: 73450, content: "a"}
-    , { time: 73601, content: "a"}
-    , { time: 73743, content: "a"}
-    , { time: 73925, content: "m"}
-    , { time: 74093, content: "m"}
-    , { time: 74234, content: "m"}
-    , { time: 74369, content: "m"}
-    , { time: 74505, content: "m"}
-    , { time: 74667, content: "m"}
-    , { time: 75179, content: " "}
-    , { time: 75997, content: "[K"}
-    , { time: 76196, content: "a"}
-    , { time: 76398, content: "a"}
-    , { time: 76550, content: "a"}
-    , { time: 76620, content: " "}
-    , { time: 76796, content: "m"}
-    , { time: 77016, content: "a"}
-    , { time: 77196, content: "a"}
-    , { time: 77340, content: "a"}
-    , { time: 77668, content: "[K"}
-    , { time: 77810, content: "[K"}
-    , { time: 78209, content: "[K"}
-    , { time: 78450, content: "i"}
-    , { time: 78596, content: "a"}
-    , { time: 78772, content: "a"}
-    , { time: 78936, content: "a"}
-    , { time: 79070, content: "a"}
-    , { time: 79305, content: "[K"}
-    , { time: 79805, content: "[K"}
-    , { time: 79835, content: "[K"}
-    , { time: 79868, content: "[K"}
-    , { time: 79899, content: "[K"}
-    , { time: 79930, content: "[K"}
-    , { time: 79960, content: "[K"}
-    , { time: 79992, content: "[K"}
-    , { time: 80023, content: "[K"}
-    , { time: 80052, content: "[K"}
-    , { time: 80083, content: "[K"}
-    , { time: 80114, content: "[K"}
-    , { time: 80145, content: "[K"}
-    , { time: 80176, content: "[K"}
-    , { time: 80206, content: "[K"}
-    , { time: 80238, content: "[K"}
-    , { time: 80269, content: "[K"}
-    , { time: 80298, content: "[K"}
-    , { time: 80330, content: "[K"}
-    , { time: 80361, content: "[K"}
-    , { time: 80391, content: "[K"}
-    , { time: 80960, content: "[K"}
-    , { time: 81462, content: "[K"}
-    , { time: 81493, content: "[K"}
-    , { time: 81524, content: "[K"}
-    , { time: 81555, content: "[K"}
-    , { time: 81586, content: "[K"}
-    , { time: 81617, content: "[K"}
-    , { time: 81649, content: "[K"}
-    , { time: 81679, content: "[K"}
-    , { time: 81710, content: "[K"}
-    , { time: 81741, content: "[K"}
-    , { time: 81772, content: "[K"}
-    , { time: 81803, content: "[K"}
-    , { time: 81837, content: "[K"}
-    , { time: 81865, content: "[K"}
-    , { time: 81895, content: "[K"}
-    , { time: 81925, content: "[K"}
-    , { time: 81956, content: ""}
-    , { time: 81986, content: ""}
-    , { time: 82017, content: ""}
-    , { time: 82906, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 83460, content: "w"}
-    , { time: 83515, content: "w"}
-    , { time: 83536, content: "h"}
-    , { time: 84065, content: "[K"}
-    , { time: 84501, content: "[K"}
-    , { time: 84739, content: "h"}
-    , { time: 84809, content: "a"}
-    , { time: 84903, content: "t"}
-    , { time: 85019, content: " "}
-    , { time: 85259, content: "e"}
-    , { time: 85325, content: "l"}
-    , { time: 85498, content: "s"}
-    , { time: 85586, content: "e"}
-    , { time: 85898, content: " "}
-    , { time: 86153, content: "w"}
-    , { time: 86374, content: "e"}
-    , { time: 86479, content: " "}
-    , { time: 86632, content: "c"}
-    , { time: 86720, content: "a"}
-    , { time: 86801, content: "n"}
-    , { time: 86911, content: " "}
-    , { time: 87032, content: "d"}
-    , { time: 87198, content: "o"}
-    , { time: 87593, content: "?"}
-    , { time: 88895, content: "[K"}
-    , { time: 89395, content: "[K"}
-    , { time: 89426, content: "[K"}
-    , { time: 89457, content: "[K"}
-    , { time: 89488, content: "[K"}
-    , { time: 89518, content: "[K"}
-    , { time: 89550, content: "[K"}
-    , { time: 89581, content: "[K"}
-    , { time: 89612, content: "[K"}
-    , { time: 89643, content: "[K"}
-    , { time: 89674, content: "[K"}
-    , { time: 89706, content: "[K"}
-    , { time: 89736, content: "[K"}
-    , { time: 89768, content: "[K"}
-    , { time: 89798, content: "[K"}
-    , { time: 89828, content: "[K"}
-    , { time: 89859, content: "[K"}
-    , { time: 89889, content: "[K"}
-    , { time: 89920, content: "[K"}
-    , { time: 89951, content: "[K"}
-    , { time: 89982, content: ""}
-    , { time: 90013, content: ""}
-    , { time: 90043, content: ""}
-    , { time: 90377, content: "p"}
-    , { time: 91144, content: "[K"}
-    , { time: 91357, content: "s"}
-    , { time: 91614, content: "e"}
-    , { time: 91780, content: "e"}
-    , { time: 91920, content: " "}
-    , { time: 92161, content: "h"}
-    , { time: 92260, content: "t"}
-    , { time: 92936, content: "o"}
-    , { time: 93377, content: "p"}
-    , { time: 93651, content: " "}
-    , { time: 93826, content: "o"}
-    , { time: 93956, content: "r"}
-    , { time: 94090, content: " "}
-    , { time: 94314, content: "v"}
-    , { time: 94825, content: "t"}
-    , { time: 95283, content: "o"}
-    , { time: 95402, content: "p"}
-    , { time: 96198, content: "[K"}
-    , { time: 96699, content: "[K"}
-    , { time: 96730, content: "[K"}
-    , { time: 96762, content: "[K"}
-    , { time: 96794, content: "[K"}
-    , { time: 96824, content: "[K"}
-    , { time: 96853, content: "[K"}
-    , { time: 96884, content: "[K"}
-    , { time: 96916, content: "[K"}
-    , { time: 96949, content: "[K"}
-    , { time: 96979, content: "[K"}
-    , { time: 97009, content: "[K"}
-    , { time: 97040, content: "[K"}
-    , { time: 97071, content: "[K"}
-    , { time: 97102, content: "[K"}
-    , { time: 97133, content: "[K"}
-    , { time: 97164, content: ""}
-    , { time: 97194, content: ""}
-    , { time: 97226, content: ""}
-    , { time: 97257, content: ""}
-    , { time: 97287, content: ""}
-    , { time: 97645, content: "h"}
-    , { time: 97775, content: "t"}
-    , { time: 97891, content: "o"}
-    , { time: 98022, content: "p"}
-    , { time: 98461, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  htop"}
-    , { time: 98464, content: ")07[?47h[1;24r[m[4l[?1h="}
-    , { time: 98464, content: "[m[?1000h"}
-    , { time: 98639, content: "[m[m[H[2J[1B  [36m1  [m[1m[[m[32m|||[31m|||[30m[1m                   14.3%[m][m     [36mTasks: [1m169[m[36m, [1m548[m[36m thr; [32m[1m1[m[36m running[3;3H2  [m[1m[[m[32m|||[30m[1m                       7.1%[m][m     [36mLoad average: [30m[1m0.44 [m[m0.42 [1m0.41 [4;3H[m[36m3  [m[1m[[m[32m|||[30m[1m                       7.1%[m][m     [36mUptime: [1m08:09:56[5;3H[m[36m4  [m[1m[[m[32m|||||||[31m|||||||||[30m[1m         50.0%[m][6;3H[m[36mMem[m[1m[[m[32m|||||||||||||||||[34m|[33m|2070/3771M[30m[1mB[m][7;3H[m[36mSwp[m[1m[[m[31m||||||[30m[1m              344/2047MB[m]\r[2B[m[30m[42m  PID USER      PRI [30m[46m NI [30m[42m VIRT   RES   SHR S CPU% MEM%   TIME+  Command          [10;1H[30m[46m 2614 crisboot   -6 -11  421M  4600  2908 S  0.0  0.1  1:03.89 /usr/bin/pulseaud[11;2H[m[m2619 crisboot   -6 [31m-11 [36m 421M  4[m[m600 [36m 2[m[m908 S  0.0  0.1  0:00.00 /usr/bin/pulseaud[12;2H2607 crisboot    9 [31m-11 [36m 421M  4[m[m600 [36m 2[m[m908 S  7.1  0.1  2:04.24 /usr/bin/pulseaud[13;5H1 [30m[1mroot      [m[m 20   0 [36m27[m[m060 [36m 2[m[m396 [36m 1[m[m204 S  0.0  0.1  0:01.43 /sbin/init[14;3H402 [30m[1mroot      [m[m 20   0 [36m15[m[m272   472   368 S  0.0  0.0  0:00.06 upstart-file-brid[15;3H431 [30m[1mroot      [m[m 20   0 [36m17[m[m320   668   516 S  0.0  0.0  0:00.18 upstart-udev-brid[16;3H433 [30m[1mroot      [m[m 20   0 [36m22[m[m272 [36m 1[m[m000   752 S  0.0  0.0  0:00.20 /sbin/udevd --dae[17;3H801 [30m[1mroot      [m[m 20   0 [36m15[m[m260   468   368 S  0.0  0.0  0:00.03 upstart-socket-br[18;2H1211 [30m[1mroot      [m[m 20   0 [36m52[m[m256   972   968 S  0.0  0.0  0:00.00 /usr/sbin/sshd -D[19;2H1219 [30m[1mmessagebu [m[m 20   0 [36m24[m[m980 [36m 2[m[m036   940 S  0.0  0.1  0:03.46 dbus-daemon --sys[20;2H1228 [30m[1msyslog    [m[m 20   0 [36m 241M  1[m[m076   844 S  0.0  0.0  0:00.96 rsyslogd -c5\r[1B 1229 [30m[1msyslog    [m[m 20 "}
-    , { time: 98639, content: "  0 [36m 241M  1[m[m076   844 S  0.0  0.0  0:00.26 rsyslogd -c5\r[1B 1230 [30m[1msyslog    [m[m 20   0 [36m 241M  1[m[m076   844 S  0.0  0.0  0:00.08 rsyslogd -c5\r[1B 1227 [30m[1msyslog    [m[m 20   0 [36m 241M  1[m[m076   844 S  0.0  0.0  0:02.99 rsyslogd -c5\r[1BF1[30m[46mHelp  [m[mF2[30m[46mSetup [m[mF3[30m[46mSearch[m[mF4[30m[46mFilter[m[mF5[30m[46mTree  [m[mF6[30m[46mSortBy[m[mF7[30m[46mNice -[m[mF8[30m[46mNice +[m[mF9[30m[46mKill  [m[mF10[30m[46mQuit [4ht[4l[H[m[m"}
-    , { time: 100174, content: "[2;7H[34m|[32m||[31m|[30m[1m  [2;32H 8.8[2;64H[32m2[3;9H[m[31m|[3;33H[30m[1m6.6[4;10H[m[31m|[4;32H[30m[1m10.7[4;58H[36m8[5;10H[m[31m||[30m[1m           [5;32H10.7[6;28H[m[33m69[10;46H[30m[46m2.7[10;61H92[12;43H[m[32mR [m[m 5.3[12;61H32[H"}
-    , { time: 100818, content: "[23B[J[?1000l[24;1H[2J[?47l8\r[?1l>"}
-    , { time: 100820, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 100833, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 101811, content: "v"}
-    , { time: 102081, content: "t"}
-    , { time: 102192, content: "o"}
-    , { time: 102297, content: "p"}
-    , { time: 102955, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  vtop"}
-    , { time: 103130, content: "[?1049h[?25l[1;1H[H[2J7[1;1H[38;5;135m [m[1;38;5;135mvtop[m[37m for crisboot-Aspire-S3-391 [38C[m05:14:568[?1000h[?1003h[?1005h7[2;1H[38;5;43m(0lqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk[m[3;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[4;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[5;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[6;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[7;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[8;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[9;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[10;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[11;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[12;1H[38;5;43mx[m[38;5;135m(B                                                                              [m[38;5;43m(0x[m[13;1H[38;5;43mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj[m[14;1H[38;5;43mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqklqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk[m[15;1H[38;5;43mx[m[38;5;135m(B                                      [m[38;5;43m(0xx[38Cx[m[16;1H[38;5;43mx[m[38;5;135m(B                                      [m[38;5;43m(0xx[38Cx[m[17;1H[38;5;43mx[m[38;5;135m(B                                      [m[38;5;43m(0xx[38Cx[m[18;1H[38;5;43mx[m[38;5;135m(B                                      [m[38;5;43m(0xx[38Cx[m[19;1H[38;5;43mx[m[38;5;135m(B                                      [m[38;5;43m(0xx[38Cx[m[20;1H[38;5;43mx[m[38;5;135m(B                                      [m[38;5;43m(0xx[38Cx[m[21;1H[38;5;43mx[m[38;5;135m(B                                      [m[38;5;43m(0xx[38Cx[m[22;1H[38;5;43mx[m[38;5;135m(B                                      [m[38;5;43m(0xx[38Cx[m[23;1H[38;5;43mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqjmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj[m[24;1H[41C[47;30m(Bm[1C[mSort[1Cby[1CMem[4Chttp://parall.ax/vtop8"}
-    , { time: 103320, content: "7[2;1H[2C CPU Usage [14;1H[14;3H Memory Usage [26C Process List [15;1H[15;35H[37m 93%[3C[m[1m Command         CPU % Count Memory %[m[16;1H[16;43H[48;5;135m chrome          6.1   31    57.2   [m[17;1H[17;44HXorg[12C0.9[3C1[5C1.1[18;1H[18;44Hcompiz[10C0.8[3C1[5C1.4[19;1H[19;44Hmongod[10C0.3[3C1[5C0.1[20;1H[20;44Hgnome-terminal[2C0.2[3C1[5C0.6[21;1H[21;44Hnode[12C0.2[3C2[5C0.9[22;1H[22;44Hrts5139-polling[1C0.1[3C1[5C0.08"}
-    , { time: 103367, content: "7[1;1H[78C78"}
-    , { time: 103463, content: "7[16;1H[16;38H[38;5;135m⢸[m[17;1H[17;38H[38;5;135m⢸[m[18;1H[18;38H[38;5;135m⢸[m[19;1H[19;38H[38;5;135m⢸[m[20;1H[20;38H[38;5;135m⢸[m[21;1H[21;38H[38;5;135m⢸[m[22;1H[22;38H[38;5;135m⢸[m8"}
-    , { time: 103636, content: "7[16;1H[16;38H[38;5;135m⣿[m[17;1H[17;38H[38;5;135m⣿[m[18;1H[18;38H[38;5;135m⣿[m[19;1H[19;38H[38;5;135m⣿[m[20;1H[20;38H[38;5;135m⣿[m[21;1H[21;38H[38;5;135m⣿[m[22;1H[22;38H[38;5;135m⣿[m8"}
-    , { time: 103810, content: "7[16;1H[16;37H[38;5;135m⢸[m[17;1H[17;37H[38;5;135m⢸[m[18;1H[18;37H[38;5;135m⢸[m[19;1H[19;37H[38;5;135m⢸[m[20;1H[20;37H[38;5;135m⢸[m[21;1H[21;37H[38;5;135m⢸[m[22;1H[22;37H[38;5;135m⢸[m8"}
-    , { time: 103952, content: "7[16;1H[16;37H[38;5;135m⣿[m[17;1H[17;37H[38;5;135m⣿[m[18;1H[18;37H[38;5;135m⣿[m[19;1H[19;37H[38;5;135m⣿[m[20;1H[20;37H[38;5;135m⣿[m[21;1H[21;37H[38;5;135m⣿[m[22;1H[22;37H[38;5;135m⣿[m8"}
-    , { time: 104087, content: "7[16;1H[16;36H[38;5;135m⢸[m[17;1H[17;36H[38;5;135m⢸[m[18;1H[18;36H[38;5;135m⢸[m[19;1H[19;36H[38;5;135m⢸[m[20;1H[20;36H[38;5;135m⢸[m[21;1H[21;36H[38;5;135m⢸[m[22;1H[22;36H[38;5;135m⢸[m8"}
-    , { time: 104232, content: "7[3;1H[3;75H[37m 22%[m[16;1H[16;36H[38;5;135m⣿[m[17;1H[17;36H[38;5;135m⣿[m[18;1H[18;36H[38;5;135m⣿[m[19;1H[19;36H[38;5;135m⣿[m[20;1H[20;36H[38;5;135m⣿[m[21;1H[21;36H[38;5;135m⣿[m[22;1H[22;36H[38;5;135m⣿[m8"}
-    , { time: 104360, content: "7[10;1H[10;78H[38;5;135m⢠[m[11;1H[11;78H[38;5;135m⢸[m[12;1H[12;78H[38;5;135m⢸[m[16;1H[16;35H[38;5;135m⢸[m[17;1H[17;35H[38;5;135m⢸[m[18;1H[18;35H[38;5;135m⢸[m[19;1H[19;35H[38;5;135m⢸[m[20;1H[20;35H[38;5;135m⢸[m[21;1H[21;35H[38;5;135m⢸[m[22;1H[22;35H[38;5;135m⢸[m8"}
-    , { time: 104401, content: "7[1;1H[78C88"}
-    , { time: 104482, content: "7[3;1H[3;76H[37m15[m[10;1H[10;78H[38;5;135m⣤[m[11;1H[11;78H[38;5;135m⣿[m[12;1H[12;78H[38;5;135m⣿[m[16;1H[16;35H[38;5;135m⣿[m[17;1H[17;35H[38;5;135m⣿[m[18;1H[18;35H[38;5;135m⣿[m[19;1H[19;35H[38;5;135m⣿[m[20;1H[20;35H[38;5;135m⣿[m[21;1H[21;35H[38;5;135m⣿[m[22;1H[22;35H[38;5;135m⣿[m8"}
-    , { time: 104620, content: "7[10;1H[10;77H[38;5;135m⢠⡄[m[11;1H[11;77H[38;5;135m⢸⣷[m[12;1H[12;77H[38;5;135m⢸[m[15;1H[15;34H[38;5;135m⢰[m[16;1H[16;34H[38;5;135m⢸[m[17;1H[17;34H[38;5;135m⢸[m[18;1H[18;34H[38;5;135m⢸[m[19;1H[19;34H[38;5;135m⢸[m[20;1H[20;34H[38;5;135m⢸[m[21;1H[21;34H[38;5;135m⢸[m[22;1H[22;34H[38;5;135m⢸[m8"}
-    , { time: 104741, content: "7[3;1H[3;77H[37m6[m[10;1H[10;77H[38;5;135m⣤ [m[11;1H[11;77H[38;5;135m⣿⣶[m[12;1H[12;77H[38;5;135m⣿[m[15;1H[15;34H[38;5;135m⣶[m[16;1H[16;34H[38;5;135m⣿[m[17;1H[17;34H[38;5;135m⣿[m[18;1H[18;34H[38;5;135m⣿[m[19;1H[19;34H[38;5;135m⣿[m[20;1H[20;34H[38;5;135m⣿[m[21;1H[21;34H[38;5;135m⣿[m[22;1H[22;34H[38;5;135m⣿[m8"}
-    , { time: 104875, content: "7[10;1H[10;76H[38;5;135m⢠⡄[m[11;1H[11;76H[38;5;135m⢸⣷[m[12;1H[12;76H[38;5;135m⢸[m[15;1H[15;33H[38;5;135m⢰[m[16;1H[16;33H[38;5;135m⢸[m[17;1H[17;33H[38;5;135m⢸[m[18;1H[18;33H[38;5;135m⢸[m[19;1H[19;33H[38;5;135m⢸[m[20;1H[20;33H[38;5;135m⢸[m[21;1H[21;33H[38;5;135m⢸[m[22;1H[22;33H[38;5;135m⢸[m8"}
-    , { time: 104993, content: "7[10;1H[10;76H[38;5;135m⣤ [m[11;1H[11;76H[38;5;135m⣿⣶[m[12;1H[12;76H[38;5;135m⣿[m[15;1H[15;33H[38;5;135m⣶[m[16;1H[16;33H[38;5;135m⣿[m[17;1H[17;33H[38;5;135m⣿[m[18;1H[18;33H[38;5;135m⣿[m[19;1H[19;33H[38;5;135m⣿[m[20;1H[20;33H[38;5;135m⣿[m[21;1H[21;33H[38;5;135m⣿[m[22;1H[22;33H[38;5;135m⣿[m8"}
-    , { time: 105113, content: "7[3;1H[3;77H[37m5[m[10;1H[10;75H[38;5;135m⢠⡄[m[11;1H[11;75H[38;5;135m⢸⣷[m[12;1H[12;75H[38;5;135m⢸[m[15;1H[15;32H[38;5;135m⢰[m[16;1H[16;32H[38;5;135m⢸[m[17;1H[17;32H[38;5;135m⢸[m[18;1H[18;32H[38;5;135m⢸[m[19;1H[19;32H[38;5;135m⢸[m[20;1H[20;32H[38;5;135m⢸[m[21;1H[21;32H[38;5;135m⢸[m[22;1H[22;32H[38;5;135m⢸[m8"}
-    , { time: 105235, content: "7[10;1H[10;75H[38;5;135m⣤ [m[11;1H[11;75H[38;5;135m⣿⣶[m[12;1H[12;75H[38;5;135m⣿[m[15;1H[15;32H[38;5;135m⣶[m[16;1H[16;32H[38;5;135m⣿[10C[m node            9.2   2     1.1    [17;1H[17;32H[38;5;135m⣿[10C[m[48;5;135m chrome          6.1   31    57.2   [m[18;1H[18;32H[38;5;135m⣿[11C[mX[1Crg  [12C9[11C1[19;1H[19;32H[38;5;135m⣿[11C[mc[1Cmpiz[12C8[9C1[1C4[20;1H[20;32H[38;5;135m⣿[11C[mmongod        [4C3[11C1[21;1H[21;32H[38;5;135m⣿[11C[mgnome-terminal[8C1[7C6[22;1H[22;32H[38;5;135m⣿[m8"}
-    , { time: 105353, content: "7[3;1H[3;77H[37m6[m[10;1H[10;74H[38;5;135m⢠⡄[m[11;1H[11;74H[38;5;135m⢸⣷[m[12;1H[12;74H[38;5;135m⢸[m[15;1H[15;31H[38;5;135m⢰[m[16;1H[16;31H[38;5;135m⢸[m[17;1H[17;31H[38;5;135m⢸[m[18;1H[18;31H[38;5;135m⢸[m[19;1H[19;31H[38;5;135m⢸[m[20;1H[20;31H[38;5;135m⢸[m[21;1H[21;31H[38;5;135m⢸[m[22;1H[22;31H[38;5;135m⢸[m8"}
-    , { time: 105424, content: "7[1;1H[78C98"}
-    , { time: 105475, content: "7[10;1H[10;74H[38;5;135m⣤ [m[11;1H[11;74H[38;5;135m⣿⣶[m[12;1H[12;74H[38;5;135m⣿[m[15;1H[15;31H[38;5;135m⣶[m[16;1H[16;31H[38;5;135m⣿[m[17;1H[17;31H[38;5;135m⣿[m[18;1H[18;31H[38;5;135m⣿[m[19;1H[19;31H[38;5;135m⣿[m[20;1H[20;31H[38;5;135m⣿[m[21;1H[21;31H[38;5;135m⣿[m[22;1H[22;31H[38;5;135m⣿[m8"}
-    , { time: 105593, content: "7[3;1H[3;77H[37m5[m[10;1H[10;73H[38;5;135m⢠⡄[m[11;1H[11;73H[38;5;135m⢸⣷[m[12;1H[12;73H[38;5;135m⢸[m[15;1H[15;30H[38;5;135m⢰[m[16;1H[16;30H[38;5;135m⢸[m[17;1H[17;30H[38;5;135m⢸[m[18;1H[18;30H[38;5;135m⢸[m[19;1H[19;30H[38;5;135m⢸[m[20;1H[20;30H[38;5;135m⢸[m[21;1H[21;30H[38;5;135m⢸[m[22;1H[22;30H[38;5;135m⢸[m8"}
-    , { time: 105714, content: "7[3;1H[3;77H[37m4[m[10;1H[10;73H[38;5;135m⣤ [m[11;1H[11;73H[38;5;135m⣿⣶[m[12;1H[12;73H[38;5;135m⣿[m[15;1H[15;30H[38;5;135m⣶[m[16;1H[16;30H[38;5;135m⣿[m[17;1H[17;30H[38;5;135m⣿[m[18;1H[18;30H[38;5;135m⣿[m[19;1H[19;30H[38;5;135m⣿[m[20;1H[20;30H[38;5;135m⣿[m[21;1H[21;30H[38;5;135m⣿[m[22;1H[22;30H[38;5;135m⣿[m8"}
-    , { time: 105833, content: "7[10;1H[10;72H[38;5;135m⢠⡄[m[11;1H[11;72H[38;5;135m⢸⣷[4C⣦[m[12;1H[12;72H[38;5;135m⢸[m[15;1H[15;29H[38;5;135m⢰[m[16;1H[16;29H[38;5;135m⢸[m[17;1H[17;29H[38;5;135m⢸[m[18;1H[18;29H[38;5;135m⢸[m[19;1H[19;29H[38;5;135m⢸[m[20;1H[20;29H[38;5;135m⢸[m[21;1H[21;29H[38;5;135m⢸[m[22;1H[22;29H[38;5;135m⢸[m8"}
-    , { time: 105956, content: "7[10;1H[10;72H[38;5;135m⣤ [m[11;1H[11;72H[38;5;135m⣿⣶[4C⣤[m[12;1H[12;72H[38;5;135m⣿[m[15;1H[15;29H[38;5;135m⣶[m[16;1H[16;29H[38;5;135m⣿[m[17;1H[17;29H[38;5;135m⣿[m[18;1H[18;29H[38;5;135m⣿[m[19;1H[19;29H[38;5;135m⣿[m[20;1H[20;29H[38;5;135m⣿[m[21;1H[21;29H[38;5;135m⣿[m[22;1H[22;29H[38;5;135m⣿[m8"}
-    , { time: 106096, content: "7[10;1H[10;71H[38;5;135m⢠⡄[m[11;1H[11;71H[38;5;135m⢸⣷[4C⣦[m[12;1H[12;71H[38;5;135m⢸[m[15;1H[15;28H[38;5;135m⢰[m[16;1H[16;28H[38;5;135m⢸[m[17;1H[17;28H[38;5;135m⢸[m[18;1H[18;28H[38;5;135m⢸[m[19;1H[19;28H[38;5;135m⢸[m[20;1H[20;28H[38;5;135m⢸[m[21;1H[21;28H[38;5;135m⢸[m[22;1H[22;28H[38;5;135m⢸[m8"}
-    , { time: 106098, content: "[H[2J"}
-    , { time: 106098, content: "[?12l[?25h"}
-    , { time: 106098, content: "[?1049l"}
-    , { time: 106099, content: "[?1000l"}
-    , { time: 106099, content: "[?1003l"}
-    , { time: 106099, content: "[?1005l"}
-    , { time: 106103, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 106109, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 106986, content: "c"}
-    , { time: 107164, content: "o"}
-    , { time: 107778, content: "o"}
-    , { time: 107970, content: "l"}
-    , { time: 108172, content: " "}
-    , { time: 108493, content: "h"}
-    , { time: 108996, content: "[K"}
-    , { time: 109111, content: "a"}
-    , { time: 109287, content: "h"}
-    , { time: 109763, content: "?"}
-    , { time: 111253, content: "[K"}
-    , { time: 111753, content: "[K"}
-    , { time: 111783, content: "[K"}
-    , { time: 111816, content: "[K"}
-    , { time: 111847, content: "[K"}
-    , { time: 111876, content: "[K"}
-    , { time: 111908, content: "[K"}
-    , { time: 111939, content: "[K"}
-    , { time: 111970, content: ""}
-    , { time: 112001, content: ""}
-    , { time: 112031, content: ""}
-    , { time: 112062, content: ""}
-    , { time: 112587, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 113443, content: "w"}
-    , { time: 113663, content: "h"}
-    , { time: 113871, content: "y"}
-    , { time: 114085, content: " "}
-    , { time: 114226, content: "d"}
-    , { time: 114303, content: "o"}
-    , { time: 114462, content: "n"}
-    , { time: 114879, content: "'"}
-    , { time: 115064, content: "t"}
-    , { time: 115255, content: " "}
-    , { time: 115396, content: "w"}
-    , { time: 115614, content: "e"}
-    , { time: 115733, content: " "}
-    , { time: 116087, content: "p"}
-    , { time: 116194, content: "l"}
-    , { time: 116377, content: "a"}
-    , { time: 116803, content: "y"}
-    , { time: 116975, content: " "}
-    , { time: 117269, content: "n"}
-    , { time: 117439, content: "e"}
-    , { time: 117568, content: "t"}
-    , { time: 117875, content: "c"}
-    , { time: 118306, content: "[K"}
-    , { time: 118555, content: "h"}
-    , { time: 118639, content: "a"}
-    , { time: 118792, content: "c"}
-    , { time: 118905, content: "k"}
-    , { time: 119815, content: "[K"}
-    , { time: 120311, content: "[K"}
-    , { time: 120341, content: "[K"}
-    , { time: 120373, content: "[K"}
-    , { time: 120405, content: "[K"}
-    , { time: 120435, content: "[K"}
-    , { time: 120465, content: "[K"}
-    , { time: 120497, content: "[K"}
-    , { time: 120528, content: "[K"}
-    , { time: 120558, content: "[K"}
-    , { time: 120589, content: "[K"}
-    , { time: 120620, content: "[K"}
-    , { time: 120651, content: "[K"}
-    , { time: 120682, content: "[K"}
-    , { time: 120712, content: "[K"}
-    , { time: 120742, content: "[K"}
-    , { time: 120773, content: "[K"}
-    , { time: 120804, content: "[K"}
-    , { time: 120834, content: "[K"}
-    , { time: 120865, content: "[K"}
-    , { time: 120896, content: "[K"}
-    , { time: 120927, content: "[K"}
-    , { time: 120957, content: "[K"}
-    , { time: 120988, content: "[K"}
-    , { time: 121019, content: "[K"}
-    , { time: 121050, content: ""}
-    , { time: 121081, content: ""}
-    , { time: 121112, content: ""}
-    , { time: 121142, content: ""}
-    , { time: 121820, content: "n"}
-    , { time: 121996, content: "e"}
-    , { time: 122078, content: "t"}
-    , { time: 122370, content: "h"}
-    , { time: 122451, content: "a"}
-    , { time: 122592, content: "c"}
-    , { time: 122705, content: "k"}
-    , { time: 122932, content: " "}
-    , { time: 123755, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  nethack"}
-    , { time: 123763, content: "7[?47h)0[H[2J[H[2;1HNetHack, Copyright 1985-2003\r[3;1H         By Stichting Mathematisch Centrum and M. Stephenson.\r[4;1H         See license for details.\r[5;1H[6;1H[7;1HShall I pick a character's race, role, gender and alignment for you? [ynq] "}
-    , { time: 125447, content: "n[H[2J[HChoosing Character's Role[1;48H[K Pick a role for your character[2;48H[K [3;48H[K a - an Archeologist[4;48H[K b - a Barbarian[5;48H[K c - a Caveman/Cavewoman[6;48H[K h - a Healer[7;48H[K k - a Knight[8;48H[K m - a Monk[9;48H[K p - a Priest/Priestess[10;48H[K r - a Rogue[11;48H[K R - a Ranger[12;48H[K s - a Samurai[13;48H[K t - a Tourist[14;48H[K v - a Valkyrie[15;48H[K w - a Wizard[16;48H[K * - Random[17;48H[K q - Quit[18;48H[K[C(end) "}
-    , { time: 127474, content: "[12;51H+[1;47H[K[2;47H[K[3;47H[K[4;47H[K[5;47H[K[6;47H[K[7;47H[K[8;47H[K[9;47H[K[10;47H[K[11;47H[K[12;47H[K[13;47H[K[14;47H[K[15;47H[K[16;47H[K[17;47H[K[18;47H[K[19;47H[K[H[2J[HChoosing Gender[1;41H[K Pick the gender of your human Samurai[2;41H[K [3;41H[K m - male[4;41H[K f - female[5;41H[K * - Random[6;41H[K q - Quit[7;41H[K[C(end) "}
-    , { time: 129423, content: "[3;44H+[1;40H[K[2;40H[K[3;40H[K[4;40H[K[5;40H[K[6;40H[K[7;40H[K[8;40H[K[H[2J[H[H[2J[H[12;17H------[33m+[m--------[13;17H|.............[33m-[m[14;17H|.............|[15;17H|..[1m[37m[7md[m[m..........|[16;17H|...[1m[37m@[m.........|[17;17H---------------[16;21H[23;1HCrisboot the Hatamoto  St:17 Dx:16 Co:18 In:9 Wi:9 Ch:6  Lawful[K\r[24;1HDlvl:1  $:0  HP:[K\rDlvl:1  $:0  HP:15(15)[K\rDlvl:1  $:0  HP:15(15) Pw:2(2) AC:4  Exp:1[K[H[2J[HIt is written in the Book of Amaterasu Omikami:\r[2;1H[3;1H    After the Creation, the cruel god Moloch rebelled\r[4;1H    against the authority of Marduk the Creator.\r[5;1H    Moloch stole from Marduk the most powerful of all\r[6;1H    the artifacts of the gods, the Amulet of Yendor,\r[7;1H    and he hid it in the dark cavities of Gehennom, the\r[8;1H    Under World, where he now lurks, and bides his time.\r[9;1H[10;1HYour goddess Amaterasu Omikami seeks to possess the Amulet, and with it\r[11;1Hto gain deserved ascendance over the other gods.\r[12;1H[13;1HYou, a newly trained Hatamoto, have been heralded\r[14;1Hfrom birth as the instrument of Amaterasu Omikami.  You are destined\r[15;1Hto recover the Amulet for your deity, or die in the\r[16;1Hattempt.  Your hour of destiny has come.  For the sake\r[17;1Hof us all:  Go bravely with Amaterasu Omikami!\r[18;1H[K[C--More--"}
-    , { time: 130863, content: "[H[2J[H[12;17H------[33m+[m--------[13;17H|.............[33m-[m[14;17H|.............|[15;17H|..[1m[37m[7md[m[m..........|[16;17H|...[1m[37m@[m.........|[17;17H---------------[16;21H[23;1HCrisboot the Hatamoto  St:17 Dx:16 Co:18 In:9 Wi:9 Ch:6  Lawful[K\r[24;1HDlvl:1  $:0  HP:[K\rDlvl:1  $:0  HP:15(15)[K\rDlvl:1  $:0  HP:15(15) Pw:2(2) AC:4  Exp:1[K[HKonnichi wa crisboot, welcome to NetHack!  You are a lawful male human Samurai.[K[16;21H"}
-    , { time: 133946, content: "[H[K[16;20H[1m[37m@[m<"}
-    , { time: 135322, content: "[A[HYou displaced Slinky.[K[15;19H[1m[37m[7md[m[m[1m[37m@[m[16;20H.[A"}
-    , { time: 135852, content: "[H[K[14;20H[1m[37m@[m[15;19H..[16;19H[1m[37m[7md[m[m[A[A"}
-    , { time: 136346, content: "[A[1m[37m@[m[14;20H.[15;18H[1m[37m[7md[m[m[16;19H.[A[A[A"}
-    , { time: 137109, content: ".[1m[37m@[m"}
-    , { time: 137553, content: "[1m[37m[7md[m[m.[1m[37m@[m[14;19H.[15;18H.[A[A[C[C[C"}
-    , { time: 137872, content: ".[C.[1m[37m@[m[14;21H[1m[37m[7md[m[m[A[C"}
-    , { time: 139540, content: "[HIn what direction? [K"}
-    , { time: 141089, content: "[13;23H[HYou see no door there.[K[13;23H"}
-    , { time: 142547, content: "[H[K[13;23H[HIn what direction? [K"}
-    , { time: 143001, content: "[13;23H[HYou see no door there.[K[13;23H"}
-    , { time: 144000, content: "[H[K[13;23H[HIn what direction? [K"}
-    , { time: 144073, content: "[13;23H[HYou see no door there.[K[13;23H"}
-    , { time: 145172, content: "[H[K[13;23H[HIn what direction? [K"}
-    , { time: 145500, content: "[13;23H[HThe door resists![K[13;23H"}
-    , { time: 146913, content: "[H[K[13;23H[HIn what direction? [K"}
-    , { time: 148456, content: "[13;23H[HYou see no door there.[K[13;23H"}
-    , { time: 149928, content: "[H[K[13;23H[HIn what direction? [K"}
-    , { time: 150267, content: "[13;23H[HThe door opens.[K[12;23H[33m|[m[13;21H[1m[37m[7md[m[m[14;20H..[A[C"}
-    , { time: 151511, content: "[H[K[12;23H[1m[37m@[m[13;21H.[1m[37m[7md[m[m.[A"}
-    , { time: 155157, content: "[HYou don't have anything to drink.[K[12;23H"}
-    , { time: 157200, content: "[H[K[12;23H[H# [K"}
-    , { time: 158284, content: "quit"}
-    , { time: 158411, content: "uit"}
-    , { time: 158488, content: "it"}
-    , { time: 158589, content: "t"}
-    , { time: 159106, content: "[H[K[12;23H[HReally quit? [yn] (n) [K"}
-    , { time: 160127, content: "y[K[24;1H[24;17H[K\r[24;17H15(15)[12;23H[HDo you want your possessions identified? [ynq] (n) [K"}
-    , { time: 160909, content: "y[K[H[K[1;27H[K [7mWeapons[m[2;27H[K a - a +0 katana (weapon in hand)[3;27H[K b - a +0 wakizashi (alternate weapon; not wielded)[4;27H[K [32mc - a blessed +0 yumi[m[5;27H[K d - 44 +0 ya (in quiver)[6;27H[K [7mArmor[m[7;27H[K [32me - a blessed rustproof +0 splint mail (being worn)[m[8;27H[K[C(end) "}
-    , { time: 162900, content: "[1;26H[K[2;26H[K[3;26H[K[4;26H[K[5;26H[K[6;26H[K[7;26H[K[8;26H[K[9;26H[K[12;23H[HDo you want to see your attributes? [ynq] (n) [K"}
-    , { time: 163420, content: "n[K[12;23H[HDo you want to see your conduct? [ynq] (n) [K"}
-    , { time: 164153, content: "y[K[H[K[1;43H[K Voluntary challenges:[2;43H[K [3;43H[K You went without food.[4;43H[K You were an atheist.[5;43H[K You never hit with a wielded weapon.[6;43H[K You were a pacifist.[7;43H[K You were illiterate.[8;43H[K You never genocided any monsters.[9;43H[K You never polymorphed an object.[10;43H[K You never changed form.[11;43H[K You used no wishes.[12;43H[K[C--More--"}
-    , { time: 164961, content: "[1;42H[K[2;42H[K[3;42H[K[4;42H[K[5;42H[K[6;42H[K[7;42H[K[8;42H[K[9;42H[K[10;42H[K[11;42H[K[12;42H[K[24;1H[H[2J[H[24;1H[H[2J[HSayonara crisboot the Samurai...\r[2;1H[3;1HYou quit in The Dungeons of Doom on dungeon level 1 with 0 points,\r[4;1Hand 0 pieces of gold, after 9 moves.\r[5;1HYou were level 1 with a maximum of 15 hit points when you quit.\r[6;1H[24;1H[K--More--"}
-    , { time: 166076, content: "[H[2J[H[2;1H No  Points     Name                                                   Hp [max]\r[3;1H  1         68  crisboot-Wiz-Hum-Mal-Neu quit in The Dungeons of Doom\r[4;1H                on level 1.                                            12  [12]\r[5;1H  2         19  crisboot-Sam-Hum-Mal-Law quit in The Dungeons of Doom\r[6;1H                on level 1.                                            15  [15]\r[7;1H[1m             0  crisboot-Sam-Hum-Mal-Law quit in The Dungeons of Doom          [m\r[8;1H[1m                on level 1.                                            15  [15][m[24;1H[K--More--"}
-    , { time: 166569, content: "[H[2J[H[2J[?47l8\r\n"}
-    , { time: 166571, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 166584, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 168175, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 169220, content: "c"}
-    , { time: 169431, content: "r"}
-    , { time: 169539, content: "e"}
-    , { time: 169987, content: "[K"}
-    , { time: 170757, content: "a"}
-    , { time: 171030, content: "z"}
-    , { time: 171744, content: "y"}
-    , { time: 172371, content: "[K"}
-    , { time: 172526, content: "[K"}
-    , { time: 172667, content: "[K"}
-    , { time: 172806, content: "[K"}
-    , { time: 172921, content: "[K"}
-    , { time: 173484, content: "j"}
-    , { time: 173641, content: "u"}
-    , { time: 173744, content: "s"}
-    , { time: 173866, content: "t"}
-    , { time: 174020, content: " "}
-    , { time: 174498, content: "f"}
-    , { time: 174638, content: "o"}
-    , { time: 174856, content: "l"}
-    , { time: 174995, content: "l"}
-    , { time: 175185, content: "o"}
-    , { time: 175322, content: "w"}
-    , { time: 175452, content: " "}
-    , { time: 175582, content: "m"}
-    , { time: 175676, content: "e"}
-    , { time: 175813, content: " "}
-    , { time: 176375, content: "o"}
-    , { time: 176558, content: "n"}
-    , { time: 176749, content: " "}
-    , { time: 177021, content: "t"}
-    , { time: 177248, content: "w"}
-    , { time: 177432, content: "i"}
-    , { time: 177650, content: "t"}
-    , { time: 177818, content: "t"}
-    , { time: 178096, content: "e"}
-    , { time: 178174, content: "r"}
-    , { time: 179378, content: " "}
-    , { time: 180229, content: "@"}
-    , { time: 180528, content: "c"}
-    , { time: 180659, content: "o"}
-    , { time: 180773, content: "r"}
-    , { time: 180984, content: "t"}
-    , { time: 181055, content: "e"}
-    , { time: 181359, content: "z"}
-    , { time: 181545, content: "c"}
-    , { time: 181738, content: "r"}
-    , { time: 181861, content: "i"}
-    , { time: 181965, content: "s"}
-    , { time: 182558, content: "t"}
-    , { time: 182691, content: "i"}
-    , { time: 182807, content: "a"}
-    , { time: 182984, content: "n"}
+    , { time: 157, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 1121, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 1759, content: "H"}
+    , { time: 1914, content: "i"}
+    , { time: 2053, content: " "}
+    , { time: 2224, content: "t"}
+    , { time: 2417, content: "h"}
+    , { time: 2478, content: "e"}
+    , { time: 2599, content: "r"}
+    , { time: 2674, content: "e"}
+    , { time: 3053, content: "!"}
+    , { time: 3243, content: "!"}
+    , { time: 3398, content: "!"}
+    , { time: 3599, content: " "}
+    , { time: 4123, content: "I"}
+    , { time: 4532, content: "'"}
+    , { time: 4765, content: "m"}
+    , { time: 4920, content: " "}
+    , { time: 5648, content: "@"}
+    , { time: 6018, content: "c"}
+    , { time: 6128, content: "o"}
+    , { time: 6283, content: "r"}
+    , { time: 6481, content: "t"}
+    , { time: 6541, content: "e"}
+    , { time: 6785, content: "z"}
+    , { time: 6959, content: "c"}
+    , { time: 7134, content: "r"}
+    , { time: 7247, content: "i"}
+    , { time: 7374, content: "s"}
+    , { time: 7477, content: "t"}
+    , { time: 7670, content: "i"}
+    , { time: 7891, content: "a"}
+    , { time: 8099, content: "n"}
+    , { time: 8920, content: "."}
+    , { time: 9073, content: "."}
+    , { time: 9198, content: "."}
+    , { time: 11955, content: ""}
+    , { time: 13325, content: "[4h#[4l"}
+    , { time: 13928, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 13933, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 14688, content: "a"}
+    , { time: 14818, content: "n"}
+    , { time: 14915, content: "d"}
+    , { time: 15030, content: " "}
+    , { time: 15179, content: "t"}
+    , { time: 15261, content: "h"}
+    , { time: 15328, content: "i"}
+    , { time: 15437, content: "s"}
+    , { time: 15564, content: " "}
+    , { time: 15820, content: "i"}
+    , { time: 15934, content: "s"}
+    , { time: 16163, content: "."}
+    , { time: 16320, content: "."}
+    , { time: 16467, content: "."}
+    , { time: 16595, content: " "}
+    , { time: 17000, content: "t"}
+    , { time: 17094, content: "e"}
+    , { time: 17214, content: "r"}
+    , { time: 17339, content: "m"}
+    , { time: 17493, content: "i"}
+    , { time: 17576, content: "n"}
+    , { time: 17671, content: "a"}
+    , { time: 17858, content: "l"}
+    , { time: 18125, content: "-"}
+    , { time: 18322, content: "r"}
+    , { time: 18384, content: "e"}
+    , { time: 18663, content: "c"}
+    , { time: 18772, content: "o"}
+    , { time: 18903, content: "r"}
+    , { time: 19179, content: "d"}
+    , { time: 19259, content: "e"}
+    , { time: 19381, content: "r"}
+    , { time: 22453, content: ""}
+    , { time: 22655, content: ""}
+    , { time: 23831, content: "[4h#[4l"}
+    , { time: 24598, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 24610, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 25345, content: "v"}
+    , { time: 25442, content: "i"}
+    , { time: 25526, content: "m"}
+    , { time: 25646, content: " "}
+    , { time: 25783, content: "t"}
+    , { time: 25874, content: "e"}
+    , { time: 26422, content: "r"}
+    , { time: 26669, content: ""}
+    , { time: 26669, content: "minal-recorder"}
+    , { time: 27786, content: "/"}
+    , { time: 28699, content: "R"}
+    , { time: 28940, content: "EADME.md "}
+    , { time: 29607, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  vim terminal-recorder/README.md"}
+    , { time: 29686, content: "7[?47h[?1h="}
+    , { time: 29687, content: "[1;24r[m[H[2J[24;1H\"terminal-recorder/README.md\""}
+    , { time: 29687, content: " 105L, 2334C"}
+    , { time: 29753, content: "[m[H[2J[1;1H[33m  1 [m[4m[35mterminal-recorder[m[4m                                                           [m[2;1H[33m  2 [m[35m============[m\r\n[33m  3 \r\n  4 [mTerminal recorder allows you to record your bash session, and export it to hh[5;1H[33m    [mtml so then you can share it with your friends.\r\n[33m  5 \r\n  6 [m[[4m[35mSee the demo[m]([31mhttp://cortezcristian.com/terminal-recorder/[m)\r\n[33m  7 \r\n  8 \r\n  9 [m[35m## Installation[m\r\n[33m 10 \r\n 11 [m[35m``[m`bash\r\n[33m 12 [m$ [sudo] npm install -g terminal-recorder\r\n[33m 13 [m[35m```[m\r\n[33m 14 \r\n 15 [m[35m## Usage[m\r\n[33m 16 \r\n 17 [m[35m```[mbash\r\n[33m 18 [m$ terminal-recorder --help\r\n[33m 19 \r\n 20 [m  Usage: terminal-recorder [options]\r\n[33m 21 \r\n 22 [m  Options:[24;63H1,1[11CTop"}
+    , { time: 29764, content: "[>c"}
+    , { time: 29767, content: "[1;5H"}
+    , { time: 31354, content: "[m[H[2J[1;1H[33m 21 [m[4m                                                                            [m[2;1H[33m 22 [m  Options:\r\n[33m 23 \r\n 24 [m    -h, --help[11C output usage information\r\n[33m 25 [m    -V, --version[8C output the version number\r\n[33m 26 [m    -o, --outpath [path]  Add the specified [path] to place the folder\r\n[33m 27 [m[27C that will contain the recorded html files\r\n[33m 28 \r\n 29 [m[35m# Start recording[m\r\n[33m 30 [m$ terminal-recorder\r\n[33m 31 \r\n 32 [m[35m# recording...[m\r\n[33m 33 [m[type your stuff and then hit Ctrl+c]\r\n[33m 34 \r\n 35 [m[35m# Notice a new folder was created[m\r\n[33m 36 \r\n 37 [m$ tree terminal-recorder-html/ -L 1\r\n[33m 38 [mterminal-recorder-html/\r\n[33m 39 [m├── bower_components\r\n[33m 40 [m├── bower.json\r\n[33m 41 [m├── css\r\n[33m 42 [m├── index.html\r\n[33m 43 [m└── js[24;63H21,0-1[8C24%[1;5H"}
+    , { time: 32059, content: "[m[H[2J[1;1H[33m 42 [m[4m├── index.html                                                              [m[2;1H[33m 43 [m└── js\r\n[33m 44 \r\n 45 [m[35m# Just open the index.html with your favourite browser[m\r\n[33m 46 [m$ firefox terminal-recorder-html/index.html &\r\n[33m 47 \r\n 48 [m[35m# See the magic ;)[m\r\n[33m 49 [m[35m```[m\r\n[33m 50 \r\n 51 [mFinal output looks like this\r\n[33m 52 [m![Demo Pic](https://raw.githubusercontent.com/cortezcristian/terminal-recordd[12;1H[33m    [mer/master/pics/demo-htop.png)\r\n[33m 53 \r\n 54 [m[35m## Features[m\r\n[33m 55 \r\n 56 *[m Records all keystrokes sent to stdin\r\n[33m 57 *[m Saves stdout in a log file [35m`[mlogs.txt[35m`[m\r\n[33m 58 *[m Export actions to html\r\n[33m 59 *[m Timeline indicator\r\n[33m 60 *[m Rollback actions\r\n[33m 61 \r\n 62 [m[35m## Comming soon[m\r\n[33m 63 *[m More templates[24;63H42,1[10C49%[1;5H"}
+    , { time: 32543, content: "[m[H[2J[1;1H[33m 62 [m[4m[35m## Comming soon[m[4m                                                             [m[2;1H[33m 63 *[m More templates\r\n[33m 64 *[m Define starting cmd (Other than bash)\r\n[33m 65 *[m Add param for picking cancelling key (Ctrl+c, Ctrl+d)\r\n[33m 66 *[m Specify terminal size\r\n[33m 67 \r\n 68 [m[35m## Experimenting[m\r\n[33m 69 \r\n 70 [mOpen a terminal:\r\n[33m 71 \r\n 72 [m[35m```[mbash\r\n[33m 73 [m$ tail -f logs.txt\r\n[33m 74 [m[35m```[m\r\n[33m 75 \r\n 76 [mOpen a second terminal:\r\n[33m 77 [m[35m```[mbash\r\n[33m 78 [m$ terminal-recorder\r\n[33m 79 [m[35m```[m\r\n[33m 80 \r\n 81 [mStart typing in the second console, and look how the first one is mimicking  [21;1H[33m    [myour moves.\r\n[33m 82 \r\n 83 [m[24;63H62,1[10C73%[1;5H"}
+    , { time: 33766, content: "[24;63H[K[24;1H/"}
+    , { time: 34251, content: "C"}
+    , { time: 34633, content: "o"}
+    , { time: 34778, content: "o"}
+    , { time: 34942, content: "l"}
+    , { time: 35248, content: "\r[1;23r[1;1H[11M[1;24r[13;1H[33m 84 \r\n 85 [m[35m## Know issues[m\r\n[33m 86 \r\n 87 *[m Record all keys, including passwords. So be careful with that.\r\n[33m 88 *[m OSX [35m`[mpty.js[35m`[m is not working ok on Mac because of a header misconfigurationn[18;1H[33m    [m. More info:\r\n[33m 89   -[m https://github.com/chjj/pty.js#todo\r\n[33m 90   -[m http://stackoverflow.com/a/24981514/467034\r\n[33m 91   -[m https://github.com/chjj/pty.js/issues/93\r\n[33m 92 \r\n 93 [m[4m[35m## Cool Stuff[m[4m                                                               [m[24;1H[K[24;63H93,4[10C85%[23;8H"}
+    , { time: 36972, content: "[1;23r[23;1H\r\n[1;24r[22;5H[35m## Cool Stuff[m[22;18H[K[23;1H[33m 94 [m[4mCool things that you can do:                                                [m[24;63H[K[24;63H94,4[10C86%[23;8H"}
+    , { time: 37163, content: "[1;23r[23;1H\r\n[1;24r[22;5HCool things that you can do:[22;33H[K[23;1H[33m 95 [m[4m                                                                            [m[24;63H[K[24;63H95,0-1[8C88%[23;5H"}
+    , { time: 37468, content: "[1;23r[23;1H\r\n[1;24r[22;5H[K[23;1H[33m 96 [m[4m[35m```[m[4mbash                                                                     [m[24;63H[K[24;63H96,4[10C89%[23;8H"}
+    , { time: 37643, content: "[1;23r[23;1H\r\n[1;24r[22;5H[35m```[mbash[22;12H[K[23;1H[33m 97 [m[4m$ filget awesomeness # Impress your friends                                 [m[24;63H[K[24;63H97,4[10C90%[23;8H"}
+    , { time: 37834, content: "[1;23r[23;1H\r\n[1;24r[22;5H$ filget awesomeness # Impress your friends[22;48H[K[23;1H[33m 98 [m[4m$ nethack # Play nethack                                                    [m[24;63H[K[24;63H98,4[10C91%[23;8H"}
+    , { time: 38003, content: "[22;5H[4m$ filget awesomeness # Impress your friends                                 [m[23;5H$ nethack # Play nethack[23;29H[K[24;64H7[22;8H"}
+    , { time: 38166, content: "[21;5H[4m[35m```[m[4mbash                                                                     [m[22;5H$ filget awesomeness # Impress your friends[22;48H[K[24;64H6[21;8H"}
+    , { time: 38446, content: "[35m```[mbash[21;12H[K[22;5H[4m$ filget awesomeness # Impress your friends                                 [m[24;64H7[22;8H"}
+    , { time: 38577, content: "$ filget awesomeness # Impress your friends[22;48H[K[23;5H[4m$ nethack # Play nethack                                                    [m[24;64H8[23;8H"}
+    , { time: 38771, content: "[1;23r[23;1H\r\n[1;24r[22;5H$ nethack # Play nethack[22;29H[K[23;1H[33m 99 [m[4m$ vim # Teach your friends with vim                                         [m[24;63H[K[24;63H99,4[10C92%[23;8H"}
+    , { time: 38891, content: "[1;23r[23;1H\r\n[1;24r[22;5H$ vim # Teach your friends with vim[22;40H[K[23;1H[33m100 [m[4m$ htop # Show server state                                                  [m[24;63H[K[24;63H100,4[9C94%[23;8H"}
+    , { time: 39026, content: "[1;23r[23;1H\r\n[1;24r[22;5H$ htop # Show server state[22;31H[K[23;1H[33m101 [m[4m$ tmux # Open the terminal multiplexor                                      [m[24;63H[K[24;63H101,4[9C95%[23;8H"}
+    , { time: 39163, content: "[1;23r[1;1H[2M[1;24r[21;5H$ tmux # Open the terminal multiplexor[21;43H[K[22;1H[33m102 [m[4m$ cmatrix # feel like neo :)                                                [m[23;1H[33m103 [m[35m```[m[24;63H[K[24;63H102,4[9C97%[22;8H"}
+    , { time: 39636, content: "$ cmatrix # feel like neo :)[22;33H[K[23;5H[4m[35m```[m[4m                                                                         [m[24;65H3,3[23;7H"}
+    , { time: 40135, content: "[1;23r[23;1H\r\n[1;24r[22;5H[35m```[m[22;8H[K[23;1H[33m104 [m[4m[35m## Credits[m[4m                                                                  [m[24;63H[K[24;63H104,4[9C98%[23;8H"}
+    , { time: 40164, content: "[1;23r[23;1H\r\n[1;24r[22;5H[35m## Credits[m[22;15H[K[23;1H[33m105 [m[4m[@cortezcristian](https://twitter.com/cortezcristian)                       [m[24;63H[K[24;63H105,4[9CBot[23;8H"}
+    , { time: 40189, content: ""}
+    , { time: 40220, content: ""}
+    , { time: 40251, content: ""}
+    , { time: 40282, content: ""}
+    , { time: 40436, content: ""}
+    , { time: 40604, content: ""}
+    , { time: 41134, content: "[22;5H[4m[35m## Credits[m[4m                                                                  [m[23;5H[@cortezcristian](https://twitter.com/cortezcristian)[23;58H[K[24;65H4[22;8H"}
+    , { time: 41251, content: "[21;5H[4m[35m```[m[4m                                                                         [m[22;5H[35m## Credits[m[22;15H[K[24;65H3,3[21;7H"}
+    , { time: 41353, content: "[20;5H[4m$ cmatrix # feel like neo :)                                                [m[21;5H[35m```[m[21;8H[K[24;65H2,4[20;8H"}
+    , { time: 41565, content: "[19;5H[4m$ tmux # Open the terminal multiplexor                                      [m[20;5H$ cmatrix # feel like neo :)[20;33H[K[24;65H1[19;8H"}
+    , { time: 41653, content: "[18;5H[4m$ htop # Show server state                                                  [m[19;5H$ tmux # Open the terminal multiplexor[19;43H[K[24;65H0[18;8H"}
+    , { time: 42160, content: "[17;5H[4m$ vim # Teach your friends with vim                                         [m[18;5H$ htop # Show server state[18;31H[K[24;63H99,4 [17;8H"}
+    , { time: 42192, content: "[16;5H[4m$ nethack # Play nethack                                                    [m[17;5H$ vim # Teach your friends with vim[17;40H[K[24;64H8[16;8H"}
+    , { time: 42217, content: "[15;5H[4m$ filget awesomeness # Impress your friends                                 [m[16;5H$ nethack # Play nethack[16;29H[K[24;64H7[15;8H"}
+    , { time: 42246, content: "[14;5H[4m[35m```[m[4mbash                                                                     [m[15;5H$ filget awesomeness # Impress your friends[15;48H[K[24;64H6[14;8H"}
+    , { time: 42284, content: "[13;5H[4m                                                                            [m[14;5H[35m```[mbash[14;12H[K[24;64H5,0-1[13;5H"}
+    , { time: 42405, content: "[12;5H[4mCool things that you can do:                                                [m[13;5H[K[24;64H4,4  [12;8H"}
+    , { time: 42532, content: "[11;5H[4m[35m## Cool Stuff[m[4m                                                               [m[12;5HCool things that you can do:[12;33H[K[24;64H3[11;8H"}
+    , { time: 42675, content: "[10;5H[4m                                                                            [m[11;5H[35m## Cool Stuff[m[11;18H[K[24;64H2,0-1[10;5H"}
+    , { time: 42802, content: "[9;5H[4m[33m  -[m[4m https://github.com/chjj/pty.js/issues/93                                [m[10;5H[K[24;64H1,4  [9;8H"}
+    , { time: 43932, content: "[24;1H[1m-- INSERT --[m[24;63H[K[24;63H92,3[10C98%[9;5H[33m  -[m https://github.com/chjj/pty.js/issues/93[9;49H[K[10;5H[4m                                                                            [m[11;5H[K[12;4H[33m [m[35m## Cool Stuff[m[12;18H[K[13;4H[33m [mCool things that you can do:[14;5H[K[15;4H[33m [m[35m```[mbash[15;12H[K[16;6H filget awesomeness # Impress your friends[17;6H nethack # Play nethack[17;29H[K[18;6H vim # Teach your friends with vim[19;6H htop # Show server state[19;32H[K[20;6H tmux # Open the terminal multiplexor[21;4H[33m [m$ cmatrix # feel like neo :)[22;4H[33m [m[35m```[m[22;8H[K[23;4H[33m [m[35m## Credits[m[23;15H[K[10;7H"}
+    , { time: 44663, content: "[10;5H[K[11;5H[4m                                                                            [m[12;5H[K[13;4H[33m [m[35m## Cool Stuff[m[13;18H[K[14;4H[33m [mCool things that you can do:[15;5H[K[16;4H[33m [m[35m```[mbash[16;12H[K[17;6H filget awesomeness # Impress your friends[18;6H nethack # Play nethack[18;29H[K[19;6H vim # Teach your friends with vim[20;6H htop # Show server state[20;32H[K[21;6H tmux # Open the terminal multiplexor[22;4H[33m [m$ cmatrix # feel like neo :)[23;4H[33m [m[35m```[m[23;8H[K[24;64H3[13C7[11;7H"}
+    , { time: 44966, content: "[11;5H[K[12;5H[4m                                                                            [m[13;5H[K[14;4H[33m [m[35m## Cool Stuff[m[14;18H[K[15;4H[33m [mCool things that you can do:[16;5H[K[17;4H[33m [m[35m```[mbash[17;12H[K[18;6H filget awesomeness # Impress your friends[19;6H nethack # Play nethack[19;29H[K[20;6H vim # Teach your friends with vim[21;6H htop # Show server state[21;32H[K[22;6H tmux # Open the terminal multiplexor[23;4H[33m [m$ cmatrix # feel like neo :)[24;64H4[13C6[12;7H"}
+    , { time: 45099, content: "[12;5H[K[13;5H[4m                                                                            [m[14;5H[K[15;4H[33m [m[35m## Cool Stuff[m[15;18H[K[16;4H[33m [mCool things that you can do:[17;5H[K[18;4H[33m [m[35m```[mbash[18;12H[K[19;6H filget awesomeness # Impress your friends[20;6H nethack # Play nethack[20;29H[K[21;6H vim # Teach your friends with vim[22;6H htop # Show server state[22;32H[K[23;6H tmux # Open the terminal multiplexor[24;64H5[13C5[13;7H"}
+    , { time: 45238, content: "[13;5H[K[14;5H[4m                                                                            [m[15;5H[K[16;4H[33m [m[35m## Cool Stuff[m[16;18H[K[17;4H[33m [mCool things that you can do:[18;5H[K[19;4H[33m [m[35m```[mbash[19;12H[K[20;6H filget awesomeness # Impress your friends[21;6H nethack # Play nethack[21;29H[K[22;6H vim # Teach your friends with vim[23;6H htop # Show server state[23;32H[K[24;64H6[13C4[14;7H"}
+    , { time: 45383, content: "[14;5H[K[15;5H[4m                                                                            [m[16;5H[K[17;4H[33m [m[35m## Cool Stuff[m[17;18H[K[18;4H[33m [mCool things that you can do:[19;5H[K[20;4H[33m [m[35m```[mbash[20;12H[K[21;6H filget awesomeness # Impress your friends[22;6H nethack # Play nethack[22;29H[K[23;6H vim # Teach your friends with vim[24;64H7[13C3[15;7H"}
+    , { time: 45514, content: "[15;5H[K[16;5H[4m                                                                            [m[17;5H[K[18;4H[33m [m[35m## Cool Stuff[m[18;18H[K[19;4H[33m [mCool things that you can do:[20;5H[K[21;4H[33m [m[35m```[mbash[21;12H[K[22;6H filget awesomeness # Impress your friends[23;6H nethack # Play nethack[23;29H[K[24;64H8[13C2[16;7H"}
+    , { time: 46119, content: "[16;5H[K[17;5H[4m                                                                            [m[18;5H[K[19;4H[33m [m[35m## Cool Stuff[m[19;18H[K[20;4H[33m [mCool things that you can do:[21;5H[K[22;4H[33m [m[35m```[mbash[22;12H[K[23;6H filget awesomeness # Impress your friends[24;64H9[13C1[17;7H"}
+    , { time: 46273, content: "[17;5H[K[18;5H[4m                                                                            [m[19;5H[K[20;4H[33m [m[35m## Cool Stuff[m[20;18H[K[21;4H[33m [mCool things that you can do:[22;5H[K[23;4H[33m [m[35m```[mbash[23;12H[K[24;63H100,3[10C0[18;7H"}
+    , { time: 46577, content: "[18;5H[K[19;5H[4m                                                                            [m[24;65H1,1[19;5H"}
+    , { time: 47075, content: "[19;5H[K[20;5H[4m[35m## Cool Stuff[m[4m                                                               [m[24;65H2,3[20;7H"}
+    , { time: 47107, content: "[35m## Cool Stuff[m[20;18H[K[21;5H[4mCool things that you can do:                                                [m[24;65H3[21;7H"}
+    , { time: 47139, content: "Cool things that you can do:[21;33H[K[22;5H[4m                                                                            [m[24;65H4,1[22;5H"}
+    , { time: 47170, content: "[22;5H[K[23;5H[4m[35m```[m[4mbash                                                                     [m[24;65H5,3[23;7H"}
+    , { time: 47203, content: "[1;23r[23;1H\r\n[1;24r[22;5H[35m```[mbash[22;12H[K[23;1H[33m106 [m[4m$ filget awesomeness # Impress your friends                                 "}
+    , { time: 47203, content: "[m[24;63H[K[24;63H106,3[9C91%[23;7H"}
+    , { time: 47232, content: "[1;23r[23;1H\r\n[1;24r[22;5H$ filget awesomeness # Impress your friends[22;48H[K[23;1H[33m107 [m[4m$ nethack # Play nethack                                                    "}
+    , { time: 47232, content: "[m[24;63H[K[24;63H107,3[9C92%[23;7H"}
+    , { time: 47266, content: "[1;23r[23;1H\r\n[1;24r[22;5H$ nethack # Play nethack[22;29H[K[23;1H[33m108 [m[4m$ vim # Teach your friends with vim                                         "}
+    , { time: 47266, content: "[m[24;63H[K[24;63H108,3[9C93%[23;7H"}
+    , { time: 47296, content: "[1;23r[23;1H\r\n[1;24r[22;5H$ vim # Teach your friends with vim[22;40H[K[23;1H[33m109 [m[4m$ htop # Show server state                                                  "}
+    , { time: 47296, content: "[m[24;63H[K[24;63H109,3[9C94%[23;7H"}
+    , { time: 47328, content: "[1;23r[1;1H[2M[1;24r[21;5H$ htop # Show server state[21;31H[K[22;1H[33m110 [m[4m$ tmux # Open the terminal multiplexor                                      [m[23;1H[33m111 [m$ cmatrix # feel like neo :)"}
+    , { time: 47328, content: "[24;63H[K[24;63H110,3[9C96%[22;7H"}
+    , { time: 47360, content: "$ tmux # Open the terminal multiplexor[22;43H[K[23;5H[4m$ cmatrix # feel like neo :)                                                [m[24;65H1[23;7H"}
+    , { time: 47389, content: "[1;23r[23;1H\r\n[1;24r[22;5H$ cmatrix # feel like neo :)[22;33H[K[23;1H[33m112 [m[4m[35m```[m[4m                                                                         "}
+    , { time: 47390, content: "[m[24;63H[K[24;63H112,3[9C97%[23;7H"}
+    , { time: 47422, content: "[1;23r[23;1H\r\n[1;24r[22;5H[35m```[m[22;8H[K[23;1H[33m113 [m[4m[35m## Credits[m[4m                                                                  "}
+    , { time: 47422, content: "[m[24;63H[K[24;63H113,3[9C98%[23;7H"}
+    , { time: 47452, content: "[1;23r[23;1H\r\n[1;24r[22;5H[35m## Credits[m[22;15H[K[23;1H[33m114 [m[4m[@cortezcristian](https://twitter.com/cortezcristian)                       "}
+    , { time: 47452, content: "[m[24;63H[K[24;63H114,3[9CBot[23;7H"}
+    , { time: 47477, content: ""}
+    , { time: 47505, content: ""}
+    , { time: 47536, content: ""}
+    , { time: 47568, content: ""}
+    , { time: 47599, content: ""}
+    , { time: 47630, content: ""}
+    , { time: 47662, content: ""}
+    , { time: 47693, content: ""}
+    , { time: 47724, content: ""}
+    , { time: 47909, content: "[22;5H[4m[35m## Credits[m[4m                                                                  [m[23;5H[@cortezcristian](https://twitter.com/cortezcristian)[23;58H[K[24;65H3[22;7H"}
+    , { time: 48454, content: "[20;5H[4m$ cmatrix # feel like neo :)                                                [m[22;5H[35m## Credits[m[22;15H[K[24;65H1[20;7H"}
+    , { time: 48469, content: "[19;5H[4m$ tmux # Open the terminal multiplexor                                      [m[20;5H$ cmatrix # feel like neo :)[20;33H[K[24;65H0[19;7H"}
+    , { time: 48501, content: "[18;5H[4m$ htop # Show server state                                                  [m[19;5H$ tmux # Open the terminal multiplexor[19;43H[K[24;64H09[18;7H"}
+    , { time: 48533, content: "[17;5H[4m$ vim # Teach your friends with vim                                         [m[18;5H$ htop # Show server state[18;31H[K[24;65H8[17;7H"}
+    , { time: 48564, content: "[16;5H[4m$ nethack # Play nethack                                                    [m[17;5H$ vim # Teach your friends with vim[17;40H[K[24;65H7[16;7H"}
+    , { time: 48595, content: "[15;5H[4m$ filget awesomeness # Impress your friends                                 [m[16;5H$ nethack # Play nethack[16;29H[K[24;65H6[15;7H"}
+    , { time: 48626, content: "[14;5H[4m[35m```[m[4mbash                                                                     [m[15;5H$ filget awesomeness # Impress your friends[15;48H[K[24;65H5[14;7H"}
+    , { time: 48657, content: "[13;5H[4m                                                                            [m[14;5H[35m```[mbash[14;12H[K[24;65H4,1[13;5H"}
+    , { time: 48688, content: "[12;5H[4mCool things that you can do:                                                [m[13;5H[K[24;65H3,3[12;7H"}
+    , { time: 48715, content: "[11;5H[4m[35m## Cool Stuff[m[4m                                                               [m[12;5HCool things that you can do:[12;33H[K[24;65H2[11;7H"}
+    , { time: 48750, content: "[10;5H[4m                                                                            [m[11;5H[35m## Cool Stuff[m[11;18H[K[24;65H1,1[10;5H"}
+    , { time: 48780, content: "[9;5H[4m                                                                            [m[10;5H[K[24;65H0[9;5H"}
+    , { time: 48811, content: "[8;5H[4m                                                                            [m[9;5H[K[24;63H99,1 [8;5H"}
+    , { time: 48843, content: "[7;5H[4m                                                                            [m[8;5H[K[24;64H8[7;5H"}
+    , { time: 48873, content: "[6;5H[4m                                                                            [m[7;5H[K[24;64H7[6;5H"}
+    , { time: 48905, content: "[5;5H[4m                                                                            [m[6;5H[K[24;64H6[5;5H"}
+    , { time: 48936, content: "[4;5H[4m                                                                            [m[5;5H[K[24;64H5[4;5H"}
+    , { time: 49069, content: "[3;5H[4m                                                                            [m[4;5H[K[24;64H4[3;5H"}
+    , { time: 49417, content: "[24;1H[K[3;5H"}
+    , { time: 50043, content: "[24;63H94,0-1[8CBot[3;5H[24;63H[K[24;1H:"}
+    , { time: 50637, content: "."}
+    , { time: 50920, content: "!"}
+    , { time: 51717, content: "f"}
+    , { time: 51824, content: "i"}
+    , { time: 52028, content: "l"}
+    , { time: 52144, content: "g"}
+    , { time: 52483, content: "[24;7H[K[24;7H"}
+    , { time: 52611, content: "[24;6H[K[24;6H"}
+    , { time: 52692, content: "g"}
+    , { time: 52866, content: "l"}
+    , { time: 53045, content: "...et[24;10H[K[24;10H"}
+    , { time: 53579, content: " "}
+    , { time: 53749, content: "t"}
+    , { time: 53837, content: "e"}
+    , { time: 53983, content: "r"}
+    , { time: 54318, content: "m"}
+    , { time: 54495, content: "i"}
+    , { time: 54618, content: "n"}
+    , { time: 54839, content: "a"}
+    , { time: 54984, content: "l"}
+    , { time: 56254, content: "\r"}
+    , { time: 56303, content: "[3;5H[4m _[21C _[12C _[m[4;4H[33m [m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[5;4H[33m [m| __/ _ \\ '__| '_ [35m`[m _ \\| | '[7m_ \\ / _[m[35m`[m | |[6;4H[33m [m| ||  __/ |  | | | | | | | | | | (_| | |[7;5H \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|[11;5H[K[12;5H[K[14;5H[K[15;5H[K[16;4H[33m [m[35m## Cool Stuff[m[16;18H[K[17;4H[33m [mCool things that you can do:[17;33H[K[18;5H[K[19;4H[33m [m[35m```[mbash[19;12H[K[20;6H filget awesomeness # Impress your friends[21;4H[33m [m$ nethack # Play nethack[22;4H[33m [m$ vim # Teach your friends with vim[23;4H[33m [m$ htop # Show server state[23;31H[K[24;63H94,2[10C94%[3;6H"}
+    , { time: 57239, content: " _                      _             _ [3;45H[K[4;5H[4m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |                                    [m[24;64H5[4;6H"}
+    , { time: 57323, content: "| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[4;45H[K[5;5H[4m| __/ _ \\ '__| '_ [m[4m[35m`[m[4m _ \\| | '[m[4m[7m_ \\ / _[m[4m[35m`[m[4m | |                                    [m[24;64H6[5;6H"}
+    , { time: 57458, content: "| __/ _ \\ '__| '_ [35m`[m _ \\| | '[7m_ \\ / _[m[35m`[m | |[5;45H[K[6;5H[4m| ||  __/ |  | | | | | | | | | | (_| | |                                    [m[24;64H7[6;6H"}
+    , { time: 57572, content: "| ||  __/ |  | | | | | | | | | | (_| | |[6;45H[K[7;5H[4m \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|                                    [m[24;64H8[7;6H"}
+    , { time: 57670, content: " \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|[7;45H[K[8;5H[4m                                                                            [m[24;64H9[8;6H"}
+    , { time: 58247, content: "                                        [8;45H[K[9;5H[4m                                                                            [m[24;63H100,0-1[9;5H"}
+    , { time: 59466, content: "[24;1H[K[24;1H:"}
+    , { time: 59889, content: "."}
+    , { time: 60355, content: ""}
+    , { time: 60365, content: "!figlet terminal"}
+    , { time: 60440, content: "[24;11Hsample[24;17H[K[24;17H"}
+    , { time: 61294, content: "[24;16H[K[24;16H"}
+    , { time: 61440, content: "[24;15H[K[24;15H"}
+    , { time: 61576, content: "[24;14H[K[24;14H"}
+    , { time: 61698, content: "[24;13H[K[24;13H"}
+    , { time: 61820, content: "[24;12H[K[24;12H"}
+    , { time: 61943, content: "[24;11H[K[24;11H"}
+    , { time: 62069, content: "r"}
+    , { time: 62132, content: "e"}
+    , { time: 62390, content: "c"}
+    , { time: 62481, content: "o"}
+    , { time: 62646, content: "r"}
+    , { time: 63075, content: "d"}
+    , { time: 63151, content: "e"}
+    , { time: 63278, content: "r"}
+    , { time: 63569, content: "\r"}
+    , { time: 63646, content: "[9;32H[4m _[m[10;5H _ __ ___  ___ ___  _ __ __| | ___ _ __[11;4H[33m [m| '__/ _ \\/ __/ _ \\| '__/ _[35m`[m |/ _ \\ '[1m__|[m[12;4H[33m [m[1m| | |  __[m/ ([7m_| (_[m) | | | ([7m_| |  __/ |   [m[13;4H[33m [m[7m|_[m|  [35m\\_[m[1m__|\\__[m[7m_\\_[m[1m__/|_|  \\__[m,[7m_|\\_[m[1m__|_|   [m[16;5H[K[17;5H[K[19;5H[K[20;5H[K[21;4H[33m [m[35m## Cool Stuff[m[21;18H[K[22;4H[33m [m[1mCool things that you can do:[m[22;33H[K[23;5H[K[24;63H100,29[8C90%[9;33H"}
+    , { time: 64427, content: "[9;5H                            _           [9;45H[K[10;5H[4m _ __ ___  ___ ___  _ __ __| | ___ _ __                                     [m[24;65H1[10;33H"}
+    , { time: 64930, content: "[10;5H _ __ ___  ___ ___  _ __ __| | ___ _ __ [10;45H[K[11;5H[4m| '__/ _ \\/ __/ _ \\| '__/ _[m[4m[35m`[m[4m |/ _ \\ '[m[1m[4m__|[m[4m                                    [m[24;65H2[11;33H"}
+    , { time: 64960, content: "[11;5H| '__/ _ \\/ __/ _ \\| '__/ _[35m`[m |/ _ \\ '[1m__|[m[11;45H[K[12;5H[1m[4m| | |  __[m[4m/ ([m[4m[7m_| (_[m[4m) | | | ([m[4m[7m_| |  __/ |   [m[4m                                    [m[24;65H3[12;33H"}
+    , { time: 64989, content: "[12;5H[1m| | |  __[m/ ([7m_| (_[m) | | | ([7m_| |  __/ |   [m[12;45H[K[13;5H[4m[7m|_[m[4m|  [m[4m[35m\\_[m[1m[4m__|\\__[m[4m[7m_\\_[m[1m[4m__/|_|  \\__[m[4m,[m[4m[7m_|\\_[m[1m[4m__|_|   [m[4m                                    [m[24;65H4[13;33H"}
+    , { time: 65023, content: "[13;5H[7m|_[m|  [35m\\_[m[1m__|\\__[m[7m_\\_[m[1m__/|_|  \\__[m,[7m_|\\_[m[1m__|_|   [m[13;45H[K[14;5H[4m                                                                            [m[24;65H5[14;33H"}
+    , { time: 65051, content: "[14;5H                                        [14;45H[K[15;5H[1m[4m [m[4m                                                                           [m[24;65H6,0-1[15;5H"}
+    , { time: 65083, content: "[15;5H[K[16;5H[1m[4m [m[4m                                                                           [m[24;65H7[16;5H"}
+    , { time: 65119, content: "[16;5H[K[17;5H[1m[4m [m[4m                                                                           [m[24;65H8[17;5H"}
+    , { time: 65146, content: "[17;5H[K[18;5H[1m[4m [m[4m                                                                           [m[24;65H9[18;5H"}
+    , { time: 65174, content: "[18;5H[K[19;5H[1m[4m [m[4m                                                                           [m[24;64H10[19;5H"}
+    , { time: 65211, content: "[19;5H[K[20;5H[1m[4m [m[4m                                                                           [m[24;65H1[20;5H"}
+    , { time: 65243, content: "[20;5H[K[21;5H[4m[35m## Cool Stuff[m[4m                                                               [m[24;65H2,13 [21;17H"}
+    , { time: 65277, content: "[21;5H[35m## Cool Stuff[m[21;18H[K[22;5H[1m[4mCool things that you can do:[m[4m                                                [m[24;65H3,28[22;32H"}
+    , { time: 65302, content: "[22;5H[1mCool things that you can do:[m[22;33H[K[23;5H[1m[4m [m[4m                                                                           [m[24;65H4,0-1[23;5H"}
+    , { time: 65340, content: "[1;23r[23;1H\r\n[1;24r[22;5H[K[23;1H[33m115 [m[1m[4m```bash[m[4m                                                                     [m[24;1H[K[24;63H115,7[9C91%[23;11H"}
+    , { time: 65372, content: "[1;23r[23;1H\r\n[1;24r[22;5H[1m```bash[m[22;12H[K[23;1H[33m116 [m[1m[4m$ filget awesomeness # Impress your friends[m[4m                                 [m[24;63H[K[24;63H116,29[8C92%[23;33H"}
+    , { time: 65403, content: "[1;23r[23;1H\r\n[1;24r[22;5H[1m$ filget awesomeness # Impress your friends[m[22;48H[K[23;1H[33m117 [m[1m[4m$ nethack # Play nethack[m[4m                                                    [m[24;63H[K[24;63H117,24[8C93%[23;28H"}
+    , { time: 65435, content: "[1;23r[23;1H\r\n[1;24r[22;5H[1m$ nethack # Play nethack[m[22;29H[K[23;1H[33m118 [m[1m[4m$ vim # Teach your friends with vim[m[4m                                         [m[24;63H[K[24;63H118,29[8C94%[23;33H"}
+    , { time: 65589, content: "[1;23r[23;1H\r\n[1;24r[22;5H[1m$ vim # Teach your friends with vim[m[22;40H[K[23;1H[33m119 [m[1m[4m$ htop # Show server state[m[4m                                                  [m[24;63H[K[24;63H119,26[8C95%[23;30H"}
+    , { time: 65784, content: "[1;23r[23;1H\r\n[1;24r[22;5H[1m$ htop # Show server state[m[22;31H[K[23;1H[33m120 [m[1m[4m$ tmux # Open the terminal multiplexor[m[4m                                      [m[24;63H[K[24;63H120,29[8C96%[23;33H"}
+    , { time: 65978, content: "[1;23r[23;1H\r\n[1;24r[5;30H[46m([m[22;5H[1m$ tmux # Open the terminal multiplexor[m[22;43H[K[23;1H[33m121 [m[1m[4m$ cmatrix # feel like neo :[m[1m[46m)[m[4m                                                [m[24;63H[K[24;63H121,28[8C97%[23;32H"}
+    , { time: 66096, content: "[1;23r[23;1H\r\n[1;24r[4;30H([22;5H[1m$ cmatrix # feel like neo :)[m[22;33H[K[23;1H[33m122 [m[1m[4m```[m[4m                                                                         [m[24;63H[K[24;63H122,3[9C98%[23;7H"}
+    , { time: 66258, content: "[1;23r[23;1H\r\n[1;24r[22;5H[1m```[m[22;8H[K[23;1H[33m123 [m[4m[35m## Credits[m[4m                                                                  [m[24;63H[K[24;63H123,10[8C99%[23;14H"}
+    , { time: 66406, content: "[1;23r[23;1H\r\n[1;24r[22;5H[35m## Credits[m[22;15H[K[23;1H[33m124 [m[1m[4m[@cortezcristian](https://twitter.com/cortezcristian)[m[4m                       [m[24;63H[K[24;63H124,29[8CBot[23;33H"}
+    , { time: 66522, content: ""}
+    , { time: 66656, content: ""}
+    , { time: 66814, content: ""}
+    , { time: 66975, content: ""}
+    , { time: 67227, content: "[22;5H[4m[35m## Credits[m[4m                                                                  [m[23;5H[1m[@cortezcristian](https://twitter.com/cortezcristian)[m[23;58H[K[24;65H3,10[22;14H"}
+    , { time: 67402, content: "[21;5H[1m[4m```[m[4m                                                                         [m[22;5H[35m## Credits[m[22;15H[K[24;65H2,3 [21;7H"}
+    , { time: 67546, content: "[2;30H[46m([m[20;5H[1m[4m$ cmatrix # feel like neo :[m[1m[46m)[m[4m                                                [m[21;5H[1m```[m[21;8H[K[24;65H1,28[20;32H"}
+    , { time: 67724, content: "[2;30H([19;5H[1m[4m$ tmux # Open the terminal multiplexor[m[4m                                      [m[20;5H[1m$ cmatrix # feel like neo :)[m[20;33H[K[24;65H0,29[19;33H"}
+    , { time: 68093, content: "[2;30H[46m([m[19;5H[1m$ tmux # Open the terminal multiplexor[m[19;43H[K[20;5H[1m[4m$ cmatrix # feel like neo :[m[1m[46m)[m[4m                                                [m[24;65H1,28[20;32H"}
+    , { time: 70037, content: "[2;30H([19;5H[1m[4m$ tmux # Open the terminal multiplexor[m[4m                                      [m[20;5H[1m$ cmatrix # feel like neo :)[m[20;33H[K[24;65H0,29[19;33H"}
+    , { time: 70167, content: "[18;5H[1m[4m$ htop # Show server state[m[4m                                                  [m[19;5H[1m$ tmux # Open the terminal multiplexor[m[19;43H[K[24;64H19,26[18;30H"}
+    , { time: 70297, content: "[17;5H[1m[4m$ vim # Teach your friends with vim[m[4m                                         [m[18;5H[1m$ htop # Show server state[m[18;31H[K[24;65H8,29[17;33H"}
+    , { time: 70433, content: "[16;5H[1m[4m$ nethack # Play nethack[m[4m                                                    [m[17;5H[1m$ vim # Teach your friends with vim[m[17;40H[K[24;65H7,24[16;28H"}
+    , { time: 72247, content: "[24;63H[K[24;1H:"}
+    , { time: 72468, content: "q"}
+    , { time: 72712, content: "a"}
+    , { time: 74091, content: "[24;3H[K[24;3H"}
+    , { time: 74306, content: "!"}
+    , { time: 75717, content: "\r[24;1H[K[24;1H[?1l>[2J[?47l8"}
+    , { time: 75719, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 75731, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 76647, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 78028, content: "h"}
+    , { time: 78203, content: "t"}
+    , { time: 78332, content: "o"}
+    , { time: 78418, content: "p"}
+    , { time: 79048, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  htop"}
+    , { time: 79058, content: ")07[?47h[1;24r[m[4l[?1h=[m[?1000h"}
+    , { time: 79246, content: "[m[m[H[2J[1B  [36m1  [m[1m[[m[32m|||||||||[31m||||[30m[1m            41.2%[m][m     [36mTasks: [1m179[m[36m, [1m536[m[36m thr; [32m[1m2[m[36m running[3;3H2  [m[1m[[m[32m||||||[31m|||||||||[30m[1m          47.1%[m][m     [36mLoad average: [30m[1m0.54 [m[m0.61 [1m0.65 [4;3H[m[36m3  [m[1m[[m[32m||||[31m||||||[30m[1m               31.2%[m][m     [36mUptime: [1m17:47:37[5;3H[m[36m4  [m[1m[[m[32m||||||[31m||[30m[1m                 26.7%[m][6;3H[m[36mMem[m[1m[[m[32m|||||||||||||||||[34m|[33m|2081/3771M[30m[1mB[m][7;3H[m[36mSwp[m[1m[[m[31m||||||||||||[30m[1m        795/2047MB[m]\r[2B[m[30m[42m  PID USER      PRI [30m[46m NI [30m[42m VIRT   RES   SHR S CPU% MEM%   TIME+  Command          [10;1H[30m[46m 2428 crisboot   -6 -11  421M  4348  2684 S  0.0  0.1  5:29.68 /usr/bin/pulseaud[11;2H[m[m2429 crisboot   -6 [31m-11 [36m 421M  4[m[m348 [36m 2[m[m684 S  0.0  0.1  0:00.00 /usr/bin/pulseaud[12;2H2412 crisboot    9 [31m-11 [36m 421M  4[m[m348 [36m 2[m[m684 S  6.1  0.1 10:27.12 /usr/bin/pulseaud[13;5H1 [30m[1mroot      [m[m 20   0 [36m27[m[m068 [36m 1[m[m884   732 S  0.0  0.0  0:01.47 /sbin/init[14;3H399 [30m[1mroot      [m[m 20   0 [36m15[m[m272   328   304 S  0.0  0.0  0:00.08 upstart-file-brid[15;3H427 [30m[1mroot      [m[m 20   0 [36m17[m[m320   536   428 S  0.0  0.0  0:00.23 upstart-udev-brid[16;3H429 [30m[1mroot      [m[m 20   0 [36m22[m[m272   536   416 S  0.0  0.0  0:00.26 /sbin/udevd --dae[17;3H759 [30m[1mroot      [m[m 20   0 [36m15[m[m260   284   276 S  0.0  0.0  0:00.04 upstart-socket-br[18;2H1176 [30m[1mroot      [m[m 20   0 [36m52[m[m256   432   428 S  0.0  0.0  0:00.00 /usr/sbin/sshd -D[19;2H1185 [30m[1mmessagebu [m[m 20   0 [36m25[m[m040 [36m 1[m[m808   716 S  0.0  0.0  0:02.52 dbus-daemon --sys[20;2H1194 [30m[1msyslog    [m[m 20   0 [36m 241M [m[m  460   296 S  0.0  0.0  0:01.14 rsyslogd -c5\r[1B 1195 [30m[1msyslog    [m[m 20   0 [36m 24"}
+    , { time: 79246, content: "1M [m[m  460   296 S  0.0  0.0  0:00.31 rsyslogd -c5\r[1B 1196 [30m[1msyslog    [m[m 20   0 [36m 241M [m[m  460   296 S  0.0  0.0  0:00.10 rsyslogd -c5\r[1B 1193 [30m[1msyslog    [m[m 20   0 [36m 241M [m[m  460   296 S  0.0  0.0  0:05.75 rsyslogd -c5\r[1BF1[30m[46mHelp  [m[mF2[30m[46mSetup [m[mF3[30m[46mSearch[m[mF4[30m[46mFilter[m[mF5[30m[46mTree  [m[mF6[30m[46mSortBy[m[mF7[30m[46mNice -[m[mF8[30m[46mNice +[m[mF9[30m[46mKill  [m[mF10[30m[46mQuit [4ht[4l[H[m[m"}
+    , { time: 80787, content: "[2;11H[31m||[30m[1m       [2;32H15.0[2;64H[32m1[3;11H[m[31m|[30m[1m          [3;32H15.0[4;9H[m[31m||[30m[1m      [4;32H 9.3[4;58H[36m9[5;9H[m[31m|[30m[1m     [5;32H 7.9[6;28H[m[33m90[10;46H[30m[46m2[10;61H72[12;46H[m[m4.6[12;62H9[H"}
+    , { time: 82322, content: "[2;10H[31m||[30m[1m [2;33H3.7[2;64H[32m2[3;9H[m[31m|[30m[1m  [3;32H 7.9[1B4[4;57H[36m41[5;9H[m[32m|[31m|[5;33H[30m[1m9.3[6;28H[m[33m89[10;48H[30m[46m6[10;62H5[12;46H[m[m5.3[12;61H26[H"}
+    , { time: 83787, content: "[23B[J[?1000l[24;1H[2J[?47l8\r[?1l>"}
+    , { time: 83790, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 83798, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 85366, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 85793, content: "R"}
+    , { time: 86078, content: "e"}
+    , { time: 86273, content: "m"}
+    , { time: 86420, content: "m"}
+    , { time: 86528, content: "e"}
+    , { time: 87041, content: "[K"}
+    , { time: 87185, content: "[K"}
+    , { time: 87567, content: "e"}
+    , { time: 87679, content: "m"}
+    , { time: 87915, content: "b"}
+    , { time: 87989, content: "e"}
+    , { time: 88048, content: "r"}
+    , { time: 88191, content: " "}
+    , { time: 89006, content: "y"}
+    , { time: 89091, content: "o"}
+    , { time: 89107, content: "u"}
+    , { time: 89282, content: " "}
+    , { time: 89387, content: "c"}
+    , { time: 89473, content: "a"}
+    , { time: 89530, content: "n"}
+    , { time: 89772, content: " "}
+    , { time: 90009, content: "r"}
+    , { time: 90154, content: "o"}
+    , { time: 90567, content: "o"}
+    , { time: 90947, content: "[K"}
+    , { time: 91165, content: "l"}
+    , { time: 91308, content: "l"}
+    , { time: 91603, content: "b"}
+    , { time: 91743, content: "a"}
+    , { time: 91936, content: "c"}
+    , { time: 92026, content: "k"}
+    , { time: 92925, content: "!"}
+    , { time: 93145, content: "!"}
+    , { time: 95266, content: "[K"}
+    , { time: 95766, content: "[K"}
+    , { time: 95797, content: "[K"}
+    , { time: 95831, content: "[K"}
+    , { time: 95862, content: "[K"}
+    , { time: 95893, content: "[K"}
+    , { time: 95925, content: "[K"}
+    , { time: 95956, content: "[K"}
+    , { time: 95985, content: "[K"}
+    , { time: 96018, content: "[K"}
+    , { time: 96047, content: "[K"}
+    , { time: 96078, content: "[K"}
+    , { time: 96109, content: "[K"}
+    , { time: 96139, content: "[K"}
+    , { time: 96171, content: "[K"}
+    , { time: 96202, content: "[K"}
+    , { time: 96232, content: "[K"}
+    , { time: 96263, content: "[K"}
+    , { time: 96294, content: "[K"}
+    , { time: 96323, content: "[K"}
+    , { time: 96353, content: "[K"}
+    , { time: 96385, content: "[K"}
+    , { time: 96416, content: "[K"}
+    , { time: 96447, content: "[K"}
+    , { time: 96478, content: "[K"}
+    , { time: 96508, content: "[K"}
+    , { time: 96540, content: "[K"}
+    , { time: 96571, content: ""}
+    , { time: 96631, content: "c"}
+    , { time: 96851, content: "m"}
+    , { time: 97252, content: "a"}
+    , { time: 97475, content: "t"}
+    , { time: 97541, content: "r"}
+    , { time: 97686, content: "i"}
+    , { time: 97920, content: "x"}
+    , { time: 98787, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  cmatrix"}
+    , { time: 98792, content: ")07[?47h[1;24r[m[4l[m[m[m[H[2J[32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m ["}
+    , { time: 98792, content: "m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m"}
+    , { time: 98793, content: " [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m ["}
+    , { time: 98793, content: "m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m"}
+    , { time: 98833, content: "[H[37m([1;31H[32mA[m[m"}
+    , { time: 98873, content: "\r[32m([1;69Hi\r[1B[37mp[2;31H[32mB[m[m"}
+    , { time: 98914, content: "\r[32mp[2;69HM\r[1B[37mD[3;31H[32m*[m[m"}
+    , { time: 98955, content: "[1;9H[32mv\r[2BD[3;69H&\r[1B[37mI[4;31H[32mv[m[m"}
+    , { time: 98995, content: "[1;19H[37mY[1;71Hu[2;9H[32mh\r[2BI[4;69H%\r[1B[37m8[5;31H[32m\"[m[m"}
+    , { time: 99035, content: "[1;19H[32mY[m[m [32m [m[m [32m [m[m [37m&[1;69H[32m [m[m [32mu[2;19H[37m}[2;71H>[3;9H[32mg\r[2B8[5;69HA\r[1B[37mI[6;31H[32m6[m[m"}
+    , { time: 99076, content: "[1;25H[32m&[2;19H}[m[m [32m [m[m [32m [m[m [37mn[2;69H[32m [m[m [32m>[3;19H[37mg[3;71H&[4;9H[32mw\r[2BI[6;69Hl\r[1B[37mu[7;31H[32mm[m[m"}
+    , { time: 99116, content: "[1;55H[32mV[2;25Hn[3;19Hg[m[m [32m [m[m [32m [m[m [37mP[3;69H[32m [m[m [32m&[4;19H[37mG[4;71H|[5;9H[32mg\r[2Bu[7;69H#\r[1B[37mX[8;31H[32mv[m[m"}
+    , { time: 99156, content: "[1;75H[32m<[2;55Ha[3;25HP[4;19HG[m[m [32m [m[m [32m [m[m [37mJ[4;69H[32m [m[m [32m|[5;19H[37me[5;71Ht[6;9H[32mI\r[2BX[8;69H3\r[1B[37mK[9;31H[32m{[m[m"}
+    , { time: 99201, content: "[1;37H[32m%[1;59H,[2;75HV[3;55H5[4;25HJ[5;19He[m[m [32m [m[m [32m [m[m [37m}[5;69H[32m [m[m [32mt[6;19H[37m,[6;71Hr[7;9H[32mk\r[2BK[9;69H0\r[1B[37m1[10;31H[32mW[m[m"}
+    , { time: 99238, content: "[1;13H[32mJ[1;23Ho[2;37Hl[2;59H.[3;75Hb[4;55HH[5;25H}[6;19H,[m[m [32m [m[m [32m [m[m [37mp[6;69H[32m [m[m [32mr[7;19H[37m\"[7;71Hf[8;9H[32mX\r[2B1[10;69HB\r[1B[37mW[11;31H[32mz[m[m"}
+    , { time: 99278, content: "[1;27H[32mp[m[m [32m [m[m [32mA[m[m [32mp[m[m [32m [m[m [32m%[m[m [37m@[1;49H[32m3[1;63H[37mo[2;13H[32m;[2;23H+[3;37Hu[3;59Hx[4;75Hs[5;55HN[6;25Hp[7;19H\"[m[m [32m [m[m [32m [m[m [37m/[7;69H[32m [m[m [32mf[8;19H[37my[8;71H<[9;9H[32mz\r[2BW[11;69H|\r[1B[37mF[12;31H[32mY[m[m"}
+    , { time: 99318, content: "[1;9H[32m [1;39H@[1;61H?[m[m [32mo[2;27HO[m[m [32m [m[m [32mB[m[m [32mk[m[m [32m [m[m [32ml[m[m [37m\\[2;49H[32m'[2;63H[37mS[3;13H[32mN[3;23Hs[4;37H@[4;59HV[5;75HK[6;55Hn[7;25H/[8;19Hy[m[m [32m [m[m [32m [m[m [37m&[8;69H[32m [m[m [32m<[9;19H[37m)[9;71Hl[10;9H[32m=\r[2BF[12;69HH\r[1B[37m9[13;31H[32mg[m[m"}
+    , { time: 99359, content: "[2;9H[32m [2;39H\\[2;61H.[m[m [32mS[3;27Hd[m[m [32m [m[m [32m*[m[m [32mT[m[m [32m [m[m [32mu[m[m [37mo[3;49H[32m][3;63H[37m][4;13H[32m@[4;23HP[5;37H![5;59Ht[6;75H;[7;55Ht[8;25H&[9;19H)[m[m [32m [m[m [32m [m[m [37m>[9;69H[32m [m[m [32ml[10;19H[37mJ[10;71HK[11;9H[32m_\r[2B9[13;69Ha\r[1B[37m=[14;31H[32mD[m[m"}
+    , { time: 99400, content: "[3;9H[32m [3;39Ho[3;61HQ[m[m [32m][4;27H/[m[m [32m [m[m [32mv[m[m [32md[m[m [32m [m[m [32m@[m[m [37mT[4;49H[32m2[4;63H[37m=[5;13H[32mn[5;23HL[6;37HV[6;59H5[7;75H#[8;55Hs[9;25H>[10;19HJ[m[m [32m [m[m [32m [m[m [37m2[10;69H[32m [m[m [32mK[11;19H[37mw[11;71Hl[12;9H[32m<\r[2B=[14;69Hc\r[1B[37me[15;31H[32mh[m[m"}
+    , { time: 99440, content: "[1;27H[32m [1;51H=[1;65H[37ml[m[m [32m [m[m [32m|[4;9H [4;39HT[4;61H%[m[m [32m=[5;27Hk[m[m [32m [m[m [32m\"[m[m [32mR[m[m [32m [m[m [32m![m[m [37mV[5;49H[32mj[5;63H[37mP[6;13H[32m$[6;23H}[7;37HL[7;59H6[8;75H}[9;55Hk[10;25H2[11;19Hw[m[m [32m [m[m [32m [m[m [37mu[11;69H[32m [m[m [32ml[12;19H[37mu[12;71H@[13;9H[32mC\r[2Be[15;69HU\r[1B[37m)[16;31H[32m+[m[m"}
+    , { time: 99481, content: "[1;13H[32m [7C2[1;53HP[1;63H [m[m [32ml[m[m [32mR[m[m [32m|[m[m [32mu[m[m [37ml[m[m [32m [2;27H [2;51H)[2;65H[37mT[m[m [32m [m[m [32mE[5;9H [5;39HV[5;61H\"[m[m [32mP[6;27Hk[m[m [32m [m[m [32m6[m[m [32m)[m[m [32m [m[m [32mV[m[m [37m3[6;49H[32m-[6;63H[37mu[7;13H[32mr[7;23Hq[8;37HW[8;59HX[9;75Hd[10;55Hx[11;25Hu[12;19Hu[m[m [32m [m[m [32m [m[m [37ml[12;69H[32m [m[m [32m@[13;19H[37m7[13;71Hy[14;9H[32m=\r[2B)[16;69H9\r[1B[37mL[17;31H[32mz[m[m"}
+    , { time: 99521, content: "[1;3H[37mv[1;29H_[1;41H[32mq[31Cl[2;13H [7C/[2;53H][2;63H [m[m [32mT[m[m [32m<[m[m [32mE[m[m [32m>[m[m [37mT[m[m [32m [3;27H [3;51H7[3;65H[37m;[m[m [32m [m[m [32mw[6;9H [6;39H3[6;61HC[m[m [32mu[7;27H'[m[m [32m [m[m [32mm[m[m [32m/[m[m [32m [m[m [32mL[m[m [37ma[7;49H[32mS[7;63H[37m$[8;13H[32mt[8;23HQ[9;37H_[9;59H{[10;75Hl[11;55H7[12;25Hl[13;19H7[m[m [32m [m[m [32m [m[m [37m+[13;69H[32m [m[m [32my[14;19H[37mZ[14;71H0[15;9H[32mF\r[2BL[17;69H^\r[1B[37me[18;31H[32m1[m[m"}
+    , { time: 99562, content: "[H[32m [m[m [32mv[1;29H_[1;47HM[2;3H[37m^[2;29HO[2;41H[32m<[31CT[3;13H [7Cn[3;53Ho[3;63H [m[m [32m;[m[m [32m;[m[m [32mw[m[m [32m&[m[m [37m1[m[m [32m [4;27H [4;51HP[4;65H[37mI[m[m [32m [m[m [32mS[7;9H [7;39Ha[7;61H+[m[m [32m$[8;27H|[m[m [32m [m[m [32mv[m[m [32m_[m[m [32m [m[m [32mW[m[m [37m}[8;49H[32m%[8;63H[37m}[9;13H[32mf[9;23HC[10;37H#[10;59Hh[11;75H([12;55H&[13;25H+[14;19HZ[m[m [32m [m[m [32m [m[m [37mF[14;69H[32m [m[m [32m0[15;19H[37mg[15;71Hw[16;9H[32mr\r[2Be[18;69H5\r[1B[37m_[19;31H[32m([m[m"}
+    , { time: 99603, content: "[1;7H[37mQ[1;17H[32m3[1;35H[37m4[1;57H[32mW[19C[37m#[m[m [32mk\r[1B [m[m [32m^[2;29HO[2;47H>[3;3H[37mw[3;29HM[3;41H[32mD[31C1[4;13H [7C@[4;53H3[4;63H [m[m [32mI[m[m [32mS[m[m [32mS[m[m [32m|[m[m [37m^[m[m [32m [5;27H [5;51H=[5;65H[37m6[m[m [32m [m[m [32m#[8;9H [8;39H}[8;61HB[m[m [32m}[9;27Hm[m[m [32m [m[m [32m{[m[m [32mX[m[m [32m [m[m [32m_[m[m [37mh[9;49H[32mG[9;63H[37mG[10;13H[32mS[10;23H][11;37H7[11;59HJ[12;75HC[13;55HI[14;25HF[15;19Hg[m[m [32m [m[m [32m [m[m [37m^[15;69H[32m [m[m [32mw[16;19H[37m\\[16;71H0[17;9H[32mD\r[2B_[19;69HU\r[1B[37m_[20;31H[32mb[m[m"}
+    , { time: 99643, content: "[1;7H[32mQ[1;35H4[7C`[7C [25C#[2;7H[37m4[2;17H[32mZ[2;35H[37m2[2;57H[32mx[19C[37mM[m[m [32m?\r[1B [m[m [32mw[3;29HM[3;47H$[4;3H[37mM[4;29Hz[4;41H[32me[31C^[5;13H [7Cc[5;53H}[5;63H [m[m [32m6[m[m [32m@[m[m [32m#[m[m [32mt[m[m [37ms[m[m [32m [6;27H [6;51Hc[6;65H[37mZ[m[m [32m [m[m [32mG[9;9H [9;39Hh[9;61H/[m[m [32mG[10;27H<[m[m [32m [m[m [32mW[m[m [32m`[m[m [32m [m[m [32m#[m[m [37m`[10;49H[32m?[10;63H[37mR[11;13H[32m][11;23HS[12;37H@[12;59H.[13;75Hz[14;55HD[15;25H^[16;19H\\[m[m [32m [m[m [32m [m[m [37mL[16;69H[32m [m[m [32m0[17;19H[37mO[17;71Hz[18;9H[32ms\r[2B_[20;69H:\r[1B[37mY[21;31H[32mk[m[m"}
+    , { time: 99684, content: "[1;19H[32m [1;29H [1;45H[37m4[7C[32m [7C [1;71H [2;7H4[2;35H2[7C7[7C [25CM[3;7H[37m-[3;17H[32mJ[3;35H[37mD[3;57H[32mZ[19C[37mx[m[m [32mJ\r[1B [m[m [32mM[4;29Hz[4;47H/[5;3H[37mJ[5;29H&[5;41H[32me[31Cs[6;13H [7CB[6;53H#[6;63H [m[m [32mZ[m[m [32mM[m[m [32mG[m[m [32mr[m[m [37m#[m[m [32m [7;27H [7;51H0[7;65H[37mK[m[m [32m [m[m [32m_[10;9H [10;39H`[10;61HW[m[m [32mR[11;27HI[m[m [32m [m[m [32mz[m[m [32mL[m[m [32m [m[m [32m7[m[m [37mI[11;49H[32mH[11;63H[37m&[12;13H[32m[[12;23Hy[13;37H<[13;59H?[14;75Hn[15;55HC[16;25HL[17;19HO[m[m [32m [m[m [32m [m[m [37mu[17;69H[32m [m[m [32mz[18;19H[37mW[18;71H$[19;9H[32mt\r[2BY[21;69Hu\r[1B[37m7[22;31H[32mW[m[m"}
+    , { time: 99725, content: "[1;45H[32m4[29C[37m([2;19H[32m [2;29H [2;45H[37m7[7C[32m [7C [2;71H [3;7H-[3;35HD[7Cl[7C [25Cx[4;7H[37mu[4;17H[32m?[4;35H[37mL[4;57H[32mW[19C[37m}[m[m [32m-\r[1B [m[m [32mJ[5;29H&[5;47HG[6;3H[37mR[6;29H&[6;41H[32mn[31C#[7;13H [7C$[7;53Hs[7;63H [m[m [32mK[m[m [32m|[m[m [32m_[m[m [32mf[m[m [37mR[m[m [32m [8;27H [8;51Hb[8;65H[37mo[m[m [32m [m[m [32m;[11;9H [11;39HI[11;61HS[m[m [32m&[12;27Hi[m[m [32m [m[m [32mY[m[m [32mv[m[m [32m [m[m [32m@[m[m [37mv[12;49H[32mr[12;63H[37mG[13;13H[32mm[13;23Hu[14;37H3[14;59Hw[15;75HB[16;55HS[17;25Hu[18;19HW[m[m [32m [m[m [32m [m[m [37mr[18;69H[32m [m[m [32m$[19;19H[37m|[19;71Hr[20;9H[32m:\r[2B7[22;69HC\r[1B[37ms[23;31H[32m&[m[m"}
+    , { time: 99766, content: "[1;5H[37mF[m[m [32mQ[m[m [32m [m[m [37m<[m[m [32m [m[m [32m{[7C [7C [43C([2;45H7[29C[37mL[3;19H[32m [3;29H [3;45H[37mA[7C[32m [7C [3;71H [4;7Hu[4;35HL[7C([7C [25C}[5;7H[37m$[5;17H[32mi[5;35H[37m,[5;57H[32m}[19C[37mJ[m[m [32mx\r[1B [m[m [32mR[6;29H&[6;47Hk[7;3H[37mu[7;29H-[7;41H[32m![31CR[8;13H [7CO[8;53Hm[8;63H [m[m [32mo[m[m [32mP[m[m [32m;[m[m [32m<[m[m [37m=[m[m [32m [9;27H [9;51Hf[9;65H[37mn[m[m [32m [m[m [32m$[12;9H [12;39Hv[12;61Hy[m[m [32mG[13;27H|[m[m [32m [m[m [32mg[m[m [32mA[m[m [32m [m[m [32m<[m[m [37mg[13;49H[32mM[13;63H[37mg[14;13H[32mW[14;23Hy[15;37HO[15;59HR[16;75H`[17;55H:[18;25Hr[19;19H|[m[m [32m [m[m [32m [m[m [37m>[19;69H[32m [m[m [32mr[20;19H[37m.[20;71Hu[21;9H[32ml\r[2Bs[23;69HO\r[1B[37mG[24;31H[32mE[m[m"}
+    , { time: 99807, content: "[1;5H[32mF[m[m [32mQ[m[m [32m [m[m [32m<[1;39H [7C [1;59H [2;5H[37me[m[m [32m4[m[m [32m [m[m [37m,[m[m [32m [m[m [32mq[7C [7C [43CL[3;45HA[29C[37mm[4;19H[32m [4;29H [4;45H[37mh[7C[32m [7C [4;71H [5;7H$[5;35H,[7CA[7C [25CJ[6;7H[37mv[6;17H[32m[[6;35H[37mJ[6;57H[32m+[19C[37m{[m[m [32mk\r[1B [m[m [32mu[7;29H-[7;47Hj[8;3H[37m[[8;29H/[8;41H[32mz[31C=[9;13H [7Cp[9;53H;[9;63H [m[m [32mn[m[m [32m&[m[m [32m$[m[m [32ml[m[m [37mC[m[m [32m [10;27H [10;51Hk[10;65H[37m^[m[m [32m [m[m [32m:[13;9H [13;39Hg[13;61HJ[m[m [32mg[14;27H[[m[m [32m [m[m [32mD[m[m [32m%[m[m [32m [m[m [32m3[m[m [37m$[14;49H[32mp[14;63H[37mR[15;13H[32m9[15;23H`[16;37HH[16;59Hd[17;75H\\[18;55Hh[19;25H>[20;19H.[m[m [32m [m[m [32m [m[m [37m?[20;69H[32m [m[m [32mu[21;19H[37m![21;71Hk[22;9H[32mh\r[2BG[24;69HT[m[m"}
+    , { time: 99848, content: "[1;13H[32mM[2;5He[m[m [32m4[m[m [32m [m[m [32m,[2;39H [7C [2;59H [3;5H[37m][m[m [32m-[m[m [32m [m[m [37ml[m[m [32m [m[m [32mv[7C [7C [43Cm[4;45Hh[29C[37mT[5;19H[32m [5;29H [5;45H[37mE[7C[32m [7C [5;71H [6;7Hv[6;35HJ[7CG[7C [25C{[7;7H[37m,[7;17H[32m7[7;35H[37m>[7;57H[32mM[19C[37m=[m[m [32mj\r[1B [m[m [32m[[8;29H/[8;47Hw[9;3H[37mL[9;29H5[9;41H[32mU[31CC[10;13H [7Cc[10;53Hs[10;63H [m[m [32m^[m[m [32m7[m[m [32m:[m[m [32mK[m[m [37mE[m[m [32m [11;27H [11;51H#[11;65H[37m>[m[m [32m [m[m [32m'[14;9H [14;39H$[14;61H*[m[m [32mR[15;27Hk[m[m [32m [m[m [32mh[m[m [32mW[m[m [32m [m[m [32mO[m[m [37mZ[15;49H[32m4[15;63H[37mV[16;13H[32mU[16;23HO[17;37Hp[17;59HR[18;75H)[19;55H![20;25H?[21;19H![m[m [32m [m[m [32m [m[m [37m/[21;69H[32m [m[m [32mk[22;19H[37mG[22;71HR[23;9H[32m*[m[m"}
+    , { time: 99889, content: "[2;13H[32mN[3;5H][m[m [32m-[m[m [32m [m[m [32ml[3;39H [7C [3;59H [4;5H[37m\"[m[m [32mu[m[m [32m [m[m [37mk[m[m [32m [m[m [32m+[7C [7C [43CT[5;45HE[29C[37mC[6;19H[32m [6;29H [6;45H[37m7[7C[32m [7C [6;71H [7;7H,[7;35H>[7C}[7C [25C=[8;7H[37m<[8;17H[32m?[8;35H[37mK[8;57H[32mo[19C[37mh[m[m [32ma\r[1B [m[m [32mL[9;29H5[9;47H;[10;3H[37mM[10;29Hv[10;41H[32m{[31CE[11;13H [7C_[11;53Hj[11;63H [m[m [32m>[m[m [32ms[m[m [32m'[m[m [32ml[m[m [37m`[m[m [32m [12;27H [12;51H>[12;65H[37m@[m[m [32m [m[m [32mt[15;9H [15;39HZ[15;61Ht[m[m [32mV[16;27HV[m[m [32m [m[m [32m+[m[m [32m3[m[m [32m [m[m [32mH[m[m [37m_[16;49H[32m4[16;63H[37m[[17;13H[32m5[17;23He[18;37Ht[18;59Hr[19;75H0[20;55HX[21;25H/[22;19HG[m[m [32m [m[m [32m [m[m [37m3[22;69H[32m [m[m [32mR[23;19H[37ml[23;71H{[24;9H[32m\\[m[m"}
+    , { time: 99930, content: "[1;29H[37my[1;47Hv[27C[32m [3;13H}[4;5H\"[m[m [32mu[m[m [32m [m[m [32mk[4;39H [7C [4;59H [5;5H[37mG[m[m [32m$[m[m [32m [m[m [37m.[m[m [32m [m[m [32m@[7C [7C [43CC[6;45H7[29C[37m@[7;19H[32m [7;29H [7;45H[37mW[7C[32m [7C [7;71H [8;7H<[8;35HK[7Cq[7C [25Ch[9;7H[37mH[9;17H[32mH[9;35H[37mo[9;57H[32m[[19C[37mE[m[m [32m;\r[1B [m[m [32mM[10;29Hv[10;47H_[11;3H[37m{[11;29HB[11;41H[32mb[31C`[12;13H [7C\"[12;53Hl[12;63H [m[m [32m@[m[m [32m<[m[m [32mt[m[m [32m@[m[m [37my[m[m [32m [13;27H [13;51H>[13;65H[37m/[m[m [32m [m[m [32m|[16;9H [16;39H_[16;61Hv[m[m [32m[[17;27H6[m[m [32m [m[m [32mz[m[m [32m=[m[m [32m [m[m [32mp[m[m [37m\\[17;49H[32mR[17;63H[37ml[18;13H[32m>[18;23HE[19;37H{[19;59H.[20;75Hu[21;55HQ[22;25H3[23;19Hl[m[m [32m [m[m [32m [m[m [37m1[23;69H[32m [m[m [32m{[24;19H[37m4[24;71HE[m[m"}
+    , { time: 99972, content: "[1;11H[32m [1;25H [m[m [32m [m[m [32my[1;47Hv[1;57H [2;29H[37m4[2;47Hw[27C[32m [4;13H=[5;5HG[m[m [32m$[m[m [32m [m[m [32m.[5;39H [7C [5;59H [6;5H[37ma[m[m [32mv[m[m [32m [m[m [37m5[m[m [32m [m[m [32m([7C [7C [43C@[7;45HW[29C[37mh[8;19H[32m [8;29H [8;45H[37m4[7C[32m [7C [8;71H [9;7HH[9;35Ho[7C4[7C [25CE[10;7H[37m*[10;17H[32ms[10;35H[37mP[10;57H[32m6[19C[37m-[m[m [32m\\\r[1B [m[m [32m{[11;29HB[11;47H@[12;3H[37m8[12;29H8[12;41H[32m+[31Cy[13;13H [7C/[13;53Hb[13;63H [m[m [32m/[m[m [32mL[m[m [32m|[m[m [32my[m[m [37m&[m[m [32m [14;27H [14;51Hs[14;65H[37mo[m[m [32m [m[m [32mV[17;9H [17;39H\\[17;61Hj[m[m [32ml[18;27H9[m[m [32m [m[m [32m1[m[m [32mj[m[m [32m [m[m [32mt[m[m [37m;[18;49H[32mM[18;63H[37mN[19;13H[32mj[19;23H<[20;37H&[20;59HX[21;75HB[22;55HH[23;25H1[24;19H4[m[m [32m [m[m [32m [m[m [37mW[24;69H[32m [m[m [32mE[m[m"}
+    , { time: 100012, content: "[1;27H[32m$[1;37H [1;67H [2;11H [2;25H [m[m [32m [m[m [32m4[2;47Hw[2;57H [3;29H[37m![3;47H9[27C[32m [5;13HX[6;5Ha[m[m [32mv[m[m [32m [m[m [32m5[6;39H [7C [6;59H [7;5H[37mF[m[m [32m,[m[m [32m [m[m [37mf[m[m [32m [m[m [32mS[7C [7C [43Ch[8;45H4[29C[37m][9;19H[32m [9;29H [9;45H[37m+[7C[32m [7C [9;71H [10;7H*[10;35HP[7C.[7C [25C-[11;7H[37m5[11;17H[32m*[11;35H[37m6[11;57H[32m([19C[37mV[m[m [32mA\r[1B [m[m [32m8[12;29H8[12;47H3[13;3H[37mN[13;29Hc[13;41H[32ma[31C&[14;13H [7CP[14;53H>[14;63H [m[m [32mo[m[m [32m0[m[m [32mV[m[m [32m0[m[m [37mD[m[m [32m [15;27H [15;51HX[15;65H[37m;[m[m [32m [m[m [32m?[18;9H [18;39H;[18;61Hc[m[m [32mN[19;27HK[m[m [32m [m[m [32m([m[m [32mr[m[m [32m [m[m [32m{[m[m [37m][19;49H[32mp[19;63H[37ml[20;13H[32mM[20;23Hk[21;37H=[21;59Ha[22;75H,[23;55HN[24;25HW[m[m"}
+    , { time: 100054, content: "[1;41H[32m [1;55H [19C[37m([2;27H[32mW[2;37H [2;67H [3;11H [3;25H [m[m [32m [m[m [32m![3;47H9[3;57H [4;29H[37m/[4;47H0[27C[32m [6;13H`[7;5HF[m[m [32m,[m[m [32m [m[m [32mf[7;39H [7C [7;59H [8;5H[37m`[m[m [32m<[m[m [32m [m[m [37mS[m[m [32m [m[m [32mF[7C [7C [43C][9;45H+[29C[37mg[10;19H[32m [10;29H [10;45H[37m^[7C[32m [7C [10;71H [11;7H5[11;35H6[7CM[7C [25CV[12;7H[37mB[12;17H[32ms[12;35H[37m![12;57H[32m{[19C[37mT[m[m [32ms\r[1B [m[m [32mN[13;29Hc[13;47H9[14;3H[37m+[14;29Hm[14;41H[32mM[31CD[15;13H [7CD[15;53HW[15;63H [m[m [32m;[m[m [32mS[m[m [32m?[m[m [32mw[m[m [37m@[m[m [32m [16;27H [16;51H?[16;65H[37mk[m[m [32m [m[m [32m][19;9H [19;39H][19;61Hr[m[m [32ml[20;27HO[m[m [32m [m[m [32mb[m[m [32m`[m[m [32m [m[m [32m&[m[m [37m{[20;49H[32my[20;63H[37m<[21;13H[32m'[21;23H%[22;37HF[22;59Hc[23;75H][24;55H=[m[m"}
+    , { time: 100094, content: "[1;11H[37mo[m[m [32mM[m[m [32m [1;25H[37mL[7C[32m [1;61H[37mc[m[m [32m [m[m [32m [9C([2;41H [2;55H [19C[37m)[3;27H[32m`[3;37H [3;67H [4;11H [4;25H [m[m [32m [m[m [32m/[4;47H0[4;57H [5;29H[37m\\[5;47Hk[27C[32m [7;13HU[8;5H`[m[m [32m<[m[m [32m [m[m [32mS[8;39H [7C [8;59H [9;5H[37m6[m[m [32mH[m[m [32m [m[m [37mN[m[m [32m [m[m [32mj[7C [7C [43Cg[10;45H^[29C[37mA[11;19H[32m [11;29H [11;45H[37m:[7C[32m [7C [11;71H [12;7HB[12;35H![7C{[7C [25CT[13;7H[37mr[13;17H[32m/[13;35H[37md[13;57H[32mL[19C[37m\"[m[m [32m}\r[1B [m[m [32m+[14;29Hm[14;47H3[15;3H[37mJ[15;29HD[15;41H[32mA[31C@[16;13H [7C'[16;53HB[16;63H [m[m [32mk[m[m [32mM[m[m [32m][m[m [32m0[m[m [37mM[m[m [32m [17;27H [17;51H\\[17;65H[37mJ[m[m [32m [m[m [32mu[20;9H [20;39H{[20;61H\\[m[m [32m<[21;27Hy[m[m [32m [m[m [32mk[m[m [32m][m[m [32m [m[m [32m=[m[m [37mF[21;49H[32m.[21;63H[37m![22;13H[32mh[22;23He[23;37HI[23;59Hx[24;75H.[m[m"}
+    , { time: 100134, content: "[1;7H[32m [m[m [32m [m[m [32mo[m[m [32m [7C [m[m [32m [m[m [32mL[m[m [32m$[m[m [32my[m[m [37mO[1;53H[32mL[7Cc[1;71H[37mS[2;11Hx[m[m [32mN[m[m [32m [2;25H[37mK[7C[32m [2;61H[37mu[m[m [32m [m[m [32m [9C)[3;41H [3;55H [19C[37my[4;27H[32mI[4;37H [4;67H [5;11H [5;25H [m[m [32m [m[m [32m\\[5;47Hk[5;57H [6;29H[37mF[6;47HT[27C[32m [8;13H%[9;5H6[m[m [32mH[m[m [32m [m[m [32mN[9;39H [7C [9;59H [10;5H[37m^[m[m [32m*[m[m [32m [m[m [37m%[m[m [32m [m[m [32m>[7C [7C [43CA[11;45H:[29C[37mL[12;19H[32m [12;29H [12;45H[37mh[7C[32m [7C [12;71H [13;7Hr[13;35Hd[7C$[7C [25C\"[14;7H[37ma[14;17H[32mo[14;35H[37my[14;57H[32m![19C[37mH[m[m [32mA\r[1B [m[m [32mJ[15;29HD[15;47H#[16;3H[37mO[16;29HY[16;41H[32mG[31CM[17;13H [7C([17;53Ho[17;63H [m[m [32mJ[m[m [32m;[m[m [32mu[m[m [32mz[m[m [37mM[m[m [32m [18;27H [18;51H%[18;65H[37m>[m[m [32m [m[m [32m,[21;9H [21;39HF[21;61HG[m[m [32m![22;27Hr[m[m [32m [m[m [32mW[m[m [32mR[m[m [32m [m[m [32mF[m[m [37mG[22;49H[32me[22;63H[37mf[23;13H[32mu[23;23HI[24;37H{[24;59H;[m[m"}
+    , { time: 100176, content: "[1;3H[32m [1;31HO[1;69H [m[m [32mS[2;7H [m[m [32m [m[m [32mx[m[m [32m [7C [m[m [32m [m[m [32mK[m[m [32mW[m[m [32m4[m[m [37m5[2;53H[32mc[7Cu[2;71H[37mx[3;11HF[m[m [32m}[m[m [32m [3;25H[37ma[7C[32m [3;61H[37m&[m[m [32m [m[m [32m [9Cy[4;41H [4;55H [19C[37mW[5;27H[32m7[5;37H [5;67H [6;11H [6;25H [m[m [32m [m[m [32mF[6;47HT[6;57H [7;29H[37my[7;47Hf[27C[32m [9;13Hm[10;5H^[m[m [32m*[m[m [32m [m[m [32m%[10;39H [7C [10;59H [11;5H[37mI[m[m [32m5[m[m [32m [m[m [37mK[m[m [32m [m[m [32m,[7C [7C [43CL[12;45Hh[29C[37m0[13;19H[32m [13;29H [13;45H[37mP[7C[32m [7C [13;71H [14;7Ha[14;35Hy[7C@[7C [25CH[15;7H[37m+[15;17H[32m7[15;35H[37mI[15;57H[32mX[19C[37mV[m[m [32mF\r[1B [m[m [32mO[16;29HY[16;47Hh[17;3H[37mr[17;29H.[17;41H[32mj[31CM[18;13H [7CE[18;53HO[18;63H [m[m [32m>[m[m [32mi[m[m [32m,[m[m [32m$[m[m [37m4[m[m [32m [19;27H [19;51H3[19;65H[37m.[m[m [32m [m[m [32mN[22;9H [22;39HG[22;61HC[m[m [32mf[23;27Hl[m[m [32m [m[m [32m&[m[m [32m_[m[m [32m [m[m [32mI[m[m [37mM[23;49H[32m%[23;63H[37m#[24;13H[32mK[24;23Hn[m[m"}
+    , { time: 100217, content: "[1;23H[37mJ[m[m [32mL[m[m [32m [1;39H4[1;51H[37mo[7C[32m+[2;3H [2;31H5[2;69H [m[m [32mx[3;7H [m[m [32m [m[m [32mF[m[m [32m [7C [m[m [32m [m[m [32ma[m[m [32m`[m[m [32m![m[m [37m3[3;53H[32m`[7C&[3;71H[37mW[4;11Hi[m[m [32m=[m[m [32m [4;25H[37mF[7C[32m [4;61H[37m>[m[m [32m [m[m [32m [9CW[5;41H [5;55H [19C[37mn[6;27H[32m0[6;37H [6;67H [7;11H [7;25H [m[m [32m [m[m [32my[7;47Hf[7;57H [8;29H[37mt[8;47H6[27C[32m [10;13HG[11;5HI[m[m [32m5[m[m [32m [m[m [32mK[11;39H [7C [11;59H [12;5H[37ml[m[m [32mB[m[m [32m [m[m [37mw[m[m [32m [m[m [32mK[7C [7C [43C0[13;45HP[29C[37mj[14;19H[32m [14;29H [14;45H[37m3[7C[32m [7C [14;71H [15;7H+[15;35HI[7Ci[7C [25CV[16;7H[37m4[16;17H[32mC[16;35H[37mh[16;57H[32m$[19C[37m>[m[m [32m5\r[1B [m[m [32mr[17;29H.[17;47HX[18;3H[37mp[18;29Hh[18;41H[32mF[31C4[19;13H [7Cq[19;53HR[19;63H [m[m [32m.[m[m [32m;[m[m [32mN[m[m [32mr[m[m [37mQ[m[m [32m [20;27H [20;51H^[20;65H[37mW[m[m [32m [m[m [32mX[23;9H [23;39HM[23;61HS[m[m [32m#[24;27H.[m[m [32m [m[m [32mE[m[m [32m:[m[m [32m [m[m [32m{[m[m [37mm[24;49H[32mD[24;63H[37m<[m[m"}
+    , { time: 100258, content: "[1;23H[32mJ[m[m [32m [1;49H [m[m [32mo[2;23H[37mK[m[m [32mK[m[m [32m [2;39Hc[2;51H[37mW[7C[32m`[3;3H [3;31H3[3;69H [m[m [32mW[4;7H [m[m [32m [m[m [32mi[m[m [32m [7C [m[m [32m [m[m [32mF[m[m [32mI[m[m [32m/[m[m [37m4[4;53H[32mq[7C>[4;71H[37m@[5;11H-[m[m [32mX[m[m [32m [5;25H[37m<[7C[32m [5;61H[37my[m[m [32m [m[m [32m [9Cn[6;41H [6;55H [19C[37mv[7;27H[32mW[7;37H [7;67H [8;11H [8;25H [m[m [32m [m[m [32mt[8;47H6[8;57H [9;29H[37mz[9;47HO[27C[32m [11;13HK[12;5Hl[m[m [32mB[m[m [32m [m[m [32mw[12;39H [7C [12;59H [13;5H[37mP[m[m [32mr[m[m [32m [m[m [37mq[m[m [32m [m[m [32mZ[7C [7C [43Cj[14;45H3[29C[37mi[15;19H[32m [15;29H [15;45H[37m#[7C[32m [7C [15;71H [16;7H4[16;35Hh[7C![7C [25C>[17;7H[37mJ[17;17H[32m^[17;35H[37mv[17;57H[32m;[19C[37m5[m[m [32mT\r[1B [m[m [32mp[18;29Hh[18;47H:[19;3H[37mU[19;29H=[19;41H[32m|[31CQ[20;13H [7Cv[20;53H0[20;63H [m[m [32mW[m[m [32mO[m[m [32mX[m[m [32mu[m[m [37m[[m[m [32m [21;27H [21;51Hh[21;65H[37mt[m[m [32m [m[m [32m&[24;9H [24;39Hm[24;61HV[m[m [32m<[m[m"}
+    , { time: 100299, content: "[1;3H[37mZ[1;67Hd[m[m [32m [m[m [32mS[m[m [32m [2;23HK[m[m [32m [2;49H [m[m [32mW[3;23H[37mI[m[m [32ma[m[m [32m [3;39HM[3;51H[37mF[7C[32mN[4;3H [4;31H4[4;69H [m[m [32m@[5;7H [m[m [32m [m[m [32m-[m[m [32m [7C [m[m [32m [m[m [32m<[m[m [32m7[m[m [32m\\[m[m [37m>[5;53H[32mn[7Cy[5;71H[37mU[6;11Ho[m[m [32m`[m[m [32m [6;25H[37m][7C[32m [6;61H[37mi[m[m [32m [m[m [32m [9Cv[7;41H [7;55H [19C[37mv[8;27H[32m^[8;37H [8;67H [9;11H [9;25H [m[m [32m [m[m [32mz[9;47HO[9;57H [10;29H[37mX[10;47HQ[27C[32m [12;13HS[13;5HP[m[m [32mr[m[m [32m [m[m [32mq[13;39H [7C [13;59H [14;5H[37mJ[m[m [32ma[m[m [32m [m[m [37mF[m[m [32m [m[m [32mo[7C [7C [43Ci[15;45H#[29C[37m{[16;19H[32m [16;29H [16;45H[37mP[7C[32m [7C [16;71H [17;7HJ[17;35Hv[7C![7C [25C5[18;7H[37mR[18;17H[32ms[18;35H[37mR[18;57H[32m{[19C[37mT[m[m [32mV\r[1B [m[m [32mU[19;29H=[19;47HY[20;3H[37m,[20;29Hu[20;41H[32m4[31C[[21;13H [7Cj[21;53Hz[21;63H [m[m [32mt[m[m [32m%[m[m [32m&[m[m [32mk[m[m [37mu[m[m [32m [22;27H [22;51H<[22;65H[37m3[m[m [32m [m[m [32m-[m[m"}
+    , { time: 100340, content: "[H[32mu[m[m [32mZ[m[m [32m [m[m [32m [m[m [37mf[1;45H[32m [1;67Hd[2;3H[37m%[2;67HZ[m[m [32m [m[m [32mx[m[m [32m [3;23HI[m[m [32m [3;49H [m[m [32mF[4;23H[37m[[m[m [32mF[m[m [32m [4;39Ha[4;51H[37m+[7C[32mm[5;3H [5;31H>[5;69H [m[m [32mU[6;7H [m[m [32m [m[m [32mo[m[m [32m [7C [m[m [32m [m[m [32m][m[m [32m0[m[m [32mF[m[m [37m_[6;53H[32mG[7Ci[6;71H[37mB[7;11Hl[m[m [32mU[m[m [32m [7;25H[37m_[7C[32m [7;61H[37mc[m[m [32m [m[m [32m [9Cv[8;41H [8;55H [19C[37mB[9;27H[32m-[9;37H [9;67H [10;11H [10;25H [m[m [32m [m[m [32mX[10;47HQ[10;57H [11;29H[37m][11;47H1[27C[32m [13;13HR[14;5HJ[m[m [32ma[m[m [32m [m[m [32mF[14;39H [7C [14;59H [15;5H[37mG[m[m [32m+[m[m [32m [m[m [37my[m[m [32m [m[m [32m}[7C [7C [43C{[16;45HP[29C[37mq[17;19H[32m [17;29H [17;45H[37m8[7C[32m [7C [17;71H [18;7HR[18;35HR[7C([7C [25CT[19;7H[37mV[19;17H[32m&[19;35H[37mR[19;57H[32m;[19C[37m>[m[m [32mE\r[1B [m[m [32m,[20;29Hu[20;47HR[21;3H[37m&[21;29Hi[21;41H[32m][31Cu[22;13H [7CG[22;53H0[22;63H [m[m [32m3[m[m [32mR[m[m [32m-[m[m [32mR[m[m [37m?[m[m [32m [23;27H [23;51H8[23;65H[37mx[m[m [32m [m[m [32mG[m[m"}
+    , { time: 100381, content: "[1;9H[32mf[1;19H&[1;43H \r[1B:[m[m [32m%[m[m [32m [m[m [32m [m[m [37ml[2;45H[32m [2;67HZ[3;3H[37mv[3;67HA[m[m [32m [m[m [32mW[m[m [32m [4;23H[[m[m [32m [4;49H [m[m [32m+[5;23H[37mz[m[m [32m<[m[m [32m [5;39H\\[5;51H[37mC[7C[32m;[6;3H [6;31H_[6;69H [m[m [32mB[7;7H [m[m [32m [m[m [32ml[m[m [32m [7C [m[m [32m [m[m [32m_[m[m [32mW[m[m [32my[m[m [37mO[7;53H[32me[7Cc[7;71H[37mP[8;11H$[m[m [32m%[m[m [32m [8;25H[37m@[7C[32m [8;61H[37m3[m[m [32m [m[m [32m [9CB[9;41H [9;55H [19C[37ml[10;27H[32ms[10;37H [10;67H [11;11H [11;25H [m[m [32m [m[m [32m][11;47H1[11;57H [12;29H[37m_[12;47Hb[27C[32m [14;13HN[15;5HG[m[m [32m+[m[m [32m [m[m [32my[15;39H [7C [15;59H [16;5H[37mD[m[m [32m4[m[m [32m [m[m [37m([m[m [32m [m[m [32m^[7C [7C [43Cq[17;45H8[29C[37m/[18;19H[32m [18;29H [18;45H[37m|[7C[32m [7C [18;71H [19;7HV[19;35HR[7CR[7C [25C>[20;7H[37mT[20;17H[32m0[20;35H[37m4[20;57H[32m>[19C[37m5[m[m [32mq\r[1B [m[m [32m&[21;29Hi[21;47Hm[22;3H[37m$[22;29H8[22;41H[32mo[31C?[23;13H [7C)[23;53HE[23;63H [m[m [32mx[m[m [32m`[m[m [32mG[m[m [32m{[m[m [37mE[m[m [32m [24;27H [24;51Hz[24;65H[37mA[m[m [32m [m[m [32m![m[m"}
+    , { time: 100423, content: "[2;9H[32ml[2;19H#[2;43H \r[1B5[m[m [32mv[m[m [32m [m[m [32m [m[m [37mI[3;45H[32m [3;67HA[4;3H[37m1[4;67HE[m[m [32m [m[m [32m@[m[m [32m [5;23Hz[m[m [32m [5;49H [m[m [32mC[6;23H[37m@[m[m [32m][m[m [32m [6;39Hz[6;51H[37m\"[7C[32mA[7;3H [7;31HO[7;69H [m[m [32mP[8;7H [m[m [32m [m[m [32m$[m[m [32m [7C [m[m [32m [m[m [32m@[m[m [32m^[m[m [32mt[m[m [37mB[8;53H[32mP[7C3[8;71H[37m[[9;11HW[m[m [32mm[m[m [32m [9;25H[37mF[7C[32m [9;61H[37mS[m[m [32m [m[m [32m [9Cl[10;41H [10;55H [19C[37mv[11;27H[32m'[11;37H [11;67H [12;11H [12;25H [m[m [32m [m[m [32m_[12;47Hb[12;57H [13;29H[37m'[13;47Ha[27C[32m [15;13H%[16;5HD[m[m [32m4[m[m [32m [m[m [32m([16;39H [7C [16;59H [17;5H[37m+[m[m [32mJ[m[m [32m [m[m [37m\"[m[m [32m [m[m [32mH[7C [7C [43C/[18;45H|[29C[37m4[19;19H[32m [19;29H [19;45H[37m[[7C[32m [7C [19;71H [20;7HT[20;35H4[7C`[7C [25C5[21;7H[37mn[21;17H[32mQ[21;35H[37m@[21;57H[32m6[19C[37m4[m[m [32mz\r[1B [m[m [32m$[22;29H8[22;47H0[23;3H[37m1[23;29Hj[23;41H[32mc[31CE[24;13H [7C+[24;53H>[24;63H [m[m [32mA[m[m [32mP[m[m [32m![m[m [32mE[m[m [37m5[m[m [32m [m[m"}
+    , { time: 100464, content: "[1;49H[32mb[1;63H[37m2[11C[32m [3;9HI[3;19H+[3;43H \r[1BZ[m[m [32m1[m[m [32m [m[m [32m [m[m [37mE[4;45H[32m [4;67HE[5;3H[37md[5;67H&[m[m [32m [m[m [32mU[m[m [32m [6;23H@[m[m [32m [6;49H [m[m [32m\"[7;23H[37ml[m[m [32m_[m[m [32m [7;39HR[7;51H[37mb[7C[32ma[8;3H [8;31HB[8;69H [m[m [32m[[9;7H [m[m [32m [m[m [32mW[m[m [32m [7C [m[m [32m [m[m [32mF[m[m [32m-[m[m [32mz[m[m [37me[9;53H[32mL[7CS[9;71H[37mw[10;11Hh[m[m [32mG[m[m [32m [10;25H[37m'[7C[32m [10;61H[37m2[m[m [32m [m[m [32m [9Cv[11;41H [11;55H [19C[37m:[12;27H[32mc[12;37H [12;67H [13;11H [13;25H [m[m [32m [m[m [32m'[13;47Ha[13;57H [14;29H[37mP[14;47H=[27C[32m [16;13H/[17;5H+[m[m [32mJ[m[m [32m [m[m [32m\"[17;39H [7C [17;59H [18;5H[37md[m[m [32mR[m[m [32m [m[m [37m*[m[m [32m [m[m [32m,[7C [7C [43C4[19;45H[[29C[37mq[20;19H[32m [20;29H [20;45H[37m%[7C[32m [7C [20;71H [21;7Hn[21;35H@[7C>[7C [25C4[22;7H[37m&[22;17H[32mG[22;35H[37m}[22;57H[32mH[19C[37m![m[m [32m}\r[1B [m[m [32m1[23;29Hj[23;47Hm[24;3H[37m}[24;29H6[24;41H[32mx[31C5[m[m"}
+    , { time: 100505, content: "[1;17H[32m [1;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [1;57HG[m[m [32m+[m[m [32m [m[m [32m2[m[m [37m.[2;49H[32mq[2;63H[37m][11C[32m [4;9HE[4;19HJ[4;43H \r[1BA[m[m [32md[m[m [32m [m[m [32m [m[m [37me[5;45H[32m [5;67H&[6;3H[37m6[6;67H3[m[m [32m [m[m [32mB[m[m [32m [7;23Hl[m[m [32m [7;49H [m[m [32mb[8;23H[37mH[m[m [32m@[m[m [32m [8;39HR[8;51H[37mN[7C[32m)[9;3H [9;31He[9;69H [m[m [32mw[10;7H [m[m [32m [m[m [32mh[m[m [32m [7C [m[m [32m [m[m [32m'[m[m [32ms[m[m [32mX[m[m [37mp[10;53H[32mc[7C2[10;71H[37mI[11;11H\\[m[m [32mK[m[m [32m [11;25H[37m/[7C[32m [11;61H[37m][m[m [32m [m[m [32m [9C:[12;41H [12;55H [19C[37mU[13;27H[32m=[13;37H [13;67H [14;11H [14;25H [m[m [32m [m[m [32mP[14;47H=[14;57H [15;29H[37m-[15;47H{[27C[32m [17;13Hi[18;5Hd[m[m [32mR[m[m [32m [m[m [32m*[18;39H [7C [18;59H [19;5H[37mb[m[m [32mV[m[m [32m [m[m [37m\\[m[m [32m [m[m [32mw[7C [7C [43Cq[20;45H%[29C[37mZ[21;19H[32m [21;29H [21;45H[37mx[7C[32m [7C [21;71H [22;7H&[22;35H}[7CQ[7C [25C![23;7H[37m>[23;17H[32mI[23;35H[37mh[23;57H[32my[19C[37mW[m[m [32mq\r[1B [m[m [32m}[24;29H6[24;47HT[m[m"}
+    , { time: 100546, content: "[1;25H[32m&[1;51H [7C [m[m [32m [m[m [32m2[m[m [32m.[2;17H [2;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [2;57HL[m[m [32m`[m[m [32m [m[m [32m][m[m [37me[3;49H[32mu[3;63H[37m\\[11C[32m [5;9He[5;19H.[5;43H \r[1Bd[m[m [32m6[m[m [32m [m[m [32m [m[m [37mu[6;45H[32m [6;67H3[7;3H[37mG[7;67Hf[m[m [32m [m[m [32mP[m[m [32m [8;23HH[m[m [32m [8;49H [m[m [32mN[9;23H[37m<[m[m [32mF[m[m [32m [9;39H|[9;51H[37m2[7C[32mO[10;3H [10;31Hp[10;69H [m[m [32mI[11;7H [m[m [32m [m[m [32m\\[m[m [32m [7C [m[m [32m [m[m [32m/[m[m [32m'[m[m [32m][m[m [37mN[11;53H[32mh[7C][11;71H[37m0[12;11HT[m[m [32mS[m[m [32m [12;25H[37m*[7C[32m [12;61H[37mq[m[m [32m [m[m [32m [9CU[13;41H [13;55H [19C[37mx[14;27H[32m.[14;37H [14;67H [15;11H [15;25H [m[m [32m [m[m [32m-[15;47H{[15;57H [16;29H[37mc[16;47H1[27C[32m [18;13HI[19;5Hb[m[m [32mV[m[m [32m [m[m [32m\\[19;39H [7C [19;59H [20;5H[37mZ[m[m [32mT[m[m [32m [m[m [37m4[m[m [32m [m[m [32mE[7C [7C [43CZ[21;45Hx[29C[37m2[22;19H[32m [22;29H [22;45H[37mZ[7C[32m [7C [22;71H [23;7H>[23;35Hh[7CL[7C [25CW[24;7H[37m9[24;17H[32ma[24;35H[37mO[24;57H[32m#[19C[37mU[m[m [32m[[m[m"}
+    , { time: 100587, content: "[1;5H[37mM[1;15H[32mg[61C [m[m [32m [2;25H][2;51H [7C [m[m [32m [m[m [32m][m[m [32me[3;17H [3;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [3;57Hm[m[m [32mN[m[m [32m [m[m [32m\\[m[m [37md[4;49H[32m}[4;63H[37m^[11C[32m [6;9Hu[6;19H&[6;43H \r[1B=[m[m [32mG[m[m [32m [m[m [32m [m[m [37mB[7;45H[32m [7;67Hf[8;3H[37mn[8;67H.[m[m [32m [m[m [32m[[m[m [32m [9;23H<[m[m [32m [9;49H [m[m [32m2[10;23H[37m4[m[m [32m'[m[m [32m [10;39Hj[10;51H[37mk[7C[32mP[11;3H [11;31HN[11;69H [m[m [32m0[12;7H [m[m [32m [m[m [32mT[m[m [32m [7C [m[m [32m [m[m [32m*[m[m [32mc[m[m [32m_[m[m [37m;[12;53H[32m9[7Cq[12;71H[37mV[13;11H2[m[m [32mR[m[m [32m [13;25H[37mT[7C[32m [13;61H[37m_[m[m [32m [m[m [32m [9Cx[14;41H [14;55H [19C[37m'[15;27H[32m'[15;37H [15;67H [16;11H [16;25H [m[m [32m [m[m [32mc[16;47H1[16;57H [17;29H[37m;[17;47H{[27C[32m [19;13Ho[20;5HZ[m[m [32mT[m[m [32m [m[m [32m4[20;39H [7C [20;59H [21;5H[37mx[m[m [32mn[m[m [32m [m[m [37mG[m[m [32m [m[m [32mZ[7C [7C [43C2[22;45HZ[29C[37m=[23;19H[32m [23;29H [23;45H[37m3[7C[32m [7C [23;71H [24;7H9[24;35HO[7CI[7C [25CU[m[m"}
+    , { time: 100628, content: "[H[32m [m[m [32mZ[m[m [32mM[7C[37m?[m[m [32mg[m[m [32m [m[m [32m [1;29H [1;47H [7Cd[2;5H[37mJ[2;15H[32mo[61C [m[m [32m [3;25Hh[3;51H [7C [m[m [32m [m[m [32m\\[m[m [32md[4;17H [4;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [4;57H?[m[m [32mm[m[m [32m [m[m [32m^[m[m [37m_[5;49H[32mc[5;63H[37m%[11C[32m [7;9HB[7;19HZ[7;43H \r[1B|[m[m [32mn[m[m [32m [m[m [32m [m[m [37m>[8;45H[32m [8;67H.[9;3H[37ms[9;67H|[m[m [32m [m[m [32mw[m[m [32m [10;23H4[m[m [32m [10;49H [m[m [32mk[11;23H[37m:[m[m [32m/[m[m [32m [11;39H&[11;51H[37mk[7C[32m)[12;3H [12;31H;[12;69H [m[m [32mV[13;7H [m[m [32m [m[m [32m2[m[m [32m [7C [m[m [32m [m[m [32mT[m[m [32m=[m[m [32m'[m[m [37mm[13;53H[32mX[7C_[13;71H[37mk[14;11He[m[m [32mN[m[m [32m [14;25H[37mU[7C[32m [14;61H[37m%[m[m [32m [m[m [32m [9C'[15;41H [15;55H [19C[37mH[16;27H[32m9[16;37H [16;67H [17;11H [17;25H [m[m [32m [m[m [32m;[17;47H{[17;57H [18;29H[37mV[18;47HM[27C[32m [20;13Hm[21;5Hx[m[m [32mn[m[m [32m [m[m [32mG[21;39H [7C [21;59H [22;5H[37mo[m[m [32m&[m[m [32m [m[m [37mX[m[m [32m [m[m [32mX[7C [7C [43C=[23;45H3[29C[37mS[24;19H[32m [24;29H [24;45H[37m([7C[32m [7C [24;71H [m[m"}
+    , { time: 100669, content: "[1;13H[32m?\r[1B [m[m [32m%[m[m [32mJ[7C[37mF[m[m [32mo[m[m [32m [m[m [32m [2;29H [2;47H [7C7[3;5H[37mD[3;15H[32m$[61C [m[m [32m [4;25H`[4;51H [7C [m[m [32m [m[m [32m^[m[m [32m_[5;17H [5;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [5;57HK[m[m [32m;[m[m [32m [m[m [32m%[m[m [37m9[6;49H[32m/[6;63H[37mI[11C[32m [8;9H>[8;19Hz[8;43H \r[1B*[m[m [32ms[m[m [32m [m[m [32m [m[m [37mo[9;45H[32m [9;67H|[10;3H[37m8[10;67H>[m[m [32m [m[m [32mI[m[m [32m [11;23H:[m[m [32m [11;49H [m[m [32mk[12;23H[37m)[m[m [32m*[m[m [32m [12;39Hc[12;51H[37mI[7C[32mL[13;3H [13;31Hm[13;69H [m[m [32mk[14;7H [m[m [32m [m[m [32me[m[m [32m [7C [m[m [32m [m[m [32mU[m[m [32m.[m[m [32mP[m[m [37mv[14;53H[32mJ[7C%[14;71H[37my[15;11H^[m[m [32m%[m[m [32m [15;25H[37m][7C[32m [15;61H[37ms[m[m [32m [m[m [32m [9CH[16;41H [16;55H [19C[37mB[17;27H[32ms[17;37H [17;67H [18;11H [18;25H [m[m [32m [m[m [32mV[18;47HM[18;57H [19;29H[37m8[19;47H-[27C[32m [21;13Ht[22;5Ho[m[m [32m&[m[m [32m [m[m [32mX[22;39H [7C [22;59H [23;5H[37ma[m[m [32m>[m[m [32m [m[m [37mL[m[m [32m [m[m [32m4[7C [7C [43CS[24;45H([29C[37mS[m[m"}
+    , { time: 100711, content: "[1;17H[37m?[1;27HW[1;47H[32mh[m[m [32m [2;13HF\r[1B [m[m [32mv[m[m [32mD[7C[37mN[m[m [32m$[m[m [32m [m[m [32m [3;29H [3;47H [7CK[4;5H[37mD[4;15H[32mk[61C [m[m [32m [5;25HM[5;51H [7C [m[m [32m [m[m [32m%[m[m [32m9[6;17H [6;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [6;57HJ[m[m [32mA[m[m [32m [m[m [32mI[m[m [37me[7;49H[32m{[7;63H[37m%[11C[32m [9;9Ho[9;19H.[9;43H \r[1B@[m[m [32m8[m[m [32m [m[m [32m [m[m [37mM[10;45H[32m [10;67H>[11;3H[37m$[11;67HK[m[m [32m [m[m [32m0[m[m [32m [12;23H)[m[m [32m [12;49H [m[m [32mI[13;23H[37m|[m[m [32mT[m[m [32m [13;39HF[13;51H[37mP[7C[32m=[14;3H [14;31Hv[14;69H [m[m [32my[15;7H [m[m [32m [m[m [32m^[m[m [32m [7C [m[m [32m [m[m [32m][m[m [32m'[m[m [32m-[m[m [37mr[15;53H[32mR[7Cs[15;71H[37mt[16;11Hg[m[m [32m/[m[m [32m [16;25H[37mW[7C[32m [16;61H[37m#[m[m [32m [m[m [32m [9CB[17;41H [17;55H [19C[37m%[18;27H[32mK[18;37H [18;67H [19;11H [19;25H [m[m [32m [m[m [32m8[19;47H-[19;57H [20;29H[37m,[20;47H`[27C[32m [22;13Hz[23;5Ha[m[m [32m>[m[m [32m [m[m [32mL[23;39H [7C [23;59H [24;5H[37m{[m[m [32m9[m[m [32m [m[m [37mq[m[m [32m [m[m [32mV[7C [7C [43CS[m[m"}
+    , { time: 100750, content: "[1;11H[32m [m[m [32m?[m[m [32mg[m[m [32m?[1;27HW[1;41H[37m[[1;57H[32m [m[m [32m [m[m [32m [m[m [32m [2;17H[37mj[2;27He[2;47H[32mc[m[m [32m [3;13HN\r[1B [m[m [32m1[m[m [32mD[7C[37m5[m[m [32mk[m[m [32m [m[m [32m [4;29H [4;47H [7C*[5;5H[37mQ[5;15H[32m.[61C [m[m [32m [6;25H\\[6;51H [7C [m[m [32m [m[m [32mI[m[m [32me[7;17H [7;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [7;57H][m[m [32ma[m[m [32m [m[m [32m%[m[m [37mO[8;49H[32m][8;63H[37mO[11C[32m [10;9HM[10;19H[[10;43H \r[1BY[m[m [32m$[m[m [32m [m[m [32m [m[m [37m0[11;45H[32m [11;67HK[12;3H[37mr[12;67Ho[m[m [32m [m[m [32mV[m[m [32m [13;23H|[m[m [32m [13;49H [m[m [32mP[14;23H[37m:[m[m [32mU[m[m [32m [14;39Hi[14;51H[37mg[7C[32m|[15;3H [15;31Hr[15;69H [m[m [32mt[16;7H [m[m [32m [m[m [32mg[m[m [32m [7C [m[m [32m [m[m [32mW[m[m [32m9[m[m [32mc[m[m [37m6[16;53H[32mx[7C#[16;71H[37mi[17;11H;[m[m [32mi[m[m [32m [17;25H[37m\"[7C[32m [17;61H[37m`[m[m [32m [m[m [32m [9C%[18;41H [18;55H [19C[37mb[19;27H[32m$[19;37H [19;67H [20;11H [20;25H [m[m [32m [m[m [32m,[20;47H`[20;57H [21;29H[37md[21;47H5[27C[32m [23;13H3[24;5H{[m[m [32m9[m[m [32m [m[m [32mq[24;39H [7C [24;59H [m[m"}
+    , { time: 100792, content: "[1;3H[32m [1;29H[37mT[1;41H[32m[[2;11H [m[m [32mF[m[m [32mo[m[m [32mj[2;27He[2;41H[37m5[2;57H[32m [m[m [32m [m[m [32m [m[m [32m [3;17H[37m+[3;27H=[3;47H[32mm[m[m [32m [4;13H5\r[1B [m[m [32md[m[m [32mQ[7C[37m*[m[m [32m.[m[m [32m [m[m [32m [5;29H [5;47H [7CO[6;5H[37mL[6;15H[32mu[61C [m[m [32m [7;25Hr[7;51H [7C [m[m [32m [m[m [32m%[m[m [32mO[8;17H [8;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [8;57H![m[m [32m)[m[m [32m [m[m [32mO[m[m [37mj[9;49H[32md[9;63H[37mL[11C[32m [11;9H0[11;19HE[11;43H \r[1B#[m[m [32mr[m[m [32m [m[m [32m [m[m [37m][12;45H[32m [12;67Ho[13;3H[37mw[13;67HV[m[m [32m [m[m [32mk[m[m [32m [14;23H:[m[m [32m [14;49H [m[m [32mg[15;23H[37m+[m[m [32m][m[m [32m [15;39H[[15;51H[37m=[7C[32m/[16;3H [16;31H6[16;69H [m[m [32mi[17;7H [m[m [32m [m[m [32m;[m[m [32m [7C [m[m [32m [m[m [32m\"[m[m [32ms[m[m [32m;[m[m [37mo[17;53H[32m-[7C`[17;71H[37mS[18;11H1[m[m [32mI[m[m [32m [18;25H[37mi[7C[32m [18;61H[37mF[m[m [32m [m[m [32m [9Cb[19;41H [19;55H [19C[37mH[20;27H[32m-[20;37H [20;67H [21;11H [21;25H [m[m [32m [m[m [32md[21;47H5[21;57H [22;29H[37mX[22;47H>[27C[32m [24;13H^[m[m"}
+    , { time: 100833, content: "[1;29H[32mT[7C?[1;61H[37m|[2;3H[32m [2;29H[37mz[2;41H[32m5[3;11H [m[m [32mN[m[m [32m$[m[m [32m+[3;27H=[3;41H[37m#[3;57H[32m [m[m [32m [m[m [32m [m[m [32m [4;17H[37m\\[4;27H<[4;47H[32mN[m[m [32m [5;13H*\r[1B [m[m [32m6[m[m [32mL[7C[37mU[m[m [32mu[m[m [32m [m[m [32m [6;29H [6;47H [7C![7;5H[37mj[7;15H[32mq[61C [m[m [32m [8;25HL[8;51H [7C [m[m [32m [m[m [32mO[m[m [32mj[9;17H [9;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [9;57H_[m[m [32mO[m[m [32m [m[m [32mL[m[m [37m5[10;49H[32mN[10;63H[37mh[11C[32m [12;9H][12;19H6[12;43H \r[1BM[m[m [32mw[m[m [32m [m[m [32m [m[m [37mW[13;45H[32m [13;67HV[14;3H[37m^[14;67H'[m[m [32m [m[m [32my[m[m [32m [15;23H+[m[m [32m [15;49H [m[m [32m=[16;23H[37mh[m[m [32mW[m[m [32m [16;39HK[16;51H[37m8[7C[32mt[17;3H [17;31Ho[17;69H [m[m [32mS[18;7H [m[m [32m [m[m [32m1[m[m [32m [7C [m[m [32m [m[m [32mi[m[m [32mK[m[m [32mV[m[m [37m9[18;53H[32mI[7CF[18;71H[37m6[19;11HP[m[m [32mo[m[m [32m [19;25H[37m,[7C[32m [19;61H[37m?[m[m [32m [m[m [32m [9CH[20;41H [20;55H [19C[37m@[21;27H[32m&[21;37H [21;67H [22;11H [22;25H [m[m [32m [m[m [32mX[22;47H>[22;57H [23;29H[37mw[23;47Hq[27C[32m [m[m"}
+    , { time: 100873, content: "[1;11H[37m&[1;39H[32mf[1;59H[37mK[m[m [32m|[7C[37m2[m[m [32m [2;29Hz[7CU[2;61H[37m![3;3H[32m [3;29H[37m,[3;41H[32m#[4;11H [m[m [32m5[m[m [32mk[m[m [32m\\[4;27H<[4;41H[37m9[4;57H[32m [m[m [32m [m[m [32m [m[m [32m [5;17H[37m8[5;27HR[5;47H[32m&[m[m [32m [6;13HU\r[1B [m[m [32mG[m[m [32mj[7C[37mz[m[m [32mq[m[m [32m [m[m [32m [7;29H [7;47H [7C%[8;5H[37m:[8;15H[32m([61C [m[m [32m [9;25HM[9;51H [7C [m[m [32m [m[m [32mL[m[m [32m5[10;17H [10;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [10;57H?[m[m [32mP[m[m [32m [m[m [32mh[m[m [37mN[11;49H[32mQ[11;63H[37my[11C[32m [13;9HW[13;19Hk[13;43H \r[1BC[m[m [32m^[m[m [32m [m[m [32m [m[m [37m:[14;45H[32m [14;67H'[15;3H[37m9[15;67HN[m[m [32m [m[m [32mt[m[m [32m [16;23Hh[m[m [32m [16;49H [m[m [32m8[17;23H[37mS[m[m [32m\"[m[m [32m [17;39Hw[17;51H[37m@[7C[32mH[18;3H [18;31H9[18;69H [m[m [32m6[19;7H [m[m [32m [m[m [32mP[m[m [32m [7C [m[m [32m [m[m [32m,[m[m [32m$[m[m [32m8[m[m [37mV[19;53H[32mQ[7C?[19;71H[37m.[20;11Hj[m[m [32mm[m[m [32m [20;25H[37m6[7C[32m [20;61H[37m8[m[m [32m [m[m [32m [9C@[21;41H [21;55H [19C[37ms[22;27H[32m-[22;37H [22;67H [23;11H [23;25H [m[m [32m [m[m [32mw[23;47Hq[23;57H [24;29H[37m0[24;47H:[27C[32m [m[m"}
+    , { time: 100914, content: "[1;11H[32m&[1;33H[37mr[1;59H[32mK[1;69H2[2;11H[37mv[2;39H[32mG[2;59H[37m+[m[m [32m![7C[37mY[m[m [32m [3;29H,[7Cr[3;61H[37mi[4;3H[32m [4;29H[37mP[4;41H[32m9[5;11H [m[m [32m*[m[m [32m.[m[m [32m8[5;27HR[5;41H[37mN[5;57H[32m [m[m [32m [m[m [32m [m[m [32m [6;17H[37mb[6;27H_[6;47H[32m![m[m [32m [7;13Hz\r[1B [m[m [32mn[m[m [32m:[7C[37mQ[m[m [32m([m[m [32m [m[m [32m [8;29H [8;47H [7Cn[9;5H[37mx[9;15H[32m0[61C [m[m [32m [10;25Hd[10;51H [7C [m[m [32m [m[m [32mh[m[m [32mN[11;17H [11;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [11;57H@[m[m [32m)[m[m [32m [m[m [32my[m[m [37m=[12;49H[32my[12;63H[37mw[11C[32m [14;9H:[14;19Hn[14;43H \r[1Bc[m[m [32m9[m[m [32m [m[m [32m [m[m [37mL[15;45H[32m [15;67HN[16;3H[37m![16;67H0[m[m [32m [m[m [32mi[m[m [32m [17;23HS[m[m [32m [17;49H [m[m [32m@[18;23H[37ma[m[m [32mi[m[m [32m [18;39H?[18;51H[37m][7C[32mg[19;3H [19;31HV[19;69H [m[m [32m.[20;7H [m[m [32m [m[m [32mj[m[m [32m [7C [m[m [32m [m[m [32m6[m[m [32m-[m[m [32m,[m[m [37mH[20;53H[32m,[7C8[20;71H[37m+[21;11H1[m[m [32mt[m[m [32m [21;25H[37m.[7C[32m [21;61H[37m![m[m [32m [m[m [32m [9Cs[22;41H [22;55H [19C[37mp[23;27H[32m7[23;37H [23;67H [24;11H [24;25H [m[m [32m [m[m [32m0[24;47H:[24;57H [m[m"}
+    , { time: 100955, content: "[1;23H[32m [1;33Hr[m[m [32mB[1;45H4[7C [2;11Hv[2;33H[37m:[2;59H[32m+[2;69HY[3;11H[37me[3;39H[32mk[3;59H[37mF[m[m [32mi[7C[37m;[m[m [32m [4;29HP[7CE[4;61H[37m5[5;3H[32m [5;29H[37mX[5;41H[32mN[6;11H [m[m [32mU[m[m [32mu[m[m [32mb[6;27H_[6;41H[37m_[6;57H[32m [m[m [32m [m[m [32m [m[m [32m [7;17H[37m>[7;27Hp[7;47H[32m}[m[m [32m [8;13HQ\r[1B [m[m [32ms[m[m [32mx[7C[37m:[m[m [32m0[m[m [32m [m[m [32m [9;29H [9;47H [7C3[10;5H[37mP[10;15H[32m_[61C [m[m [32m [11;25H0[11;51H [7C [m[m [32m [m[m [32my[m[m [32m=[12;17H [12;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [12;57H#[m[m [32mL[m[m [32m [m[m [32mw[m[m [37ml[13;49H[32m;[13;63H[37m^[11C[32m [15;9HL[15;19H3[15;43H \r[1B?[m[m [32m![m[m [32m [m[m [32m [m[m [37mV[16;45H[32m [16;67H0[17;3H[37m8[17;67Hf[m[m [32m [m[m [32mS[m[m [32m [18;23Ha[m[m [32m [18;49H [m[m [32m][19;23H[37mQ[m[m [32m,[m[m [32m [19;39H:[19;51H[37mi[7C[32mN[20;3H [20;31HH[20;69H [m[m [32m+[21;7H [m[m [32m [m[m [32m1[m[m [32m [7C [m[m [32m [m[m [32m.[m[m [32m&[m[m [32md[m[m [37mk[21;53H[32me[7C![21;71H[37mF[22;11Hu[m[m [32mz[m[m [32m [22;25H[37mZ[7C[32m [22;61H[37mv[m[m [32m [m[m [32m [9Cp[23;41H [23;55H [19C[37mS[24;27H[32m][24;37H [24;67H [m[m"}
+    , { time: 100997, content: "[1;75H[32m/[2;23H [2;33H:[m[m [32mV[2;45H=[7C [3;11He[3;33H[37m_[3;59H[32mF[3;69H;[4;11H[37mt[4;39H[32mo[4;59H[37m|[m[m [32m5[7C[37mk[m[m [32m [5;29HX[7C\\[5;61H[37mh[6;3H[32m [6;29H[37mm[6;41H[32m_[7;11H [m[m [32mz[m[m [32mq[m[m [32m>[7;27Hp[7;41H[37m\"[7;57H[32m [m[m [32m [m[m [32m [m[m [32m [8;17H[37mg[8;27HD[8;47H[32mh[m[m [32m [9;13H:\r[1B [m[m [32m8[m[m [32mP[7C[37mQ[m[m [32m_[m[m [32m [m[m [32m [10;29H [10;47H [7C^[11;5H[37m/[11;15H[32m`[61C [m[m [32m [12;25HZ[12;51H [7C [m[m [32m [m[m [32mw[m[m [32ml[13;17H [13;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [13;57H6[m[m [32m=[m[m [32m [m[m [32m^[m[m [37mt[14;49H[32mv[14;63H[37m@[11C[32m [16;9HV[16;19H1[16;43H \r[1BS[m[m [32m8[m[m [32m [m[m [32m [m[m [37m/[17;45H[32m [17;67Hf[18;3H[37m*[18;67Hz[m[m [32m [m[m [32m6[m[m [32m [19;23HQ[m[m [32m [19;49H [m[m [32mi[20;23H[37mY[m[m [32m6[m[m [32m [20;39HV[20;51H[37mx[7C[32m4[21;3H [21;31Hk[21;69H [m[m [32mF[22;7H [m[m [32m [m[m [32mu[m[m [32m [7C [m[m [32m [m[m [32mZ[m[m [32m-[m[m [32mX[m[m [37mw[22;53H[32mW[7Cv[22;71H[37mE[23;11HN[m[m [32m3[m[m [32m [23;25H[37mx[7C[32m [23;61H[37m([m[m [32m [m[m [32m [9CS[24;41H [24;55H [19C[37mM[m[m"}
+    , { time: 101039, content: "[1;11H[32m [1;23HZ[1;71H1[2;75H?[3;23H [3;33H_[m[m [32mC[3;45H([7C [4;11Ht[4;33H[37m.[4;59H[32m|[4;69Hk[5;11H[37mQ[5;39H[32mS[5;59H[37my[m[m [32mh[7C[37mv[m[m [32m [6;29Hm[7Cv[6;61H[37m{[7;3H[32m [7;29H[37mI[7;41H[32m\"[8;11H [m[m [32mQ[m[m [32m([m[m [32mg[8;27HD[8;41H[37mK[8;57H[32m [m[m [32m [m[m [32m [m[m [32m [9;17H[37m%[9;27H8[9;47H[32m/[m[m [32m [10;13HQ\r[1B [m[m [32m$[m[m [32m/[7C[37m&[m[m [32m`[m[m [32m [m[m [32m [11;29H [11;47H [7CR[12;5H[37mE[12;15H[32m'[61C [m[m [32m [13;25HD[13;51H [7C [m[m [32m [m[m [32m^[m[m [32mt[14;17H [14;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [14;57Hy[m[m [32m|[m[m [32m [m[m [32m@[m[m [37m}[15;49H[32mW[15;63H[37m)[11C[32m [17;9H/[17;19HC[17;43H \r[1BV[m[m [32m*[m[m [32m [m[m [32m [m[m [37m7[18;45H[32m [18;67Hz[19;3H[37my[19;67HD[m[m [32m [m[m [32m.[m[m [32m [20;23HY[m[m [32m [20;49H [m[m [32mx[21;23H[37mP[m[m [32m.[m[m [32m [21;39Hz[21;51H[37mU[7C[32m#[22;3H [22;31Hw[22;69H [m[m [32mE[23;7H [m[m [32m [m[m [32mN[m[m [32m [7C [m[m [32m [m[m [32mx[m[m [32m7[m[m [32mw[m[m [37m+[23;53H[32me[7C([23;71H[37m_[24;11H#[m[m [32m^[m[m [32m [24;25H[37mk[7C[32m [24;61H[37m\"[m[m [32m [m[m [32m [9CM[m[m"}
+    , { time: 101080, content: "[1;67H[32m [9C[37m9[2;11H[32m [2;23H.[2;71HA[3;75HB[4;23H [4;33H.[m[m [32m4[4;45HX[7C [5;11HQ[5;33H[37m[[5;59H[32my[5;69Hv[6;11H[37mK[6;39H[32mY[6;59H[37mC[m[m [32m{[7C[37m<[m[m [32m [7;29HI[7Ct[7;61H[37mF[8;3H[32m [8;29H[37m9[8;41H[32mK[9;11H [m[m [32m:[m[m [32m0[m[m [32m%[9;27H8[9;41H[37m|[9;57H[32m [m[m [32m [m[m [32m [m[m [32m [10;17H[37mE[10;27H`[10;47H[32mV[m[m [32m [11;13H&\r[1B [m[m [32mr[m[m [32mE[7C[37m@[m[m [32m'[m[m [32m [m[m [32m [12;29H [12;47H [7C0[13;5H[37mJ[13;15H[32m'[61C [m[m [32m [14;25HC[14;51H [7C [m[m [32m [m[m [32m@[m[m [32m}[15;17H [15;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [15;57H([m[m [32m/[m[m [32m [m[m [32m)[m[m [37mv[16;49H[32mr[16;63H[37mh[11C[32m [18;9H7[18;19Hj[18;43H \r[1BF[m[m [32my[m[m [32m [m[m [32m [m[m [37mT[19;45H[32m [19;67HD[20;3H[37m([20;67Hm[m[m [32m [m[m [32m+[m[m [32m [21;23HP[m[m [32m [21;49H [m[m [32mU[22;23H[37mT[m[m [32mZ[m[m [32m [22;39H5[22;51H[37mR[7C[32mn[23;3H [23;31H+[23;69H [m[m [32m_[24;7H [m[m [32m [m[m [32m#[m[m [32m [7C [m[m [32m [m[m [32mk[m[m [32m][m[m [32m0[m[m [37mr[24;53H[32m5[7C\"[24;71H[37m/[m[m"}
+    , { time: 101121, content: "[H[32mc[m[m [32m [m[m [32mM[m[m [32mM[1;17H [1;35H [41C9[2;67H [9C[37m+[3;11H[32m [3;23Hl[3;71HZ[4;75H>[5;23H [5;33H[[m[m [32mJ[5;45H&[7C [6;11HK[6;33H[37mt[6;59H[32mC[6;69H<[7;11H[37m#[7;39H[32mj[7;59H[37m5[m[m [32mF[7C[37m([m[m [32m [8;29H9[7Cj[8;61H[37m1[9;3H[32m [9;29H[37m([9;41H[32m|[10;11H [m[m [32mQ[m[m [32m_[m[m [32mE[10;27H`[10;41H[37m&[10;57H[32m [m[m [32m [m[m [32m [m[m [32m [11;17H[37mq[11;27H+[11;47H[32m([m[m [32m [12;13H@\r[1B [m[m [32mw[m[m [32mJ[7C[37mR[m[m [32m'[m[m [32m [m[m [32m [13;29H [13;47H [7Cp[14;5H[37mw[14;15H[32m%[61C [m[m [32m [15;25He[15;51H [7C [m[m [32m [m[m [32m)[m[m [32mv[16;17H [16;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [16;57H9[m[m [32mt[m[m [32m [m[m [32mh[m[m [37m/[17;49H[32mT[17;63H[37m3[11C[32m [19;9HT[19;19Hv[19;43H \r[1B#[m[m [32m([m[m [32m [m[m [32m [m[m [37mb[20;45H[32m [20;67Hm[21;3H[37mD[21;67H\\[m[m [32m [m[m [32mF[m[m [32m [22;23HT[m[m [32m [22;49H [m[m [32mR[23;23H[37mg[m[m [32mx[m[m [32m [23;39Hw[23;51H[37m2[7C[32m6[24;3H [24;31Hr[24;69H [m[m [32m/[m[m"}
+    , { time: 101162, content: "[1;9H[32m [m[m [32m [m[m [32m [7CN[1;43HY[7CR\r[1B.[m[m [32m [m[m [32mJ[m[m [32m0[2;17H [2;35H [41C+[3;67H [9C[37mI[4;11H[32m [4;23H`[4;71Hb[5;75H{[6;23H [6;33Ht[m[m [32me[6;45Hk[7C [7;11H#[7;33H[37mr[7;59H[32m5[7;69H([8;11H[37mi[8;39H[32m'[8;59H[37mI[m[m [32m1[7C[37mU[m[m [32m [9;29H([7CO[9;61H[37mW[10;3H[32m [10;29H[37mA[10;41H[32m&[11;11H [m[m [32m&[m[m [32m`[m[m [32mq[11;27H+[11;41H[37m-[11;57H[32m [m[m [32m [m[m [32m [m[m [32m [12;17H[37m][12;27HR[12;47H[32m.[m[m [32m [13;13HR\r[1B [m[m [32m^[m[m [32mw[7C[37m:[m[m [32m%[m[m [32m [m[m [32m [14;29H [14;47H [7Ct[15;5H[37m$[15;15H[32me[61C [m[m [32m [16;25H^[16;51H [7C [m[m [32m [m[m [32mh[m[m [32m/[17;17H [17;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [17;57H#[m[m [32mH[m[m [32m [m[m [32m3[m[m [37m2[18;49H[32m][18;63H[37mu[11C[32m [20;9Hb[20;19Hb[20;43H \r[1BB[m[m [32mD[m[m [32m [m[m [32m [m[m [37m`[21;45H[32m [21;67H\\[22;3H[37my[22;67H][m[m [32m [m[m [32mE[m[m [32m [23;23Hg[m[m [32m [23;49H [m[m [32m2[24;23H[37m)[m[m [32mk[m[m [32m [24;39Hr[24;51H[37m#[7C[32mP[m[m"}
+    , { time: 101203, content: "[2;9H[32m [m[m [32m [m[m [32m [7Cx[2;43Hl[7CL\r[1BG[m[m [32m [m[m [32mD[m[m [32mW[3;17H [3;35H [41CI[4;67H [9C[37md[5;11H[32m [5;23H|[5;71Ho[6;75HN[7;23H [7;33Hr[m[m [32m7[7;45H<[7C [8;11Hi[8;33H[37mv[8;59H[32mI[8;69HU[9;11H[37mh[9;39H[32ml[9;59H[37m0[m[m [32mW[7C[37m.[m[m [32m [10;29HA[7CD[10;61H[37mJ[11;3H[32m [11;29H[37mD[11;41H[32m-[12;11H [m[m [32m@[m[m [32m'[m[m [32m][12;27HR[12;41H[37m:[12;57H[32m [m[m [32m [m[m [32m [m[m [32m [13;17H[37mB[13;27He[13;47H[32mn[m[m [32m [14;13H:\r[1B [m[m [32m9[m[m [32m$[7C[37m\"[m[m [32me[m[m [32m [m[m [32m [15;29H [15;47H [7CM[16;5H[37m;[16;15H[32mk[61C [m[m [32m [17;25He[17;51H [7C [m[m [32m [m[m [32m3[m[m [32m2[18;17H [18;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [18;57H:[m[m [32mg[m[m [32m [m[m [32mu[m[m [37mT[19;49H[32mc[19;63H[37m`[11C[32m [21;9H`[21;19Hj[21;43H \r[1BM[m[m [32my[m[m [32m [m[m [32m [m[m [37mW[22;45H[32m [22;67H][23;3H[37mM[23;67Ht[m[m [32m [m[m [32m_[m[m [32m [24;23H)[m[m [32m [24;49H [m[m [32m#[m[m"}
+    , { time: 101244, content: "[3;9H[32m [m[m [32m [m[m [32m [7CF[3;43HG[7C/\r[1BW[m[m [32m [m[m [32mD[m[m [32m;[4;17H [4;35H [41Cd[5;67H [9C[37mq[6;11H[32m [6;23H][6;71HO[7;75HS[8;23H [8;33Hv[m[m [32mO[8;45H[[7C [9;11Hh[9;33H[37m#[9;59H[32m0[9;69H.[10;11H[37mv[10;39H[32mL[10;59H[37m}[m[m [32mJ[7C[37mH[m[m [32m [11;29HD[7C/[11;61H[37mi[12;3H[32m [12;29H[37mL[12;41H[32m:[13;11H [m[m [32mR[m[m [32m'[m[m [32mB[13;27He[13;41H[37m{[13;57H[32m [m[m [32m [m[m [32m [m[m [32m [14;17H[37m:[14;27H_[14;47H[32mF[m[m [32m [15;13H\"\r[1B [m[m [32m![m[m [32m;[7C[37m#[m[m [32mk[m[m [32m [m[m [32m [16;29H [16;47H [7C<[17;5H[37mx[17;15H[32m0[61C [m[m [32m [18;25Hd[18;51H [7C [m[m [32m [m[m [32mu[m[m [32mT[19;17H [19;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [19;57H4[m[m [32mN[m[m [32m [m[m [32m`[m[m [37mW[20;49H[32m'[20;63H[37mv[11C[32m [22;9HW[22;19Hv[22;43H \r[1BO[m[m [32mM[m[m [32m [m[m [32m [m[m [37mJ[23;45H[32m [23;67Ht[24;3H[37mR[24;67H8[m[m [32m [m[m [32m/[m[m [32m [m[m"}
+    , { time: 101285, content: "[1;15H[32m [7C [49Cg[4;9H [m[m [32m [m[m [32m [7C/[4;43H0[7CK\r[1BF[m[m [32m [m[m [32mQ[m[m [32m_[5;17H [5;35H [41Cq[6;67H [9C[37m1[7;11H[32m [7;23HS[7;71H6[8;75Hl[9;23H [9;33H#[m[m [32m5[9;45HU[7C [10;11Hv[10;33H[37m=[10;59H[32m}[10;69HH[11;11H[37mG[11;39H[32mB[11;59H[37mr[m[m [32mi[7C[37ml[m[m [32m [12;29HL[7Cs[12;61H[37mG[13;3H[32m [13;29H[37mN[13;41H[32m{[14;11H [m[m [32m:[m[m [32m%[m[m [32m:[14;27H_[14;41H[37mD[14;57H[32m [m[m [32m [m[m [32m [m[m [32m [15;17H[37m&[15;27HZ[15;47H[32mA[m[m [32m [16;13H#\r[1B [m[m [32m8[m[m [32mx[7C[37m=[m[m [32m0[m[m [32m [m[m [32m [17;29H [17;47H [7Cw[18;5H[37m![18;15H[32m/[61C [m[m [32m [19;25Ht[19;51H [7C [m[m [32m [m[m [32m`[m[m [32mW[20;17H [20;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [20;57H1[m[m [32m4[m[m [32m [m[m [32mv[m[m [37mf[21;49H[32mv[21;63H[37mc[11C[32m [23;9HJ[23;19Hf[23;43H \r[1BS[m[m [32mR[m[m [32m [m[m [32m [m[m [37mK[24;45H[32m [24;67H8[m[m"}
+    , { time: 101326, content: "[1;3H[32m1[1;25H [1;37H [m[m [32mf[m[m [32m[[m[m [32m [1;59H [2;15H [7C [49CJ[5;9H [m[m [32m [m[m [32m [7CP[5;43H2[7CK\r[1BO[m[m [32m [m[m [32mL[m[m [32mj[6;17H [6;35H [41C1[7;67H [9C[37my[8;11H[32m [8;23H,[8;71H2[9;75H=[10;23H [10;33H=[m[m [32ml[10;45H@[7C [11;11HG[11;33H[37mt[11;59H[32mr[11;69Hl[12;11H[37m%[12;39H[32mZ[12;59H[37mY[m[m [32mG[7C[37m\\[m[m [32m [13;29HN[7C|[13;61H[37m9[14;3H[32m [14;29H[37m<[14;41H[32mD[15;11H [m[m [32m\"[m[m [32me[m[m [32m&[15;27HZ[15;41H[37mX[15;57H[32m [m[m [32m [m[m [32m [m[m [32m [16;17H[37m4[16;27HH[16;47H[32m%[m[m [32m [17;13H=\r[1B [m[m [32m*[m[m [32m![7C[37m\"[m[m [32m/[m[m [32m [m[m [32m [18;29H [18;47H [7Cj[19;5H[37m^[19;15H[32m0[61C [m[m [32m [20;25H\"[20;51H [7C [m[m [32m [m[m [32mv[m[m [32mf[21;17H [21;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [21;57H^[m[m [32m#[m[m [32m [m[m [32mc[m[m [37m<[22;49H[32mo[22;63H[37m[[11C[32m [24;9HK[24;19HU[24;43H [m[m"}
+    , { time: 101366, content: "[1;71H[32m [2;3H>[2;25H [2;37H [m[m [32mG[m[m [32m5[m[m [32m [2;59H [3;15H [7C [49Cw[6;9H [m[m [32m [m[m [32m [7C![6;43H%[7Cf\r[1BN[m[m [32m [m[m [32mj[m[m [32m_[7;17H [7;35H [41Cy[8;67H [9C[37mP[9;11H[32m [9;23H%[9;71HH[10;75Ha[11;23H [11;33Ht[m[m [32mD[11;45H.[7C [12;11H%[12;33H[37mD[12;59H[32mY[12;69H\\[13;11H[37mr[13;39H[32mc[13;59H[37m\"[m[m [32m9[7C[37mC[m[m [32m [14;29H<[7C3[14;61H[37m'[15;3H[32m [15;29H[37m\"[15;41H[32mX[16;11H [m[m [32m#[m[m [32mk[m[m [32m4[16;27HH[16;41H[37mF[16;57H[32m [m[m [32m [m[m [32m [m[m [32m [17;17H[37mt[17;27Hj[17;47H[32m0[m[m [32m [18;13H\"\r[1B [m[m [32my[m[m [32m^[7C[37mW[m[m [32m0[m[m [32m [m[m [32m [19;29H [19;47H [7CI[20;5H[37m)[20;15H[32mi[61C [m[m [32m [21;25Hh[21;51H [7C [m[m [32m [m[m [32mc[m[m [32m<[22;17H [22;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [22;57H=[m[m [32mn[m[m [32m [m[m [32m[[m[m [37mL[23;49H[32mb[23;63H[37mL[11C[32m [m[m"}
+    , { time: 101407, content: "[1;53H[37mK[1;65H[32m [2;71H [3;3HS[3;25H [3;37H [m[m [32mk[m[m [32m#[m[m [32m [3;59H [4;15H [7C [49C+[7;9H [m[m [32m [m[m [32m [7Cp[7;43H<[7C+\r[1BW[m[m [32m [m[m [32m:[m[m [32mB[8;17H [8;35H [41CP[9;67H [9C[37mG[10;11H[32m [10;23HE[10;71H6[11;75Hg[12;23H [12;33HD[m[m [32mX[12;45H*[7C [13;11Hr[13;33H[37m8[13;59H[32m\"[13;69HC[14;11H[37mG[14;39H[32mC[14;59H[37m{[m[m [32m'[7C[37mD[m[m [32m [15;29H\"[7CZ[15;61H[37m%[16;3H[32m [16;29H[37mX[16;41H[32mF[17;11H [m[m [32m=[m[m [32m0[m[m [32mt[17;27Hj[17;41H[37mg[17;57H[32m [m[m [32m [m[m [32m [m[m [32m [18;17H[37m1[18;27H4[18;47H[32m2[m[m [32m [19;13HW\r[1B [m[m [32m([m[m [32m)[7C[37m'[m[m [32mi[m[m [32m [m[m [32m [20;29H [20;47H [7CL[21;5H[37m)[21;15H[32mD[61C [m[m [32m [22;25HT[22;51H [7C [m[m [32m [m[m [32m[[m[m [32mL[23;17H [23;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [23;57H<[m[m [32m6[m[m [32m [m[m [32mL[m[m [37m$[24;49H[32mX[24;63H[37mm[11C[32m [m[m"}
+    , { time: 101448, content: "[1;21H[32m [1;53HK[25C[37mL[2;53HZ[2;65H[32m [3;71H [4;3H-[4;25H [4;37H [m[m [32mo[m[m [32m9[m[m [32m [4;59H [5;15H [7C [49C3[8;9H [m[m [32m [m[m [32m [7CS[8;43HN[7Cj\r[1Bx[m[m [32m [m[m [32mx[m[m [32m-[9;17H [9;35H [41CG[10;67H [9C[37m![11;11H[32m [11;23HK[11;71Hr[12;75H^[13;23H [13;33H8[m[m [32md[13;45H_[7C [14;11HG[14;33H[37m1[14;59H[32m{[14;69HD[15;11H[37mb[15;39H[32m4[15;59H[37m[[m[m [32m%[7C[37me[m[m [32m [16;29HX[7Cs[16;61H[37m,[17;3H[32m [17;29H[37m][17;41H[32mg[18;11H [m[m [32m\"[m[m [32m/[m[m [32m1[18;27H4[18;41H[37m9[18;57H[32m [m[m [32m [m[m [32m [m[m [32m [19;17H[37m>[19;27HZ[19;47H[32md[m[m [32m [20;13H'\r[1B [m[m [32mD[m[m [32m)[7C[37m0[m[m [32mD[m[m [32m [m[m [32m [21;29H [21;47H [7Ch[22;5H[37mx[22;15H[32md[61C [m[m [32m [23;25HY[23;51H [7C [m[m [32m [m[m [32mL[m[m [32m$[24;17H [24;31H [m[m [32m [m[m [32m [m[m [32m [m[m [32m [24;57HY[m[m [32mP[m[m [32m [m[m [32mm[m[m [37ml[m[m"}
+    , { time: 101488, content: "[1;19H[37mY[7C[32m [m[m [32m [1;41H [31C [m[m [32m/[m[m [32m9[m[m [32mL[2;21H [2;53HZ[25C[37mq[3;53Hx[3;65H[32m [4;71H [5;3Hk[5;25H [5;37H [m[m [32mS[m[m [32mN[m[m [32m [5;59H [6;15H [7C [49C>[9;9H [m[m [32m [m[m [32m [7C*[9;43H:[7CE\r[1B}[m[m [32m [m[m [32mP[m[m [32mV[10;17H [10;35H [41C![11;67H [9C[37mq[12;11H[32m [12;23Hb[12;71HK[13;75H#[14;23H [14;33H1[m[m [32mz[14;45H3[7C [15;11Hb[15;33H[37mm[15;59H[32m[[15;69He[16;11H[37mG[16;39H[32mS[16;59H[37m_[m[m [32m,[7C[37mM[m[m [32m [17;29H][7C'[17;61H[37mF[18;3H[32m [18;29H[37m;[18;41H[32m9[19;11H [m[m [32mW[m[m [32m0[m[m [32m>[19;27HZ[19;41H[37mn[19;57H[32m [m[m [32m [m[m [32m [m[m [32m [20;17H[37m,[20;27Ho[20;47H[32mm[m[m [32m [21;13H0\r[1B [m[m [32my[m[m [32mx[7C[37mU[m[m [32md[m[m [32m [m[m [32m [22;29H [22;47H [7CM[23;5H[37mv[23;15H[32mf[61C [m[m [32m [24;25H3[24;51H [7C [m[m [32m [m[m [32mm[m[m [32ml[m[m"}
+    , { time: 101530, content: "[1;19H[32mY[m[m [32m [m[m [32m [m[m [37mk[m[m [32m [m[m [32m [m[m [37m>[1;45H[32m [m[m [32mh[m[m [37m-[m[m [32mR[m[m [32mK[m[m [32m [2;19H[37mt[7C[32m [m[m [32m [2;41H [31C [m[m [32m?[m[m [32m+[m[m [32mq[3;21H [3;53Hx[25C[37m}[4;53HN[4;65H[32m [5;71H [6;3H|[6;25H [6;37H [m[m [32mY[m[m [32m_[m[m [32m [6;59H [7;15H [7C [49C2[10;9H [m[m [32m [m[m [32m [7CL[10;43Hk[7Cy\r[1Bg[m[m [32m [m[m [32m/[m[m [32ma[11;17H [11;35H [41Cq[12;67H [9C[37m2[13;11H[32m [13;23H:[13;71Hz[14;75H#[15;23H [15;33Hm[m[m [32m=[15;45Hn[7C [16;11HG[16;33H[37mP[16;59H[32m_[16;69HM[17;11H[37m@[17;39H[32mz[17;59H[37mm[m[m [32mF[7C[37mm[m[m [32m [18;29H;[7Ch[18;61H[37mw[19;3H[32m [19;29H[37mO[19;41H[32mn[20;11H [m[m [32m'[m[m [32mi[m[m [32m,[20;27Ho[20;41H[37mY[20;57H[32m [m[m [32m [m[m [32m [m[m [32m [21;17H[37mI[21;27H%[21;47H[32mL[m[m [32m [22;13HU\r[1B [m[m [32mM[m[m [32mv[7C[37m3[m[m [32mf[m[m [32m [m[m [32m [23;29H [23;47H [7CS[24;5H[37m;[24;15H[32m:[61C [m[m [32m [m[m"}
+    , { time: 101571, content: "[1;5H[32m [1;25Hk[m[m [32m [m[m [32m [m[m [32m>[1;49H-[m[m [32mR[m[m [32m [7C [2;19Ht[m[m [32m [m[m [32m [m[m [37my[m[m [32m [m[m [32m [m[m [37mf[2;45H[32m [m[m [32mc[m[m [37my[m[m [32mL[m[m [32mZ[m[m [32m [3;19H[37m4[7C[32m [m[m [32m [3;41H [31C [m[m [32mB[m[m [32mI[m[m [32m}[4;21H [4;53HN[25C[37mJ[5;53H_[5;65H[32m [6;71H [7;3H^[7;25H [7;37H [m[m [32mj[m[m [32m\"[m[m [32m [7;59H [8;15H [7C [49Cl[11;9H [m[m [32m [m[m [32m [7C#[11;43HL[7C5\r[1B%[m[m [32m [m[m [32mE[m[m [32mz[12;17H [12;35H [41C2[13;67H [9C[37m'[14;11H[32m [14;23H/[14;71H\"[15;75H$[16;23H [16;33HP[m[m [32m3[16;45H_[7C [17;11H@[17;33H[37mk[17;59H[32mm[17;69Hm[18;11H[37ms[18;39H[32mU[18;59H[37m\"[m[m [32mw[7C[37m%[m[m [32m [19;29HO[7C:[19;61H[37m[[20;3H[32m [20;29H[37mg[20;41H[32mY[21;11H [m[m [32m0[m[m [32mD[m[m [32mI[21;27H%[21;41H[37mw[21;57H[32m [m[m [32m [m[m [32m [m[m [32m [22;17H[37mr[22;27H}[22;47H[32mr[m[m [32m [23;13H3\r[1B [m[m [32mR[m[m [32m;[7C[37mQ[m[m [32m:[m[m [32m [m[m [32m [24;29H [24;47H [7Cp[m[m"}
+    , { time: 101612, content: "[1;47H[32m [25C?[2;5H [2;25Hy[m[m [32m [m[m [32m [m[m [32mf[2;49Hy[m[m [32mL[m[m [32m [7C [3;19H4[m[m [32m [m[m [32m [m[m [37mx[m[m [32m [m[m [32m [m[m [37mc[3;45H[32m [m[m [32mm[m[m [37m,[m[m [32m/[m[m [32mx[m[m [32m [4;19H[37m{[7C[32m [m[m [32m [4;41H [31C [m[m [32m>[m[m [32md[m[m [32mJ[5;21H [5;53H_[25C[37m4[6;53H<[6;65H[32m [7;71H [8;3Hw[8;25H [8;37H [m[m [32m'[m[m [32mK[m[m [32m [8;59H [9;15H [7C [49C*[12;9H [m[m [32m [m[m [32m [7C|[12;43Hw[7CB\r[1B{[m[m [32m [m[m [32mJ[m[m [32mz[13;17H [13;35H [41C'[14;67H [9C[37m.[15;11H[32m [15;23H'[15;71H,[16;75H.[17;23H [17;33Hk[m[m [32m'[17;45Ha[7C [18;11Hs[18;33H[37mv[18;59H[32m\"[18;69H%[19;11H[37mo[19;39H[32mo[19;59H[37m+[m[m [32m[[7C[37m@[m[m [32m [20;29Hg[7C8[20;61H[37m{[21;3H[32m [21;29H[37mj[21;41H[32mw[22;11H [m[m [32mU[m[m [32md[m[m [32mr[22;27H}[22;41H[37mP[22;57H[32m [m[m [32m [m[m [32m [m[m [32m [23;17H[37m+[23;27Hc[23;47H[32mJ[m[m [32m [24;13HQ[m[m"}
+    , { time: 101652, content: "[1;39H[32m [2;47H [25CN[3;5H [3;25Hx[m[m [32m [m[m [32m [m[m [32mc[3;49H,[m[m [32m/[m[m [32m [7C [4;19H{[m[m [32m [m[m [32m [m[m [37m+[m[m [32m [m[m [32m [m[m [37mZ[4;45H[32m [m[m [32mN[m[m [37m_[m[m [32mK[m[m [32mN[m[m [32m [5;19H[37m'[7C[32m [m[m [32m [5;41H [31C [m[m [32m{[m[m [32mq[m[m [32m4[6;21H [6;53H<[25C[37m`[7;53H;[7;65H[32m [8;71H [9;3H*[9;25H [9;37H [m[m [32ml[m[m [32m|[m[m [32m [9;59H [10;15H [7C [49CY[13;9H [m[m [32m [m[m [32m [7Cc[13;43HB[7C5\r[1B)[m[m [32m [m[m [32mw[m[m [32m:[14;17H [14;35H [41C.[15;67H [9C[37ma[16;11H[32m [16;23Hc[16;71H?[17;75HJ[18;23H [18;33Hv[m[m [32m5[18;45H*[7C [19;11Ho[19;33H[37mt[19;59H[32m+[19;69H@[20;11H[37m#[20;39H[32m\"[20;59H[37m![m[m [32m{[7C[37mL[m[m [32m [21;29Hj[7C&[21;61H[37mE[22;3H[32m [22;29H[37mT[22;41H[32mP[23;11H [m[m [32m3[m[m [32mf[m[m [32m+[23;27Hc[23;41H[37mT[23;57H[32m [m[m [32m [m[m [32m [m[m [32m [24;17H[37mm[24;27H{[24;47H[32mQ[m[m [32m [m[m"}
+    , { time: 101694, content: "[1;41H[32mp[1;55H[37m'[m[m [37mD[m[m [32m [m[m [32m$[15C [2;39H [3;47H [25CO[4;5H [4;25H+[m[m [32m [m[m [32m [m[m [32mZ[4;49H_[m[m [32mK[m[m [32m [7C [5;19H'[m[m [32m [m[m [32m [m[m [37m*[m[m [32m [m[m [32m [m[m [37mY[5;45H[32m [m[m [32m&[m[m [37me[m[m [32mK[m[m [32m_[m[m [32m [6;19H[37m}[7C[32m [m[m [32m [6;41H [31C [m[m [32mN[m[m [32m1[m[m [32m`[7;21H [7;53H;[25C[37m-[8;53HV[8;65H[32m [9;71H [10;3Hy[10;25H [10;37H [m[m [32mL[m[m [32m&[m[m [32m [10;59H [11;15H [7C [49Cj[14;9H [m[m [32m [m[m [32m [7CH[14;43HU[7Cw\r[1BT[m[m [32m [m[m [32m$[m[m [32mb[15;17H [15;35H [41Ca[16;67H [9C[37mW[17;11H[32m [17;23H([17;71Hl[18;75H/[19;23H [19;33Ht[m[m [32m9[19;45H+[7C [20;11H#[20;33H[37ma[20;59H[32m![20;69HL[21;11H[37mC[21;39H[32mg[21;59H[37m![m[m [32mE[7C[37mS[m[m [32m [22;29HT[7Ck[22;61H[37mh[23;3H[32m [23;29H[37mE[23;41H[32mT[24;11H [m[m [32mQ[m[m [32m:[m[m [32mm[24;27H{[24;41H[37me[24;57H[32m [m[m [32m [m[m [32m [m[m [32m [m[m"}
+    , { time: 101735, content: "[1;55H[32m'[m[m [32mD[1;69H [2;41H#[2;55H[37m([m[m [37mB[m[m [32m [m[m [32mp[15C [3;39H [4;47H [25C`[5;5H [5;25H*[m[m [32m [m[m [32m [m[m [32mY[5;49He[m[m [32mK[m[m [32m [7C [6;19H}[m[m [32m [m[m [32m [m[m [37m([m[m [32m [m[m [32m [m[m [37mm[6;45H[32m [m[m [32m![m[m [37m![m[m [32mf[m[m [32m<[m[m [32m [7;19H[37m$[7C[32m [m[m [32m [7;41H [31C [m[m [32mS[m[m [32my[m[m [32m-[8;21H [8;53HV[25C[37m>[9;53HB[9;65H[32m [10;71H [11;3H=[11;25H [11;37H [m[m [32mB[m[m [32m-[m[m [32m [11;59H [12;15H [7C [49C?[15;9H [m[m [32m [m[m [32m [7CW[15;43H0[7C(\r[1B![m[m [32m [m[m [32m;[m[m [32m_[16;17H [16;35H [41CW[17;67H [9C[37mj[18;11H[32m [18;23H^[18;71HA[19;75Hv[20;23H [20;33Ha[m[m [32m$[20;45Hw[7C [21;11HC[21;33H[37mS[21;59H[32m![21;69HS[22;11H[37m+[22;39H[32mV[22;59H[37mC[m[m [32mh[7C[37m1[m[m [32m [23;29HE[7C][23;61H[37mt[24;3H[32m [24;29H[37m{[24;41H[32me[m[m"}
+    , { time: 101775, content: "[1;7H[32m [m[m [32m [m[m [32m{[1;21H^[1;33H [1;63Hm[11C [2;55H([m[m [32mB[2;69H [3;41H{[3;55H[37mH[m[m [37mf[m[m [32m [m[m [32mo[15C [4;39H [5;47H [25Cl[6;5H [6;25H([m[m [32m [m[m [32m [m[m [32mm[6;49H![m[m [32mf[m[m [32m [7C [7;19H$[m[m [32m [m[m [32m [m[m [37mc[m[m [32m [m[m [32m [m[m [37m[[7;45H[32m [m[m [32m}[m[m [37m\\[m[m [32m+[m[m [32m;[m[m [32m [8;19H[37mm[7C[32m [m[m [32m [8;41H [31C [m[m [32ml[m[m [32mP[m[m [32m>[9;21H [9;53HB[25C[37m3[10;53H-[10;65H[32m [11;71H [12;3HJ[12;25H [12;37H [m[m [32mZ[m[m [32m:[m[m [32m [12;59H [13;15H [7C [49CS[16;9H [m[m [32m [m[m [32m [7C:[16;43H.[7CK\r[1B5[m[m [32m [m[m [32mx[m[m [32mF[17;17H [17;35H [41Cj[18;67H [9C[37mk[19;11H[32m [19;23H![19;71HZ[20;75H{[21;23H [21;33HS[m[m [32m([21;45H7[7C [22;11H+[22;33H[37m([22;59H[32mC[22;69H1[23;11H[37mq[23;39H[32mu[23;59H[37m?[m[m [32mt[7C[37m%[m[m [32m [24;29H{[7C{[24;61H[37m.[m[m"}
+    , { time: 101817, content: "[1;45H[32m^[1;71H`[2;7H [m[m [32m [m[m [32mp[2;21Hk[2;33H [2;63H%[11C [3;55HH[m[m [32mf[3;69H [4;41H{[4;55H[37m@[m[m [37m9[m[m [32m [m[m [32m;[15C [5;39H [6;47H [25C-[7;5H [7;25Hc[m[m [32m [m[m [32m [m[m [32m[[7;49H\\[m[m [32m+[m[m [32m [7C [8;19Hm[m[m [32m [m[m [32m [m[m [37my[m[m [32m [m[m [32m [m[m [37m|[8;45H[32m [m[m [32mh[m[m [37mf[m[m [32mj[m[m [32mV[m[m [32m [9;19H[37mz[7C[32m [m[m [32m [9;41H [31C [m[m [32m=[m[m [32mG[m[m [32m3[10;21H [10;53H-[25C[37mE[11;53HM[11;65H[32m [12;71H [13;3Hk[13;25H [13;37H [m[m [32mc[m[m [32m{[m[m [32m [13;59H [14;15H [7C [49CI[17;9H [m[m [32m [m[m [32m [7Cf[17;43H,[7CK\r[1B5[m[m [32m [m[m [32m![m[m [32mu[18;17H [18;35H [41Ck[19;67H [9C[37m([20;11H[32m [20;23Hx[20;71H$[21;75Hy[22;23H [22;33H([m[m [32mD[22;45HI[7C [23;11Hq[23;33H[37mV[23;59H[32m?[23;69H%[24;11H[37mq[24;39H[32m)[24;59H[37m\"[m[m [32m.[7C[37m2[m[m [32m [m[m"}
+    , { time: 101857, content: "[1;5H[37m:[1;27H[32m_[1;43H[37mW[7C[32m [2;45H+[2;71Hr[3;7H [m[m [32m [m[m [32mi[3;21H4[3;33H [3;63H+[11C [4;55H@[m[m [32m9[4;69H [5;41Hv[5;55H[37mq[m[m [37m*[m[m [32m [m[m [32m:[15C [6;39H [7;47H [25C$[8;5H [8;25Hy[m[m [32m [m[m [32m [m[m [32m|[8;49Hf[m[m [32mj[m[m [32m [7C [9;19Hz[m[m [32m [m[m [32m [m[m [37m`[m[m [32m [m[m [32m [m[m [37mo[9;45H[32m [m[m [32m/[m[m [37mE[m[m [32mE[m[m [32mB[m[m [32m [10;19H[37mw[7C[32m [m[m [32m [10;41H [31C [m[m [32ma[m[m [32m![m[m [32mE[11;21H [11;53HM[25C[37mh[12;53HH[12;65H[32m [13;71H [14;3HI[14;25H [14;37H [m[m [32mC[m[m [32mD[m[m [32m [14;59H [15;15H [7C [49C([18;9H [m[m [32m [m[m [32m [7CQ[18;43Hs[7CT\r[1BQ[m[m [32m [m[m [32m^[m[m [32mk[19;17H [19;35H [41C([20;67H [9C[37mF[21;11H[32m [21;23HE[21;71H&[22;75HT[23;23H [23;33HV[m[m [32mO[23;45Hz[7C [24;11Hq[24;33H[37mY[24;59H[32m\"[24;69H2[m[m"}
+    , { time: 101899, content: "[1;5H[32m:[1;35H[37mn[7C[32mW[1;67H[37mz[2;5HH[2;27H[32m>[2;43H[37m8[7C[32m [3;45Hk[3;71HC[4;7H [m[m [32m [m[m [32m`[4;21H([4;33H [4;63Ha[11C [5;55Hq[m[m [32m*[5;69H [6;41Hc[6;55H[37m>[m[m [37mg[m[m [32m [m[m [32m+[15C [7;39H [8;47H [25C$[9;5H [9;25H`[m[m [32m [m[m [32m [m[m [32mo[9;49HE[m[m [32mE[m[m [32m [7C [10;19Hw[m[m [32m [m[m [32m [m[m [37m![m[m [32m [m[m [32m [m[m [37m*[10;45H[32m [m[m [32mV[m[m [37m<[m[m [32my[m[m [32m-[m[m [32m [11;19H[37m9[7C[32m [m[m [32m [11;41H [31C [m[m [32mg[m[m [32mq[m[m [32mh[12;21H [12;53HH[25C[37ml[13;53HU[13;65H[32m [14;71H [15;3H\"[15;25H [15;37H [m[m [32m4[m[m [32mX[m[m [32m [15;59H [16;15H [7C [49CQ[19;9H [m[m [32m [m[m [32m [7C/[19;43H2[7C_\r[1BE[m[m [32m [m[m [32m)[m[m [32mM[20;17H [20;35H [41CF[21;67H [9C[37m\"[22;11H[32m [22;23H0[22;71H/[23;75H>[24;23H [24;33HY[m[m [32mA[24;45HR[7C [m[m"}
+    , { time: 101940, content: "[1;35H[32mn[m[m [32m [m[m [37mu[1;53H{[1;67H[32mz[2;5HH[2;35H[37m.[7C[32m8[2;67H[37ma[3;5Ha[3;27H[32mb[3;43H[37mY[7C[32m [4;45Hn[4;71H[[5;7H [m[m [32m [m[m [32m5[5;21H`[5;33H [5;63H/[11C [6;55H>[m[m [32mg[6;69H [7;41H-[7;55H[37mN[m[m [37m@[m[m [32m [m[m [32mG[15C [8;39H [9;47H [25CB[10;5H [10;25H![m[m [32m [m[m [32m [m[m [32m*[10;49H<[m[m [32my[m[m [32m [7C [11;19H9[m[m [32m [m[m [32m [m[m [37mr[m[m [32m [m[m [32m [m[m [37m7[11;45H[32m [m[m [32m([m[m [37mQ[m[m [32m5[m[m [32mM[m[m [32m [12;19H[37mO[7C[32m [m[m [32m [12;41H [31C [m[m [32m^[m[m [32m2[m[m [32ml[13;21H [13;53HU[25C[37m5[14;53HB[14;65H[32m [15;71H [16;3H'[16;25H [16;37H [m[m [32mS[m[m [32mF[m[m [32m [16;59H [17;15H [7C [49CP[20;9H [m[m [32m [m[m [32m [7Cu[20;43HE[7C?\r[1BE[m[m [32m [m[m [32m)[m[m [32mB[21;17H [21;35H [41C\"[22;67H [9C[37m6[23;11H[32m [23;23He[23;71H^[24;75HE[m[m"}
+    , { time: 101980, content: "[1;9H[32m;[m[m [32m{[m[m [32mH[1;39Hu[1;53H{[m[m [32m [m[m [32mD[m[m [32m [m[m [32m [2;35H.[m[m [32m [m[m [37mD[2;53HF[2;67H[32ma[3;5Ha[3;35H[37m2[7C[32mY[3;67H[37m[[4;5HV[4;27H[32mc[4;43H[37mm[7C[32m [5;45H2[5;71HL[6;7H [m[m [32m [m[m [32m`[6;21HU[6;33H [6;63H&[11C [7;55HN[m[m [32m@[7;69H [8;41Hb[8;55H[37m<[m[m [37my[m[m [32m [m[m [32m2[15C [9;39H [10;47H [25Cu[11;5H [11;25Hr[m[m [32m [m[m [32m [m[m [32m7[11;49HQ[m[m [32m5[m[m [32m [7C [12;19HO[m[m [32m [m[m [32m [m[m [37m%[m[m [32m [m[m [32m [m[m [37m*[12;45H[32m [m[m [32m.[m[m [37m2[m[m [32mB[m[m [32mH[m[m [32m [13;19H[37m?[7C[32m [m[m [32m [13;41H [31C [m[m [32m#[m[m [32m'[m[m [32m5[14;21H [14;53HB[25C[37m`[15;53Hj[15;65H[32m [16;71H [17;3HA[17;25H [17;37H [m[m [32mz[m[m [32mg[m[m [32m [17;59H [18;15H [7C [49C,[21;9H [m[m [32m [m[m [32m [7CC[21;43He[7Cx\r[1B[[m[m [32m [m[m [32mx[m[m [32mF[22;17H [22;35H [41C6[23;67H [9C[37m_[24;11H[32m [24;23Ha[24;71Hy[m[m"}
+    , { time: 102021, content: "[H[32m [2;9H)[m[m [32mp[m[m [32m,[2;39HD[2;53HF[m[m [32m [m[m [32mB[m[m [32m [m[m [32m [3;35H2[m[m [32m [m[m [37m7[3;53HF[3;67H[32m[[4;5HV[4;35H[37m,[7C[32mm[4;67H[37mv[5;5H)[5;27H[32mR[5;43H[37m=[7C[32m [6;45HJ[6;71Ho[7;7H [m[m [32m [m[m [32mK[7;21H.[7;33H [7;63HI[11C [8;55H<[m[m [32my[8;69H [9;41H'[9;55H[37mN[m[m [37m#[m[m [32m [m[m [32mc[15C [10;39H [11;47H [25C([12;5H [12;25H%[m[m [32m [m[m [32m [m[m [32m*[12;49H2[m[m [32mB[m[m [32m [7C [13;19H?[m[m [32m [m[m [32m [m[m [37m=[m[m [32m [m[m [32m [m[m [37mr[13;45H[32m [m[m [32mn[m[m [37m)[m[m [32m5[m[m [32mU[m[m [32m [14;19H[37m.[7C[32m [m[m [32m [14;41H [31C [m[m [32m#[m[m [32m.[m[m [32m`[15;21H [15;53Hj[25C[37mZ[16;53H8[16;65H[32m [17;71H [18;3HT[18;25H [18;37H [m[m [32mU[m[m [32m9[m[m [32m [18;59H [19;15H [7C [49CV[22;9H [m[m [32m [m[m [32m [7C3[22;43H0[7CK\r[1B+[m[m [32m [m[m [32mv[m[m [32mI[23;17H [23;35H [41C_[24;67H [9C[37my[m[m"}
+    , { time: 102062, content: "[1;5H[32m [m[m [32m [m[m [32m;[m[m [32m [1;41H \r[1B [3;9HN[m[m [32mi[m[m [32m7[3;39H7[3;53HF[m[m [32m [m[m [32mf[m[m [32m [m[m [32m [4;35H,[m[m [32m [m[m [37mQ[4;53H%[4;67H[32mv[5;5H)[5;35H[37mY[7C[32m=[5;67H[37mR[6;5Hb[6;27H[32m7[6;43H[37m#[7C[32m [7;45HW[7;71Hv[8;7H [m[m [32m [m[m [32mm[8;21H,[8;33H [8;63HC[11C [9;55HN[m[m [32m#[9;69H [10;41H/[10;55H[37mR[m[m [37mM[m[m [32m [m[m [32mA[15C [11;39H [12;47H [25C<[13;5H [13;25H=[m[m [32m [m[m [32m [m[m [32mr[13;49H)[m[m [32m5[m[m [32m [7C [14;19H.[m[m [32m [m[m [32m [m[m [37mS[m[m [32m [m[m [32m [m[m [37m}[14;45H[32m [m[m [32mF[m[m [37mH[m[m [32mw[m[m [32mB[m[m [32m [15;19H[37m`[7C[32m [m[m [32m [15;41H [31C [m[m [32m$[m[m [32ma[m[m [32mZ[16;21H [16;53H8[25C[37mU[17;53HI[17;65H[32m [18;71H [19;3HD[19;25H [19;37H [m[m [32mo[m[m [32mn[m[m [32m [19;59H [20;15H [7C [49C.[23;9H [m[m [32m [m[m [32m [7Cf[23;43HW[7Cn\r[1B^[m[m [32m [m[m [32m;[m[m [32m*[24;17H [24;35H [41Cy[m[m"}
+    , { time: 102103, content: "[1;3H[32m [1;15H[37m@[m[m [37mf[1;65Hc[2;5H[32m [m[m [32m [m[m [32m)[m[m [32m [2;41H \r[1B [4;9H^[m[m [32m`[m[m [32m_[4;39HQ[4;53H%[m[m [32m [m[m [32m9[m[m [32m [m[m [32m [5;35HY[m[m [32m [m[m [37mH[5;53HM[5;67H[32mR[6;5Hb[6;35H[37mi[7C[32m#[6;67H[37mw[7;5Hp[7;27H[32mv[7;43H[37m*[7C[32m [8;45H?[8;71Hd[9;7H [m[m [32m [m[m [32m-[9;21H([9;33H [9;63Hm[11C [10;55HR[m[m [32mM[10;69H [11;41Hk[11;55H[37mb[m[m [37m=[m[m [32m [m[m [32m4[15C [12;39H [13;47H [25C=[14;5H [14;25HS[m[m [32m [m[m [32m [m[m [32m}[14;49HH[m[m [32mw[m[m [32m [7C [15;19H`[m[m [32m [m[m [32m [m[m [37mA[m[m [32m [m[m [32m [m[m [37mA[15;45H[32m [m[m [32mA[m[m [37m\"[m[m [32m([m[m [32mj[m[m [32m [16;19H[37mv[7C[32m [m[m [32m [16;41H [31C [m[m [32m.[m[m [32mW[m[m [32mU[17;21H [17;53HI[25C[37m7[18;53HT[18;65H[32m [19;71H [20;3H][20;25H [20;37H [m[m [32m\"[m[m [32mY[m[m [32m [20;59H [21;15H [7C [49Cm[24;9H [m[m [32m [m[m [32m [7C=[24;43Hj[7C&[m[m"}
+    , { time: 102144, content: "[1;15H[32m@[m[m [32mf[m[m [32mY[m[m [32m [1;65Hc[2;3H [2;15H[37m2[m[m [37m[[2;65H/[3;5H[32m [m[m [32m [m[m [32mN[m[m [32m [3;41H \r[1B [5;9H<[m[m [32m5[m[m [32m([5;39HH[5;53HM[m[m [32m [m[m [32m*[m[m [32m [m[m [32m [6;35Hi[m[m [32m [m[m [37mw[6;53HM[6;67H[32mw[7;5Hp[7;35H[37mf[7C[32m*[7;67H[37mL[8;5He[8;27H[32mw[8;43H[37m3[7C[32m [9;45HM[9;71HJ[10;7H [m[m [32m [m[m [32m=[10;21HY[10;33H [10;63HS[11C [11;55Hb[m[m [32m=[11;69H [12;41HH[12;55H[37mw[m[m [37mK[m[m [32m [m[m [32mg[15C [13;39H [14;47H [25Cr[15;5H [15;25HA[m[m [32m [m[m [32m [m[m [32mA[15;49H\"[m[m [32m([m[m [32m [7C [16;19Hv[m[m [32m [m[m [32m [m[m [37mH[m[m [32m [m[m [32m [m[m [37mC[16;45H[32m [m[m [32m%[m[m [37m+[m[m [32mK[m[m [32m8[m[m [32m [17;19H[37mn[7C[32m [m[m [32m [17;41H [31C [m[m [32mJ[m[m [32mj[m[m [32m7[18;21H [18;53HT[25C[37m9[19;53Ha[19;65H[32m [20;71H [21;3H#[21;25H [21;37H [m[m [32mg[m[m [32mw[m[m [32m [21;59H [22;15H [7C [49Cf[m[m"}
+    , { time: 102186, content: "[1;3H[32m%[1;49H [2;15H2[m[m [32m[[m[m [32mt[m[m [32m [2;65H/[3;3H [3;15H[37m)[m[m [37mm[3;65Hi[4;5H[32m [m[m [32m [m[m [32m^[m[m [32m [4;41H \r[1B [6;9H_[m[m [32m`[m[m [32m2[6;39Hw[6;53HM[m[m [32m [m[m [32mg[m[m [32m [m[m [32m [7;35Hf[m[m [32m [m[m [37m%[7;53HZ[7;67H[32mL[8;5He[8;35H[37m3[7C[32m3[8;67H[37m2[9;5HV[9;27H[32mz[9;43H[37mq[7C[32m [10;45H{[10;71H![11;7H [m[m [32m [m[m [32ms[11;21Hl[11;33H [11;63Hw[11C [12;55Hw[m[m [32mK[12;69H [13;41HL[13;55H[37m&[m[m [37m&[m[m [32m [m[m [32mw[15C [14;39H [15;47H [25CQ[16;5H [16;25HH[m[m [32m [m[m [32m [m[m [32mC[16;49H+[m[m [32mK[m[m [32m [7C [17;19Hn[m[m [32m [m[m [32m [m[m [37md[m[m [32m [m[m [32m [m[m [37m}[17;45H[32m [m[m [32m0[m[m [37mt[m[m [32mK[m[m [32mI[m[m [32m [18;19H[37mR[7C[32m [m[m [32m [18;41H [31C [m[m [32m/[m[m [32mk[m[m [32m9[19;21H [19;53Ha[25C[37mE[20;53HP[20;65H[32m [21;71H [22;3H&[22;25H [22;37H [m[m [32mV[m[m [32mP[m[m [32m [22;59H [23;15H [7C [49C1[m[m"}
+    , { time: 102227, content: "[1;63H[32m [2;3HU[2;49H [3;15H)[m[m [32mm[m[m [32m4[m[m [32m [3;65Hi[4;3H [4;15H[37m:[m[m [37mt[4;65H+[5;5H[32m [m[m [32m [m[m [32m<[m[m [32m [5;41H \r[1B [7;9H4[m[m [32mK[m[m [32m,[7;39H%[7;53HZ[m[m [32m [m[m [32m@[m[m [32m [m[m [32m [8;35H3[m[m [32m [m[m [37m\\[8;53H:[8;67H[32m2[9;5HV[9;35H[37ml[7C[32mq[9;67H[37m1[10;5Hz[10;27H[32mX[10;43H[37m^[7C[32m [11;45HY[11;71H@[12;7H [m[m [32m [m[m [32m*[12;21H'[12;33H [12;63H@[11C [13;55H&[m[m [32m&[13;69H [14;41HO[14;55H[37mI[m[m [37m@[m[m [32m [m[m [32m\"[15C [15;39H [16;47H [25CZ[17;5H [17;25Hd[m[m [32m [m[m [32m [m[m [32m}[17;49Ht[m[m [32mK[m[m [32m [7C [18;19HR[m[m [32m [m[m [32m [m[m [37mZ[m[m [32m [m[m [32m [m[m [37m&[18;45H[32m [m[m [32m2[m[m [37mD[m[m [32mT[m[m [32mT[m[m [32m [19;19H[37m^[7C[32m [m[m [32m [19;41H [31C [m[m [32mv[m[m [32m([m[m [32mE[20;21H [20;53HP[25C[37mb[21;53H)[21;65H[32m [22;71H [23;3H4[23;25H [23;37H [m[m [32mu[m[m [32mT[m[m [32m [23;59H [24;15H [7C [49C?[m[m"}
+    , { time: 102267, content: "[1;7H[32mP[1;25H [m[m [32m [1;43H [1;65H [11CF[m[m [32m [2;63H [3;3H1[3;49H [4;15H:[m[m [32mt[m[m [32m{[m[m [32m [4;65H+[5;3H [5;15H[37m{[m[m [37me[5;65HB[6;5H[32m [m[m [32m [m[m [32m_[m[m [32m [6;41H \r[1B [8;9HF[m[m [32mm[m[m [32m,[8;39H\\[8;53H:[m[m [32m [m[m [32my[m[m [32m [m[m [32m [9;35Hl[m[m [32m [m[m [37mo[9;53H@[9;67H[32m1[10;5Hz[10;35H[37mZ[7C[32m^[10;67H[37m\"[11;5H][11;27H[32mU[11;43H[37m#[7C[32m [12;45H/[12;71H9[13;7H [m[m [32m [m[m [32mb[13;21HY[13;33H [13;63Hf[11C [14;55HI[m[m [32m@[14;69H [15;41H8[15;55H[37mG[m[m [37m^[m[m [32m [m[m [32mp[15C [16;39H [17;47H [25C![18;5H [18;25HZ[m[m [32m [m[m [32m [m[m [32m&[18;49HD[m[m [32mT[m[m [32m [7C [19;19H^[m[m [32m [m[m [32m [m[m [37m7[m[m [32m [m[m [32m [m[m [37m2[19;45H[32m [m[m [32md[m[m [37m7[m[m [32m_[m[m [32ma[m[m [32m [20;19H[37mu[7C[32m [m[m [32m [20;41H [31C [m[m [32m{[m[m [32mF[m[m [32mb[21;21H [21;53H)[25C[37m-[22;53H7[22;65H[32m [23;71H [24;3HS[24;25H [24;37H [m[m [32m)[m[m [32me[m[m [32m [24;59H [m[m"}
+    , { time: 102308, content: "[1;23H[37mB[m[m [32m [m[m [32m [m[m [37mX[m[m [32m [m[m [32m [m[m [32mn[m[m [37m?[1;59H7[1;69H[32mj[2;7H+[2;25H [m[m [32m [2;43H [2;65H [11CQ[m[m [32m [3;63H [4;3Hd[4;49H [5;15H{[m[m [32me[m[m [32m'[m[m [32m [5;65HB[6;3H [6;15H[37m_[m[m [37my[6;65HV[7;5H[32m [m[m [32m [m[m [32m4[m[m [32m [7;41H \r[1B [9;9HK[m[m [32m-[m[m [32ma[9;39Ho[9;53H@[m[m [32m [m[m [32m#[m[m [32m [m[m [32m [10;35HZ[m[m [32m [m[m [37m}[10;53HN[10;67H[32m\"[11;5H][11;35H[37md[7C[32m#[11;67H[37m;[12;5HO[12;27H[32m-[12;43H[37m%[7C[32m [13;45HL[13;71H.[14;7H [m[m [32m [m[m [32mF[14;21H;[14;33H [14;63HI[11C [15;55HG[m[m [32m^[15;69H [16;41HL[16;55H[37m8[m[m [37m/[m[m [32m [m[m [32m`[15C [17;39H [18;47H [25CL[19;5H [19;25H7[m[m [32m [m[m [32m [m[m [32m2[19;49H7[m[m [32m_[m[m [32m [7C [20;19Hu[m[m [32m [m[m [32m [m[m [37m[[m[m [32m [m[m [32m [m[m [37mz[20;45H[32m [m[m [32mm[m[m [37mT[m[m [32m?[m[m [32mP[m[m [32m [21;19H[37ms[7C[32m [m[m [32m [21;41H [31C [m[m [32my[m[m [32m\"[m[m [32m-[22;21H [22;53H7[25C[37md[23;53Hp[23;65H[32m [24;71H [m[m"}
+    , { time: 102348, content: "[1;19H[32m [m[m [32m [m[m [32mB[m[m [32m [m[m [37ma[m[m [32mX[7C?[m[m [32mu[m[m [37mi[7C}[1;59H[32m7[2;23H[37mD[m[m [32m [m[m [32m [m[m [37mn[m[m [32m [m[m [32m [m[m [32m.[m[m [37m,[2;59Hu[2;69H[32m&[3;7H$[3;25H [m[m [32m [3;43H [3;65H [11Ct[m[m [32m [4;63H [5;3Hi[5;49H [6;15H_[m[m [32my[m[m [32m}[m[m [32m [6;65HV[7;3H [7;15H[37m-[m[m [37mT[7;65H&[8;5H[32m [m[m [32m [m[m [32mF[m[m [32m [8;41H \r[1B [10;9H+[m[m [32m=[m[m [32mM[10;39H}[10;53HN[m[m [32m [m[m [32mM[m[m [32m [m[m [32m [11;35Hd[m[m [32m [m[m [37m_[11;53HW[11;67H[32m;[12;5HO[12;35H[37m4[7C[32m%[12;67H[37m_[13;5H+[13;27H[32m[[13;43H[37ml[7C[32m [14;45HM[14;71Hg[15;7H [m[m [32m [m[m [32m)[15;21HZ[15;33H [15;63Hw[11C [16;55H8[m[m [32m/[16;69H [17;41HY[17;55H[37m![m[m [37m1[m[m [32m [m[m [32m;[15C [18;39H [19;47H [25C<[20;5H [20;25H[[m[m [32m [m[m [32m [m[m [32mz[20;49HT[m[m [32m?[m[m [32m [7C [21;19Hs[m[m [32m [m[m [32m [m[m [37m;[m[m [32m [m[m [32m [m[m [37m,[21;45H[32m [m[m [32mL[m[m [37m}[m[m [32mx[m[m [32m)[m[m [32m [22;19H[37m$[7C[32m [m[m [32m [22;41H [31C [m[m [32mT[m[m [32m6[m[m [32md[23;21H [23;53Hp[25C[37mp[24;53HQ[24;65H[32m [m[m"}
+    , { time: 102390, content: "[1;27H[32ma[m[m [32mX[m[m [37m=[m[m [37m8[7C[32mi[7C}[2;19H [m[m [32m [m[m [32mD[m[m [32m [m[m [37m{[m[m [32mn[7C,[m[m [32mD[m[m [37m\\[7CJ[2;59H[32mu[3;23H[37mo[m[m [32m [m[m [32m [m[m [37m#[m[m [32m [m[m [32m [m[m [32m2[m[m [37m-[3;59HW[3;69H[32m5[4;7HO[4;25H [m[m [32m [4;43H [4;65H [11C0[m[m [32m [5;63H [6;3HM[6;49H [7;15H-[m[m [32mT[m[m [32m$[m[m [32m [7;65H&[8;3H [8;15H[37m9[m[m [37mE[8;65HH[9;5H[32m [m[m [32m [m[m [32mK[m[m [32m [9;41H \r[1B [11;9H|[m[m [32ms[m[m [32m\\[11;39H_[11;53HW[m[m [32m [m[m [32m=[m[m [32m [m[m [32m [12;35H4[m[m [32m [m[m [37mQ[12;53H5[12;67H[32m_[13;5H+[13;35H[37mf[7C[32ml[13;67H[37mr[14;5H}[14;27H[32m@[14;43H[37m|[7C[32m [15;45HY[15;71Hg[16;7H [m[m [32m [m[m [32m[[16;21H'[16;33H [16;63H:[11C [17;55H![m[m [32m1[17;69H [18;41H{[18;55H[37m([m[m [37m5[m[m [32m [m[m [32m<[15C [19;39H [20;47H [25Cr[21;5H [21;25H;[m[m [32m [m[m [32m [m[m [32m,[21;49H}[m[m [32mx[m[m [32m [7C [22;19H$[m[m [32m [m[m [32m [m[m [37mV[m[m [32m [m[m [32m [m[m [37mi[22;45H[32m [m[m [32mr[m[m [37mz[m[m [32mK[m[m [32m7[m[m [32m [23;19H[37m5[7C[32m [m[m [32m [23;41H [31C [m[m [32m>[m[m [32m_[m[m [32mp[24;21H [24;53HQ[25C[37m$[m[m"}
+    , { time: 102431, content: "[H[32mw[m[m [32m [1;13H [1;31H=[m[m [32m8[1;43H[37m{[1;71H[32m [m[m [32m [2;27H{[m[m [32mn[m[m [37mj[m[m [37m2[7C[32m\\[7CJ[3;19H [m[m [32m [m[m [32mo[m[m [32m [m[m [37mW[m[m [32m#[7C-[m[m [32m7[m[m [37m8[7Ct[3;59H[32mW[4;23H[37mt[m[m [32m [m[m [32m [m[m [37mt[m[m [32m [m[m [32m [m[m [32m,[m[m [37m)[4;59H3[4;69H[32mO[5;7H=[5;25H [m[m [32m [5;43H [5;65H [11C&[m[m [32m [6;63H [7;3Hv[7;49H [8;15H9[m[m [32mE[m[m [32mm[m[m [32m [8;65HH[9;3H [9;15H[37m_[m[m [37m=[9;65HP[10;5H[32m [m[m [32m [m[m [32m+[m[m [32m [10;41H \r[1B [12;9H.[m[m [32m*[m[m [32mH[12;39HQ[12;53H5[m[m [32m [m[m [32mK[m[m [32m [m[m [32m [13;35Hf[m[m [32m [m[m [37m$[13;53HR[13;67H[32mr[14;5H}[14;35H[37m$[7C[32m|[14;67H[37m}[15;5Hx[15;27H[32m+[15;43H[37m4[7C[32m [16;45HZ[16;71HF[17;7H [m[m [32m [m[m [32ma[17;21H[[17;33H [17;63Hr[11C [18;55H([m[m [32m5[18;69H [19;41Hn[19;55H[37m4[m[m [37m6[m[m [32m [m[m [32m[[15C [20;39H [21;47H [25Ck[22;5H [22;25HV[m[m [32m [m[m [32m [m[m [32mi[22;49Hz[m[m [32mK[m[m [32m [7C [23;19H5[m[m [32m [m[m [32m [m[m [37mn[m[m [32m [m[m [32m [m[m [37ma[23;45H[32m [m[m [32mJ[m[m [37m*[m[m [32mn[m[m [32mp[m[m [32m [24;19H[37mE[7C[32m [m[m [32m [24;41H [31C [m[m [32mE[m[m [32my[m[m [32m$[m[m"}
+    , { time: 102470, content: "[1;17H[32m [7C[37m,[1;43H[32m{[m[m [32m^[m[m [37mM[27C]\r[1B[32mN[m[m [32m [2;13H [2;31Hj[m[m [32m2[2;43H[37m?[2;71H[32m [m[m [32m [3;27HW[m[m [32m#[m[m [37mT[m[m [37mL[7C[32m8[7Ct[4;19H [m[m [32m [m[m [32mt[m[m [32m [m[m [37mA[m[m [32mt[7C)[m[m [32mQ[m[m [37m.[7CN[4;59H[32m3[5;23H[37mj[m[m [32m [m[m [32m [m[m [37m:[m[m [32m [m[m [32m [m[m [32mY[m[m [37m:[5;59H,[5;69H[32m9[6;7H1[6;25H [m[m [32m [6;43H [6;65H [11CS[m[m [32m [7;63H [8;3Ha[8;49H [9;15H_[m[m [32m=[m[m [32mz[m[m [32m [9;65HP[10;3H [10;15H[37mr[m[m [37m+[10;65H7[11;5H[32m [m[m [32m [m[m [32m|[m[m [32m [11;41H \r[1B [13;9Hq[m[m [32mb[m[m [32m7[13;39H$[13;53HR[m[m [32m [m[m [32m&[m[m [32m [m[m [32m [14;35H$[m[m [32m [m[m [37my[14;53HB[14;67H[32m}[15;5Hx[15;35H[37m/[7C[32m4[15;67H[37mQ[16;5Ho[16;27H[32m3[16;43H[37my[7C[32m [17;45Hl[17;71Hz[18;7H [m[m [32m [m[m [32mr[18;21H'[18;33H [18;63H0[11C [19;55H4[m[m [32m6[19;69H [20;41Hf[20;55H[37mX[m[m [37m8[m[m [32m [m[m [32m'[15C [21;39H [22;47H [25Cp[23;5H [23;25Hn[m[m [32m [m[m [32m [m[m [32ma[23;49H*[m[m [32mn[m[m [32m [7C [24;19HE[m[m [32m [m[m [32m [m[m [37me[m[m [32m [m[m [32m [m[m [37mF[24;45H[32m [m[m [32mQ[m[m [37m2[m[m [32m&[m[m [32mQ[m[m [32m [m[m"}
+    , { time: 102512, content: "[1;21H[32mm[m[m [32mB[m[m [32m,[1;47HM[m[m [32m}[m[m [32m [m[m [32m [21C][m[m [32m [2;17H [7C[37m&[2;43H[32m?[m[m [32m+[m[m [37mY[27C6\r[1B[32m*[m[m [32m [3;13H [3;31HT[m[m [32mL[3;43H[37m'[3;71H[32m [m[m [32m [4;27HA[m[m [32mt[m[m [37mB[m[m [37mq[7C[32m.[7CN[5;19H [m[m [32m [m[m [32mj[m[m [32m [m[m [37m+[m[m [32m:[7C:[m[m [32mH[m[m [37ms[7Ck[5;59H[32m,[6;23H[37m>[m[m [32m [m[m [32m [m[m [37m3[m[m [32m [m[m [32m [m[m [32mi[m[m [37m>[6;59H\\[6;69H[32mP[7;7Ho[7;25H [m[m [32m [7;43H [7;65H [11Cg[m[m [32m [8;63H [9;3HY[9;49H [10;15Hr[m[m [32m+[m[m [32mw[m[m [32m [10;65H7[11;3H [11;15H[37mb[m[m [37m4[11;65H>[12;5H[32m [m[m [32m [m[m [32m.[m[m [32m [12;41H \r[1B [14;9Hu[m[m [32mF[m[m [32m[[14;39Hy[14;53HB[m[m [32m [m[m [32m@[m[m [32m [m[m [32m [15;35H/[m[m [32m [m[m [37mc[15;53Hd[15;67H[32mQ[16;5Ho[16;35H[37mL[7C[32my[16;67H[37m$[17;5H^[17;27H[32mB[17;43H[37md[7C[32m [18;45H.[18;71Hy[19;7H [m[m [32m [m[m [32mW[19;21H\"[19;33H [19;63H8[11C [20;55HX[m[m [32m8[20;69H [21;41HO[21;55H[37m8[m[m [37m[[m[m [32m [m[m [32mn[15C [22;39H [23;47H [25Cb[24;5H [24;25He[m[m [32m [m[m [32m [m[m [32mF[24;49H2[m[m [32m&[m[m [32m [7C [m[m"}
+    , { time: 102553, content: "[1;45H[32m [1;55H6[m[m [32m [m[m [32m [1;69H [2;21HK[m[m [32mD[m[m [32m&[2;47HY[m[m [32mJ[m[m [32m [m[m [32m [21C6[m[m [32m [3;17H [7C[37my[3;43H[32m'[m[m [32mk[m[m [37m3[27CF\r[1B[32ma[m[m [32m [4;13H [4;31HB[m[m [32mq[4;43H[37mc[4;71H[32m [m[m [32m [5;27H+[m[m [32m:[m[m [37m)[m[m [37mn[7C[32ms[7Ck[6;19H [m[m [32m [m[m [32m>[m[m [32m [m[m [37mM[m[m [32m3[7C>[m[m [32mw[m[m [37mI[7Ca[6;59H[32m\\[7;23H[37m?[m[m [32m [m[m [32m [m[m [37m)[m[m [32m [m[m [32m [m[m [32mf[m[m [37m@[7;59H5[7;69H[32mv[8;7Hl[8;25H [m[m [32m [8;43H [8;65H [11C#[m[m [32m [9;63H [10;3HQ[10;49H [11;15Hb[m[m [32m4[m[m [32m9[m[m [32m [11;65H>[12;3H [12;15H[37md[m[m [37mJ[12;65H^[13;5H[32m [m[m [32m [m[m [32mq[m[m [32m [13;41H \r[1B [15;9Hs[m[m [32m)[m[m [32m0[15;39Hc[15;53Hd[m[m [32m [m[m [32m^[m[m [32m [m[m [32m [16;35HL[m[m [32m [m[m [37mK[16;53Hq[16;67H[32m$[17;5H^[17;35H[37mm[7C[32md[17;67H[37mw[18;5Hl[18;27H[32m$[18;43H[37mf[7C[32m [19;45H2[19;71H}[20;7H [m[m [32m [m[m [32m![20;21HG[20;33H [20;63HP[11C [21;55H8[m[m [32m[[21;69H [22;41H.[22;55H[37mB[m[m [37mj[m[m [32m [m[m [32mO[15C [23;39H [24;47H [25Cp[m[m"}
+    , { time: 102593, content: "[1;63H[37m6[m[m [32m [m[m [32m [2;45H [2;55H)[m[m [32m [m[m [32m [2;69H [3;21Ht[m[m [32mo[m[m [32my[3;47H3[m[m [32mt[m[m [32m [m[m [32m [21CF[m[m [32m [4;17H [7C[37mU[4;43H[32mc[m[m [32mn[m[m [37ma[27C6\r[1B[32mw[m[m [32m [5;13H [5;31H)[m[m [32mn[5;43H[37mk[5;71H[32m [m[m [32m [6;27HM[m[m [32m3[m[m [37mM[m[m [37mO[7C[32mI[7Ca[7;19H [m[m [32m [m[m [32m?[m[m [32m [m[m [37mx[m[m [32m)[7C@[m[m [32m%[m[m [37mG[7C%[7;59H[32m5[8;23H[37m1[m[m [32m [m[m [32m [m[m [37m}[m[m [32m [m[m [32m [m[m [32m3[m[m [37ml[8;59HR[8;69H[32m=[9;7Hf[9;25H [m[m [32m [9;43H [9;65H [11Cs[m[m [32m [10;63H [11;3HL[11;49H [12;15Hd[m[m [32mJ[m[m [32mO[m[m [32m [12;65H^[13;3H [13;15H[37mv[m[m [37m|[13;65Hf[14;5H[32m [m[m [32m [m[m [32mu[m[m [32m [14;41H \r[1B [16;9Hi[m[m [32m[[m[m [32m/[16;39HK[16;53Hq[m[m [32m [m[m [32m/[m[m [32m [m[m [32m [17;35Hm[m[m [32m [m[m [37m;[17;53H([17;67H[32mw[18;5Hl[18;35H[37m3[7C[32mf[18;67H[37m=[19;5Hn[19;27H[32mW[19;43H[37m([7C[32m [20;45H5[20;71H;[21;7H [m[m [32m [m[m [32m<[21;21H([21;33H [21;63H.[11C [22;55HB[m[m [32mj[22;69H [23;41H>[23;55H[37m%[m[m [37m![m[m [32m [m[m [32mr[15C [24;39H [m[m"}
+    , { time: 102634, content: "[1;63H[32m6[13C}[2;63H[37mB[m[m [32m [m[m [32m [3;45H [3;55He[m[m [32m [m[m [32m [3;69H [4;21Ht[m[m [32mt[m[m [32mU[4;47Ha[m[m [32mN[m[m [32m [m[m [32m [21C6[m[m [32m [5;17H [7C[37mv[5;43H[32mk[m[m [32m2[m[m [37mR[27C&\r[1B[32m8[m[m [32m [6;13H [6;31HM[m[m [32mO[6;43H[37m6[6;71H[32m [m[m [32m [7;27Hx[m[m [32m)[m[m [37m*[m[m [37mc[7C[32mG[7C%[8;19H [m[m [32m [m[m [32m1[m[m [32m [m[m [37m*[m[m [32m}[7Cl[m[m [32m\\[m[m [37m![7CI[8;59H[32mR[9;23H[37m+[m[m [32m [m[m [32m [m[m [37mz[m[m [32m [m[m [32m [m[m [32ml[m[m [37mk[9;59HI[9;69H[32md[10;7HK[10;25H [m[m [32m [10;43H [10;65H [11Cx[m[m [32m [11;63H [12;3Hb[12;49H [13;15Hv[m[m [32m|[m[m [32m?[m[m [32m [13;65Hf[14;3H [14;15H[37mk[m[m [37mH[14;65H=[15;5H[32m [m[m [32m [m[m [32ms[m[m [32m [15;41H \r[1B [17;9HP[m[m [32ma[m[m [32mo[17;39H;[17;53H([m[m [32m [m[m [32m1[m[m [32m [m[m [32m [18;35H3[m[m [32m [m[m [37m#[18;53H_[18;67H[32m=[19;5Hn[19;35H[37mo[7C[32m([19;67H[37m1[20;5HB[20;27H[32m2[20;43H[37m-[7C[32m [21;45HE[21;71Hd[22;7H [m[m [32m [m[m [32m][22;21H#[22;33H [22;63Hw[11C [23;55H%[m[m [32m![23;69H [24;41H_[24;55H[37m<[m[m [37mw[m[m [32m [m[m [32m^[15C [m[m"}
+    , { time: 102675, content: "[1;37H[32m [m[m [32m [1;51H[[2;63HB[13CF[3;63H[37mC[m[m [32m [m[m [32m [4;45H [4;55HL[m[m [32m [m[m [32m [4;69H [5;21Hb[m[m [32mj[m[m [32mv[5;47HR[m[m [32mk[m[m [32m [m[m [32m [21C&[m[m [32m [6;17H [7C[37mD[6;43H[32m6[m[m [32mJ[m[m [37mw[27Cb\r[1B[32mt[m[m [32m [7;13H [7;31H*[m[m [32mc[7;43H[37m4[7;71H[32m [m[m [32m [8;27H*[m[m [32m}[m[m [37mX[m[m [37m8[7C[32m![7CI[9;19H [m[m [32m [m[m [32m+[m[m [32m [m[m [37m0[m[m [32mz[7Ck[m[m [32mo[m[m [37mh[7C\"[9;59H[32mI[10;23H[37m<[m[m [32m [m[m [32m [m[m [37m;[m[m [32m [m[m [32m [m[m [32mZ[m[m [37mO[10;59H;[10;69H[32m+[11;7H_[11;25H [m[m [32m [11;43H [11;65H [11C^[m[m [32m [12;63H [13;3Ha[13;49H [14;15Hk[m[m [32mH[m[m [32m.[m[m [32m [14;65H=[15;3H [15;15H[37mv[m[m [37ms[15;65HX[16;5H[32m [m[m [32m [m[m [32mi[m[m [32m [16;41H \r[1B [18;9Hc[m[m [32mr[m[m [32m@[18;39H#[18;53H_[m[m [32m [m[m [32m5[m[m [32m [m[m [32m [19;35Ho[m[m [32m [m[m [37mR[19;53H`[19;67H[32m1[20;5HB[20;35H[37mZ[7C[32m-[20;67H[37m;[21;5Hi[21;27H[32mX[21;43H[37m6[7C[32m [22;45Hm[22;71H=[23;7H [m[m [32m [m[m [32mg[23;21HJ[23;33H [23;63H5[11C [24;55H<[m[m [32mw[24;69H [m[m"}
+    , { time: 102716, content: "[1;43H[32m [1;61Ho[2;37H [m[m [32m [2;51HV[3;63HC[13C?[4;63H[37m[[m[m [32m [m[m [32m [5;45H [5;55Ha[m[m [32m [m[m [32m [5;69H [6;21H.[m[m [32m>[m[m [32mD[6;47Hw[m[m [32ma[m[m [32m [m[m [32m [21Cb[m[m [32m [7;17H [7C[37m&[7;43H[32m4[m[m [32mW[m[m [37m5[27Cy\r[1B[32mq[m[m [32m [8;13H [8;31HX[m[m [32m8[8;43H[37mz[8;71H[32m [m[m [32m [9;27H0[m[m [32mz[m[m [37mv[m[m [37mU[7C[32mh[7C\"[10;19H [m[m [32m [m[m [32m<[m[m [32m [m[m [37mw[m[m [32m;[7CO[m[m [32m}[m[m [37m_[7C=[10;59H[32m;[11;23H[37m([m[m [32m [m[m [32m [m[m [37mj[m[m [32m [m[m [32m [m[m [32md[m[m [37mX[11;59H6[11;69H[32m:[12;7HJ[12;25H [m[m [32m [12;43H [12;65H [11CD[m[m [32m [13;63H [14;3H{[14;49H [15;15Hv[m[m [32ms[m[m [32m`[m[m [32m [15;65HX[16;3H [16;15H[37mb[m[m [37m:[16;65HS[17;5H[32m [m[m [32m [m[m [32mP[m[m [32m [17;41H \r[1B [19;9H3[m[m [32mW[m[m [32mx[19;39HR[19;53H`[m[m [32m [m[m [32m6[m[m [32m [m[m [32m [20;35HZ[m[m [32m [m[m [37m#[20;53Hv[20;67H[32m;[21;5Hi[21;35H[37mE[7C[32m6[21;67H[37mt[22;5Hv[22;27H[32mp[22;43H[37m5[7C[32m [23;45H:[23;71HK[24;7H [m[m [32m [m[m [32mP[24;21Hw[24;33H [24;63H.[11C [m[m"}
+    , { time: 102757, content: "[1;35H[32m [1;49H [2;43H [2;61HV[3;37H [m[m [32m [3;51Hj[4;63H[[13CP[5;63H[37mD[m[m [32m [m[m [32m [6;45H [6;55H![m[m [32m [m[m [32m [6;69H [7;21Hk[m[m [32m?[m[m [32m&[7;47H5[m[m [32m%[m[m [32m [m[m [32m [21Cy[m[m [32m [8;17H [7C[37mH[8;43H[32mz[m[m [32m?[m[m [37m#[27C-\r[1B[32mk[m[m [32m [9;13H [9;31Hv[m[m [32mU[9;43H[37mt[9;71H[32m [m[m [32m [10;27Hw[m[m [32m;[m[m [37mw[m[m [37mR[7C[32m_[7C=[11;19H [m[m [32m [m[m [32m([m[m [32m [m[m [37m\"[m[m [32mj[7CX[m[m [32m_[m[m [37m<[7CT[11;59H[32m6[12;23H[37mU[m[m [32m [m[m [32m [m[m [37m{[m[m [32m [m[m [32m [m[m [32m4[m[m [37ma[12;59Hf[12;69H[32m][13;7H@[13;25H [m[m [32m [13;43H [13;65H [11C3[m[m [32m [14;63H [15;3H)[15;49H [16;15Hb[m[m [32m:[m[m [32mv[m[m [32m [16;65HS[17;3H [17;15H[37m@[m[m [37m/[17;65HQ[18;5H[32m [m[m [32m [m[m [32mc[m[m [32m [18;41H \r[1B [20;9HM[m[m [32m![m[m [32mq[20;39H#[20;53Hv[m[m [32m [m[m [32m8[m[m [32m [m[m [32m [21;35HE[m[m [32m [m[m [37m3[21;53H:[21;67H[32mt[22;5Hv[22;35H[37m1[7C[32m5[22;67H[37m^[23;5H<[23;27H[32mq[23;43H[37m$[7C[32m [24;45Hv[24;71Hq[m[m"}
+    , { time: 102798, content: "[H[32m [7C [1;21H [2;35H [2;49H [3;43H [3;61HB[4;37H [m[m [32m [4;51H$[5;63HD[13C=[6;63H[37mB[m[m [32m [m[m [32m [7;45H [7;55Hq[m[m [32m [m[m [32m [7;69H [8;21H+[m[m [32m1[m[m [32mH[8;47H#[m[m [32mI[m[m [32m [m[m [32m [21C-[m[m [32m [9;17H [7C[37mr[9;43H[32mt[m[m [32mM[m[m [37mX[27Ch\r[1B[32m;[m[m [32m [10;13H [10;31Hw[m[m [32mR[10;43H[37mp[10;71H[32m [m[m [32m [11;27H\"[m[m [32mj[m[m [37m<[m[m [37m![7C[32m<[7CT[12;19H [m[m [32m [m[m [32mU[m[m [32m [m[m [37m;[m[m [32m{[7Ca[m[m [32mQ[m[m [37m#[7C5[12;59H[32mf[13;23H[37mk[m[m [32m [m[m [32m [m[m [37mg[m[m [32m [m[m [32m [m[m [32mf[m[m [37mp[13;59Hr[13;69H[32mZ[14;7H`[14;25H [m[m [32m [14;43H [14;65H [11Ct[m[m [32m [15;63H [16;3H;[16;49H [17;15H@[m[m [32m/[m[m [32mn[m[m [32m [17;65HQ[18;3H [18;15H[37m][m[m [37m4[18;65H&[19;5H[32m [m[m [32m [m[m [32m3[m[m [32m [19;41H \r[1B [21;9H<[m[m [32m<[m[m [32mW[21;39H3[21;53H:[m[m [32m [m[m [32m[[m[m [32m [m[m [32m [22;35H1[m[m [32m [m[m [37mi[22;53H8[22;67H[32m^[23;5H<[23;35H[37mi[7C[32m$[23;67H[37m][24;5He[24;27H[32m)[24;43H[37mQ[7C[32m [m[m"}
+    , { time: 102839, content: "[1;29H[32m [1;41H [1;69H[37m\\[m[m [32m [m[m [32m [m[m [32m \r[1B [7C [2;21H [3;35H [3;49H [4;43H [4;61H![5;37H [m[m [32m [5;51Hd[6;63HB[13CX[7;63H[37m;[m[m [32m [m[m [32m [8;45H [8;55H^[m[m [32m [m[m [32m [8;69H [9;21Hn[m[m [32m+[m[m [32mr[9;47HX[m[m [32m\"[m[m [32m [m[m [32m [21Ch[m[m [32m [10;17H [7C[37m![10;43H[32mp[m[m [32m{[m[m [37m*[27C5\r[1B[32mA[m[m [32m [11;13H [11;31H<[m[m [32m![11;43H[37mr[11;71H[32m [m[m [32m [12;27H;[m[m [32m{[m[m [37mn[m[m [37mW[7C[32m#[7C5[13;19H [m[m [32m [m[m [32mk[m[m [32m [m[m [37ml[m[m [32mg[7Cp[m[m [32m$[m[m [37m%[7C<[13;59H[32mr[14;23H[37mb[m[m [32m [m[m [32m [m[m [37mK[m[m [32m [m[m [32m [m[m [32m$[m[m [37m`[14;59H&[14;69H[32mQ[15;7H*[15;25H [m[m [32m [15;43H [15;65H [11C6[m[m [32m [16;63H [17;3Hx[17;49H [18;15H][m[m [32m4[m[m [32mR[m[m [32m [18;65H&[19;3H [19;15H[37my[m[m [37mb[19;65H_[20;5H[32m [m[m [32m [m[m [32mM[m[m [32m [20;41H \r[1B [22;9HJ[m[m [32m][m[m [32me[22;39Hi[22;53H8[m[m [32m [m[m [32mj[m[m [32m [m[m [32m [23;35Hi[m[m [32m [m[m [37m([23;53H{[23;67H[32m][24;5He[24;35H[37mM[7C[32mQ[24;67H[37mi[m[m"}
+    , { time: 102880, content: "[1;33H[32m [1;57H[37ms[1;69H[32m\\[2;29H [2;41H [2;69H[37m#[m[m [32m [m[m [32m [m[m [32m \r[1B [7C [3;21H [4;35H [4;49H [5;43H [5;61Hf[6;37H [m[m [32m [6;51H}[7;63H;[13Ce[8;63H[37m)[m[m [32m [m[m [32m [9;45H [9;55H{[m[m [32m [m[m [32m [9;69H [10;21H2[m[m [32m<[m[m [32m![10;47H*[m[m [32m=[m[m [32m [m[m [32m [21C5[m[m [32m [11;17H [7C[37mK[11;43H[32mr[m[m [32mY[m[m [37mP[27CM\r[1B[32m#[m[m [32m [12;13H [12;31Hn[m[m [32mW[12;43H[37mA[12;71H[32m [m[m [32m [13;27Hl[m[m [32mg[m[m [37mT[m[m [37mP[7C[32m%[7C<[14;19H [m[m [32m [m[m [32mb[m[m [32m [m[m [37m7[m[m [32mK[7C`[m[m [32my[m[m [37m.[7CF[14;59H[32m&[15;23H[37ma[m[m [32m [m[m [32m [m[m [37mV[m[m [32m [m[m [32m [m[m [32m/[m[m [37m<[15;59H\\[15;69H[32m<[16;7H4[16;25H [m[m [32m [16;43H [16;65H [11C?[m[m [32m [17;63H [18;3H:[18;49H [19;15Hy[m[m [32mb[m[m [32m^[m[m [32m [19;65H_[20;3H [20;15H[37m$[m[m [37mF[20;65H^[21;5H[32m [m[m [32m [m[m [32m<[m[m [32m [21;41H \r[1B [23;9Hn[m[m [32mg[m[m [32me[23;39H([23;53H{[m[m [32m [m[m [32m![m[m [32m [m[m [32m [24;35HM[m[m [32m [m[m [37mP[24;53H9[24;67H[32mi[m[m"}
+    , { time: 102921, content: "[1;17H[37mh[1;55H[32m [m[m [32ms[m[m [32m [m[m [32mo[m[m [32m [11C>[m[m [32m}[m[m [37ml[2;33H[32m [2;57H[37mZ[2;69H[32m#[3;29H [3;41H [3;69H[37m.[m[m [32m [m[m [32m [m[m [32m \r[1B [7C [4;21H [5;35H [5;49H [6;43H [6;61H<[7;37H [m[m [32m [7;51HJ[8;63H)[13CO[9;63H[37mA[m[m [32m [m[m [32m [10;45H [10;55Ho[m[m [32m [m[m [32m [10;69H [11;21Hp[m[m [32m([m[m [32mK[11;47HP[m[m [32mT[m[m [32m [m[m [32m [21CM[m[m [32m [12;17H [7C[37m1[12;43H[32mA[m[m [32m/[m[m [37m2[27C|\r[1B[32mp[m[m [32m [13;13H [13;31HT[m[m [32mP[13;43H[37mA[13;71H[32m [m[m [32m [14;27H7[m[m [32mK[m[m [37ma[m[m [37mN[7C[32m.[7CF[15;19H [m[m [32m [m[m [32ma[m[m [32m [m[m [37m,[m[m [32mV[7C<[m[m [32mc[m[m [37mr[7CZ[15;59H[32m\\[16;23H[37m1[m[m [32m [m[m [32m [m[m [37m,[m[m [32m [m[m [32m [m[m [32mL[m[m [37mS[16;59He[16;69H[32m8[17;7H#[17;25H [m[m [32m [17;43H [17;65H [11C^[m[m [32m [18;63H [19;3Hv[19;49H [20;15H$[m[m [32mF[m[m [32mu[m[m [32m [20;65H^[21;3H [21;15H[37mX[m[m [37m2[21;65H'[22;5H[32m [m[m [32m [m[m [32mJ[m[m [32m [22;41H \r[1B [24;9H=[m[m [32mP[m[m [32m-[24;39HP[24;53H9[m[m [32m [m[m [32mw[m[m [32m [m[m [32m [m[m"}
+    , { time: 102961, content: "[H[32mU[1;11HV[m[m [32m [m[m [32m [m[m [32mh[1;29H[37mj[47C[32m [m[m [32ml[2;17H[37mv[2;55H[32m [m[m [32mZ[m[m [32m [m[m [32mV[m[m [32m [11C\\[m[m [32mF[m[m [37m|[3;33H[32m [3;57H[37ma[3;69H[32m.[4;29H [4;41H [4;69H[37mj[m[m [32m [m[m [32m [m[m [32m \r[1B [7C [5;21H [6;35H [6;49H [7;43H [7;61Hy[8;37H [m[m [32m [8;51Hh[9;63HA[13Cn[10;63H[37mG[m[m [32m [m[m [32m [11;45H [11;55HR[m[m [32m [m[m [32m [11;69H [12;21H}[m[m [32mU[m[m [32m1[12;47H2[m[m [32m5[m[m [32m [m[m [32m [21C|[m[m [32m [13;17H [7C[37m`[13;43H[32mA[m[m [32mL[m[m [37mL[27CC\r[1B[32mD[m[m [32m [14;13H [14;31Ha[m[m [32mN[14;43H[37m9[14;71H[32m [m[m [32m [15;27H,[m[m [32mV[m[m [37m5[m[m [37mJ[7C[32mr[7CZ[16;19H [m[m [32m [m[m [32m1[m[m [32m [m[m [37mH[m[m [32m,[7CS[m[m [32mK[m[m [37m,[7C,[16;59H[32me[17;23H[37m.[m[m [32m [m[m [32m [m[m [37mC[m[m [32m [m[m [32m [m[m [32mm[m[m [37mp[17;59H,[17;69H[32m|[18;7Hf[18;25H [m[m [32m [18;43H [18;65H [11CS[m[m [32m [19;63H [20;3HH[20;49H [21;15HX[m[m [32m2[m[m [32ms[m[m [32m [21;65H'[22;3H [22;15H[37mo[m[m [37mZ[22;65H'[23;5H[32m [m[m [32m [m[m [32mn[m[m [32m [23;41H \r[1B [m[m"}
+    , { time: 103002, content: "[1;5H[32mZ[1;29Hj[1;47H \r[1Bk[2;11H:[m[m [32m [m[m [32m [m[m [32mv[2;29H[37m1[47C[32m [m[m [32m|[3;17H[37m1[3;55H[32m [m[m [32ma[m[m [32m [m[m [32mB[m[m [32m [11C?[m[m [32m?[m[m [37mJ[4;33H[32m [4;57H[37mw[4;69H[32mj[5;29H [5;41H [5;69H[37mh[m[m [32m [m[m [32m [m[m [32m \r[1B [7C [6;21H [7;35H [7;49H [8;43H [8;61H.[9;37H [m[m [32m [9;51H|[10;63HG[13Cm[11;63H[37mb[m[m [32m [m[m [32m [12;45H [12;55H2[m[m [32m [m[m [32m [12;69H [13;21Hx[m[m [32mk[m[m [32m`[13;47HL[m[m [32m<[m[m [32m [m[m [32m [21CC[m[m [32m [14;17H [7C[37mW[14;43H[32m9[m[m [32mM[m[m [37mm[27Cc\r[1B[32m`[m[m [32m [15;13H [15;31H5[m[m [32mJ[15;43H[37mA[15;71H[32m [m[m [32m [16;27HH[m[m [32m,[m[m [37md[m[m [37m:[7C[32m,[7C,[17;19H [m[m [32m [m[m [32m.[m[m [32m [m[m [37m&[m[m [32mC[7Cp[m[m [32m;[m[m [37m.[7C*[17;59H[32m,[18;23H[37mG[m[m [32m [m[m [32m [m[m [37m*[m[m [32m [m[m [32m [m[m [32m3[m[m [37m%[18;59HO[18;69H[32mv[19;7He[19;25H [m[m [32m [19;43H [19;65H [11Cx[m[m [32m [20;63H [21;3H][21;49H [22;15Ho[m[m [32mZ[m[m [32m$[m[m [32m [22;65H'[23;3H [23;15H[37mn[m[m [37m,[23;65H0[24;5H[32m [m[m [32m [m[m [32m=[m[m [32m [24;41H [m[m"}
+    , { time: 103042, content: "[1;7H[32m [1;23H [m[m [32m,[m[m [32m [m[m [32mj[m[m [32m [m[m [32m6[1;61H [11C[37mw[2;5H[32m5[2;29H1[2;47H \r[1B)[3;11H\"[m[m [32m [m[m [32m [m[m [32m1[3;29H[37mV[47C[32m [m[m [32mJ[4;17H[37md[4;55H[32m [m[m [32mw[m[m [32m [m[m [32m![m[m [32m [11C0[m[m [32mP[m[m [37mq[5;33H[32m [5;57H[37m\\[5;69H[32mh[6;29H [6;41H [6;69H[37m<[m[m [32m [m[m [32m [m[m [32m \r[1B [7C [7;21H [8;35H [8;49H [9;43H [9;61H*[10;37H [m[m [32m [10;51HL[11;63Hb[13Cn[12;63H[37mC[m[m [32m [m[m [32m [13;45H [13;55H![m[m [32m [m[m [32m [13;69H [14;21Hr[m[m [32mb[m[m [32mW[14;47Hm[m[m [32mF[m[m [32m [m[m [32m [21Cc[m[m [32m [15;17H [7C[37mJ[15;43H[32mA[m[m [32mY[m[m [37m4[27C*\r[1B[32mg[m[m [32m [16;13H [16;31Hd[m[m [32m:[16;43H[37mi[16;71H[32m [m[m [32m [17;27H&[m[m [32mC[m[m [37md[m[m [37m![7C[32m.[7C*[18;19H [m[m [32m [m[m [32mG[m[m [32m [m[m [37mu[m[m [32m*[7C%[m[m [32m#[m[m [37mE[7Cc[18;59H[32mO[19;23H[37mK[m[m [32m [m[m [32m [m[m [37mh[m[m [32m [m[m [32m [m[m [32mo[m[m [37m;[19;59Hu[19;69H[32m$[20;7H_[20;25H [m[m [32m [20;43H [20;65H [11Ce[m[m [32m [21;63H [22;3HX[22;49H [23;15Hn[m[m [32m,[m[m [32m5[m[m [32m [23;65H0[24;3H [24;15H[37mi[m[m [37m0[24;65HO[m[m"}
+    , { time: 103084, content: "[1;15H[32mK[1;53H+[19Cw[2;7H [2;23H [m[m [32m&[m[m [32m [m[m [32m1[m[m [32m [m[m [32mn[2;61H [11C[37mY[3;5H[32mE[3;29HV[3;47H \r[1BR[4;11Hl[m[m [32m [m[m [32m [m[m [32md[4;29H[37mS[47C[32m [m[m [32mq[5;17H[37mt[5;55H[32m [m[m [32m\\[m[m [32m [m[m [32mf[m[m [32m [11C}[m[m [32m=[m[m [37m![6;33H[32m [6;57H[37mZ[6;69H[32m<[7;29H [7;41H [7;69H[37mr[m[m [32m [m[m [32m [m[m [32m \r[1B [7C [8;21H [9;35H [9;49H [10;43H [10;61Hr[11;37H [m[m [32m [11;51Hh[12;63HC[13CM[13;63H[37mH[m[m [32m [m[m [32m [14;45H [14;55Hs[m[m [32m [m[m [32m [14;69H [15;21HY[m[m [32ma[m[m [32mJ[15;47H4[m[m [32mZ[m[m [32m [m[m [32m [21C*[m[m [32m [16;17H [7C[37mP[16;43H[32mi[m[m [32mZ[m[m [37m+[27CU\r[1B[32mG[m[m [32m [17;13H [17;31Hd[m[m [32m![17;43H[37mX[17;71H[32m [m[m [32m [18;27Hu[m[m [32m*[m[m [37m{[m[m [37ms[7C[32mE[7Cc[19;19H [m[m [32m [m[m [32mK[m[m [32m [m[m [37mN[m[m [32mh[7C;[m[m [32mR[m[m [37mr[7Ck[19;59H[32mu[20;23H[37mJ[m[m [32m [m[m [32m [m[m [37mr[m[m [32m [m[m [32m [m[m [32mZ[m[m [37mK[20;59HO[20;69H[32m-[21;7H}[21;25H [m[m [32m [21;43H [21;65H [11CW[m[m [32m [22;63H [23;3HW[23;49H [24;15Hi[m[m [32m0[m[m [32mE[m[m [32m [24;65HO[m[m"}
+    , { time: 103124, content: "[H[2J[24;1H[2J[?47l8\r[?1l>"}
+    , { time: 103125, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 103137, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 104103, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 104936, content: "n"}
+    , { time: 105085, content: "e"}
+    , { time: 105213, content: "t"}
+    , { time: 105637, content: "h"}
+    , { time: 105719, content: "a"}
+    , { time: 105878, content: "c"}
+    , { time: 105993, content: "k"}
+    , { time: 106806, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  nethack"}
+    , { time: 107224, content: "7[?47h)0[H[2J[H[2;1HNetHack, Copyright 1985-2003\r[3;1H         By Stichting Mathematisch Centrum and M. Stephenson.\r[4;1H         See license for details.\r[5;1H"}
+    , { time: 107274, content: "[6;1H[7;1HShall I pick a character's race, role, gender and alignment for you? [ynq] "}
+    , { time: 109537, content: "n[H[2J[HChoosing Character's Role[1;48H[K Pick a role for your character[2;48H[K [3;48H[K a - an Archeologist[4;48H[K b - a Barbarian[5;48H[K c - a Caveman/Cavewoman[6;48H[K h - a Healer[7;48H[K k - a Knight[8;48H[K m - a Monk[9;48H[K p - a Priest/Priestess[10;48H[K r - a Rogue[11;48H[K R - a Ranger[12;48H[K s - a Samurai[13;48H[K t - a Tourist[14;48H[K v - a Valkyrie[15;48H[K w - a Wizard[16;48H[K * - Random[17;48H[K q - Quit[18;48H[K[C(end) "}
+    , { time: 110319, content: "[12;51H+[1;47H[K[2;47H[K[3;47H[K[4;47H[K[5;47H[K[6;47H[K[7;47H[K[8;47H[K[9;47H[K[10;47H[K[11;47H[K[12;47H[K[13;47H[K[14;47H[K[15;47H[K[16;47H[K[17;47H[K[18;47H[K[19;47H[K[H[2J[HChoosing Gender[1;41H[K Pick the gender of your human Samurai[2;41H[K [3;41H[K m - male[4;41H[K f - female[5;41H[K * - Random[6;41H[K q - Quit[7;41H[K[C(end) "}
+    , { time: 111371, content: "[3;44H+[1;40H[K[2;40H[K[3;40H[K[4;40H[K[5;40H[K[6;40H[K[7;40H[K[8;40H[K"}
+    , { time: 111376, content: "[H[2J[H[H[2J[H[11;33H-----[12;33H..[1m[37m[7md[m[m[1m[37m@[m|[13;33H|...|[14;33H|...|[15;33H|...|[16;33H|...[33m+[m[17;33H-----[12;36H"}
+    , { time: 111376, content: "[23;1HCrisboot the Hatamoto  St:14 Dx:16 Co:18 In:10 Wi:9 Ch:8  Lawful[K\r[24;1HDlvl:1  $:0  HP:[K\rDlvl:1  $:0  HP:15(15)[K\rDlvl:1  $:0  HP:15(15) Pw:2(2) AC:4  Exp:1[K[H[2J[HIt is written in the Book of Amaterasu Omikami:\r[2;1H[3;1H    After the Creation, the cruel god Moloch rebelled\r[4;1H    against the authority of Marduk the Creator.\r[5;1H    Moloch stole from Marduk the most powerful of all\r[6;1H    the artifacts of the gods, the Amulet of Yendor,\r[7;1H    and he hid it in the dark cavities of Gehennom, the\r[8;1H    Under World, where he now lurks, and bides his time.\r[9;1H[10;1HYour goddess Amaterasu Omikami seeks to possess the Amulet, and with it\r[11;1Hto gain deserved ascendance over the other gods.\r[12;1H[13;1HYou, a newly trained Hatamoto, have been heralded\r[14;1Hfrom birth as the instrument of Amaterasu Omikami.  You are destined\r[15;1Hto recover the Amulet for your deity, or die in the\r[16;1Hattempt.  Your hour of destiny has come.  For the sake\r[17;1Hof us all:  Go bravely with Amaterasu Omikami!\r[18;1H[K[C--More--"}
+    , { time: 112163, content: "[H[2J[H[11;33H-----[12;33H..[1m[37m[7md[m[m[1m[37m@[m|[13;33H|...|[14;33H|...|[15;33H|...|[16;33H|...[33m+[m[17;33H-----[12;36H[23;1HCrisboot the Hatamoto  St:14 Dx:16 Co:18 In:10 Wi:9 Ch:8  Lawful[K\r[24;1HDlvl:1  $:0  HP:[K\rDlvl:1  $:0  HP:15(15)[K\rDlvl:1  $:0  HP:15(15) Pw:2(2) AC:4  Exp:1[K[HKonnichi wa crisboot, welcome to NetHack!  You are a lawful male human Samurai.[K[12;36H[1;80H[K[K\r\n--More--"}
+    , { time: 115487, content: "\r[A[K[2;1H[K[H[HBe careful!  New moon tonight.[K[12;36H"}
+    , { time: 116112, content: "[H[K[12;36H[He - an uncursed rustproof +0 splint mail (being worn).[K[12;36H[H[K[1;48H[K Drop what type of items?[2;48H[K [3;48H[K a - All types[4;48H[K b - Weapons[5;48H[K c - Armor[6;48H[K A - Auto-select every item[7;48H[K U - Items known to be Uncursed[8;48H[K[C(end) "}
+    , { time: 117422, content: "[1;47H[K[2;47H[K[3;47H[K[4;47H[K[5;47H[K[6;47H[K[7;47H[K[8;47H[K[9;47H[K[12;36H"}
+    , { time: 117942, content: "[He - an uncursed rustproof +0 splint mail (being worn).[K[12;36H[H[K[1;48H[K Drop what type of items?[2;48H[K [3;48H[K a - All types[4;48H[K b - Weapons[5;48H[K c - Armor[6;48H[K A - Auto-select every item[7;48H[K U - Items known to be Uncursed[8;48H[K[C(end) "}
+    , { time: 118610, content: "[1;47H[K[2;47H[K[3;47H[K[4;47H[K[5;47H[K[6;47H[K[7;47H[K[8;47H[K[9;47H[K[12;36H"}
+    , { time: 120452, content: "[HYou displaced Slinky.[K[12;35H[1m[37m@[7md[m[m"}
+    , { time: 120875, content: "[H[K[12;35H.<[13;35H[1m[37m@[7md[m[m"}
+    , { time: 121308, content: "[1m[37m@[m..[14;35H[1m[37m[7md[m[m[A"}
+    , { time: 121980, content: ".[14;34H[1m[37m@[m.[15;35H[1m[37m[7md[m[m[A"}
+    , { time: 122400, content: "[A[1m[37m@[m[14;34H.[A"}
+    , { time: 122590, content: "[A[1m[37m@[m[13;34H.[C[1m[37m[7md[m[m[14;36H.[15;35H.[A[A[A"}
+    , { time: 123188, content: "[A#[12;32H#[1m[37m@[m.[1m[37m[7md[m[m[13;36H.[12;33H"}
+    , { time: 123493, content: "[A#[12;32H[1m[37m@[m."}
+    , { time: 124335, content: "[A[1m[37m@[m[12;32H#[C[C.[13;35H.[11;32H"}
+    , { time: 124830, content: "[A#[11;30H#[1m[37m@[m#[13;36H[1m[37m[7md[m[m[11;31H"}
+    , { time: 125095, content: "[1m[37m@[m#[13;36H.[11;30H"}
+    , { time: 125765, content: "[A[A##[10;30H[1m[37m@[m[11;30H#[A"}
+    , { time: 126027, content: "[A[1m[37m@[m[10;30H#[A"}
+    , { time: 126365, content: "[A#[9;28H#[1m[37m@[m#"}
+    , { time: 126589, content: "[1m[37m@[m#"}
+    , { time: 127339, content: "[A[A#[8;28H[1m[37m@[m[9;28H#[A"}
+    , { time: 127552, content: "[A[A[33m+[m#[7;28H[1m[37m@[m[8;28H#[A"}
+    , { time: 127666, content: "[A[1m[37m@[m[7;28H#[A"}
+    , { time: 129804, content: "[HIn what direction? [K"}
+    , { time: 130003, content: "[6;28H[HThis door is locked.[K[6;28H"}
+    , { time: 132422, content: "[H[K[6;28H[HIn what direction? [K"}
+    , { time: 132633, content: "[6;28H[HThis door is locked.[K[6;28H"}
+    , { time: 133322, content: "[H[K[6;28H"}
+    , { time: 133383, content: "#[7;28H[1m[37m@[m"}
+    , { time: 133600, content: "#[8;28H[1m[37m@[m"}
+    , { time: 133754, content: "#[9;28H[1m[37m@[7md[m[m"}
+    , { time: 134074, content: "[HYou stop.  Slinky is in the way![K[9;29H#"}
+    , { time: 134515, content: "[H[K[8;28H[1m[37m@[m[9;28H#[A"}
+    , { time: 134890, content: "[A[1m[37m@[m[8;28H#[A"}
+    , { time: 135463, content: "[A[1m[37m@[m[7;28H#[A"}
+    , { time: 135652, content: "#[7;28H[1m[37m@[m"}
+    , { time: 138931, content: "[A[1m[37m@[m[7;28H#[A"}
+    , { time: 139749, content: "#[7;28H[1m[37m@[m[8;28H[1m[37m[7md[m[m[A"}
+    , { time: 140023, content: "[8;28H[HYou displaced Slinky.[K[7;28H#[8;28H[1m[37m@[m"}
+    , { time: 140302, content: "[H[K[8;28H[1m[37m[7md[m[m[9;28H[1m[37m@[m"}
+    , { time: 140975, content: "#[1m[37m@[m"}
+    , { time: 141290, content: "[A#[9;29H[1m[37m[7md[m[m[1m[37m@[m"}
+    , { time: 141870, content: "[1m[37m[7md[m[m#[10;30H[1m[37m@[m[12;33H[1m[33m:[m[10;30H"}
+    , { time: 142179, content: "[A#[10;30H[1m[37m[7md[m[m[11;30H[1m[37m@[m[12;33H.[11;30H"}
+    , { time: 142818, content: "[A[1m[37m[7md[m[m[11;30H#[1m[37m@[m[1m[33m:[m"}
+    , { time: 143120, content: "[HYou kill the newt![K[23;1H[24;1H[24;17H[K\r[24;17H15(15)\r[24;23H Pw:2(2) AC:4  Exp:1[11;32H[1m[33m%[m"}
+    , { time: 144371, content: "[H[K[10;30H#[11;31H#[1m[37m@[m[HYou see here a newt corpse.[K[11;31H[1m[37m[7md[m[m"}
+    , { time: 145913, content: "[H[K[11;32H[HThere is a newt corpse here; eat it? [ynq] (n) [K"}
+    , { time: 146256, content: "y[K[11;32H[HBlecch!  Rotten food![K[11;31H#[12;32H#[1m[37m[7md[m[m[A"}
+    , { time: 151562, content: "[H[K[11;32H[H# [K"}
+    , { time: 152035, content: "quit"}
+    , { time: 152214, content: "uit"}
+    , { time: 152305, content: "it"}
+    , { time: 152514, content: "t"}
+    , { time: 152827, content: "[H[K[11;32H[HReally quit? [yn] (n) [K"}
+    , { time: 154002, content: "y[K[24;1H[24;17H[K\r[24;17H15(15)[11;32H[HDo you want your possessions identified? [ynq] (n) [K"}
+    , { time: 154628, content: "y[K[H[K[1;25H[K [7mWeapons[m[2;25H[K a - a +0 katana (weapon in hand)[3;25H[K b - a +0 wakizashi (alternate weapon; not wielded)[4;25H[K c - a +0 yumi[5;25H[K d - 26 +0 ya (in quiver)[6;25H[K [7mArmor[m[7;25H[K [1m[33me - an uncursed rustproof +0 splint mail (being worn)[m[8;25H[K[C(end) "}
+    , { time: 155779, content: "[1;24H[K[2;24H[K[3;24H[K[4;24H[K[5;24H[K[6;24H[K[C[C[C[33m+[m#[7;24H[K[7;28H#[8;24H[K[8;28H#[9;24H[K[9;28H###[11;32H[HDo you want to see your attributes? [ynq] (n) [K"}
+    , { time: 156304, content: "y[K[H[K[1;52H[K Final Attributes:[2;52H[K [3;52H[K You were fervently aligned.[4;52H[K You were fast.[5;52H[K You survived.[6;52H[K[C--More--"}
+    , { time: 156983, content: "[1;51H[K[2;51H[K[3;51H[K[4;51H[K[5;51H[K[6;51H[K[11;32H[HDo you want an account of creatures vanquished? [ynq] (n) [K"}
+    , { time: 157629, content: "y[K[H[K[1;58H[K Vanquished creatures:[2;58H[K [3;58H[K a newt[4;58H[K[C--More--"}
+    , { time: 158165, content: "[1;57H[K[2;57H[K[3;57H[K[4;57H[K[11;32H[HDo you want to see your conduct? [ynq] (n) [K"}
+    , { time: 158681, content: "y[K[H[K[1;46H[K Voluntary challenges:[2;46H[K [3;46H[K You were an atheist.[4;46H[K You were illiterate.[5;46H[K You never genocided any monsters.[6;46H[K You never polymorphed an object.[7;46H[K You never changed form.[8;46H[K You used no wishes.[9;46H[K[C--More--"}
+    , { time: 159852, content: "[1;45H[K[2;45H[K[3;45H[K[4;45H[K[5;45H[K[6;45H[K[7;45H[K[8;45H[K[9;45H[K[24;1H[H[2J[H[24;1H[H[2J[HSayonara crisboot the Samurai...\r[2;1H[3;1HYou quit in The Dungeons of Doom on dungeon level 1 with 4 points,\r[4;1Hand 0 pieces of gold, after 30 moves.\r[5;1HYou were level 1 with a maximum of 15 hit points when you quit.\r[6;1H[24;1H[K--More--"}
+    , { time: 160676, content: "[H[2J[H[2;1HYou made the top ten list!\r[3;1H[4;1H No  Points     Name                                                   Hp [max]\r[5;1H  1         68  crisboot-Wiz-Hum-Mal-Neu quit in The Dungeons of Doom\r[6;1H                on level 1.                                            12  [12]\r[7;1H  2         19  crisboot-Sam-Hum-Mal-Law quit in The Dungeons of Doom\r[8;1H                on level 1.                                            15  [15]\r[9;1H  3          9  crisboot-Sam-Hum-Mal-Law quit in The Dungeons of Doom\r[10;1H                on level 1.                                            15  [15]\r[11;1H[1m  4          4  crisboot-Sam-Hum-Mal-Law quit in The Dungeons of Doom          [m\r[12;1H[1m                on level 1.                                            15  [15][m[24;1H[K--More--"}
+    , { time: 161266, content: "[H[2J[H[2J[?47l8\r\n"}
+    , { time: 161280, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 161289, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 162434, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 164718, content: "a"}
+    , { time: 165138, content: "[K"}
+    , { time: 166176, content: ":"}
+    , { time: 166292, content: "D"}
+    , { time: 167575, content: "[K"}
+    , { time: 167740, content: "[K"}
+    , { time: 168104, content: "s"}
+    , { time: 168213, content: "o"}
+    , { time: 169218, content: " "}
+    , { time: 169568, content: "[K"}
+    , { time: 169706, content: "[K"}
+    , { time: 169824, content: "[K"}
+    , { time: 170035, content: "t"}
+    , { time: 170144, content: "h"}
+    , { time: 170214, content: "i"}
+    , { time: 170310, content: "s"}
+    , { time: 170438, content: " "}
+    , { time: 170594, content: "i"}
+    , { time: 170971, content: "[K"}
+    , { time: 171391, content: "i"}
+    , { time: 171495, content: "s"}
+    , { time: 171596, content: " "}
+    , { time: 171739, content: "t"}
+    , { time: 171818, content: "e"}
+    , { time: 171963, content: "r"}
+    , { time: 172153, content: "m"}
+    , { time: 172573, content: "i"}
+    , { time: 172666, content: "n"}
+    , { time: 172759, content: "a"}
+    , { time: 172928, content: "l"}
+    , { time: 173590, content: "-"}
+    , { time: 173817, content: "r"}
+    , { time: 173973, content: "e"}
+    , { time: 174332, content: "c"}
+    , { time: 174546, content: "o"}
+    , { time: 174671, content: "r"}
+    , { time: 174863, content: "d"}
+    , { time: 174972, content: "e"}
+    , { time: 175063, content: "r"}
+    , { time: 175707, content: " "}
+    , { time: 176183, content: "-"}
+    , { time: 176565, content: " "}
+    , { time: 178328, content: "#"}
+    , { time: 178927, content: "[K"}
+    , { time: 179284, content: "@"}
+    , { time: 179615, content: "c"}
+    , { time: 179753, content: "o"}
+    , { time: 179888, content: "r"}
+    , { time: 180054, content: "t"}
+    , { time: 180131, content: "e"}
+    , { time: 180353, content: "z"}
+    , { time: 180557, content: "c"}
+    , { time: 180731, content: "r"}
+    , { time: 180836, content: "i"}
+    , { time: 180951, content: "s"}
+    , { time: 181055, content: "t"}
+    , { time: 181157, content: "i"}
+    , { time: 181282, content: "a"}
+    , { time: 181441, content: "n"}
 ];
 
+var terminalText = "";
+
 //Markers
-var m1;
+var m1, c = "", regexRollback;
 
 for(var i=0; i<stdouts.length; i++) {
     m1 = {
         time: stdouts[i]['time'],
         content: stdouts[i]['content'],
         forward: function(){
-          console.log("do action");
+          console.log("do action Time: "+this.time);
           term.write(this.content);
+          terminalText += this.content;
         },    
-        backward: function(){ console.log("Undo action"); },    
+        backward: function(){ 
+          console.log("Undo action Time: "+this.time);
+          c = this.content.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+          regexRollback = new RegExp(c+'$');
+          terminalText = terminalText.replace(regexRollback,'');
+          term.reset();
+          term.write(terminalText);
+        }
     }
 
     t.markers.push(m1);
 }
 
-t.play();
+//t.play();

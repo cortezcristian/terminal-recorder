@@ -16,7 +16,7 @@ window.addEventListener('load', function() {
       document.title = title;
     });
 
-    term.open(document.body);
+    term.open(document.getElementById('terminal'));
 
     //term.write('\x1b[31mWelcome to term.js!\x1b[m\r\n');
 
@@ -28,3 +28,4 @@ window.addEventListener('load', function() {
 
     //term.destroy();
 }, false);
+
