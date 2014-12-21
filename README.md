@@ -84,7 +84,7 @@ Start typing in the second console, and look how the first one is mimicking your
 
 
 
-## Know issues
+## Known issues
 
 * Record all keys, including passwords. So be careful with that.
 * OSX `pty.js` is not working ok on Mac because of a header misconfiguration. More info:
