@@ -29,6 +29,7 @@ for(var i=0; i<stdouts.length; i++) {
           c = this.content.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
           regexRollback = new RegExp(c+'$');
           terminalText = terminalText.replace(regexRollback,'');
+          term.reset();
           term.write(terminalText);
         }
     }

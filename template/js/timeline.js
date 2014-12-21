@@ -72,6 +72,27 @@
       return _results;
     };
 
+    // Added function to iterate backwards
+    Timeline.prototype._triggerMarkersRollback = function() {
+      var marker, _i, _len, _ref, _ref2, _ref3, _results;
+      _ref = this.markers;
+      _results = [];
+      for (_i = _ref.length-1, _len = 0; _i > _len; _i--) {
+        marker = _ref[_i];
+        // On move backward
+        if ((this._lastPosition > (_ref2 = marker.time) && _ref2 >= this._position)) {
+          marker.backward();
+        }
+        // On move forward the time line, this will never execute
+        if ((this._lastPosition <= (_ref3 = marker.time) && _ref3 < this._position)) {
+          _results.push(marker.forward());
+        } else {
+          _results.push(void 0);
+        }
+      }
+      return _results;
+    };
+
     Timeline.prototype._checkForEnd = function() {
       if (this._position >= this._options.length) {
         this._position = this._options.length;
@@ -124,7 +145,12 @@
         if (ms < 0) ms = 0;
         this._lastPosition = this._position;
         this._position = ms;
-        this._triggerMarkers();
+        if(this._position < this._lastPosition) {
+            //
+            this._triggerMarkersRollback();
+        } else {
+            this._triggerMarkers();
+        }
         this.trigger('tick');
         this._checkForEnd();
         return this;
