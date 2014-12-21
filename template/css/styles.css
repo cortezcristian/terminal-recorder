@@ -31,12 +31,18 @@ span.terminal-cursor {
 #controls li.slide-con {
     width: 580px;
     float: left;
-    padding: 8px 0 8px 14px;
+    padding: 10px 0 10px 14px;
 }
 
-#controls li.slide-con .ui-slider-handle {
-    border-radius: 100px;
+#controls li.slide-con .ui-slider-horizontal {
+    height: 8px;
 }
+
+#controls li.slide-con .ui-slider-horizontal .ui-slider-handle {
+    border-radius: 100px;
+    top: -8px;
+}
+
 
 #controls a.ui-icon {
     float: left;

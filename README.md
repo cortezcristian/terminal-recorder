@@ -58,8 +58,11 @@ Final output looks like this
 * Export actions to html
 
 ## Comming soon
-* Timeline indicator
 * Rollback actions
+* More templates
+* Define starting cmd (Other than bash)
+* Add param for picking cancelling key (Ctrl+c, Ctrl+d)
+* Specify terminal size
 
 ## Experimenting
 

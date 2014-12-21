@@ -15,6 +15,8 @@ $(function() {
 
   $('#slider').on('slidestop', function(event,ui){
     t.position(ui.value/100*t.length());
+    $('.ui-icon-pause').parent().hide();
+    $('.ui-icon-play').parent().show();
   });
 
   $('.ui-icon-play').click(function(){
