@@ -56,9 +56,10 @@ Final output looks like this
 * Records all keystrokes sent to stdin
 * Saves stdout in a log file `logs.txt`
 * Export actions to html
+* Timeline indicator
+* Rollback actions
 
 ## Comming soon
-* Rollback actions
 * More templates
 * Define starting cmd (Other than bash)
 * Add param for picking cancelling key (Ctrl+c, Ctrl+d)
