@@ -9,7 +9,7 @@ $(function() {
   //Tick event
   t.on('tick', function(){
     var pos = parseInt(t.position()/t.length()*100);
-    console.log(t.position(), pos);    
+    //console.log(t.position(), pos);    
     $('#slider').slider({ value: pos });
   });
 
