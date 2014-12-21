@@ -23,7 +23,6 @@ span.terminal-cursor {
 #controls li.ui-state-default {
     margin: 2px;
     position: relative;
-    padding: 4px 0;
     cursor: pointer;
     float: left;
     list-style: none;
@@ -35,7 +34,12 @@ span.terminal-cursor {
     padding: 8px 0 8px 14px;
 }
 
+#controls li.slide-con .ui-slider-handle {
+    border-radius: 100px;
+}
+
 #controls a.ui-icon {
     float: left;
-    margin: 0 4px;
+    margin: 4px;
 }
+

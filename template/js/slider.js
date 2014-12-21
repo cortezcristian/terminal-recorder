@@ -20,12 +20,16 @@ $(function() {
   $('.ui-icon-play').click(function(){
     if(!t.playing){
         t.play();
+        $(this).parent().hide();
+        $('.ui-icon-pause').parent().show();
     }
   });
 
   $('.ui-icon-pause').click(function(){
     if(t.playing){
         t.pause();
+        $(this).parent().hide();
+        $('.ui-icon-play').parent().show();
     }
   });
 
@@ -35,6 +39,10 @@ $(function() {
     }
     $('#slider').slider({value:0});
     t.position(0);
+    $('.ui-icon-pause').parent().hide();
+    $('.ui-icon-play').parent().show();
   });
+
+  $('.ui-icon-play').click();
 
 });
