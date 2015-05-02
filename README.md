@@ -1,6 +1,8 @@
 terminal-recorder
 ============
 
+[![NPM](https://nodei.co/npm-dl/terminal-recorder.png?months=6&height=3)](https://nodei.co/npm/terminal-recorder/)
+
 Terminal recorder allows you to record your bash session, and export it to html so then you can share it with your friends.
 
 - [Latest Demo (with TimeLine)](http://cortezcristian.github.io/terminal-recorder/terminal-recorder-html/)
@@ -9,6 +11,8 @@ Terminal recorder allows you to record your bash session, and export it to html 
 
 
 ## Installation
+
+[![NPM](https://nodei.co/npm/terminal-recorder.png?compact=true)](https://nodei.co/npm/terminal-recorder/)
 
 ```bash
 $ [sudo] npm install -g terminal-recorder 
