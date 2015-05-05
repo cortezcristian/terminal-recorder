@@ -1,5 +1,6 @@
 html {
-    background: #000;
+    padding-top:60px;
+    background: url("../img/background.png") no-repeat 50% 0;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -84,5 +85,9 @@ span.terminal-cursor {
 #controls a.ui-icon {
     float: left;
     margin: 4px;
+}
+
+.hide {
+    display: none;
 }
 
