@@ -7,6 +7,7 @@
   <meta name="author" content="@cortezcristian">
 
   <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
@@ -23,15 +24,64 @@
 </head>
 
 <body>
-  <div id="terminal" class="mod-console">
-    <div class="hdr"><span class="title-term">crisboot@crisboot-Aspire-S3-391 $</span></div>
-    <div class="bdy"><div xterm class="content"></div></div>
+  <div class="heading">
+    <h1><i class="fa fa-terminal"></i> Terminal Recorder</h1>
   </div>
-  <ul id="controls" class="ui-widget ui-helper-clearfix">
-    <li class="ui-state-default ui-corner-all hide" title=".ui-icon-play"><a class="ui-icon ui-icon-play"></a></li>
-    <li class="ui-state-default ui-corner-all" title=".ui-icon-pause"><a class="ui-icon ui-icon-pause"></a></li>
-    <li class="ui-state-default ui-corner-all" title=".ui-icon-stop"><a class="ui-icon ui-icon-stop"></a></li>
-    <li class="slide-con"><div id="slider"></div></li>
-  </ul>
+  <div class="sidebar">
+    <p>
+      Terminal recorder allows you to record your bash session, and export it to html so then you can share it with your friends.
+      <ul class="benefits">
+        <li>
+            <i class="fa fa-check"></i> Record your bash session
+        </li>
+        <li>
+            <i class="fa fa-check"></i> Export it to HTML
+        </li>
+        <li>
+            <i class="fa fa-check"></i> Share it with your friends
+        </li>
+        <li>
+            <i class="fa fa-check"></i> Make tutorials
+        </li>
+        <li>
+            <i class="fa fa-check"></i> Allow others to play and pause
+        </li>
+        <li>
+            <i class="fa fa-check"></i> Allow them to copy and paste
+        </li>
+      </ul>
+    </p>
+  </div>
+  <div class="main-content">
+    <div id="terminal" class="mod-console">
+      <div class="hdr"><span class="title-term">crisboot@crisboot-Aspire-S3-391 $</span></div>
+      <div class="bdy"><div xterm class="content"></div></div>
+    </div>
+    <ul id="controls" class="ui-widget ui-helper-clearfix">
+      <li class="ui-state-default ui-corner-all hide" title=".ui-icon-play"><a class="ui-icon ui-icon-play"></a></li>
+      <li class="ui-state-default ui-corner-all" title=".ui-icon-pause"><a class="ui-icon ui-icon-pause"></a></li>
+      <li class="ui-state-default ui-corner-all" title=".ui-icon-stop"><a class="ui-icon ui-icon-stop"></a></li>
+      <li class="slide-con"><div id="slider"></div></li>
+    </ul>
+  </div>
+  <div class="footer">
+    <ul>
+      <li>
+        <a href="https://twitter.com/cortezcristian">
+          <i class="fa fa-twitter"></i> @cortezcristian
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/cortezcristian/terminal-recorder">
+          <i class="fa fa-github-alt"></i> Github Repo
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/cortezcristian/terminal-recorder">
+          <i class="fa fa-terminal"></i> Terminal-Recorder NPM
+        </a>
+      </li>
+    </ul>
+  </div>
 </body>
 </html>
