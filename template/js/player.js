@@ -1,8 +1,8 @@
 var term;
 window.addEventListener('load', function() {
     term = new Terminal({
-      cols: 80,
-      rows: 24,
+      cols: 90,
+      rows: 30,
       screenKeys: true
     });
 

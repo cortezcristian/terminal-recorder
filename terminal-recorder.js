@@ -86,8 +86,8 @@ console.log("-------------------------------------------------------------------
 
 var term = pty.spawn('bash', [], {
   name: 'xterm-color',
-  //cols: 80,
-  //rows: 30,
+  cols: 90,
+  rows: 30,
   stdio: [ 'pipe', 'pipe', 'pipe'],
   cwd: process.env.HOME,
   //cwd: process.cwd(),
