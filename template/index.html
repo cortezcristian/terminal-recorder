@@ -6,6 +6,7 @@
   <meta name="description" content="The terminal-rec reproducer">
   <meta name="author" content="@cortezcristian">
 
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
@@ -22,7 +23,10 @@
 </head>
 
 <body>
-  <div id="terminal"></div>
+  <div id="terminal" class="mod-console">
+    <div class="hdr"><span class="title-term">crisboot@crisboot-Aspire-S3-391 $</span></div>
+    <div class="bdy"><div xterm class="content"></div></div>
+  </div>
   <ul id="controls" class="ui-widget ui-helper-clearfix">
     <li class="ui-state-default ui-corner-all" title=".ui-icon-play"><a class="ui-icon ui-icon-play"></a></li>
     <li class="ui-state-default ui-corner-all" title=".ui-icon-pause"><a class="ui-icon ui-icon-pause"></a></li>

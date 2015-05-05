@@ -1,5 +1,6 @@
 html {
     background: #000;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 span.terminal-cursor {
@@ -12,7 +13,43 @@ span.terminal-cursor {
   font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
   font-size: 14px;
   color: #f0f0f0;
-  background: #000;
+  background: transparent;
+  background-color: transparent !important;
+  border: 0;
+}
+
+.mod-console {
+    padding: 0 0 10px 0;
+    width: 760px
+}
+
+.mod-console .hdr {
+    background: #3e3d39;
+    background: linear-gradient(to bottom,#3e3d39 0%,#676662 2%,#3c3b37 49%,#3c3b37 100%);
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    color: #5e5c58;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 4px 0 0 6px;
+    height: 26px;
+    border-bottom: 1px solid #5b5859;
+    -webkit-box-shadow: 2px 5px 2px 0 rgba(0,0,0,0.8);
+    box-shadow: 1px 5px 2px 1px rgba(0,0,0,0.8)
+}
+
+.mod-console .hdr span {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    padding-top: 1px
+}
+
+.mod-console .bdy {
+    background: #3f2337;
+    background: linear-gradient(to bottom,#3f2337 1%,#3f2337 5%,#502e46 37%,#56344c 99%);
+    -webkit-box-shadow: 2px 3px 2px 0 rgba(0,0,0,0.8);
+    box-shadow: 2px 3px 2px 0 rgba(0,0,0,0.8)
 }
 
 #controls {
