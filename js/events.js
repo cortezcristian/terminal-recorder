@@ -1,245 +1,994 @@
 //Timeline
-var timeTotal = 92088+10;
+var timeTotal = 250234+10;
 
 var t = window.t = new Timeline({length: timeTotal, frequency:10 });
 
 var stdouts = [
     { time: 0, content: '  terminal-recorder by @cortezcristian\r\n'}
-    , { time: 309, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 312, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 1260, content: "f"}
-    , { time: 1360, content: "i"}
-    , { time: 1760, content: "g"}
-    , { time: 1848, content: "l"}
-    , { time: 1982, content: "e"}
-    , { time: 2069, content: "t"}
-    , { time: 2194, content: " "}
-    , { time: 2545, content: "a"}
-    , { time: 2639, content: "m"}
-    , { time: 2737, content: "a"}
-    , { time: 2978, content: "z"}
-    , { time: 3092, content: "o"}
-    , { time: 3521, content: "[K"}
-    , { time: 3711, content: "i"}
-    , { time: 3822, content: "n"}
-    , { time: 3875, content: "g"}
-    , { time: 4470, content: " "}
-    , { time: 4889, content: "w"}
-    , { time: 5020, content: "o"}
-    , { time: 5140, content: "r"}
-    , { time: 5252, content: "k"}
-    , { time: 6181, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  figlet amazing work"}
-    , { time: 6185, content: "                           _                                  _    \r\n  __ _ _ __ ___   __ _ ___(_)_ __   __ _  __      _____  _ __| | __\r\n / _` | '_ ` _ \\ / _` |_  / | '_ \\ / _` | \\ \\ /\\ / / _ \\| '__| |/ /\r\n| (_| | | | | | | (_| |/ /| | | | | (_| |  \\ V  V / (_) | |  |   < \r\n \\__,_|_| |_| |_|\\__,_/___|_|_| |_|\\__, |   \\_/\\_/ \\___/|_|  |_|\\_\\\r\n                                   |___/                           \r\n"}
-    , { time: 6186, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 6199, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 7494, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 10021, content: "#"}
-    , { time: 11260, content: "F"}
-    , { time: 11568, content: "o"}
-    , { time: 11967, content: "l"}
-    , { time: 12082, content: "l"}
-    , { time: 12244, content: "o"}
-    , { time: 12378, content: "w"}
-    , { time: 12483, content: " "}
-    , { time: 12636, content: "m"}
-    , { time: 12734, content: "e"}
-    , { time: 12824, content: " "}
-    , { time: 13041, content: "o"}
-    , { time: 13288, content: "n"}
-    , { time: 13444, content: " "}
-    , { time: 14201, content: "t"}
-    , { time: 14456, content: "w"}
-    , { time: 14935, content: "i"}
-    , { time: 15131, content: "t"}
-    , { time: 15323, content: "t"}
-    , { time: 15496, content: "e"}
-    , { time: 15607, content: "r"}
-    , { time: 16171, content: " "}
-    , { time: 16807, content: "@"}
-    , { time: 17153, content: "c"}
-    , { time: 17306, content: "o"}
-    , { time: 17449, content: "r"}
-    , { time: 17640, content: "t"}
-    , { time: 17699, content: "e"}
-    , { time: 17981, content: "z"}
-    , { time: 18176, content: "c"}
-    , { time: 18385, content: "r"}
-    , { time: 18515, content: "i"}
-    , { time: 18642, content: "s"}
-    , { time: 18762, content: "t"}
-    , { time: 18890, content: "i"}
-    , { time: 18986, content: "a"}
-    , { time: 20233, content: "n"}
-    , { time: 20686, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 20695, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 21710, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 23077, content: "#"}
-    , { time: 23483, content: "l"}
-    , { time: 23589, content: "e"}
-    , { time: 23792, content: "t"}
-    , { time: 24246, content: "'"}
-    , { time: 24702, content: "s"}
-    , { time: 24861, content: " "}
-    , { time: 25068, content: "s"}
-    , { time: 25305, content: "e"}
-    , { time: 25459, content: "e"}
-    , { time: 25635, content: " "}
-    , { time: 25757, content: "w"}
-    , { time: 25960, content: "h"}
-    , { time: 26093, content: "a"}
-    , { time: 26582, content: "t"}
-    , { time: 26771, content: " "}
-    , { time: 26983, content: "t"}
-    , { time: 27156, content: "h"}
-    , { time: 27239, content: "i"}
-    , { time: 27304, content: "s"}
-    , { time: 27436, content: " "}
-    , { time: 27643, content: "b"}
-    , { time: 27695, content: "a"}
-    , { time: 28015, content: "b"}
-    , { time: 28691, content: "y"}
-    , { time: 28879, content: " "}
-    , { time: 29011, content: "c"}
-    , { time: 29103, content: "a"}
-    , { time: 29166, content: "n"}
-    , { time: 29288, content: " "}
-    , { time: 29419, content: "d"}
-    , { time: 29554, content: "o"}
-    , { time: 29922, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 29934, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 34476, content: "#"}
-    , { time: 34904, content: "o"}
-    , { time: 35029, content: "p"}
-    , { time: 35200, content: "e"}
-    , { time: 35346, content: "n"}
-    , { time: 35494, content: " "}
-    , { time: 35690, content: "v"}
-    , { time: 35796, content: "i"}
-    , { time: 35881, content: "m"}
-    , { time: 36462, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 36471, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 37226, content: "v"}
-    , { time: 37336, content: "i"}
-    , { time: 37402, content: "m"}
-    , { time: 37780, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  vim"}
-    , { time: 37855, content: "7[?47h[?1h="}
-    , { time: 37855, content: "[1;24r[m[H[2J[>c"}
-    , { time: 37857, content: "[1;1H[33m  1 [m[4m                                                                            [m[2;1H[1m[34m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H0,0-1"}
-    , { time: 37858, content: "[9CAll[6;32HVIM - Vi IMproved[8;33Hversion 7.3.547[9;29Hby Bram Moolenaar et al.[10;13HModified by pkg-vim-maintainers@lists.alioth.debian.org[11;19HVim is open source and freely distributable[13;26HHelp poor children in Uganda![14;18Htype  :help iccf[34m<Enter>[m       for information [16;18Htype  :q[34m<Enter>[m               to exit         [17;18Htype  :help[34m<Enter>[m  or  [34m<F1>[m  for on-line help[18;18Htype  :help version7[34m<Enter>[m   for version info[1;5H"}
-    , { time: 41771, content: "[24;63H[K[24;1H:"}
-    , { time: 42863, content: "."}
-    , { time: 43099, content: "!"}
-    , { time: 45384, content: "f"}
-    , { time: 45563, content: "i"}
-    , { time: 45830, content: "g"}
-    , { time: 45963, content: "l"}
-    , { time: 46090, content: "e"}
-    , { time: 46167, content: "t"}
-    , { time: 46329, content: " "}
-    , { time: 49543, content: "t"}
-    , { time: 49608, content: "e"}
-    , { time: 49714, content: "r"}
-    , { time: 49847, content: "m"}
-    , { time: 50023, content: "i"}
-    , { time: 50138, content: "n"}
-    , { time: 50254, content: "a"}
-    , { time: 50413, content: "l"}
-    , { time: 52061, content: "\r"}
-    , { time: 52108, content: "[1;5H[4m _[21C _[12C _[m\r\n[33m  2 [m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[2;45H[K[3;1H[33m  3 [m| __/ _ \\ '__| '_ ` _ \\| | '_ \\ / _` | |[3;45H[K[4;1H[33m  4 [m| ||  __/ |  | | | | | | | | | | (_| | |[4;45H[K[5;1H[33m  5 [m \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|[5;45H[K[6;1H[33m  6 [m                                        [6;45H[K[8;33H[1m[34m               [9;29H                        [10;13H                                                       [11;19H                                           [13;26H                             [14;18H                                              [16;18H                                              [17;18H                                              [18;18H                                              [m[24;63H1,2[11CAll[1;6H"}
-    , { time: 55273, content: ""}
-    , { time: 56222, content: " _                      _             _ [1;45H[K[2;5H[4m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |                                    [m[24;63H2[2;6H"}
-    , { time: 56259, content: "[1;5H[4m _                      _             _                                     [m[2;5H| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[2;45H[K[24;63H1[1;6H"}
-    , { time: 56590, content: ""}
-    , { time: 56667, content: " _                      _             _ [1;45H[K[2;5H[4m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |                                    [m[24;63H2[2;6H"}
-    , { time: 56794, content: "| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[2;45H[K[3;5H[4m| __/ _ \\ '__| '_ ` _ \\| | '_ \\ / _` | |                                    [m[24;63H3[3;6H"}
-    , { time: 56937, content: "| __/ _ \\ '__| '_ ` _ \\| | '_ \\ / _` | |[3;45H[K[4;5H[4m| ||  __/ |  | | | | | | | | | | (_| | |                                    [m[24;63H4[4;6H"}
-    , { time: 57142, content: "| ||  __/ |  | | | | | | | | | | (_| | |[4;45H[K[5;5H[4m \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|                                    [m[24;63H5[5;6H"}
-    , { time: 57311, content: " \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|[5;45H[K[6;5H[4m                                                                            [m[24;63H6[6;6H"}
-    , { time: 57538, content: ""}
-    , { time: 59350, content: ""}
-    , { time: 60153, content: "[24;1H[K[24;1H:"}
-    , { time: 62173, content: "."}
-    , { time: 62768, content: "!"}
-    , { time: 63628, content: "f"}
-    , { time: 63905, content: "i"}
-    , { time: 64151, content: "g"}
-    , { time: 64529, content: "l"}
-    , { time: 64630, content: "e"}
-    , { time: 64728, content: "t"}
-    , { time: 65617, content: " "}
-    , { time: 65803, content: "r"}
-    , { time: 65895, content: "e"}
-    , { time: 66194, content: "c"}
-    , { time: 66398, content: "o"}
-    , { time: 66535, content: "r"}
-    , { time: 66895, content: "d"}
-    , { time: 66980, content: "e"}
-    , { time: 67136, content: "r"}
-    , { time: 68138, content: "\r"}
-    , { time: 68200, content: "[6;32H[4m _[m\r\n[33m  7 [m _ __ ___  ___ ___  _ __ __| | ___ _ __ [7;45H[K[8;1H[33m  8 [m| '__/ _ \\/ __/ _ \\| '__/ _` |/ _ \\ '__|[8;45H[K[9;1H[33m  9 [m| | |  __/ (_| (_) | | | (_| |  __/ |   [9;45H[K[10;1H[33m 10 [m|_|  \\___|\\___\\___/|_|  \\__,_|\\___|_|   [10;45H[K[11;1H[33m 11 [m                                        [11;45H[K[24;63H6,29[10CAll[6;33H"}
-    , { time: 70401, content: "[24;1H[K[24;1H:"}
-    , { time: 71314, content: "q"}
-    , { time: 73847, content: "\r[1m[37m[41mE37: No write since last change (add ! to override)[m[11C6,29[10CAll[6;33H"}
-    , { time: 74662, content: "[24;1H[K[24;1H:"}
-    , { time: 75538, content: "q"}
-    , { time: 75849, content: "!"}
-    , { time: 76284, content: "\r[24;1H[K[24;1H[?1l>[2J[?47l8"}
-    , { time: 76286, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
-    , { time: 76302, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 78140, content: "[H[2J[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
-    , { time: 79784, content: "t"}
-    , { time: 79970, content: "h"}
-    , { time: 80072, content: "a"}
-    , { time: 80121, content: "t"}
-    , { time: 80554, content: "'"}
-    , { time: 80667, content: "s"}
-    , { time: 80807, content: " "}
-    , { time: 80937, content: "a"}
-    , { time: 81083, content: "l"}
-    , { time: 81223, content: "l"}
-    , { time: 83043, content: "[K"}
-    , { time: 83544, content: "[K"}
-    , { time: 83575, content: "[K"}
-    , { time: 83608, content: "[K"}
-    , { time: 83639, content: "[K"}
-    , { time: 83671, content: "[K"}
-    , { time: 83702, content: "[K"}
-    , { time: 83729, content: "[K"}
-    , { time: 83762, content: "[K"}
-    , { time: 83794, content: "[K"}
-    , { time: 83825, content: ""}
-    , { time: 83861, content: ""}
-    , { time: 83885, content: ""}
-    , { time: 83915, content: ""}
-    , { time: 86615, content: "h"}
-    , { time: 86723, content: "t"}
-    , { time: 86842, content: "o"}
-    , { time: 86973, content: "p"}
-    , { time: 87276, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  htop"}
-    , { time: 87312, content: ")07[?47h[1;24r[m[4l[?1h="}
-    , { time: 87313, content: "[m[?1000h"}
-    , { time: 87481, content: "[m[m[H[2J[1B  [36m1  [m[1m[[m[32m|||[30m[1m                       7.7%[m][m     [36mTasks: [1m175[m[36m, [1m595[m[36m thr; [32m[1m1[m[36m running[3;3H2  [m[1m[[m[32m|||[31m||||||||||||[30m[1m          46.2%[m][m     [36mLoad average: [30m[1m0.18 [m[m0.51 [1m0.73 [4;3H[m[36m3  [m[1m[[30m                          0.0%[m][m     [36mUptime: [1m05:51:39[5;3H[m[36m4  [m[1m[[30m                          0.0%[m][6;3H[m[36mMem[m[1m[[m[32m|||||||||||||||||||267[34m8/[33m3771MB[m[1m][7;3H[m[36mSwp[m[1m[[m[31m||||||[30m[1m              347/2047MB[m]\r[2B[m[30m[42m  PID USER      PRI [30m[46m NI [30m[42m VIRT   RES   SHR S CPU% MEM%   TIME+  Command          [10;1H[30m[46m 2614 crisboot   -6 -11  357M  3520  2196 S  0.0  0.1  0:11.22 /usr/bin/pulseaud[11;2H[m[m2619 crisboot   -6 [31m-11 [36m 357M  3[m[m520 [36m 2[m[m196 S  0.0  0.1  0:00.00 /usr/bin/pulseaud[12;2H2607 crisboot    9 [31m-11 [36m 357M  3[m[m520 [36m 2[m[m196 S  0.0  0.1  0:21.78 /usr/bin/pulseaud[13;5H1 [30m[1mroot      [m[m 20   0 [36m27[m[m060 [36m 2[m[m456 [36m 1[m[m264 S  0.0  0.1  0:01.40 /sbin/init[14;3H402 [30m[1mroot      [m[m 20   0 [36m15[m[m272   484   380 S  0.0  0.0  0:00.06 upstart-file-brid[15;3H431 [30m[1mroot      [m[m 20   0 [36m17[m[m320   668   516 S  0.0  0.0  0:00.18 upstart-udev-brid[16;3H433 [30m[1mroot      [m[m 20   0 [36m22[m[m272   952   704 S  0.0  0.0  0:00.19 /sbin/udevd --dae[17;3H801 [30m[1mroot      [m[m 20   0 [36m15[m[m260   480   380 S  0.0  0.0  0:00.03 upstart-socket-br[18;2H1211 [30m[1mroot      [m[m 20   0 [36m52[m[m256   972   968 S  0.0  0.0  0:00.00 /usr/sbin/sshd -D[19;2H1219 [30m[1mmessagebu [m[m 20   0 [36m24[m[m980 [36m 1[m[m992   892 S  0.0  0.1  0:03.25 dbus-daemon --sys[20;2H1228 [30m[1msyslog    [m[m 20   0 [36m 241M [m[m  940   940 S  0.0  0.0  0:00.91 rsyslogd -c5\r[1B 1229 [30m[1msyslog    [m[m 20   0 [36m 241M [m[m  940   940 S  0.0  0.0 "}
-    , { time: 87481, content: " 0:00.24 rsyslogd -c5\r[1B 1230 [30m[1msyslog    [m[m 20   0 [36m 241M [m[m  940   940 S  0.0  0.0  0:00.07 rsyslogd -c5\r[1B 1227 [30m[1msyslog    [m[m 20   0 [36m 241M [m[m  940   940 S  0.0  0.0  0:02.41 rsyslogd -c5\r[1BF1[30m[46mHelp  [m[mF2[30m[46mSetup [m[mF3[30m[46mSearch[m[mF4[30m[46mFilter[m[mF5[30m[46mTree  [m[mF6[30m[46mSortBy[m[mF7[30m[46mNice -[m[mF8[30m[46mNice +[m[mF9[30m[46mKill  [m[mF10[30m[46mQuit [4ht[4l[H[m[m"}
-    , { time: 89016, content: "[2;8H[31m|[30m[1m [2;33H4.0[3;8H[m[31m|[30m[1m             [3;32H 3.3[4;7H[m[32m||[4;33H[30m[1m5.2[4;57H[36m40[5;7H[m[32m|[31m|[5;33H[30m[1m2[6;29H[m[34m9[H[m[m"}
-    , { time: 90552, content: "[2;33H[30m[1m5.9[3;33H2.0[4;8H[m[31m|[4;33H[30m[1m4.0[4;58H[36m2[5;33H[30m3.9[H[m[m"}
-    , { time: 92088, content: "[2;8H[32m|[31m|[2;33H[30m[1m7.2[3;33H4.5[3;60H7 [m[m0.50[4;7H[34m|[32m|[31m|[4;33H[30m[1m2.6[4;58H[36m3[5;35H[30m3[H[m[m"}
+    , { time: 182, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 2084, content: "K"}
+    , { time: 2905, content: "n"}
+    , { time: 3072, content: "o"}
+    , { time: 3278, content: "c"}
+    , { time: 3363, content: "k"}
+    , { time: 3969, content: ","}
+    , { time: 4164, content: " "}
+    , { time: 5123, content: "k"}
+    , { time: 5360, content: "n"}
+    , { time: 5476, content: "o"}
+    , { time: 5591, content: "c"}
+    , { time: 5720, content: "k"}
+    , { time: 6380, content: " "}
+    , { time: 6640, content: "N"}
+    , { time: 6832, content: "e"}
+    , { time: 6922, content: "o"}
+    , { time: 7265, content: "."}
+    , { time: 7432, content: "."}
+    , { time: 7568, content: "."}
+    , { time: 11220, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  Knock, knock Neo..."}
+    , { time: 11331, content: "Knock,: command not found\r\n"}
+    , { time: 11338, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 11347, content: "[m [31m127[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 14141, content: "T"}
+    , { time: 14248, content: "h"}
+    , { time: 14415, content: "e"}
+    , { time: 14500, content: " "}
+    , { time: 14926, content: "M"}
+    , { time: 15140, content: "a"}
+    , { time: 15373, content: "t"}
+    , { time: 15455, content: "r"}
+    , { time: 15555, content: "i"}
+    , { time: 15816, content: "x"}
+    , { time: 16208, content: " "}
+    , { time: 16456, content: "h"}
+    , { time: 16507, content: "a"}
+    , { time: 16558, content: "s"}
+    , { time: 16951, content: " "}
+    , { time: 17256, content: "y"}
+    , { time: 17364, content: "o"}
+    , { time: 17462, content: "u"}
+    , { time: 17781, content: "."}
+    , { time: 17941, content: "."}
+    , { time: 18063, content: "."}
+    , { time: 18570, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  The Matrix has you..."}
+    , { time: 18692, content: "No command 'The' found, did you mean:\r\n Command 'the' from package 'the' (universe)"}
+    , { time: 18692, content: "\r\nThe: command not found\r\n"}
+    , { time: 18700, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 18713, content: "[m [31m127[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 20308, content: "J"}
+    , { time: 20506, content: "u"}
+    , { time: 20714, content: "s"}
+    , { time: 20838, content: "t"}
+    , { time: 21033, content: " "}
+    , { time: 21222, content: "k"}
+    , { time: 21403, content: "i"}
+    , { time: 21580, content: "d"}
+    , { time: 21700, content: "d"}
+    , { time: 21800, content: "i"}
+    , { time: 21874, content: "n"}
+    , { time: 21965, content: "g"}
+    , { time: 22816, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  Just kidding"}
+    , { time: 22929, content: "Just: command not found\r\n"}
+    , { time: 22942, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 22952, content: "[m [31m127[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 25201, content: "[H[2J[m [31m127[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 26709, content: "v"}
+    , { time: 26816, content: "i"}
+    , { time: 26897, content: "m"}
+    , { time: 26996, content: " "}
+    , { time: 27593, content: "H"}
+    , { time: 27835, content: "o"}
+    , { time: 27955, content: "w"}
+    , { time: 28412, content: "t"}
+    , { time: 28596, content: "o"}
+    , { time: 29386, content: "."}
+    , { time: 29734, content: "m"}
+    , { time: 30347, content: "d"}
+    , { time: 30813, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  vim Howto.md"}
+    , { time: 30958, content: "7[?47h[?1h="}
+    , { time: 30958, content: "[1;30r[m[H[2J[30;1H\"Howto.md\" [New File]"}
+    , { time: 31027, content: "[>c"}
+    , { time: 31034, content: "[1;1H[38;5;254m[48;5;56m Howto.md [m[38;5;56m[48;5;238m[m[38;5;254m[48;5;238m                                                                    [m[38;5;238m[48;5;238m[m[38;5;180m[48;5;238m[m[38;5;234m[48;5;180m buffers [m[2;1H[38;5;130m  1 [m[4m                                                                                      [m[3;1H[94m~                                                                                         [4;1H~                                                                                         [5;1H~                                                                                         [6;1H~                                                                                         [7;1H~                                                                                         [8;1H~                                                                                         [9;1H~                                                                                         [10;1H~                                                                                         [11;1H~                                                                                         [12;1H~                                                                                         [13;1H~                                                                                         [14;1H~                                                                                         [15;1H~                                                                                         [16;1H~                                                                                         [17;1H~                                                                                         [18;1H~                                                                                         [19;1H~                                                                                         [20;1H~                       "}
+    , { time: 31036, content: "                                                                  [21;1H~                                                                                         [22;1H~                                                                                         [23;1H~                                                                                         [24;1H~                                                                                         [25;1H~                                                                                         [26;1H~                                                                                         [27;1H~                                                                                         [28;1H~                                                                                         [m[29;1H[38;5;254m[48;5;56m [m[1m[38;5;254m[48;5;56mNORMAL[m[38;5;254m[48;5;56m [m[38;5;56m[48;5;234m[m[38;5;234m[48;5;238m[m[38;5;254m[48;5;238m Howto.md                                  [m[38;5;238m[48;5;238m[m[38;5;254m[48;5;238m modula2 [m[38;5;234m[48;5;238m[m[38;5;206m[48;5;234m [unix] [m[38;5;56m[48;5;234m[m[38;5;254m[48;5;56m 100% [m[1m[38;5;254m[48;5;56m   0[m[38;5;254m[48;5;56m:  0  [2;5H"}
+    , { time: 33496, content: "[m[30;1H[1m-- INSERT --[m[30;13H[K"}
+    , { time: 33503, content: "[29;1H[38;5;234m[48;5;111m [m[1m[38;5;234m[48;5;111mINSERT[m[38;5;254m[48;5;56m [m[38;5;234m[48;5;111m [m[38;5;111m[48;5;234m[m[55C[38;5;80m[48;5;234m [unix] [m[38;5;111m[48;5;234m[m[38;5;234m[48;5;111m 100% [m[1m[38;5;234m[48;5;111m   0[m[38;5;254m[48;5;56m:[m[38;5;234m[48;5;111m:  1  [2;5H"}
+    , { time: 34639, content: "[1;1H Howto.md+ [m[38;5;111m[48;5;238m[m[2;4H[38;5;130m [m[4mB[m[29;10H[38;5;234m[48;5;111m Howto.md[+]                               [m[38;5;238m[48;5;111m[m[29C[1m[38;5;234m[48;5;111m1[m[38;5;234m[48;5;111m:  2[2;6H"}
+    , { time: 34910, content: "[m[4mBa[m[29;88H[38;5;234m[48;5;111m3[2;7H"}
+    , { time: 35290, content: "[m[4mas[m[29;88H[38;5;234m[48;5;111m4[2;8H"}
+    , { time: 35508, content: "[m[4msi[m[29;88H[38;5;234m[48;5;111m5[2;9H"}
+    , { time: 35709, content: "[m[4mic[m[29;88H[38;5;234m[48;5;111m6[2;10H"}
+    , { time: 35828, content: "[m[4mca[m[29;88H[38;5;234m[48;5;111m7[2;11H"}
+    , { time: 35959, content: "[m[4mal[m[29;88H[38;5;234m[48;5;111m8[2;12H"}
+    , { time: 36099, content: "[m[4mll[m[29;88H[38;5;234m[48;5;111m9[2;13H"}
+    , { time: 36228, content: "[m[4mly[m[29;87H[38;5;234m[48;5;111m10[2;14H"}
+    , { time: 36414, content: "[29;88H1[2;15H"}
+    , { time: 36886, content: "[m[4m I[m[29;88H[38;5;234m[48;5;111m2[2;16H"}
+    , { time: 37020, content: "[29;88H3[2;17H"}
+    , { time: 37201, content: "[m[4m g[m[29;88H[38;5;234m[48;5;111m4[2;18H"}
+    , { time: 37260, content: "[m[4mge[m[29;88H[38;5;234m[48;5;111m5[2;19H"}
+    , { time: 37429, content: "[m[4met[m[29;88H[38;5;234m[48;5;111m6[2;20H"}
+    , { time: 37521, content: "[29;88H7[2;21H"}
+    , { time: 37791, content: "[m[4m t[m[29;88H[38;5;234m[48;5;111m8[2;22H"}
+    , { time: 37906, content: "[m[4mti[m[29;88H[38;5;234m[48;5;111m9[2;23H"}
+    , { time: 38417, content: "[m[4mir[m[29;87H[38;5;234m[48;5;111m20[2;24H"}
+    , { time: 38516, content: "[m[4mre[m[29;88H[38;5;234m[48;5;111m1[2;25H"}
+    , { time: 38715, content: "[m[4med[m[29;88H[38;5;234m[48;5;111m2[2;26H"}
+    , { time: 38822, content: "[29;88H3[2;27H"}
+    , { time: 39040, content: "[m[4m o[m[29;88H[38;5;234m[48;5;111m4[2;28H"}
+    , { time: 39267, content: "[m[4mof[m[29;88H[38;5;234m[48;5;111m5[2;29H"}
+    , { time: 39474, content: "[29;88H6[2;30H"}
+    , { time: 40757, content: "[m[4m v[m[29;88H[38;5;234m[48;5;111m7[2;31H"}
+    , { time: 40849, content: "[m[4mvi[m[29;88H[38;5;234m[48;5;111m8[2;32H"}
+    , { time: 41294, content: "[m[4mid[m[29;88H[38;5;234m[48;5;111m9[2;33H"}
+    , { time: 41358, content: "[m[4mde[m[29;87H[38;5;234m[48;5;111m30[2;34H"}
+    , { time: 41433, content: "[m[4meo[m[29;88H[38;5;234m[48;5;111m1[2;35H"}
+    , { time: 41593, content: "[m[4mos[m[29;88H[38;5;234m[48;5;111m2[2;36H"}
+    , { time: 43510, content: "[m[4mo [m[29;88H[38;5;234m[48;5;111m1[2;35H"}
+    , { time: 43769, content: "[29;88H2[2;36H"}
+    , { time: 43947, content: "[m[4m t[m[29;88H[38;5;234m[48;5;111m3[2;37H"}
+    , { time: 44131, content: "[m[4mtu[m[29;88H[38;5;234m[48;5;111m4[2;38H"}
+    , { time: 44537, content: "[m[4mut[m[29;88H[38;5;234m[48;5;111m5[2;39H"}
+    , { time: 44663, content: "[m[4mto[m[29;88H[38;5;234m[48;5;111m6[2;40H"}
+    , { time: 44764, content: "[m[4mor[m[29;88H[38;5;234m[48;5;111m7[2;41H"}
+    , { time: 44895, content: "[m[4mri[m[29;88H[38;5;234m[48;5;111m8[2;42H"}
+    , { time: 45010, content: "[m[4mia[m[29;88H[38;5;234m[48;5;111m9[2;43H"}
+    , { time: 45176, content: "[m[4mal[m[29;87H[38;5;234m[48;5;111m40[2;44H"}
+    , { time: 45271, content: "[m[4mls[m[29;88H[38;5;234m[48;5;111m1[2;45H"}
+    , { time: 45940, content: "[m[4ms,[m[29;88H[38;5;234m[48;5;111m2[2;46H"}
+    , { time: 46099, content: "[29;88H3[2;47H"}
+    , { time: 46544, content: "[m[4m a[m[29;88H[38;5;234m[48;5;111m4[2;48H"}
+    , { time: 46679, content: "[m[4man[m[29;88H[38;5;234m[48;5;111m5[2;49H"}
+    , { time: 46792, content: "[m[4mni[m[29;88H[38;5;234m[48;5;111m6[2;50H"}
+    , { time: 46972, content: "[m[4mim[m[29;88H[38;5;234m[48;5;111m7[2;51H"}
+    , { time: 47046, content: "[m[4mma[m[29;88H[38;5;234m[48;5;111m8[2;52H"}
+    , { time: 47253, content: "[m[4mat[m[29;88H[38;5;234m[48;5;111m9[2;53H"}
+    , { time: 47344, content: "[m[4mte[m[29;87H[38;5;234m[48;5;111m50[2;54H"}
+    , { time: 47644, content: "[m[4med[m[29;88H[38;5;234m[48;5;111m1[2;55H"}
+    , { time: 47843, content: "[29;88H2[2;56H"}
+    , { time: 48607, content: "[m[4m g[m[29;88H[38;5;234m[48;5;111m3[2;57H"}
+    , { time: 48716, content: "[m[4mgi[m[29;88H[38;5;234m[48;5;111m4[2;58H"}
+    , { time: 48819, content: "[m[4mif[m[29;88H[38;5;234m[48;5;111m5[2;59H"}
+    , { time: 49754, content: "[m[2;5HBasically I get tired of video tutorials, animated gif[2;59H[K[3;1H[38;5;130m  2 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m2[m[38;5;234m[48;5;111m:  1[3;5H"}
+    , { time: 50204, content: "[m[38;5;130m [m[4mw[m[29;88H[38;5;234m[48;5;111m2[3;6H"}
+    , { time: 50312, content: "[m[4mwh[m[29;88H[38;5;234m[48;5;111m3[3;7H"}
+    , { time: 50468, content: "[m[4mhe[m[29;88H[38;5;234m[48;5;111m4[3;8H"}
+    , { time: 50608, content: "[m[4mer[m[29;88H[38;5;234m[48;5;111m5[3;9H"}
+    , { time: 50673, content: "[m[4mre[m[29;88H[38;5;234m[48;5;111m6[3;10H"}
+    , { time: 51010, content: "[29;88H7[3;11H"}
+    , { time: 51193, content: "[m[4m y[m[29;88H[38;5;234m[48;5;111m8[3;12H"}
+    , { time: 51479, content: "[m[4myo[m[29;88H[38;5;234m[48;5;111m9[3;13H"}
+    , { time: 51533, content: "[m[4mou[m[29;87H[38;5;234m[48;5;111m10[3;14H"}
+    , { time: 51721, content: "[29;88H1[3;15H"}
+    , { time: 51840, content: "[m[4m c[m[29;88H[38;5;234m[48;5;111m2[3;16H"}
+    , { time: 51906, content: "[m[4mca[m[29;88H[38;5;234m[48;5;111m3[3;17H"}
+    , { time: 52005, content: "[m[4man[m[29;88H[38;5;234m[48;5;111m4[3;18H"}
+    , { time: 52158, content: "[m[4mnn[m[29;88H[38;5;234m[48;5;111m5[3;19H"}
+    , { time: 52523, content: "[m[4mno[m[29;88H[38;5;234m[48;5;111m6[3;20H"}
+    , { time: 52640, content: "[m[4mot[m[29;88H[38;5;234m[48;5;111m7[3;21H"}
+    , { time: 52782, content: "[29;88H8[3;22H"}
+    , { time: 53008, content: "[m[4m c[m[29;88H[38;5;234m[48;5;111m9[3;23H"}
+    , { time: 53259, content: "[m[4mco[m[29;87H[38;5;234m[48;5;111m20[3;24H"}
+    , { time: 53483, content: "[m[4mop[m[29;88H[38;5;234m[48;5;111m1[3;25H"}
+    , { time: 53670, content: "[m[4mpy[m[29;88H[38;5;234m[48;5;111m2[3;26H"}
+    , { time: 54561, content: "[29;88H3[3;27H"}
+    , { time: 54899, content: "[m[4m f[m[29;88H[38;5;234m[48;5;111m4[3;28H"}
+    , { time: 54983, content: "[m[4mfr[m[29;88H[38;5;234m[48;5;111m5[3;29H"}
+    , { time: 55086, content: "[m[4mro[m[29;88H[38;5;234m[48;5;111m6[3;30H"}
+    , { time: 55147, content: "[m[4mom[m[29;88H[38;5;234m[48;5;111m7[3;31H"}
+    , { time: 56059, content: "[m[3;5Hwhere you cannot copy from[3;31H[K[4;1H[38;5;130m  3 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m3[m[38;5;234m[48;5;111m:  1[4;5H"}
+    , { time: 56246, content: "[m[4;5H[K[5;1H[38;5;130m  4 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m4[m[38;5;234m[48;5;111m:[5;5H"}
+    , { time: 56801, content: "[m[38;5;130m [m[4mS[m[29;88H[38;5;234m[48;5;111m2[5;6H"}
+    , { time: 57038, content: "[m[4mSo[m[29;88H[38;5;234m[48;5;111m3[5;7H"}
+    , { time: 57220, content: "[29;88H4[5;8H"}
+    , { time: 58637, content: "[m[4m I[m[29;88H[38;5;234m[48;5;111m5[5;9H"}
+    , { time: 58808, content: "[29;88H6[5;10H"}
+    , { time: 59170, content: "[m[4m c[m[29;88H[38;5;234m[48;5;111m7[5;11H"}
+    , { time: 59406, content: "[m[4mcr[m[29;88H[38;5;234m[48;5;111m8[5;12H"}
+    , { time: 59480, content: "[m[4mre[m[29;88H[38;5;234m[48;5;111m9[5;13H"}
+    , { time: 59557, content: "[m[4mea[m[29;87H[38;5;234m[48;5;111m10[5;14H"}
+    , { time: 59794, content: "[m[4mat[m[29;88H[38;5;234m[48;5;111m1[5;15H"}
+    , { time: 59872, content: "[m[4mte[m[29;88H[38;5;234m[48;5;111m2[5;16H"}
+    , { time: 60111, content: "[m[4med[m[29;88H[38;5;234m[48;5;111m3[5;17H"}
+    , { time: 60264, content: "[29;88H4[5;18H"}
+    , { time: 60511, content: "[m[4m t[m[29;88H[38;5;234m[48;5;111m5[5;19H"}
+    , { time: 60606, content: "[m[4mte[m[29;88H[38;5;234m[48;5;111m6[5;20H"}
+    , { time: 60724, content: "[m[4mer[m[29;88H[38;5;234m[48;5;111m7[5;21H"}
+    , { time: 60843, content: "[m[4mrm[m[29;88H[38;5;234m[48;5;111m8[5;22H"}
+    , { time: 60996, content: "[m[4mmi[m[29;88H[38;5;234m[48;5;111m9[5;23H"}
+    , { time: 61081, content: "[m[4min[m[29;87H[38;5;234m[48;5;111m20[5;24H"}
+    , { time: 61178, content: "[m[4mna[m[29;88H[38;5;234m[48;5;111m1[5;25H"}
+    , { time: 61361, content: "[m[4mal[m[29;88H[38;5;234m[48;5;111m2[5;26H"}
+    , { time: 61486, content: "[29;88H3[5;27H"}
+    , { time: 61621, content: "[m[4m r[m[29;88H[38;5;234m[48;5;111m4[5;28H"}
+    , { time: 61692, content: "[m[4mre[m[29;88H[38;5;234m[48;5;111m5[5;29H"}
+    , { time: 61905, content: "[m[4mec[m[29;88H[38;5;234m[48;5;111m6[5;30H"}
+    , { time: 62006, content: "[m[4mco[m[29;88H[38;5;234m[48;5;111m7[5;31H"}
+    , { time: 62149, content: "[m[4mor[m[29;88H[38;5;234m[48;5;111m8[5;32H"}
+    , { time: 62425, content: "[m[4mrd[m[29;88H[38;5;234m[48;5;111m9[5;33H"}
+    , { time: 62498, content: "[m[4mde[m[29;87H[38;5;234m[48;5;111m30[5;34H"}
+    , { time: 62650, content: "[m[4mer[m[29;88H[38;5;234m[48;5;111m1[5;35H"}
+    , { time: 65182, content: "[m[5;5HSo I created terminal recorder[5;35H[K[6;1H[38;5;130m  5 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m5[m[38;5;234m[48;5;111m:  [6;5H"}
+    , { time: 65324, content: "[m[6;5H[K[7;1H[38;5;130m  6 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m6[m[38;5;234m[48;5;111m:[7;5H"}
+    , { time: 66427, content: "[m[38;5;130m [m[4m#[m[29;88H[38;5;234m[48;5;111m2[7;6H"}
+    , { time: 66575, content: "[m[4m##[m[29;88H[38;5;234m[48;5;111m3[7;7H"}
+    , { time: 67028, content: "[29;88H4[7;8H"}
+    , { time: 67342, content: "[m[4m H[m[29;88H[38;5;234m[48;5;111m5[7;9H"}
+    , { time: 67604, content: "[m[4mHo[m[29;88H[38;5;234m[48;5;111m6[7;10H"}
+    , { time: 68051, content: "[m[4mow[m[29;88H[38;5;234m[48;5;111m7[7;11H"}
+    , { time: 68239, content: "[29;88H8[7;12H"}
+    , { time: 68861, content: "[m[4m t[m[29;88H[38;5;234m[48;5;111m9[7;13H"}
+    , { time: 68973, content: "[m[4mto[m[29;87H[38;5;234m[48;5;111m10[7;14H"}
+    , { time: 69080, content: "[29;88H1[7;15H"}
+    , { time: 69409, content: "[m[4m i[m[29;88H[38;5;234m[48;5;111m2[7;16H"}
+    , { time: 69495, content: "[m[4min[m[29;88H[38;5;234m[48;5;111m3[7;17H"}
+    , { time: 69559, content: "[m[4mns[m[29;88H[38;5;234m[48;5;111m4[7;18H"}
+    , { time: 69715, content: "[m[4mst[m[29;88H[38;5;234m[48;5;111m5[7;19H"}
+    , { time: 69807, content: "[m[4mta[m[29;88H[38;5;234m[48;5;111m6[7;20H"}
+    , { time: 69931, content: "[m[4mal[m[29;88H[38;5;234m[48;5;111m7[7;21H"}
+    , { time: 70038, content: "[m[4mll[m[29;88H[38;5;234m[48;5;111m8[7;22H"}
+    , { time: 70289, content: "[29;88H9[7;23H"}
+    , { time: 70398, content: "[m[4m i[m[29;87H[38;5;234m[48;5;111m20[7;24H"}
+    , { time: 70487, content: "[m[4mit[m[29;88H[38;5;234m[48;5;111m1[7;25H"}
+    , { time: 71451, content: "[m[4mt?[m[29;88H[38;5;234m[48;5;111m2[7;26H"}
+    , { time: 71867, content: "[m[7;5H## How to install it?[7;26H[K[8;1H[38;5;130m  7 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m7[m[38;5;234m[48;5;111m:  1[8;5H"}
+    , { time: 72044, content: "[m[8;5H[K[9;1H[38;5;130m  8 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m8[m[38;5;234m[48;5;111m:[9;5H"}
+    , { time: 72986, content: "[m[38;5;130m [m[4m`[m[29;88H[38;5;234m[48;5;111m2[9;6H"}
+    , { time: 73234, content: "[m[4m``[m[29;88H[38;5;234m[48;5;111m3[9;7H"}
+    , { time: 73749, content: "[m[4m``[m[29;88H[38;5;234m[48;5;111m4[9;8H"}
+    , { time: 74378, content: "[m[4m`b[m[29;88H[38;5;234m[48;5;111m5[9;9H"}
+    , { time: 74497, content: "[m[4mba[m[29;88H[38;5;234m[48;5;111m6[9;10H"}
+    , { time: 74578, content: "[m[4mas[m[29;88H[38;5;234m[48;5;111m7[9;11H"}
+    , { time: 74640, content: "[m[4msh[m[29;88H[38;5;234m[48;5;111m8[9;12H"}
+    , { time: 74969, content: "[m[9;5H```bash[9;12H[K[10;1H[38;5;130m  9 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m9[m[38;5;234m[48;5;111m:  1[10;5H"}
+    , { time: 76207, content: "[m[38;5;130m [m[4m`[m[29;88H[38;5;234m[48;5;111m2[10;6H"}
+    , { time: 76484, content: "[m[4m``[m[29;88H[38;5;234m[48;5;111m3[10;7H"}
+    , { time: 76791, content: "[m[4m``[m[29;88H[38;5;234m[48;5;111m4[10;8H"}
+    , { time: 77478, content: "[29;88H3[10;7H"}
+    , { time: 77609, content: "[29;88H2[10;6H"}
+    , { time: 77752, content: "[29;88H1[10;5H"}
+    , { time: 78060, content: "[m[10;5H[K[11;1H[38;5;130m 10 [m[4m```                                                                                   [m[29;83H[1m[38;5;234m[48;5;111m10[m[38;5;234m[48;5;111m:[11;5H"}
+    , { time: 78439, content: "[m[10;5H[4m                                                                                      [m[11;5H```[11;8H[K[29;75H[38;5;234m[48;5;111m 9[m[6C[1m[38;5;234m[48;5;111m 9[m[38;5;234m[48;5;111m:[10;5H"}
+    , { time: 79936, content: "[m[38;5;130m [m[4m$[m[29;88H[38;5;234m[48;5;111m2[10;6H"}
+    , { time: 80281, content: "[29;88H3[10;7H"}
+    , { time: 80809, content: "[m[4m n[m[29;88H[38;5;234m[48;5;111m4[10;8H"}
+    , { time: 81227, content: "[m[4m  [m[29;88H[38;5;234m[48;5;111m3[10;7H"}
+    , { time: 81333, content: "[m[4m s[m[29;88H[38;5;234m[48;5;111m4[10;8H"}
+    , { time: 81513, content: "[m[4msu[m[29;88H[38;5;234m[48;5;111m5[10;9H"}
+    , { time: 81704, content: "[m[4mud[m[29;88H[38;5;234m[48;5;111m6[10;10H"}
+    , { time: 81849, content: "[m[4mdo[m[29;88H[38;5;234m[48;5;111m7[10;11H"}
+    , { time: 82149, content: "[29;88H8[10;12H"}
+    , { time: 82308, content: "[m[4m n[m[29;88H[38;5;234m[48;5;111m9[10;13H"}
+    , { time: 82784, content: "[m[4mnp[m[29;87H[38;5;234m[48;5;111m10[10;14H"}
+    , { time: 82975, content: "[m[4mpm[m[29;88H[38;5;234m[48;5;111m1[10;15H"}
+    , { time: 83134, content: "[29;88H2[10;16H"}
+    , { time: 83262, content: "[m[4m i[m[29;88H[38;5;234m[48;5;111m3[10;17H"}
+    , { time: 83342, content: "[m[4min[m[29;88H[38;5;234m[48;5;111m4[10;18H"}
+    , { time: 83387, content: "[m[4mns[m[29;88H[38;5;234m[48;5;111m5[10;19H"}
+    , { time: 83533, content: "[m[4mst[m[29;88H[38;5;234m[48;5;111m6[10;20H"}
+    , { time: 83617, content: "[m[4mta[m[29;88H[38;5;234m[48;5;111m7[10;21H"}
+    , { time: 83696, content: "[m[4mal[m[29;88H[38;5;234m[48;5;111m8[10;22H"}
+    , { time: 83835, content: "[m[4mll[m[29;88H[38;5;234m[48;5;111m9[10;23H"}
+    , { time: 83975, content: "[29;87H20[10;24H"}
+    , { time: 84166, content: "[m[4m -[m[29;88H[38;5;234m[48;5;111m1[10;25H"}
+    , { time: 84304, content: "[m[4m-g[m[29;88H[38;5;234m[48;5;111m2[10;26H"}
+    , { time: 84514, content: "[29;88H3[10;27H"}
+    , { time: 85242, content: "[m[4m t[m[29;88H[38;5;234m[48;5;111m4[10;28H"}
+    , { time: 85329, content: "[m[4mte[m[29;88H[38;5;234m[48;5;111m5[10;29H"}
+    , { time: 85453, content: "[m[4mer[m[29;88H[38;5;234m[48;5;111m6[10;30H"}
+    , { time: 85553, content: "[m[4mrm[m[29;88H[38;5;234m[48;5;111m7[10;31H"}
+    , { time: 85695, content: "[m[4mmi[m[29;88H[38;5;234m[48;5;111m8[10;32H"}
+    , { time: 85774, content: "[m[4min[m[29;88H[38;5;234m[48;5;111m9[10;33H"}
+    , { time: 85882, content: "[m[4mna[m[29;87H[38;5;234m[48;5;111m30[10;34H"}
+    , { time: 86009, content: "[m[4mal[m[29;88H[38;5;234m[48;5;111m1[10;35H"}
+    , { time: 86335, content: "[m[4ml-[m[29;88H[38;5;234m[48;5;111m2[10;36H"}
+    , { time: 86680, content: "[m[4m-r[m[29;88H[38;5;234m[48;5;111m3[10;37H"}
+    , { time: 86734, content: "[m[4mre[m[29;88H[38;5;234m[48;5;111m4[10;38H"}
+    , { time: 86984, content: "[m[4mec[m[29;88H[38;5;234m[48;5;111m5[10;39H"}
+    , { time: 87124, content: "[m[4mco[m[29;88H[38;5;234m[48;5;111m6[10;40H"}
+    , { time: 87251, content: "[m[4mor[m[29;88H[38;5;234m[48;5;111m7[10;41H"}
+    , { time: 87523, content: "[m[4mrd[m[29;88H[38;5;234m[48;5;111m8[10;42H"}
+    , { time: 87616, content: "[m[4mde[m[29;88H[38;5;234m[48;5;111m9[10;43H"}
+    , { time: 87727, content: "[m[4mer[m[29;87H[38;5;234m[48;5;111m40[10;44H"}
+    , { time: 88337, content: "[m[10;5H$ sudo npm install -g terminal-recorder[10;44H[K[11;5H[4m```                                                                                   [m[29;75H[38;5;234m[48;5;111m10[m[6C[1m[38;5;234m[48;5;111m10[m[38;5;234m[48;5;111m:  4[11;8H"}
+    , { time: 88477, content: "[m[10;5H[4m$ sudo npm install -g terminal-recorder                                               [m[11;5H```[11;8H[K[29;75H[38;5;234m[48;5;111m 9[m[6C[1m[38;5;234m[48;5;111m 9[m[38;5;234m[48;5;111m: 40[10;44H"}
+    , { time: 88701, content: "[m[9;5H[4m```bash                                                                               [m[10;5H$ sudo npm install -g terminal-recorder[10;44H[K[29;76H[38;5;234m[48;5;111m8[m[7C[1m[38;5;234m[48;5;111m8[m[38;5;234m[48;5;111m:  8[9;12H"}
+    , { time: 88929, content: "[m[30;1H[K[9;11H"}
+    , { time: 88986, content: "[29;1H[38;5;254m[48;5;56m [m[1m[38;5;254m[48;5;56mNORMAL[m[38;5;234m[48;5;111m [m[38;5;254m[48;5;56m [m[38;5;56m[48;5;234m[m[38;5;234m[48;5;56m[m[38;5;254m[48;5;56m Howto.md[+]                               [m[38;5;238m[48;5;56m[m[10C[38;5;206m[48;5;234m [unix] [m[38;5;56m[48;5;234m[m[38;5;254m[48;5;56m  80% [m[1m[38;5;254m[48;5;56m   8[m[38;5;234m[48;5;111m:[m[38;5;254m[48;5;56m:  7  [9;11H"}
+    , { time: 89436, content: "[m[9;5H[47m```bas[mh[47m [m[9;13H[K[29;1H[38;5;234m[48;5;180m [m[1m[38;5;234m[48;5;180mV-LINE[m[38;5;254m[48;5;56m [m[38;5;234m[48;5;180m [m[38;5;180m[48;5;234m[m[38;5;234m[48;5;180m Howto.md[+]                               [m[38;5;238m[48;5;180m[m[10C[38;5;186m[48;5;234m [unix] [m[38;5;180m[48;5;234m[m[38;5;234m[48;5;180m  80% [m[1m[38;5;234m[48;5;180m   8[m[38;5;254m[48;5;56m:[m[38;5;234m[48;5;180m:  7  "}
+    , { time: 89437, content: "[m[30;1H[1m-- VISUAL LINE --[9;11H"}
+    , { time: 89561, content: "[m[47mh[10;5H$ sudo[m [47mnpm install -g terminal-recorder [m[29;76H[38;5;234m[48;5;180m9[m[7C[1m[38;5;234m[48;5;180m9[m[38;5;234m[48;5;180m:[10;11H"}
+    , { time: 89729, content: "[m[47m [11;5H```[m[29;75H[38;5;234m[48;5;180m10[m[6C[1m[38;5;234m[48;5;180m10[m[38;5;234m[48;5;180m:  4[11;8H"}
+    , { time: 90724, content: "[m[9;5H[4m```bash                                                                               [m[10;5H$ sudo npm install -g terminal-recorder[10;44H[K[11;5H```[30;1H[K[30;1H3 lines yanked"}
+    , { time: 90732, content: "[29;1H[38;5;254m[48;5;56m [m[1m[38;5;254m[48;5;56mNORMAL[m[38;5;234m[48;5;180m [m[38;5;254m[48;5;56m [m[38;5;56m[48;5;234m[m[38;5;234m[48;5;56m[m[38;5;254m[48;5;56m Howto.md[+]                               [m[38;5;238m[48;5;56m[m[10C[38;5;206m[48;5;234m [unix] [m[38;5;56m[48;5;234m[m[38;5;254m[48;5;56m  80% [m[1m[38;5;254m[48;5;56m   8[m[38;5;234m[48;5;180m:[m[38;5;254m[48;5;56m:  1  [9;5H"}
+    , { time: 90852, content: "[m```bash[9;12H[K[10;5H[4m$ sudo npm install -g terminal-recorder                                               [m[29;76H[38;5;254m[48;5;56m9[m[7C[1m[38;5;254m[48;5;56m9[m[38;5;254m[48;5;56m:[10;5H"}
+    , { time: 91017, content: "[m$ sudo npm install -g terminal-recorder[10;44H[K[11;5H[4m```                                                                                   [m[29;75H[38;5;254m[48;5;56m10[m[6C[1m[38;5;254m[48;5;56m10[m[38;5;254m[48;5;56m:[11;5H"}
+    , { time: 91936, content: "[m[30;1H[1m-- INSERT --[m[30;13H[K"}
+    , { time: 91957, content: "[11;5H```[11;8H[K[12;1H[38;5;130m 11 [m[4m                                                                                      [m[29;1H[38;5;234m[48;5;111m [m[1m[38;5;234m[48;5;111mINSERT[m[38;5;254m[48;5;56m [m[38;5;234m[48;5;111m [m[38;5;111m[48;5;234m[m[38;5;234m[48;5;111m Howto.md[+]                               [m[38;5;238m[48;5;111m[m[10C[38;5;80m[48;5;234m [unix] [m[38;5;111m[48;5;234m[m[38;5;234m[48;5;111m 100% [m[1m[38;5;234m[48;5;111m  11[m[38;5;254m[48;5;56m:[m[38;5;234m[48;5;111m:  1  [12;5H"}
+    , { time: 92262, content: "[m[12;5H[K[13;1H[38;5;130m 12 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m2[m[38;5;234m[48;5;111m:[13;5H"}
+    , { time: 94058, content: "[m[38;5;130m [m[4m#[m[29;88H[38;5;234m[48;5;111m2[13;6H"}
+    , { time: 94188, content: "[m[4m##[m[29;88H[38;5;234m[48;5;111m3[13;7H"}
+    , { time: 94572, content: "[29;88H4[13;8H"}
+    , { time: 94950, content: "[m[4m H[m[29;88H[38;5;234m[48;5;111m5[13;9H"}
+    , { time: 95152, content: "[m[4mHo[m[29;88H[38;5;234m[48;5;111m6[13;10H"}
+    , { time: 95274, content: "[m[4mow[m[29;88H[38;5;234m[48;5;111m7[13;11H"}
+    , { time: 95394, content: "[29;88H8[13;12H"}
+    , { time: 95547, content: "[m[4m t[m[29;88H[38;5;234m[48;5;111m9[13;13H"}
+    , { time: 95634, content: "[m[4mto[m[29;87H[38;5;234m[48;5;111m10[13;14H"}
+    , { time: 95737, content: "[29;88H1[13;15H"}
+    , { time: 96066, content: "[m[4m s[m[29;88H[38;5;234m[48;5;111m2[13;16H"}
+    , { time: 96201, content: "[m[4mst[m[29;88H[38;5;234m[48;5;111m3[13;17H"}
+    , { time: 96302, content: "[m[4mta[m[29;88H[38;5;234m[48;5;111m4[13;18H"}
+    , { time: 96449, content: "[m[4mar[m[29;88H[38;5;234m[48;5;111m5[13;19H"}
+    , { time: 96606, content: "[m[4mrt[m[29;88H[38;5;234m[48;5;111m6[13;20H"}
+    , { time: 96725, content: "[29;88H7[13;21H"}
+    , { time: 96980, content: "[m[4m i[m[29;88H[38;5;234m[48;5;111m8[13;22H"}
+    , { time: 97071, content: "[m[4mit[m[29;88H[38;5;234m[48;5;111m9[13;23H"}
+    , { time: 97481, content: "[m[4mt?[m[29;87H[38;5;234m[48;5;111m20[13;24H"}
+    , { time: 98113, content: "[m[13;5H## How to start it?[13;24H[K[14;1H[38;5;130m 13 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m3[m[38;5;234m[48;5;111m:  1[14;5H"}
+    , { time: 98828, content: "[m[14;5H[K[15;1H[38;5;130m 14 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m4[m[38;5;234m[48;5;111m:[15;5H"}
+    , { time: 99424, content: "[m[30;1H[K[15;5H"}
+    , { time: 99496, content: "[29;1H[38;5;254m[48;5;56m [m[1m[38;5;254m[48;5;56mNORMAL[m[38;5;234m[48;5;111m [m[38;5;254m[48;5;56m [m[38;5;56m[48;5;234m[m[38;5;234m[48;5;56m[m[38;5;254m[48;5;56m Howto.md[+]                               [m[38;5;238m[48;5;56m[m[10C[38;5;206m[48;5;234m [unix] [m[38;5;56m[48;5;234m[m[38;5;254m[48;5;56m 100% [m[1m[38;5;254m[48;5;56m  14[m[38;5;234m[48;5;111m:[m[38;5;254m[48;5;56m:  0  [15;5H"}
+    , { time: 100651, content: "[m[30;1H3 more lines[15;5H[K[16;1H[38;5;130m 15 [m[4m```bash                                                                               [m[17;1H[38;5;130m 16 [m$ sudo npm install -g terminal-recorder[17;44H[K[18;1H[38;5;130m 17 [m```[18;8H[K[29;75H[38;5;254m[48;5;56m 88[m[6C[1m[38;5;254m[48;5;56m5[m[38;5;254m[48;5;56m:  1[16;5H"}
+    , { time: 101343, content: "[m```bash[16;12H[K[17;5H[4m$ sudo npm install -g terminal-recorder                                               [m[29;76H[38;5;254m[48;5;56m94[m[6C[1m[38;5;254m[48;5;56m6[m[38;5;254m[48;5;56m:[17;5H"}
+    , { time: 101540, content: "[29;88H2[17;6H"}
+    , { time: 101841, content: "[29;88H3[17;7H"}
+    , { time: 102603, content: "[m[4m                                      [m[29;88H[38;5;254m[48;5;56m2[17;6H"}
+    , { time: 103424, content: "[m[30;1H[1m-- INSERT --"}
+    , { time: 103441, content: "[m[29;1H[38;5;234m[48;5;111m [m[1m[38;5;234m[48;5;111mINSERT[m[38;5;254m[48;5;56m [m[38;5;234m[48;5;111m [m[38;5;111m[48;5;234m[m[38;5;234m[48;5;111m Howto.md[+]                               [m[38;5;238m[48;5;111m[m[10C[38;5;80m[48;5;234m [unix] [m[38;5;111m[48;5;234m[m[38;5;234m[48;5;111m  94% [m[1m[38;5;234m[48;5;111m  16[m[38;5;254m[48;5;56m:[m[38;5;234m[48;5;111m:  2  [17;6H"}
+    , { time: 103526, content: "[29;88H3[17;7H"}
+    , { time: 103823, content: "[m[4m t[m[29;88H[38;5;234m[48;5;111m4[17;8H"}
+    , { time: 103952, content: "[m[4mte[m[29;88H[38;5;234m[48;5;111m5[17;9H"}
+    , { time: 104082, content: "[m[4mer[m[29;88H[38;5;234m[48;5;111m6[17;10H"}
+    , { time: 104219, content: "[m[4mrm[m[29;88H[38;5;234m[48;5;111m7[17;11H"}
+    , { time: 104377, content: "[m[4mmi[m[29;88H[38;5;234m[48;5;111m8[17;12H"}
+    , { time: 104446, content: "[m[4min[m[29;88H[38;5;234m[48;5;111m9[17;13H"}
+    , { time: 104532, content: "[m[4mna[m[29;87H[38;5;234m[48;5;111m10[17;14H"}
+    , { time: 104717, content: "[m[4mal[m[29;88H[38;5;234m[48;5;111m1[17;15H"}
+    , { time: 104990, content: "[m[4ml-[m[29;88H[38;5;234m[48;5;111m2[17;16H"}
+    , { time: 105125, content: "[m[4m-r[m[29;88H[38;5;234m[48;5;111m3[17;17H"}
+    , { time: 105190, content: "[m[4mre[m[29;88H[38;5;234m[48;5;111m4[17;18H"}
+    , { time: 105437, content: "[m[4mec[m[29;88H[38;5;234m[48;5;111m5[17;19H"}
+    , { time: 105571, content: "[m[4mco[m[29;88H[38;5;234m[48;5;111m6[17;20H"}
+    , { time: 105681, content: "[m[4mor[m[29;88H[38;5;234m[48;5;111m7[17;21H"}
+    , { time: 106129, content: "[m[4mrd[m[29;88H[38;5;234m[48;5;111m8[17;22H"}
+    , { time: 106222, content: "[m[4mde[m[29;88H[38;5;234m[48;5;111m9[17;23H"}
+    , { time: 106353, content: "[m[4mer[m[29;87H[38;5;234m[48;5;111m20[17;24H"}
+    , { time: 106856, content: "[m[17;5H$ terminal-recorder [17;25H[K[18;5H[4m```                                                                                   [m[29;75H[38;5;234m[48;5;111m100[m[6C[1m[38;5;234m[48;5;111m7[m[38;5;234m[48;5;111m:  4[18;8H"}
+    , { time: 107238, content: "[m```[18;8H[K[19;1H[38;5;130m 18 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m8[m[38;5;234m[48;5;111m:  1[19;5H"}
+    , { time: 107458, content: "[m[19;5H[K[20;1H[38;5;130m 19 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m9[m[38;5;234m[48;5;111m:[20;5H"}
+    , { time: 108591, content: "[m[38;5;130m [m[4mO[m[29;88H[38;5;234m[48;5;111m2[20;6H"}
+    , { time: 108809, content: "[m[4mOn[m[29;88H[38;5;234m[48;5;111m3[20;7H"}
+    , { time: 108924, content: "[m[4mnc[m[29;88H[38;5;234m[48;5;111m4[20;8H"}
+    , { time: 109004, content: "[m[4mce[m[29;88H[38;5;234m[48;5;111m5[20;9H"}
+    , { time: 109124, content: "[29;88H6[20;10H"}
+    , { time: 109392, content: "[m[4m y[m[29;88H[38;5;234m[48;5;111m7[20;11H"}
+    , { time: 109559, content: "[m[4myo[m[29;88H[38;5;234m[48;5;111m8[20;12H"}
+    , { time: 109635, content: "[m[4mou[m[29;88H[38;5;234m[48;5;111m9[20;13H"}
+    , { time: 109748, content: "[29;87H10[20;14H"}
+    , { time: 109850, content: "[m[4m s[m[29;88H[38;5;234m[48;5;111m1[20;15H"}
+    , { time: 109953, content: "[m[4mst[m[29;88H[38;5;234m[48;5;111m2[20;16H"}
+    , { time: 110041, content: "[m[4mta[m[29;88H[38;5;234m[48;5;111m3[20;17H"}
+    , { time: 110176, content: "[m[4mar[m[29;88H[38;5;234m[48;5;111m4[20;18H"}
+    , { time: 110359, content: "[m[4mrt[m[29;88H[38;5;234m[48;5;111m5[20;19H"}
+    , { time: 110493, content: "[29;88H6[20;20H"}
+    , { time: 110641, content: "[m[4m i[m[29;88H[38;5;234m[48;5;111m7[20;21H"}
+    , { time: 110719, content: "[m[4mit[m[29;88H[38;5;234m[48;5;111m8[20;22H"}
+    , { time: 110914, content: "[29;88H9[20;23H"}
+    , { time: 111743, content: "[29;88H8[20;22H"}
+    , { time: 112520, content: "[m[4mt.[m[29;88H[38;5;234m[48;5;111m9[20;23H"}
+    , { time: 112926, content: "[29;87H20[20;24H"}
+    , { time: 113241, content: "[m[4m I[m[29;88H[38;5;234m[48;5;111m1[20;25H"}
+    , { time: 113429, content: "[m[4mIt[m[29;88H[38;5;234m[48;5;111m2[20;26H"}
+    , { time: 114308, content: "[m[4mt[m[4m[31m'[m[29;88H[38;5;234m[48;5;111m3[20;27H"}
+    , { time: 114633, content: "[m[4m[31m'l[m[29;88H[38;5;234m[48;5;111m4[20;28H"}
+    , { time: 114778, content: "[m[4m[31mll[m[29;88H[38;5;234m[48;5;111m5[20;29H"}
+    , { time: 114980, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m6[20;30H"}
+    , { time: 115203, content: "[m[4m[31m r[m[29;88H[38;5;234m[48;5;111m7[20;31H"}
+    , { time: 115284, content: "[m[4m[31mre[m[29;88H[38;5;234m[48;5;111m8[20;32H"}
+    , { time: 115493, content: "[m[4m[31mec[m[29;88H[38;5;234m[48;5;111m9[20;33H"}
+    , { time: 115594, content: "[m[4m[31mco[m[29;87H[38;5;234m[48;5;111m30[20;34H"}
+    , { time: 115718, content: "[m[4m[31mor[m[29;88H[38;5;234m[48;5;111m1[20;35H"}
+    , { time: 115941, content: "[m[4m[31mrd[m[29;88H[38;5;234m[48;5;111m2[20;36H"}
+    , { time: 116345, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m3[20;37H"}
+    , { time: 116492, content: "[m[4m[31m a[m[29;88H[38;5;234m[48;5;111m4[20;38H"}
+    , { time: 116634, content: "[m[4m[31mal[m[29;88H[38;5;234m[48;5;111m5[20;39H"}
+    , { time: 116762, content: "[m[4m[31mll[m[29;88H[38;5;234m[48;5;111m6[20;40H"}
+    , { time: 116880, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m7[20;41H"}
+    , { time: 117408, content: "[m[4m[31m y[m[29;88H[38;5;234m[48;5;111m8[20;42H"}
+    , { time: 117566, content: "[m[4m[31myo[m[29;88H[38;5;234m[48;5;111m9[20;43H"}
+    , { time: 117647, content: "[m[4m[31mou[m[29;87H[38;5;234m[48;5;111m40[20;44H"}
+    , { time: 117877, content: "[m[4m[31mur[m[29;88H[38;5;234m[48;5;111m1[20;45H"}
+    , { time: 118024, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m2[20;46H"}
+    , { time: 118875, content: "[m[4m[31m k[m[29;88H[38;5;234m[48;5;111m3[20;47H"}
+    , { time: 118976, content: "[m[4m[31mke[m[29;88H[38;5;234m[48;5;111m4[20;48H"}
+    , { time: 119223, content: "[m[4m[31mey[m[29;88H[38;5;234m[48;5;111m5[20;49H"}
+    , { time: 119746, content: "[m[4m[31mys[m[29;88H[38;5;234m[48;5;111m6[20;50H"}
+    , { time: 119935, content: "[m[4m[31mst[m[29;88H[38;5;234m[48;5;111m7[20;51H"}
+    , { time: 120023, content: "[m[4m[31mtr[m[29;88H[38;5;234m[48;5;111m8[20;52H"}
+    , { time: 120493, content: "[m[4m[31mro[m[29;88H[38;5;234m[48;5;111m9[20;53H"}
+    , { time: 120710, content: "[m[4m[31moc[m[29;87H[38;5;234m[48;5;111m50[20;54H"}
+    , { time: 121174, content: "[m[4m[31mo[m[4m [m[29;87H[38;5;234m[48;5;111m49[20;53H"}
+    , { time: 121441, content: "[m[4m[31mok[m[29;87H[38;5;234m[48;5;111m50[20;54H"}
+    , { time: 121598, content: "[m[4m[31mke[m[29;88H[38;5;234m[48;5;111m1[20;55H"}
+    , { time: 121673, content: "[m[4m[31mes[m[29;88H[38;5;234m[48;5;111m2[20;56H"}
+    , { time: 122343, content: "[m[20;5HOnce you start it. It[31m'll record all your keystrokes[m[20;56H[K[21;1H[38;5;130m 20 [m[4m[31m [m[4m                                                                                     [m[29;83H[1m[38;5;234m[48;5;111m20[m[38;5;234m[48;5;111m:  1[21;5H"}
+    , { time: 122556, content: "[m[21;5H[K[22;1H[38;5;130m 21 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m1[m[38;5;234m[48;5;111m:[22;5H"}
+    , { time: 126197, content: "[m[38;5;130m [m[4m[31mW[m[29;88H[38;5;234m[48;5;111m2[22;6H"}
+    , { time: 126306, content: "[m[4m[31mWh[m[29;88H[38;5;234m[48;5;111m3[22;7H"}
+    , { time: 126456, content: "[m[4m[31mhe[m[29;88H[38;5;234m[48;5;111m4[22;8H"}
+    , { time: 126850, content: "[m[4m[31men[m[29;88H[38;5;234m[48;5;111m5[22;9H"}
+    , { time: 127018, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m6[22;10H"}
+    , { time: 127173, content: "[m[4m[31m y[m[29;88H[38;5;234m[48;5;111m7[22;11H"}
+    , { time: 127339, content: "[m[4m[31myo[m[29;88H[38;5;234m[48;5;111m8[22;12H"}
+    , { time: 127460, content: "[m[4m[31mou[m[29;88H[38;5;234m[48;5;111m9[22;13H"}
+    , { time: 127611, content: "[m[4m[31m [m[29;87H[38;5;234m[48;5;111m10[22;14H"}
+    , { time: 127950, content: "[m[4m[31m f[m[29;88H[38;5;234m[48;5;111m1[22;15H"}
+    , { time: 128093, content: "[m[4m[31mfi[m[29;88H[38;5;234m[48;5;111m2[22;16H"}
+    , { time: 128174, content: "[m[4m[31min[m[29;88H[38;5;234m[48;5;111m3[22;17H"}
+    , { time: 128285, content: "[m[4m[31mni[m[29;88H[38;5;234m[48;5;111m4[22;18H"}
+    , { time: 128420, content: "[m[4m[31mis[m[29;88H[38;5;234m[48;5;111m5[22;19H"}
+    , { time: 128539, content: "[m[4m[31msh[m[29;88H[38;5;234m[48;5;111m6[22;20H"}
+    , { time: 128766, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m7[22;21H"}
+    , { time: 130127, content: "[m[4m[31m j[m[29;88H[38;5;234m[48;5;111m8[22;22H"}
+    , { time: 130293, content: "[m[4m[31mju[m[29;88H[38;5;234m[48;5;111m9[22;23H"}
+    , { time: 130382, content: "[m[4m[31mus[m[29;87H[38;5;234m[48;5;111m20[22;24H"}
+    , { time: 130490, content: "[m[4m[31mst[m[29;88H[38;5;234m[48;5;111m1[22;25H"}
+    , { time: 130683, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m2[22;26H"}
+    , { time: 131112, content: "[m[4m[31m t[m[29;88H[38;5;234m[48;5;111m3[22;27H"}
+    , { time: 131322, content: "[m[4m[31mty[m[29;88H[38;5;234m[48;5;111m4[22;28H"}
+    , { time: 131420, content: "[m[4m[31myp[m[29;88H[38;5;234m[48;5;111m5[22;29H"}
+    , { time: 131842, content: "[m[4m[31mpe[m[29;88H[38;5;234m[48;5;111m6[22;30H"}
+    , { time: 132053, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m7[22;31H"}
+    , { time: 132418, content: "[m[4m[31m C[m[29;88H[38;5;234m[48;5;111m8[22;32H"}
+    , { time: 132775, content: "[m[4m[31mCt[m[29;88H[38;5;234m[48;5;111m9[22;33H"}
+    , { time: 132828, content: "[m[4m[31mtr[m[29;87H[38;5;234m[48;5;111m30[22;34H"}
+    , { time: 132972, content: "[m[4m[31mrl[m[29;88H[38;5;234m[48;5;111m1[22;35H"}
+    , { time: 133893, content: "[m[4m[31ml+[m[29;88H[38;5;234m[48;5;111m2[22;36H"}
+    , { time: 134301, content: "[m[4m[31m+C[m[29;88H[38;5;234m[48;5;111m3[22;37H"}
+    , { time: 134629, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m4[22;38H"}
+    , { time: 134813, content: "[m[4m[31m o[m[29;88H[38;5;234m[48;5;111m5[22;39H"}
+    , { time: 134980, content: "[m[4m[31mor[m[29;88H[38;5;234m[48;5;111m6[22;40H"}
+    , { time: 135445, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m7[22;41H"}
+    , { time: 135881, content: "[m[4m[31m C[m[29;88H[38;5;234m[48;5;111m8[22;42H"}
+    , { time: 136134, content: "[m[4m[31mCt[m[29;88H[38;5;234m[48;5;111m9[22;43H"}
+    , { time: 136225, content: "[m[4m[31mtr[m[29;87H[38;5;234m[48;5;111m40[22;44H"}
+    , { time: 136356, content: "[m[4m[31mrl[m[29;88H[38;5;234m[48;5;111m1[22;45H"}
+    , { time: 137123, content: "[m[4m[31ml+[m[29;88H[38;5;234m[48;5;111m2[22;46H"}
+    , { time: 137418, content: "[m[4m[31m+D[m[29;88H[38;5;234m[48;5;111m3[22;47H"}
+    , { time: 137953, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m4[22;48H"}
+    , { time: 138139, content: "[m[4m[31m d[m[29;88H[38;5;234m[48;5;111m5[22;49H"}
+    , { time: 138209, content: "[m[4m[31mde[m[29;88H[38;5;234m[48;5;111m6[22;50H"}
+    , { time: 138529, content: "[m[4m[31mep[m[29;88H[38;5;234m[48;5;111m7[22;51H"}
+    , { time: 138574, content: "[m[4m[31mpe[m[29;88H[38;5;234m[48;5;111m8[22;52H"}
+    , { time: 138747, content: "[m[4m[31men[m[29;88H[38;5;234m[48;5;111m9[22;53H"}
+    , { time: 138897, content: "[m[4m[31mnd[m[29;87H[38;5;234m[48;5;111m50[22;54H"}
+    , { time: 139049, content: "[m[4m[31mdi[m[29;88H[38;5;234m[48;5;111m1[22;55H"}
+    , { time: 139176, content: "[m[4m[31min[m[29;88H[38;5;234m[48;5;111m2[22;56H"}
+    , { time: 139893, content: "[m[4m[31mng[m[29;88H[38;5;234m[48;5;111m3[22;57H"}
+    , { time: 140080, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m4[22;58H"}
+    , { time: 140854, content: "[m[4m[31m o[m[29;88H[38;5;234m[48;5;111m5[22;59H"}
+    , { time: 141022, content: "[m[4m[31mon[m[29;88H[38;5;234m[48;5;111m6[22;60H"}
+    , { time: 141150, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m7[22;61H"}
+    , { time: 141437, content: "[m[4m[31m y[m[29;88H[38;5;234m[48;5;111m8[22;62H"}
+    , { time: 141529, content: "[m[4m[31myo[m[29;88H[38;5;234m[48;5;111m9[22;63H"}
+    , { time: 141635, content: "[m[4m[31mou[m[29;87H[38;5;234m[48;5;111m60[22;64H"}
+    , { time: 142021, content: "[m[4m[31mur[m[29;88H[38;5;234m[48;5;111m1[22;65H"}
+    , { time: 142153, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m2[22;66H"}
+    , { time: 142323, content: "[m[4m[31m s[m[29;88H[38;5;234m[48;5;111m3[22;67H"}
+    , { time: 142390, content: "[m[4m[31mse[m[29;88H[38;5;234m[48;5;111m4[22;68H"}
+    , { time: 142654, content: "[m[4m[31met[m[29;88H[38;5;234m[48;5;111m5[22;69H"}
+    , { time: 142803, content: "[m[4m[31mtt[m[29;88H[38;5;234m[48;5;111m6[22;70H"}
+    , { time: 142911, content: "[m[4m[31mti[m[29;88H[38;5;234m[48;5;111m7[22;71H"}
+    , { time: 142987, content: "[m[4m[31min[m[29;88H[38;5;234m[48;5;111m8[22;72H"}
+    , { time: 143050, content: "[m[4m[31mng[m[29;88H[38;5;234m[48;5;111m9[22;73H"}
+    , { time: 143157, content: "[m[4m[31mgs[m[29;87H[38;5;234m[48;5;111m70[22;74H"}
+    , { time: 144171, content: "[m[22;5H[31mWhen you finish just type Ctrl+C or Ctrl+D depending on your settings[m[22;74H[K[23;1H[38;5;130m 22 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m2[m[38;5;234m[48;5;111m:  1[23;5H"}
+    , { time: 144391, content: "[m[23;5H[K[24;1H[38;5;130m 23 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m3[m[38;5;234m[48;5;111m:[24;5H"}
+    , { time: 144985, content: "[m[38;5;130m [m[4m[31mI[m[29;88H[38;5;234m[48;5;111m2[24;6H"}
+    , { time: 145181, content: "[m[4m[31mIt[m[29;88H[38;5;234m[48;5;111m3[24;7H"}
+    , { time: 145622, content: "[m[4m[31mt'[m[29;88H[38;5;234m[48;5;111m4[24;8H"}
+    , { time: 145934, content: "[m[4m[31m'[m[4ml[m[29;88H[38;5;234m[48;5;111m5[24;9H"}
+    , { time: 146116, content: "[m[4mll[m[29;88H[38;5;234m[48;5;111m6[24;10H"}
+    , { time: 146922, content: "[29;88H7[24;11H"}
+    , { time: 147071, content: "[m[4m c[m[29;88H[38;5;234m[48;5;111m8[24;12H"}
+    , { time: 147293, content: "[m[4mcr[m[29;88H[38;5;234m[48;5;111m9[24;13H"}
+    , { time: 147360, content: "[m[4mre[m[29;87H[38;5;234m[48;5;111m10[24;14H"}
+    , { time: 147465, content: "[m[4mea[m[29;88H[38;5;234m[48;5;111m1[24;15H"}
+    , { time: 147653, content: "[m[4mat[m[29;88H[38;5;234m[48;5;111m2[24;16H"}
+    , { time: 147735, content: "[m[4mte[m[29;88H[38;5;234m[48;5;111m3[24;17H"}
+    , { time: 147928, content: "[29;88H4[24;18H"}
+    , { time: 148303, content: "[m[4m a[m[29;88H[38;5;234m[48;5;111m5[24;19H"}
+    , { time: 148452, content: "[m[4man[m[29;88H[38;5;234m[48;5;111m6[24;20H"}
+    , { time: 148747, content: "[29;88H7[24;21H"}
+    , { time: 149764, content: "[m[4m H[m[29;88H[38;5;234m[48;5;111m8[24;22H"}
+    , { time: 149955, content: "[m[4mHT[m[29;88H[38;5;234m[48;5;111m9[24;23H"}
+    , { time: 150121, content: "[m[4mTM[m[29;87H[38;5;234m[48;5;111m20[24;24H"}
+    , { time: 150207, content: "[m[4mML[m[29;88H[38;5;234m[48;5;111m1[24;25H"}
+    , { time: 150764, content: "[29;88H2[24;26H"}
+    , { time: 150935, content: "[m[4m f[m[29;88H[38;5;234m[48;5;111m3[24;27H"}
+    , { time: 151049, content: "[m[4mfo[m[29;88H[38;5;234m[48;5;111m4[24;28H"}
+    , { time: 151216, content: "[m[4mor[m[29;88H[38;5;234m[48;5;111m5[24;29H"}
+    , { time: 151733, content: "[m[4mo [m[29;88H[38;5;234m[48;5;111m4[24;28H"}
+    , { time: 151951, content: "[m[4mol[m[29;88H[38;5;234m[48;5;111m5[24;29H"}
+    , { time: 152030, content: "[m[4mld[m[29;88H[38;5;234m[48;5;111m6[24;30H"}
+    , { time: 152098, content: "[m[4mde[m[29;88H[38;5;234m[48;5;111m7[24;31H"}
+    , { time: 152223, content: "[m[4mer[m[29;88H[38;5;234m[48;5;111m8[24;32H"}
+    , { time: 153418, content: "[29;88H9[24;33H"}
+    , { time: 153918, content: "[m[4m .[m[29;87H[38;5;234m[48;5;111m30[24;34H"}
+    , { time: 154367, content: "[m[4m  [m[29;87H[38;5;234m[48;5;111m29[24;33H"}
+    , { time: 154490, content: "[m[4m c[m[29;87H[38;5;234m[48;5;111m30[24;34H"}
+    , { time: 154578, content: "[m[4mca[m[29;88H[38;5;234m[48;5;111m1[24;35H"}
+    , { time: 154731, content: "[m[4mal[m[29;88H[38;5;234m[48;5;111m2[24;36H"}
+    , { time: 154870, content: "[m[4mll[m[29;88H[38;5;234m[48;5;111m3[24;37H"}
+    , { time: 155091, content: "[m[4mle[m[29;88H[38;5;234m[48;5;111m4[24;38H"}
+    , { time: 155288, content: "[m[4med[m[29;88H[38;5;234m[48;5;111m5[24;39H"}
+    , { time: 155411, content: "[29;88H6[24;40H"}
+    , { time: 155742, content: "[m[4m .[m[29;88H[38;5;234m[48;5;111m7[24;41H"}
+    , { time: 156481, content: "[m[4m./[m[29;88H[38;5;234m[48;5;111m8[24;42H"}
+    , { time: 156712, content: "[m[4m/t[m[29;88H[38;5;234m[48;5;111m9[24;43H"}
+    , { time: 156794, content: "[m[4mte[m[29;87H[38;5;234m[48;5;111m40[24;44H"}
+    , { time: 157048, content: "[m[4mer[m[29;88H[38;5;234m[48;5;111m1[24;45H"}
+    , { time: 157205, content: "[m[4mrm[m[29;88H[38;5;234m[48;5;111m2[24;46H"}
+    , { time: 157338, content: "[m[4mmi[m[29;88H[38;5;234m[48;5;111m3[24;47H"}
+    , { time: 157444, content: "[m[4min[m[29;88H[38;5;234m[48;5;111m4[24;48H"}
+    , { time: 157540, content: "[m[4mna[m[29;88H[38;5;234m[48;5;111m5[24;49H"}
+    , { time: 157719, content: "[m[4mal[m[29;88H[38;5;234m[48;5;111m6[24;50H"}
+    , { time: 157999, content: "[m[4ml-[m[29;88H[38;5;234m[48;5;111m7[24;51H"}
+    , { time: 158174, content: "[m[4m-r[m[29;88H[38;5;234m[48;5;111m8[24;52H"}
+    , { time: 158350, content: "[m[4mre[m[29;88H[38;5;234m[48;5;111m9[24;53H"}
+    , { time: 158602, content: "[m[4mec[m[29;87H[38;5;234m[48;5;111m50[24;54H"}
+    , { time: 158719, content: "[m[4mco[m[29;88H[38;5;234m[48;5;111m1[24;55H"}
+    , { time: 158819, content: "[m[4mor[m[29;88H[38;5;234m[48;5;111m2[24;56H"}
+    , { time: 159132, content: "[m[4mrd[m[29;88H[38;5;234m[48;5;111m3[24;57H"}
+    , { time: 159201, content: "[m[4mde[m[29;88H[38;5;234m[48;5;111m4[24;58H"}
+    , { time: 159316, content: "[m[4mer[m[29;88H[38;5;234m[48;5;111m5[24;59H"}
+    , { time: 159886, content: "[29;88H6[24;60H"}
+    , { time: 160077, content: "[m[4m a[m[29;88H[38;5;234m[48;5;111m7[24;61H"}
+    , { time: 160186, content: "[m[4man[m[29;88H[38;5;234m[48;5;111m8[24;62H"}
+    , { time: 160283, content: "[m[4mnd[m[29;88H[38;5;234m[48;5;111m9[24;63H"}
+    , { time: 160428, content: "[29;87H60[24;64H"}
+    , { time: 160679, content: "[m[4m p[m[29;88H[38;5;234m[48;5;111m1[24;65H"}
+    , { time: 160767, content: "[m[4mpl[m[29;88H[38;5;234m[48;5;111m2[24;66H"}
+    , { time: 160841, content: "[m[4mla[m[29;88H[38;5;234m[48;5;111m3[24;67H"}
+    , { time: 160989, content: "[m[4mac[m[29;88H[38;5;234m[48;5;111m4[24;68H"}
+    , { time: 161073, content: "[m[4mce[m[29;88H[38;5;234m[48;5;111m5[24;69H"}
+    , { time: 161221, content: "[29;88H6[24;70H"}
+    , { time: 161377, content: "[m[4m a[m[29;88H[38;5;234m[48;5;111m7[24;71H"}
+    , { time: 161501, content: "[29;88H8[24;72H"}
+    , { time: 161732, content: "[m[4m l[m[29;88H[38;5;234m[48;5;111m9[24;73H"}
+    , { time: 161895, content: "[m[4mlo[m[29;87H[38;5;234m[48;5;111m70[24;74H"}
+    , { time: 162054, content: "[m[4mog[m[29;88H[38;5;234m[48;5;111m1[24;75H"}
+    , { time: 162474, content: "[m[4mo [m[29;88H[38;5;234m[48;5;111m0[24;74H"}
+    , { time: 162511, content: "[m[4mot[m[29;88H[38;5;234m[48;5;111m1[24;75H"}
+    , { time: 162870, content: "[29;88H2[24;76H"}
+    , { time: 163105, content: "[m[4m o[m[29;88H[38;5;234m[48;5;111m3[24;77H"}
+    , { time: 163322, content: "[m[4mof[m[29;88H[38;5;234m[48;5;111m4[24;78H"}
+    , { time: 163453, content: "[29;88H5[24;79H"}
+    , { time: 163820, content: "[m[4m h[m[29;88H[38;5;234m[48;5;111m6[24;80H"}
+    , { time: 163974, content: "[m[4mht[m[29;88H[38;5;234m[48;5;111m7[24;81H"}
+    , { time: 164090, content: "[m[4mtm[m[29;88H[38;5;234m[48;5;111m8[24;82H"}
+    , { time: 164164, content: "[m[4mml[m[29;88H[38;5;234m[48;5;111m9[24;83H"}
+    , { time: 164558, content: "[29;87H80[24;84H"}
+    , { time: 164927, content: "[m[4m f[m[29;88H[38;5;234m[48;5;111m1[24;85H"}
+    , { time: 165030, content: "[m[4mfi[m[29;88H[38;5;234m[48;5;111m2[24;86H"}
+    , { time: 165229, content: "[m[4mil[m[29;88H[38;5;234m[48;5;111m3[24;87H"}
+    , { time: 165317, content: "[m[4mle[m[29;88H[38;5;234m[48;5;111m4[24;88H"}
+    , { time: 165391, content: "[m[4mes[m[29;88H[38;5;234m[48;5;111m5[24;89H"}
+    , { time: 165513, content: "[29;88H6[24;90H"}
+    , { time: 165794, content: "[m[4m t[m[29;88H[38;5;234m[48;5;111m7[25;5H"}
+    , { time: 165924, content: "[m\r[38;5;130m    [m[4mh                                                                                     [m[29;88H[38;5;234m[48;5;111m8[25;6H"}
+    , { time: 166049, content: "[m[4mhe[m[29;88H[38;5;234m[48;5;111m9[25;7H"}
+    , { time: 166187, content: "[m[4mer[m[29;87H[38;5;234m[48;5;111m90[25;8H"}
+    , { time: 166258, content: "[m[4mre[m[29;88H[38;5;234m[48;5;111m1[25;9H"}
+    , { time: 166976, content: "[m[24;5H[31mIt'[mll create an HTML folder called ./terminal-recorder and place a lot of html files tt[25;1H[38;5;130m [m[3Chere[25;9H[K[26;1H[38;5;130m 24 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m4[m[38;5;234m[48;5;111m:  [26;5H"}
+    , { time: 167135, content: "[m[26;5H[K[27;1H[38;5;130m 25 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m5[m[38;5;234m[48;5;111m:[27;5H"}
+    , { time: 167275, content: "[m[27;5H[K[28;1H[38;5;130m 26 [m[4m                                                                                      [m[29;84H[1m[38;5;234m[48;5;111m6[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 168046, content: "[m[27;5H[4m                                                                                      [m[28;5H[K[29;75H[38;5;234m[48;5;111m 96[m[6C[1m[38;5;234m[48;5;111m5[m[38;5;234m[48;5;111m:[27;5H"}
+    , { time: 168369, content: "[m[26;5H[4m                                                                                      [m[27;5H[K[29;77H[38;5;234m[48;5;111m2[m[6C[1m[38;5;234m[48;5;111m4[m[38;5;234m[48;5;111m:[26;5H"}
+    , { time: 168638, content: "[m[26;5H[K[27;5H[4m                                                                                      [m[29;77H[38;5;234m[48;5;111m6[m[6C[1m[38;5;234m[48;5;111m5[m[38;5;234m[48;5;111m:[27;5H"}
+    , { time: 170652, content: "[m[38;5;130m [m[4mT[m[29;88H[38;5;234m[48;5;111m2[27;6H"}
+    , { time: 170896, content: "[m[4mTh[m[29;88H[38;5;234m[48;5;111m3[27;7H"}
+    , { time: 171132, content: "[m[4mha[m[29;88H[38;5;234m[48;5;111m4[27;8H"}
+    , { time: 171511, content: "[m[4mat[m[29;88H[38;5;234m[48;5;111m5[27;9H"}
+    , { time: 172237, content: "[m[4mt[m[4m[31m'[m[29;88H[38;5;234m[48;5;111m6[27;10H"}
+    , { time: 172344, content: "[m[4m[31m's[m[29;88H[38;5;234m[48;5;111m7[27;11H"}
+    , { time: 172769, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m8[27;12H"}
+    , { time: 172988, content: "[m[4m[31m i[m[29;88H[38;5;234m[48;5;111m9[27;13H"}
+    , { time: 173051, content: "[m[4m[31mit[m[29;87H[38;5;234m[48;5;111m10[27;14H"}
+    , { time: 174261, content: "[m[4m[31mt![m[29;88H[38;5;234m[48;5;111m1[27;15H"}
+    , { time: 174639, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m2[27;16H"}
+    , { time: 175088, content: "[m[4m[31m r[m[29;88H[38;5;234m[48;5;111m3[27;17H"}
+    , { time: 175170, content: "[m[4m[31mre[m[29;88H[38;5;234m[48;5;111m4[27;18H"}
+    , { time: 175412, content: "[m[4m[31mem[m[29;88H[38;5;234m[48;5;111m5[27;19H"}
+    , { time: 175573, content: "[m[4m[31mme[m[29;88H[38;5;234m[48;5;111m6[27;20H"}
+    , { time: 175676, content: "[m[4m[31mem[m[29;88H[38;5;234m[48;5;111m7[27;21H"}
+    , { time: 175928, content: "[m[4m[31mmb[m[29;88H[38;5;234m[48;5;111m8[27;22H"}
+    , { time: 176032, content: "[m[4m[31mbe[m[29;88H[38;5;234m[48;5;111m9[27;23H"}
+    , { time: 176087, content: "[m[4m[31mer[m[29;87H[38;5;234m[48;5;111m20[27;24H"}
+    , { time: 176251, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m1[27;25H"}
+    , { time: 176778, content: "[m[4m[31m t[m[29;88H[38;5;234m[48;5;111m2[27;26H"}
+    , { time: 176873, content: "[m[4m[31mth[m[29;88H[38;5;234m[48;5;111m3[27;27H"}
+    , { time: 176950, content: "[m[4m[31mhi[m[29;88H[38;5;234m[48;5;111m4[27;28H"}
+    , { time: 177029, content: "[m[4m[31mis[m[29;88H[38;5;234m[48;5;111m5[27;29H"}
+    , { time: 177145, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m6[27;30H"}
+    , { time: 177289, content: "[m[4m[31m i[m[29;88H[38;5;234m[48;5;111m7[27;31H"}
+    , { time: 177374, content: "[m[4m[31mis[m[29;88H[38;5;234m[48;5;111m8[27;32H"}
+    , { time: 177501, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m9[27;33H"}
+    , { time: 177711, content: "[m[4m[31m n[m[29;87H[38;5;234m[48;5;111m30[27;34H"}
+    , { time: 177785, content: "[m[4m[31mno[m[29;88H[38;5;234m[48;5;111m1[27;35H"}
+    , { time: 177831, content: "[m[4m[31mot[m[29;88H[38;5;234m[48;5;111m2[27;36H"}
+    , { time: 178021, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m3[27;37H"}
+    , { time: 178386, content: "[m[4m[31m a[m[29;88H[38;5;234m[48;5;111m4[27;38H"}
+    , { time: 178501, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m5[27;39H"}
+    , { time: 178666, content: "[m[4m[31m v[m[29;88H[38;5;234m[48;5;111m6[27;40H"}
+    , { time: 178776, content: "[m[4m[31mvi[m[29;88H[38;5;234m[48;5;111m7[27;41H"}
+    , { time: 178911, content: "[m[4m[31mid[m[29;88H[38;5;234m[48;5;111m8[27;42H"}
+    , { time: 178986, content: "[m[4m[31mde[m[29;88H[38;5;234m[48;5;111m9[27;43H"}
+    , { time: 179129, content: "[m[4m[31meo[m[29;87H[38;5;234m[48;5;111m40[27;44H"}
+    , { time: 179707, content: "[m[4m[31mo![m[29;88H[38;5;234m[48;5;111m1[27;45H"}
+    , { time: 179881, content: "[m[4m[31m!![m[29;88H[38;5;234m[48;5;111m2[27;46H"}
+    , { time: 180246, content: "[m[27;5HThat[31m's it! remember this is not a video!![m[27;46H[K[28;5H[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m6[m[38;5;234m[48;5;111m:  1[28;5H"}
+    , { time: 180402, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 27 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m7[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 180543, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 28 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m8[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 181593, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 29 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m9[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182094, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 30 [m[4m[31m [m[4m                                                                                     [m[29;83H[1m[38;5;234m[48;5;111m30[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182126, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 31 [m[4m[31m [m[4m                                                                                     "}
+    , { time: 182128, content: "[m[29;84H[1m[38;5;234m[48;5;111m1[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182158, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 32 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m2[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182190, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 33 [m[4m[31m [m[4m                                                                                     [m[29;77H[38;5;234m[48;5;111m7[m[6C[1m[38;5;234m[48;5;111m3[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182224, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 34 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m4[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182251, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 35 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m5[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182284, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 36 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m6[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182315, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 37 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m7[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182347, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 38 [m[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m8[m[38;5;234m[48;5;111m:[28;5H"}
+    , { time: 182615, content: "[m[27;5H[4m[31m [m[4m                                                                                     [m[28;5H[K[29;77H[38;5;234m[48;5;111m4[m[6C[1m[38;5;234m[48;5;111m7[m[38;5;234m[48;5;111m:[27;5H"}
+    , { time: 182815, content: "[m[26;5H[4m[31m [m[4m                                                                                     [m[27;5H[K[29;77H[38;5;234m[48;5;111m2[m[6C[1m[38;5;234m[48;5;111m6[m[38;5;234m[48;5;111m:[26;5H"}
+    , { time: 182998, content: "[m[25;5H[4m[31m [m[4m                                                                                     [m[26;5H[K[29;76H[38;5;234m[48;5;111m89[m[6C[1m[38;5;234m[48;5;111m5[m[38;5;234m[48;5;111m:[25;5H"}
+    , { time: 183097, content: "[m[24;5H[4m[31m [m[4m                                                                                     [m[25;5H[K[29;77H[38;5;234m[48;5;111m7[m[6C[1m[38;5;234m[48;5;111m4[m[38;5;234m[48;5;111m:[24;5H"}
+    , { time: 183228, content: "[m[23;5H[4m[31m [m[4m                                                                                     [m[24;5H[K[29;77H[38;5;234m[48;5;111m4[m[6C[1m[38;5;234m[48;5;111m3[m[38;5;234m[48;5;111m:[23;5H"}
+    , { time: 183356, content: "[m[22;5H[4m[31m [m[4m                                                                                     [m[23;5H[K[29;77H[38;5;234m[48;5;111m2[m[6C[1m[38;5;234m[48;5;111m2[m[38;5;234m[48;5;111m:[22;5H"}
+    , { time: 183486, content: "[m[21;5H[4m[31m [m[4m                                                                                     [m[22;5H[K[29;76H[38;5;234m[48;5;111m79[m[6C[1m[38;5;234m[48;5;111m1[m[38;5;234m[48;5;111m:[21;5H"}
+    , { time: 183609, content: "[m[20;5H[4m[31m [m[4m                                                                                     [m[21;5H[K[29;77H[38;5;234m[48;5;111m6[m[6C[1m[38;5;234m[48;5;111m0[m[38;5;234m[48;5;111m:[20;5H"}
+    , { time: 183741, content: "[m[19;5H[4m[31m [m[4m                                                                                     [m[20;5H[K[29;77H[38;5;234m[48;5;111m4[m[5C[1m[38;5;234m[48;5;111m29[m[38;5;234m[48;5;111m:[19;5H"}
+    , { time: 183865, content: "[m[18;5H[4m[31m [m[4m                                                                                     [m[19;5H[K[29;77H[38;5;234m[48;5;111m1[m[6C[1m[38;5;234m[48;5;111m8[m[38;5;234m[48;5;111m:[18;5H"}
+    , { time: 184573, content: "[m[38;5;130m [m[4m[31mT[m[29;88H[38;5;234m[48;5;111m2[18;6H"}
+    , { time: 185088, content: "[m[4m[31mTr[m[29;88H[38;5;234m[48;5;111m3[18;7H"}
+    , { time: 185326, content: "[m[4m[31mry[m[29;88H[38;5;234m[48;5;111m4[18;8H"}
+    , { time: 185523, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m5[18;9H"}
+    , { time: 185673, content: "[m[4m[31m t[m[29;88H[38;5;234m[48;5;111m6[18;10H"}
+    , { time: 185775, content: "[m[4m[31mto[m[29;88H[38;5;234m[48;5;111m7[18;11H"}
+    , { time: 185896, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m8[18;12H"}
+    , { time: 186151, content: "[m[4m[31m c[m[29;88H[38;5;234m[48;5;111m9[18;13H"}
+    , { time: 186210, content: "[m[4m[31mco[m[29;87H[38;5;234m[48;5;111m10[18;14H"}
+    , { time: 186389, content: "[m[4m[31mop[m[29;88H[38;5;234m[48;5;111m1[18;15H"}
+    , { time: 186487, content: "[m[4m[31mpy[m[29;88H[38;5;234m[48;5;111m2[18;16H"}
+    , { time: 186706, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m3[18;17H"}
+    , { time: 186841, content: "[m[4m[31m a[m[29;88H[38;5;234m[48;5;111m4[18;18H"}
+    , { time: 186928, content: "[m[4m[31man[m[29;88H[38;5;234m[48;5;111m5[18;19H"}
+    , { time: 187059, content: "[m[4m[31mnd[m[29;88H[38;5;234m[48;5;111m6[18;20H"}
+    , { time: 187152, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m7[18;21H"}
+    , { time: 187269, content: "[m[4m[31m p[m[29;88H[38;5;234m[48;5;111m8[18;22H"}
+    , { time: 187338, content: "[m[4m[31mpa[m[29;88H[38;5;234m[48;5;111m9[18;23H"}
+    , { time: 187406, content: "[m[4m[31mas[m[29;87H[38;5;234m[48;5;111m20[18;24H"}
+    , { time: 187602, content: "[m[4m[31mst[m[29;88H[38;5;234m[48;5;111m1[18;25H"}
+    , { time: 187687, content: "[m[4m[31mte[m[29;88H[38;5;234m[48;5;111m2[18;26H"}
+    , { time: 187859, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m3[18;27H"}
+    , { time: 188085, content: "[m[4m[31m n[m[29;88H[38;5;234m[48;5;111m4[18;28H"}
+    , { time: 188166, content: "[m[4m[31mno[m[29;88H[38;5;234m[48;5;111m5[18;29H"}
+    , { time: 188250, content: "[m[4m[31mow[m[29;88H[38;5;234m[48;5;111m6[18;30H"}
+    , { time: 188822, content: "[m[4m[31mw:[m[29;88H[38;5;234m[48;5;111m7[18;31H"}
+    , { time: 189610, content: "[m[18;5H[31mTry to copy and paste now:[m[18;31H[K[19;5H[4m[31m [m[4m                                                                                     [m[29;77H[38;5;234m[48;5;111m2[m[6C[1m[38;5;234m[48;5;111m9[m[38;5;234m[48;5;111m:  1[19;5H"}
+    , { time: 189772, content: "[m[19;5H[K[20;5H[4m[31m [m[4m                                                                                     [m[29;77H[38;5;234m[48;5;111m3[m[5C[1m[38;5;234m[48;5;111m30[m[38;5;234m[48;5;111m:[20;5H"}
+    , { time: 190288, content: "[m[30;1H[K[20;5H"}
+    , { time: 190360, content: "[29;1H[38;5;254m[48;5;56m [m[1m[38;5;254m[48;5;56mNORMAL[m[38;5;234m[48;5;111m [m[38;5;254m[48;5;56m [m[38;5;56m[48;5;234m[m[38;5;234m[48;5;56m[m[38;5;254m[48;5;56m Howto.md[+]                               [m[38;5;238m[48;5;56m[m[10C[38;5;206m[48;5;234m [unix] [m[38;5;56m[48;5;234m[m[38;5;254m[48;5;56m  73% [m[1m[38;5;254m[48;5;56m  30[m[38;5;234m[48;5;111m:[m[38;5;254m[48;5;56m:  0  [20;5H"}
+    , { time: 190703, content: "[30;1H[m:"}
+    , { time: 190871, content: "!"}
+    , { time: 192646, content: "[30;2H[K[30;2H"}
+    , { time: 193009, content: "."}
+    , { time: 193365, content: "!"}
+    , { time: 194187, content: "f"}
+    , { time: 194291, content: "i"}
+    , { time: 194494, content: "l"}
+    , { time: 194627, content: "g"}
+    , { time: 194770, content: "e"}
+    , { time: 194892, content: "t"}
+    , { time: 195066, content: " "}
+    , { time: 195546, content: "t"}
+    , { time: 195647, content: "e"}
+    , { time: 195758, content: "r"}
+    , { time: 195894, content: "m"}
+    , { time: 196078, content: "i"}
+    , { time: 196172, content: "n"}
+    , { time: 196255, content: "a"}
+    , { time: 196435, content: "l"}
+    , { time: 197034, content: "\r"}
+    , { time: 197259, content: "\r\nshell returned 127\r\r\n[m\r\n[32mPress ENTER or type command to continue"}
+    , { time: 198388, content: "[m[H[2J[1;1H[38;5;234m[48;5;111m Howto.md+ [m[38;5;111m[48;5;238m[m[38;5;254m[48;5;238m                                                                   [m[38;5;238m[48;5;238m[m[38;5;180m[48;5;238m[m[38;5;234m[48;5;180m buffers [m[2;1H[38;5;130m 13 \r\n 14 \r\n 15 [m```bash\r\n[38;5;130m 16 [m$ terminal-recorder\r\n[38;5;130m 17 [m```\r\n[38;5;130m 18 \r\n 19 [mOnce you start it. It[31m'll record all your keystrokes[m\r\n[38;5;130m 20 \r\n 21 [m[31mWhen you finish just type Ctrl+C or Ctrl+D depending on your settings[m\r\n[38;5;130m 22 \r\n 23 [m[31mIt'[mll create an HTML folder called ./terminal-recorder and place a lot of html files tt[13;1H[38;5;130m    [mhere\r\n[38;5;130m 24 \r\n 25 [mThat[31m's it! remember this is not a video!![m\r\n[38;5;130m 26 \r\n 27 \r\n 28 [m[31mTry to copy and paste now:[m\r\n[38;5;130m 29 \r\n 30 [m[4m[31m/bin/bash: filget: command not found[m[4m                                                  [m[21;1H[38;5;130m 31 \r\n 32 \r\n 33 \r\n 34 \r\n 35 \r\n 36 \r\n 37 \r\n 38 [m\r\n[38;5;254m[48;5;56m [m[1m[38;5;254m[48;5;56mNORMAL[m[38;5;254m[48;5;56m [m[38;5;56m[48;5;234m[m[38;5;234m[48;5;56m[m[38;5;254m[48;5;56m Howto.md[+]                               [m[38;5;238m[48;5;56m[m[38;5;254m[48;5;238m modula2 [m[38;5;234m[48;5;238m[m[38;5;206m[48;5;234m [unix] [m[38;5;56m[48;5;234m[m[38;5;254m[48;5;56m  73% [m[1m[38;5;254m[48;5;56m  30[m[38;5;254m[48;5;56m:  1  [20;5H"}
+    , { time: 199276, content: "[30;1H[m:"}
+    , { time: 199634, content: "!"}
+    , { time: 200381, content: "[30;2H[K[30;2H"}
+    , { time: 200662, content: "."}
+    , { time: 200883, content: "!"}
+    , { time: 201839, content: "f"}
+    , { time: 201955, content: "i"}
+    , { time: 202645, content: "g"}
+    , { time: 202928, content: "l"}
+    , { time: 203147, content: "..."}
+    , { time: 203177, content: "et[30;10H[K[30;10H"}
+    , { time: 203682, content: " "}
+    , { time: 203798, content: "t"}
+    , { time: 203886, content: "e"}
+    , { time: 204016, content: "r"}
+    , { time: 204120, content: "m"}
+    , { time: 204262, content: "i"}
+    , { time: 204459, content: "n"}
+    , { time: 204499, content: "a"}
+    , { time: 204668, content: "l"}
+    , { time: 205059, content: "\r"}
+    , { time: 205170, content: "[20;4H[38;5;130m [m[4m[31m _                      _             _ [m[21;4H[38;5;130m [m[31m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[m[22;4H[38;5;130m [m[31m| __/ _ \\ '[m__| [31m'_ ` _ \\| | '[m_ \\ / _` | |[23;4H[38;5;130m [m| ||  __/ |  | | | | | | | | | | (_| | |[24;5H \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|[29;76H[38;5;254m[48;5;56m65[10C2[20;6H"}
+    , { time: 206083, content: "[m[31m _                      _             _ [m[20;45H[K[21;5H[4m[31m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[m[4m                                              [m[29;77H[38;5;254m[48;5;56m7[m[6C[1m[38;5;254m[48;5;56m1[m[38;5;254m[48;5;56m:[21;6H"}
+    , { time: 206241, content: "[m[31m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[m[21;45H[K[22;5H[4m[31m| __/ _ \\ '[m[4m__| [m[4m[31m'_ ` _ \\| | '[m[4m_ \\ / _` | |                                              [m[29;77H[38;5;254m[48;5;56m9[m[6C[1m[38;5;254m[48;5;56m2[m[38;5;254m[48;5;56m:[22;6H"}
+    , { time: 206350, content: "[m[31m| __/ _ \\ '[m__| [31m'_ ` _ \\| | '[m_ \\ / _` | |[22;45H[K[23;5H[4m| ||  __/ |  | | | | | | | | | | (_| | |                                              [m[29;76H[38;5;254m[48;5;56m71[m[6C[1m[38;5;254m[48;5;56m3[m[38;5;254m[48;5;56m:[23;6H"}
+    , { time: 206506, content: "[m| ||  __/ |  | | | | | | | | | | (_| | |[23;45H[K[24;5H[4m \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|                                              [m[29;77H[38;5;254m[48;5;56m3[m[6C[1m[38;5;254m[48;5;56m4[m[38;5;254m[48;5;56m:[24;6H"}
+    , { time: 206595, content: "[m \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|[24;45H[K[25;5H[4m                                                                                      [m[29;77H[38;5;254m[48;5;56m6[m[6C[1m[38;5;254m[48;5;56m5[m[38;5;254m[48;5;56m:[25;6H"}
+    , { time: 207284, content: ""}
+    , { time: 207624, content: "[m[30;1H[K[30;1H:"}
+    , { time: 207976, content: ".!figlet terminal"}
+    , { time: 208719, content: "[30;18H[K[30;18H"}
+    , { time: 208866, content: "[30;17H[K[30;17H"}
+    , { time: 208988, content: "[30;16H[K[30;16H"}
+    , { time: 209135, content: "[30;15H[K[30;15H"}
+    , { time: 209282, content: "[30;14H[K[30;14H"}
+    , { time: 209410, content: "[30;13H[K[30;13H"}
+    , { time: 209551, content: "[30;12H[K[30;12H"}
+    , { time: 209675, content: "[30;11H[K[30;11H"}
+    , { time: 209799, content: "r"}
+    , { time: 209866, content: "e"}
+    , { time: 210102, content: "c"}
+    , { time: 210197, content: "o"}
+    , { time: 210350, content: "r"}
+    , { time: 211057, content: "d"}
+    , { time: 211149, content: "e"}
+    , { time: 211279, content: "r"}
+    , { time: 211779, content: "\r"}
+    , { time: 211842, content: "[25;32H[4m _[m[26;5H _ __ ___  ___ ___  _ __ __| | ___ _ __[27;4H[38;5;130m [m| [31m'__/ _ \\/ __/ _ \\| '[m__/ _` |/ _ \\ [31m'__|[m[28;4H[38;5;130m [m[31m| | |  __/ (_| (_) | | | (_| |  __/ |   [m[29;76H[38;5;254m[48;5;56m68[9C29[25;33H"}
+    , { time: 212677, content: "[m[25;5H                            _           [25;45H[K[26;5H[4m _ __ ___  ___ ___  _ __ __| | ___ _ __                                               [m[29;76H[38;5;254m[48;5;56m70[m[6C[1m[38;5;254m[48;5;56m6[m[38;5;254m[48;5;56m:[26;33H"}
+    , { time: 212825, content: "[m[26;5H _ __ ___  ___ ___  _ __ __| | ___ _ __ [26;45H[K[27;5H[4m| [m[4m[31m'__/ _ \\/ __/ _ \\| '[m[4m__/ _` |/ _ \\ [m[4m[31m'__|[m[4m                                              [m[29;77H[38;5;254m[48;5;56m2[m[6C[1m[38;5;254m[48;5;56m7[m[38;5;254m[48;5;56m:[27;33H"}
+    , { time: 212968, content: "[m[27;5H| [31m'__/ _ \\/ __/ _ \\| '[m__/ _` |/ _ \\ [31m'__|[m[27;45H[K[28;5H[4m[31m| | |  __/ (_| (_) | | | (_| |  __/ |   [m[4m                                              [m[29;77H[38;5;254m[48;5;56m4[m[6C[1m[38;5;254m[48;5;56m8[m[38;5;254m[48;5;56m:[28;33H"}
+    , { time: 213110, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[31m| | |  __/ (_| (_) | | | (_| |  __/ |   [m[27;45H[K[28;1H[38;5;130m 39 [m[4m[31m|_|  \\___|\\___\\___/|_|  \\__,_|\\___|_|   [m[4m                                              [m[30;1H[K[29;77H[38;5;254m[48;5;56m6[m[6C[1m[38;5;254m[48;5;56m9[m[38;5;254m[48;5;56m:[28;33H"}
+    , { time: 213251, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[31m|_|  \\___|\\___\\___/|_|  \\__,_|\\___|_|   [m[27;45H[K[28;1H[38;5;130m 40 [m[4m[31m                                        [m[4m                                              [m[29;77H[38;5;254m[48;5;56m8[m[5C[1m[38;5;254m[48;5;56m40[m[38;5;254m[48;5;56m:[28;33H"}
+    , { time: 213416, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[31m                                        [m[27;45H[K[28;1H[38;5;130m 41 [m[4m[31m [m[4m                                                                                     [m[29;76H[38;5;254m[48;5;56m80[m[6C[1m[38;5;254m[48;5;56m1[m[38;5;254m[48;5;56m:  0[28;5H"}
+    , { time: 213916, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 42 [m[4m[31m [m[4m                                                                                     [m[29;77H[38;5;254m[48;5;56m2[m[6C[1m[38;5;254m[48;5;56m2[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 213950, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 43 [m[4m[31m [m[4m                                                                                     [m[29;77H[38;5;254m[48;5;56m4[m[6C[1m[38;5;254m[48;5;56m3[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 213979, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 44 [m[4m[31m [m[4m                                                                                     [m[29;77H[38;5;254m[48;5;56m6[m[6C[1m[38;5;254m[48;5;56m4[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 214007, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 45 [m[4m[31m [m[4m                                                                                     [m[29;77H[38;5;254m[48;5;56m8[m[6C[1m[38;5;254m[48;5;56m5[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 214043, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 46 [m[4m[31m [m[4m                                                                                     [m[29;76H[38;5;254m[48;5;56m90[m[6C[1m[38;5;254m[48;5;56m6[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 214075, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 47 [m[4m[31m [m[4m                                                                                     [m[29;77H[38;5;254m[48;5;56m2[m[6C[1m[38;5;254m[48;5;56m7[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 214104, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 48 [m[4m[31m [m[4m                                                                                     [m[29;77H[38;5;254m[48;5;56m4[m[6C[1m[38;5;254m[48;5;56m8[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 214136, content: "[2;28r[m[2;1H[2M[1;30r[26;5H[K[27;1H[38;5;130m 49 [m[4m[31m [m[4m                                                                                     [m[28;1H[38;5;130m 50 [m[29;77H[38;5;254m[48;5;56m6[m[6C[1m[38;5;254m[48;5;56m9[m[38;5;254m[48;5;56m:[27;5H"}
+    , { time: 214173, content: "[m[27;5H[K[28;5H[4m[31m [m[4m                                                                                     [m[29;77H[38;5;254m[48;5;56m8[m[5C[1m[38;5;254m[48;5;56m50[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 214316, content: "[m[27;5H[4m[31m [m[4m                                                                                     [m[28;5H[K[29;77H[38;5;254m[48;5;56m6[m[5C[1m[38;5;254m[48;5;56m49[m[38;5;254m[48;5;56m:[27;5H"}
+    , { time: 214530, content: "[m[26;5H[4m[31m [m[4m                                                                                     [m[27;5H[K[29;77H[38;5;254m[48;5;56m4[m[6C[1m[38;5;254m[48;5;56m8[m[38;5;254m[48;5;56m:[26;5H"}
+    , { time: 214617, content: "[m[25;5H[4m[31m [m[4m                                                                                     [m[26;5H[K[29;77H[38;5;254m[48;5;56m2[m[6C[1m[38;5;254m[48;5;56m7[m[38;5;254m[48;5;56m:[25;5H"}
+    , { time: 214758, content: "[m[24;5H[4m[31m [m[4m                                                                                     [m[25;5H[K[29;77H[38;5;254m[48;5;56m0[m[6C[1m[38;5;254m[48;5;56m6[m[38;5;254m[48;5;56m:[24;5H"}
+    , { time: 214894, content: "[m[23;5H[4m[31m [m[4m                                                                                     [m[24;5H[K[29;76H[38;5;254m[48;5;56m88[m[6C[1m[38;5;254m[48;5;56m5[m[38;5;254m[48;5;56m:[23;5H"}
+    , { time: 215033, content: "[m[22;5H[4m[31m [m[4m                                                                                     [m[23;5H[K[29;77H[38;5;254m[48;5;56m6[m[6C[1m[38;5;254m[48;5;56m4[m[38;5;254m[48;5;56m:[22;5H"}
+    , { time: 215165, content: "[m[21;5H[4m[31m [m[4m                                                                                     [m[22;5H[K[29;77H[38;5;254m[48;5;56m4[m[6C[1m[38;5;254m[48;5;56m3[m[38;5;254m[48;5;56m:[21;5H"}
+    , { time: 215309, content: "[m[20;5H[4m[31m [m[4m                                                                                     [m[21;5H[K[29;77H[38;5;254m[48;5;56m2[m[6C[1m[38;5;254m[48;5;56m2[m[38;5;254m[48;5;56m:[20;5H"}
+    , { time: 217716, content: "[m[30;1H[1m-- INSERT --"}
+    , { time: 217730, content: "[m[29;1H[38;5;234m[48;5;111m [m[1m[38;5;234m[48;5;111mINSERT[m[38;5;254m[48;5;56m [m[38;5;234m[48;5;111m [m[38;5;111m[48;5;234m[m[38;5;234m[48;5;111m Howto.md[+]                               [m[38;5;238m[48;5;111m[m[10C[38;5;80m[48;5;234m [unix] [m[38;5;111m[48;5;234m[m[38;5;234m[48;5;111m  82% [m[1m[38;5;234m[48;5;111m  42[m[38;5;254m[48;5;56m:[m[38;5;234m[48;5;111m:  1  [20;5H"}
+    , { time: 218561, content: "[m[38;5;130m [m[4m[31mf[m[29;88H[38;5;234m[48;5;111m2[20;6H"}
+    , { time: 219112, content: "[m[38;5;130m [m[4m[31m [m[29;88H[38;5;234m[48;5;111m1[20;5H"}
+    , { time: 219188, content: "[m[38;5;130m [m[4m[31mF[m[29;88H[38;5;234m[48;5;111m2[20;6H"}
+    , { time: 219570, content: "[m[4m[31mFo[m[29;88H[38;5;234m[48;5;111m3[20;7H"}
+    , { time: 219805, content: "[m[4m[31mol[m[29;88H[38;5;234m[48;5;111m4[20;8H"}
+    , { time: 219937, content: "[m[4m[31mll[m[29;88H[38;5;234m[48;5;111m5[20;9H"}
+    , { time: 220115, content: "[m[4m[31mlo[m[29;88H[38;5;234m[48;5;111m6[20;10H"}
+    , { time: 220243, content: "[m[4m[31mow[m[29;88H[38;5;234m[48;5;111m7[20;11H"}
+    , { time: 220345, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m8[20;12H"}
+    , { time: 220491, content: "[m[4m[31m m[m[29;88H[38;5;234m[48;5;111m9[20;13H"}
+    , { time: 220604, content: "[m[4m[31mme[m[29;87H[38;5;234m[48;5;111m10[20;14H"}
+    , { time: 220703, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m1[20;15H"}
+    , { time: 220988, content: "[m[4m[31m o[m[29;88H[38;5;234m[48;5;111m2[20;16H"}
+    , { time: 221156, content: "[m[4m[31mon[m[29;88H[38;5;234m[48;5;111m3[20;17H"}
+    , { time: 221361, content: "[m[4m[31m [m[29;88H[38;5;234m[48;5;111m4[20;18H"}
+    , { time: 221785, content: "[m[4m[31m T[m[29;88H[38;5;234m[48;5;111m5[20;19H"}
+    , { time: 222122, content: "[m[4m[31mTw[m[29;88H[38;5;234m[48;5;111m6[20;20H"}
+    , { time: 222344, content: "[m[4m[31mwo[m[29;88H[38;5;234m[48;5;111m7[20;21H"}
+    , { time: 222840, content: "[m[4m[31mw[m[4m [m[29;88H[38;5;234m[48;5;111m6[20;20H"}
+    , { time: 223076, content: "[m[4m[31mwi[m[29;88H[38;5;234m[48;5;111m7[20;21H"}
+    , { time: 223185, content: "[m[4m[31mit[m[29;88H[38;5;234m[48;5;111m8[20;22H"}
+    , { time: 223405, content: "[m[4m[31mtt[m[29;88H[38;5;234m[48;5;111m9[20;23H"}
+    , { time: 223584, content: "[m[4m[31mte[m[29;87H[38;5;234m[48;5;111m20[20;24H"}
+    , { time: 223663, content: "[m[4m[31mer[m[29;88H[38;5;234m[48;5;111m1[20;25H"}
+    , { time: 224308, content: "[m[20;5H[31mFollow me on Twitter[m[20;25H[K[21;5H[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m3[m[38;5;234m[48;5;111m:  [21;5H"}
+    , { time: 224448, content: "[m[21;5H[K[22;5H[4m[31m [m[4m                                                                                     [m[29;77H[38;5;234m[48;5;111m3[m[6C[1m[38;5;234m[48;5;111m4[m[38;5;234m[48;5;111m:[22;5H"}
+    , { time: 224600, content: "[m[22;5H[K[23;5H[4m[31m [m[4m                                                                                     [m[29;84H[1m[38;5;234m[48;5;111m5[m[38;5;234m[48;5;111m:[23;5H"}
+    , { time: 225196, content: "[m[38;5;130m [m[4m[31m:[m[29;88H[38;5;234m[48;5;111m2[23;6H"}
+    , { time: 225844, content: "[m[38;5;130m [m[4m[31m [m[29;88H[38;5;234m[48;5;111m1[23;5H"}
+    , { time: 226053, content: "[m[30;1H[K[23;5H"}
+    , { time: 226120, content: "[29;1H[38;5;254m[48;5;56m [m[1m[38;5;254m[48;5;56mNORMAL[m[38;5;234m[48;5;111m [m[38;5;254m[48;5;56m [m[38;5;56m[48;5;234m[m[38;5;234m[48;5;56m[m[38;5;254m[48;5;56m Howto.md[+]                               [m[38;5;238m[48;5;56m[m[10C[38;5;206m[48;5;234m [unix] [m[38;5;56m[48;5;234m[m[38;5;254m[48;5;56m  83% [m[1m[38;5;254m[48;5;56m  45[m[38;5;234m[48;5;111m:[m[38;5;254m[48;5;56m:  0  [23;5H"}
+    , { time: 226632, content: "[30;1H[m:"}
+    , { time: 226930, content: "!"}
+    , { time: 227799, content: "[30;2H[K[30;2H"}
+    , { time: 228303, content: ".!figlet recorder"}
+    , { time: 228958, content: "[30;18H[K[30;18H"}
+    , { time: 229115, content: "[30;17H[K[30;17H"}
+    , { time: 229254, content: "[30;16H[K[30;16H"}
+    , { time: 229390, content: "[30;15H[K[30;15H"}
+    , { time: 229520, content: "[30;14H[K[30;14H"}
+    , { time: 229639, content: "[30;13H[K[30;13H"}
+    , { time: 229769, content: "[30;12H[K[30;12H"}
+    , { time: 229947, content: "[30;11H[K[30;11H"}
+    , { time: 230857, content: "@"}
+    , { time: 231127, content: "c"}
+    , { time: 231254, content: "o"}
+    , { time: 232253, content: "r"}
+    , { time: 232433, content: "t"}
+    , { time: 232525, content: "e"}
+    , { time: 232704, content: "z"}
+    , { time: 232922, content: "c"}
+    , { time: 233102, content: "r"}
+    , { time: 233243, content: "i"}
+    , { time: 233401, content: "s"}
+    , { time: 233477, content: "t"}
+    , { time: 233602, content: "i"}
+    , { time: 233711, content: "a"}
+    , { time: 233828, content: "n"}
+    , { time: 234233, content: "\r"}
+    , { time: 234290, content: "[23;6H[4m[31m  ____                 _                    _     _   _             [m[24;5H[31m  / __ \\  ___ ___  _ __| |_ ___ _______ _ __(_)___| |_(_) __ _ _ __  [25;5H / / _` |/ __/ _ \\| '[m__| __/ _ \\_  / __| [31m'__| / __| __| |/ _` | '[m_ \\[26;4H[38;5;130m [m| | (_| | (_| (_) | |  | ||  __// / (__| |  | \\__ \\ |_| | (_| | | | |[27;5H \\ \\__,_|\\___\\___/|_|   \\__\\___/___\\___|_|  |_|___/\\__|_|\\__,_|_| |_|[28;6H \\____/[29;76H[38;5;254m[48;5;56m76[10C4[23;8H"}
+    , { time: 235041, content: "[m[31m   ____                 _                    _     _   _             [m[23;74H[K[24;5H[4m[31m  / __ \\  ___ ___  _ __| |_ ___ _______ _ __(_)___| |_(_) __ _ _ __  [m[4m                 [m[29;77H[38;5;254m[48;5;56m7[m[6C[1m[38;5;254m[48;5;56m6[m[38;5;254m[48;5;56m:[24;8H"}
+    , { time: 235541, content: "[m[31m  / __ \\  ___ ___  _ __| |_ ___ _______ _ __(_)___| |_(_) __ _ _ __  [m[24;74H[K[25;5H[4m[31m / / _` |/ __/ _ \\| '[m[4m__| __/ _ \\_  / __| [m[4m[31m'__| / __| __| |/ _` | '[m[4m_ \\                  [m[29;77H[38;5;254m[48;5;56m9[m[6C[1m[38;5;254m[48;5;56m7[m[38;5;254m[48;5;56m:[25;8H"}
+    , { time: 235575, content: "[m[31m / / _` |/ __/ _ \\| '[m__| __/ _ \\_  / __| [31m'__| / __| __| |/ _` | '[m_ \\ [25;74H[K[26;5H[4m| | (_| | (_| (_) | |  | ||  __// / (__| |  | \\__ \\ |_| | (_| | | | |                 [m[29;76H[38;5;254m[48;5;56m81[m[6C[1m[38;5;254m[48;5;56m8[m[38;5;254m[48;5;56m:[26;8H"}
+    , { time: 235604, content: "[m| | (_| | (_| (_) | |  | ||  __// / (__| |  | \\__ \\ |_| | (_| | | | |[26;74H[K[27;5H[4m \\ \\__,_|\\___\\___/|_|   \\__\\___/___\\___|_|  |_|___/\\__|_|\\__,_|_| |_|                 [m[29;77H[38;5;254m[48;5;56m3[m[6C[1m[38;5;254m[48;5;56m9[m[38;5;254m[48;5;56m:[27;8H"}
+    , { time: 235634, content: "[m \\ \\__,_|\\___\\___/|_|   \\__\\___/___\\___|_|  |_|___/\\__|_|\\__,_|_| |_|[27;74H[K[28;5H[4m  \\____/                                                                              [m[29;77H[38;5;254m[48;5;56m4[m[5C[1m[38;5;254m[48;5;56m50[m[38;5;254m[48;5;56m:[28;8H"}
+    , { time: 235671, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H  \\____/                                                             [27;74H[K[28;1H[38;5;130m 51 [m[4m                                                                                      [m[30;1H[K[29;77H[38;5;254m[48;5;56m6[m[6C[1m[38;5;254m[48;5;56m1[m[38;5;254m[48;5;56m:  0[28;5H"}
+    , { time: 235701, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 52 [m[4m                                                                                      [m[29;77H[38;5;254m[48;5;56m8[m[6C[1m[38;5;254m[48;5;56m2[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 235735, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 53 [m[4m                                                                                      [m[29;77H[38;5;254m[48;5;56m9[m[6C[1m[38;5;254m[48;5;56m3[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 235763, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 54 [m[4m                                                                                      [m[29;76H[38;5;254m[48;5;56m91[m[6C[1m[38;5;254m[48;5;56m4[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 235795, content: "[2;28r[m[28;1H\r\n[1;30r[27;5H[K[28;1H[38;5;130m 55 [m[4m                                                                                      [m[29;77H[38;5;254m[48;5;56m3[m[6C[1m[38;5;254m[48;5;56m5[m[38;5;254m[48;5;56m:[28;5H"}
+    , { time: 236205, content: "[m[27;5H[4m                                                                                      [m[28;5H[K[29;77H[38;5;254m[48;5;56m1[m[6C[1m[38;5;254m[48;5;56m4[m[38;5;254m[48;5;56m:[27;5H"}
+    , { time: 236366, content: "[m[26;5H[4m                                                                                      [m[27;5H[K[29;76H[38;5;254m[48;5;56m89[m[6C[1m[38;5;254m[48;5;56m3[m[38;5;254m[48;5;56m:[26;5H"}
+    , { time: 236928, content: "[m[30;1H[1m-- INSERT --"}
+    , { time: 236943, content: "[m[29;1H[38;5;234m[48;5;111m [m[1m[38;5;234m[48;5;111mINSERT[m[38;5;254m[48;5;56m [m[38;5;234m[48;5;111m [m[38;5;111m[48;5;234m[m[38;5;234m[48;5;111m Howto.md[+]                               [m[38;5;238m[48;5;111m[m[10C[38;5;80m[48;5;234m [unix] [m[38;5;111m[48;5;234m[m[38;5;234m[48;5;111m  89% [m[1m[38;5;234m[48;5;111m  53[m[38;5;254m[48;5;56m:[m[38;5;234m[48;5;111m:  1  [26;5H"}
+    , { time: 237215, content: "[m[38;5;130m [m[4me[m[29;88H[38;5;234m[48;5;111m2[26;6H"}
+    , { time: 237418, content: "[m[4mee[m[29;88H[38;5;234m[48;5;111m3[26;7H"}
+    , { time: 237863, content: "[m[4me [m[29;88H[38;5;234m[48;5;111m2[26;6H"}
+    , { time: 237985, content: "[m[38;5;130m [m[4m [m[29;88H[38;5;234m[48;5;111m1[26;5H"}
+    , { time: 238173, content: "[m[38;5;130m [m[4mS[m[29;88H[38;5;234m[48;5;111m2[26;6H"}
+    , { time: 238459, content: "[m[4mSe[m[29;88H[38;5;234m[48;5;111m3[26;7H"}
+    , { time: 238632, content: "[m[4mee[m[29;88H[38;5;234m[48;5;111m4[26;8H"}
+    , { time: 238860, content: "[29;88H5[26;9H"}
+    , { time: 239422, content: "[m[4m y[m[29;88H[38;5;234m[48;5;111m6[26;10H"}
+    , { time: 239539, content: "[m[4myo[m[29;88H[38;5;234m[48;5;111m7[26;11H"}
+    , { time: 239619, content: "[m[4mou[m[29;88H[38;5;234m[48;5;111m8[26;12H"}
+    , { time: 239860, content: "[m[4mu![m[29;88H[38;5;234m[48;5;111m9[26;13H"}
+    , { time: 240685, content: "[m[30;1H[K[26;12H"}
+    , { time: 240759, content: "\r\n\r\n\r\n[38;5;254m[48;5;56m [m[1m[38;5;254m[48;5;56mNORMAL[m[38;5;234m[48;5;111m [m[38;5;254m[48;5;56m [m[38;5;56m[48;5;234m[m[38;5;234m[48;5;56m[m[38;5;254m[48;5;56m Howto.md[+]                               [m[38;5;238m[48;5;56m[m[10C[38;5;206m[48;5;234m [unix] [m[38;5;56m[48;5;234m[m[38;5;254m[48;5;56m  89% [m[1m[38;5;254m[48;5;56m  53[m[38;5;234m[48;5;111m:[m[38;5;254m[48;5;56m:  8  [26;12H"}
+    , { time: 241629, content: "[30;1H[m:"}
+    , { time: 241957, content: "w"}
+    , { time: 242399, content: "q"}
+    , { time: 243582, content: "\r\"Howto.md\""}
+    , { time: 243642, content: " [New] 59L, 1447C written"}
+    , { time: 243672, content: "[2;1H[34m[48;5;248m  [m[38;5;130m 29 [m\r\r\n[34m[48;5;248m  [m[38;5;130m 30 [m[31m _[19C   _[10C   _ [m\r\r\n[34m[48;5;248m  [m[38;5;130m 31 [m[31m| |_ ___ _ __ _ __ ___ (_)_ __   __ _| |[m\r\r\n[34m[48;5;248m  [m[38;5;130m 32 [m[31m| __/ _ \\ '[m__| [31m'_ ` _ \\| | '[m_ \\ / _` | |\r\r\n[34m[48;5;248m  [m[38;5;130m 33 [m| ||  __/ | [18C | (_| | |\r\r\n[34m[48;5;248m  [m[38;5;130m 34 [m \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|\r\r\n[34m[48;5;248m  [m[38;5;130m 35 [m[25C   _\r\r\n[34m[48;5;248m  [m[38;5;130m 36 [m _ __ ___  ___ ___  _ __ __| | ___ _ __\r\r\n[34m[48;5;248m  [m[38;5;130m 37 [m| [31m'__/ _ \\/ __/ _ \\| '[m__/ _` |/ _ \\ [31m'__|[m\r\r\n[34m[48;5;248m  [m[38;5;130m 38 [m[3C[31m |  __/ (_| (_) | | | (_| |  __/ |   [m\r\r\n[34m[48;5;248m  [m[38;5;130m 39 [m[31m|_|  \\___|\\___\\___/|_|  \\__,_|\\___|_|   [m\r\r\n[34m[48;5;248m  [m[38;5;130m 40 [m[38C[31m  [m\r\r\n[34m[48;5;248m  [m[38;5;130m 41 [m\r\r\n[34m[48;5;248m  [m[38;5;130m 42 [m[31mFollow me on Twitter[m\r\r\n[34m[48;5;248m  [m[38;5;130m 43 [m\r\r\n[34m[48;5;248m  [m[38;5;130m 44 [m\r\r\n[34m[48;5;248m  [m[38;5;130m 45 [m[31m   ____[14C   _[17C   _     _   _[11C  [m\r\r\n[34m[48;5;248m  [m[38;5;130m 46 [m[31m  / __ \\  ___ ___  _ __| |_ ___ _______ _ __(_)___| |_(_) __ _ _ __  [m\r\r\n[34m[48;5;248m  [m[38;5;130m 47 [m[2C[31m / _` |/ __/ _ \\| '[m__| __/ _ \\_  / __| [31m'__| / __| __| |/ _` | '[m_ \\\r\r\n[34m[48;5;248m  [m[38;5;130m 48 [m| | (_| | (_| (_) | |  | ||  __// / (__| |  | \\__ \\ |_| | (_[7C |\r\r\n[34m[48;5;248m  [m[38;5;130m 49 [m \\ \\__,_|\\___\\___/|_|   \\__\\___/___\\___|_|  |_|___/\\__|_|\\__,_|_| |_|\r\r\n[34m[48;5;248m  [m[38;5;130m 50 [m  \\____/\r\r\n[34m[48;5;248m  [m[38;5;130m 51 [m\r\r\n[34m[48;5;248m  [m[38;5;130m 52 [m\r\r\n[34m[48;5;248m  [m[38;5;130m 53 [m[4mSee you![m\r\r\n[34m[48;5;248m  [m[38;5;130m 54 [m\r\r\n[34m[48;5;248m  [m[38;5;130m 55 "}
+    , { time: 243734, content: "\r\r\n\r\r\n\r\r\n[m[?1l>[2J[?47l8"}
+    , { time: 243737, content: "]2;crisboot@crisboot-Aspire-S3-391  ~/"}
+    , { time: 243748, content: "[m  [34mcrisboot[32m@crisboot-Aspire-S3-391 [m[1m[36m~$ [m"}
+    , { time: 245356, content: "c"}
+    , { time: 245511, content: "m"}
+    , { time: 245631, content: "a"}
+    , { time: 245858, content: "t"}
+    , { time: 245931, content: "r"}
+    , { time: 246117, content: "i"}
+    , { time: 246267, content: "x "}
+    , { time: 247195, content: "\r\n]2;crisboot@crisboot-Aspire-S3-391  cmatrix"}
+    , { time: 247201, content: ")07[?47h[1;30r[m[4l[m[m[m[H[2J[32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B ["}
+    , { time: 247201, content: "m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m"}
+    , { time: 247201, content: " [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m"}
+    , { time: 247202, content: "[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m "}
+    , { time: 247202, content: "[m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [3"}
+    , { time: 247209, content: "2m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m \r[1B [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m [32m [m[m"}
+    , { time: 247242, content: "[1;63H[37m,[m[m"}
+    , { time: 247282, content: "[61D[32mJ[1;63H,[1B[37m:[m[m"}
+    , { time: 247323, content: "[1;31H[37mG[2;3H[32mX[2;63H:[1B[37me[m[m"}
+    , { time: 247363, content: "[1;31H[32mG[1;65H[37md[m[m [37m0[2;31H$[3;3H[32mV[3;63He[1B[37mc[m[m"}
+    , { time: 247404, content: "[1;25H[32ml[1;65Hd[m[m [32m0[2;31H$[2;65H[37mF[m[m [37mt[3;31HJ[4;3H[32mg[4;63Hc[1B[37mo[m[m"}
+    , { time: 247444, content: "[1;39H[37m([1;63H[32m [2;25H}[2;65HF[m[m [32mt[3;31HJ[3;65H[37mq[m[m [37mk[4;31Hy[5;3H[32m+[5;63Ho[1B[37m4[m[m"}
+    , { time: 247485, content: "[1;39H[32m([1;49H[37m{[35C[32m'[2;39H[37mX[2;63H[32m [3;25Hi[3;65Hq[m[m [32mk[4;31Hy[4;65H[37m][m[m [37m8[5;31H%[6;3H[32mh[6;63H4[1B[37m*[m[m"}
+    , { time: 247525, content: "[1;19H[32ms[1;31H [1;49H{[2;39HX[2;49H[37mn[35C[32mS[3;39H[37mQ[3;63H[32m [4;25H![4;65H][m[m [32m8[5;31H%[5;65H[37md[m[m [37ma[6;31H`[7;3H[32mM[7;63H*[1B[37mf[m[m"}
+    , { time: 247566, content: "[1;17H[32m0[1;63H/[2;19H![2;31H [2;49Hn[3;39HQ[3;49H[37mN[35C[32m)[4;39H[37m*[4;63H[32m [5;25Ho[5;65Hd[m[m [32ma[6;31H`[6;65H[37mI[m[m [37mN[7;31H+[8;3H[32mL[8;63Hf[1B[37m/[m[m"}
+    , { time: 247607, content: "[2;17H[32mk[2;63H4[3;19H{[3;31H [3;49HN[4;39H*[4;49H[37ml[35C[32m^[5;39H[37mN[5;63H[32m [6;25H|[6;65HI[m[m [32mN[7;31H+[7;65H[37mM[m[m [37md[8;31HL[9;3H[32m![9;63H/[1B[37m2[m[m"}
+    , { time: 247647, content: "[1;37H[37m.[3;17H[32m9[3;63H4[4;19Ha[4;31H [4;49Hl[5;39HN[5;49H[37m|[35C[32m5[6;39H[37mp[6;63H[32m [7;25Hn[7;65HM[m[m [32md[8;31HL[8;65H[37m-[m[m [37mB[9;31HH[10;3H[32mv[10;63H2[1B[37ml[m[m"}
+    , { time: 247688, content: "[H[32mE[1;37H.[1B[37m\"[4;17H[32mo[4;63H_[5;19Hp[5;31H [5;49H|[6;39Hp[6;49H[37mf[35C[32m0[7;39H[37mI[7;63H[32m [8;25Hz[8;65H-[m[m [32mB[9;31HH[9;65H[37m\"[m[m [37mA[10;31H%[11;3H[32m1[11;63Hl[1B[37m?[m[m"}
+    , { time: 247729, content: "[1;11H[32mi[m[m [32m [m[m [37mN[1;55H,[1;69H[32m+[7C[37mV[9Cs[m[m [37mN\r[1B[32mG[2;37H\"[1B[37mr[5;17H[32mi[5;63HP[6;19HN[6;31H [6;49Hf[7;39HI[7;49H[37m-[35C[32m[[8;39H[37m:[8;63H[32m [9;25Hu[9;65H\"[m[m [32mA[10;31H%[10;65H[37mh[m[m [37mo[11;31H|[12;3H[32m\"[12;63H?[1B[37mL[m[m"}
+    , { time: 247769, content: "[1;15H[32mN[1;55H,[1;77HV[9Cs[m[m [32mN[2;11HU[m[m [32m [m[m [37m$[2;55HQ[2;69H[32ms[7C[37mL[9CK[m[m [37m)\r[1B[32mz[3;37Hr[1B[37mI[6;17H[32m:[6;63H@[7;19H`[7;31H [7;49H-[8;39H:[8;49H[37m5[35C[32mn[9;39H[37mB[9;63H[32m [10;25HS[10;65Hh[m[m [32mo[11;31H|[11;65H[37mY[m[m [37m+[12;31He[13;3H[32mT[13;63HL[1B[37m)[m[m"}
+    , { time: 247809, content: "[1;3H[32m [m[m [32m [m[m [32m [m[m [32m7[1;59H[37mp[2;15H[32m$[2;55HQ[2;77HL[9CK[m[m [32m)[3;11H8[m[m [32m [m[m [37mJ[3;55Hg[3;69H[32m.[7C[37mu[9CV[m[m [37m}\r[1B[32mb[4;37HI[1B[37m7[7;17H[32md[7;63HG[8;19H4[8;31H [8;49H5[9;39HB[9;49H[37my[35C[32mA[10;39H[37m7[10;63H[32m [11;25H{[11;65HY[m[m [32m+[12;31He[12;65H[37mL[m[m [37mQ[13;31H;[14;3H[32mS[14;63H)[1B[37m9[m[m"}
+    , { time: 247851, content: "[1;13H[37mX[1;43H[32mv[7C<[7Cp[2;3H [m[m [32m [m[m [32m [m[m [32mW[2;59H[37m6[3;15H[32mJ[3;55Hg[3;77Hu[9CV[m[m [32m}[4;11H&[m[m [32m [m[m [37m}[4;55Hg[4;69H[32m>[7C[37m=[9CL[m[m [37mV\r[1B[32m$[5;37H7[1B[37mj[8;17H[32mv[8;63Ho[9;19HV[9;31H [9;49Hy[10;39H7[10;49H[37mG[35C[32mH[11;39H[37m4[11;63H[32m [12;25H;[12;65HL[m[m [32mQ[13;31H;[13;65H[37m9[m[m [37mw[14;31H/[15;3H[32m)[15;63H9[1B[37mg[m[m"}
+    , { time: 247892, content: "[1;13H[32mX[1;39H [1;81H[37m%[7C[32m [2;13H[37mY[2;43H[32m%[7C|[7C6[3;3H [m[m [32m [m[m [32m [m[m [32mV[3;59H[37m5[4;15H[32m}[4;55Hg[4;77H=[9CL[m[m [32mV[5;11H&[m[m [32m [m[m [37mn[5;55HG[5;69H[32mQ[7C[37m>[9C([m[m [37mZ\r[1B[32m-[6;37Hj[1B[37m.[9;17H[32m2[9;63Hm[10;19HF[10;31H [10;49HG[11;39H4[11;49H[37m'[35C[32m][12;39H[37mV[12;63H[32m [13;25H$[13;65H9[m[m [32mw[14;31H/[14;65H[37mO[m[m [37mV[15;31H([16;3H[32m&[16;63Hg[1B[37m<[m[m"}
+    , { time: 247933, content: "[1;45H[37m@[1;81H[32m%[2;13HY[2;39H [2;81H[37m/[7C[32m [3;13H[37mb[3;43H[32m+[7C|[7C5[4;3H [m[m [32m [m[m [32m [m[m [32m0[4;59H[37m;[5;15H[32mn[5;55HG[5;77H>[9C([m[m [32mZ[6;11Hn[m[m [32m [m[m [37m{[6;55Hu[6;69H[32ml[7C[37m'[9C_[m[m [37mw\r[1B[32mi[7;37H.[1B[37m6[10;17H[32m![10;63H=[11;19H*[11;31H [11;49H'[12;39HV[12;49H[37mj[35C[32mr[13;39H[37mT[13;63H[32m [14;25H|[14;65HO[m[m [32mV[15;31H([15;65H[37m#[m[m [37mR[16;31H([17;3H[32m,[17;63H<[1B[37m3[m[m"}
+    , { time: 247972, content: "[1;5H[37mg[1;45H[32m@[37CN[2;45H[37md[2;81H[32m/[3;13Hb[3;39H [3;81H[37m1[7C[32m [4;13H[37m|[4;43H[32m.[7CI[7C;[5;3H [m[m [32m [m[m [32m [m[m [32mh[5;59H[37m4[6;15H[32m{[6;55Hu[6;77H'[9C_[m[m [32mw[7;11Hk[m[m [32m [m[m [37m=[7;55H![7;69H[32m^[7C[37mr[9C#[m[m [37m7\r[1B[32m{[8;37H6[1B[37me[11;17H[32ms[11;63HI[12;19H8[12;31H [12;49Hj[13;39HT[13;49H[37m$[35C[32mh[14;39H[37m/[14;63H[32m [15;25Hm[15;65H#[m[m [32mR[16;31H([16;65H[37m![m[m [37mP[17;31HD[18;3H[32mn[18;63H3[1B[37mR[m[m"}
+    , { time: 248014, content: "[1;5H[32mg[m[m [32m&[m[m [32m7[m[m [32m [1;35H[37m#[1;57Hb[m[m [32mp[m[m [32m [m[m [32m [m[m [32m [2;5H[37m5[2;45H[32md[37CU[3;45H[37m^[3;81H[32m1[4;13H|[4;39H [4;81H[37m0[7C[32m [5;13H[37m1[5;43H[32mY[7Ct[7C4[6;3H [m[m [32m [m[m [32m [m[m [32m2[6;59H[37mW[7;15H[32m=[7;55H![7;77Hr[9C#[m[m [32m7[8;11Hh[m[m [32m [m[m [37ms[8;55H.[8;69H[32mE[7C[37m3[9Cx[m[m [37m/\r[1B[32mS[9;37He[1B[37mo[12;17H[32mi[12;63Hj[13;19HW[13;31H [13;49H$[14;39H/[14;49H[37m^[35C[32m([15;39H[37mb[15;63H[32m [16;25Hq[16;65H![m[m [32mP[17;31HD[17;65H[37m$[m[m [37mH[18;31H}[19;3H[32ml[19;63HR[1B[37mB[m[m"}
+    , { time: 248055, content: "[1;27H[32m^[7C#[1;47Hc[1;57Hb[2;5H5[m[m [32m=[m[m [32mW[m[m [32m [2;35H[37mE[2;57Hi[m[m [32m6[m[m [32m [m[m [32m [m[m [32m [3;5H[37m/[3;45H[32m^[37Cx[4;45H[37ma[4;81H[32m0[5;13H1[5;39H [5;81H[37m1[7C[32m [6;13H[37m=[6;43H[32m/[7Cd[7CW[7;3H [m[m [32m [m[m [32m [m[m [32mt[7;59H[37m\\[8;15H[32ms[8;55H.[8;77H3[9Cx[m[m [32m/[9;11H`[m[m [32m [m[m [37me[9;55H\\[9;69H[32mY[7C[37m5[9CV[m[m [37mw\r[1B[32mx[10;37Ho[1B[37m@[13;17H[32mB[13;63HU[14;19Hu[14;31H [14;49H^[15;39Hb[15;49H[37m][35C[32m+[16;39H[37mL[16;63H[32m [17;25HE[17;65H$[m[m [32mH[18;31H}[18;65H[37mv[m[m [37mJ[19;31Hu[20;3H[32mw[20;63HB[1B[37mw[m[m"}
+    , { time: 248096, content: "[1;71H[32me[1;81H [2;27HG[7CE[2;47H$[2;57Hi[3;5H/[m[m [32mQ[m[m [32mV[m[m [32m [3;35H[37mW[3;57Hp[m[m [32m5[m[m [32m [m[m [32m [m[m [32m [4;5H[37mB[4;45H[32ma[37CL[5;45H[37mh[5;81H[32m1[6;13H=[6;39H [6;81H[37mN[7C[32m [7;13H[37mq[7;43H[32m<[7C=[7C\\[8;3H [m[m [32m [m[m [32m [m[m [32m{[8;59H[37md[9;15H[32me[9;55H\\[9;77H5[9CV[m[m [32mw[10;11Hf[m[m [32m [m[m [37mI[10;55Hx[10;69H[32m/[7C[37mS[9Ct[m[m [37m?\r[1B[32ms[11;37H@[1B[37m-[14;17H[32ms[14;63HQ[15;19HT[15;31H [15;49H][16;39HL[16;49H[37mw[35C[32mF[17;39H[37m9[17;63H[32m [18;25Hv[18;65Hv[m[m [32mJ[19;31Hu[19;65H[37mu[m[m [37mK[20;31H\\[21;3H[32m)[21;63Hw[1B[37m'[m[m"}
+    , { time: 248137, content: "[1;5H[32m [1;39H[[1;61H>[23C [2;71Hf[2;81H [3;27Ht[7CW[3;47HJ[3;57Hp[4;5HB[m[m [32mV[m[m [32m0[m[m [32m [4;35H[37mH[4;57H9[m[m [32m;[m[m [32m [m[m [32m [m[m [32m [5;5H[37me[5;45H[32mh[37CZ[6;45H[37m][6;81H[32mN[7;13Hq[7;39H [7;81H[37m7[7C[32m [8;13H[37mn[8;43H[32m*[7C3[7Cd[9;3H [m[m [32m [m[m [32m [m[m [32mD[9;59H[37mV[10;15H[32mI[10;55Hx[10;77HS[9Ct[m[m [32m?[11;11Hq[m[m [32m [m[m [37m_[11;55Hw[11;69H[32m^[7C[37md[9C\\[m[m [37m5\r[1B[32mz[12;37H-[1B[37mZ[15;17H[32mY[15;63H([16;19Ho[16;31H [16;49Hw[17;39H9[17;49H[37mm[35C[32mM[18;39H[37mw[18;63H[32m [19;25HX[19;65Hu[m[m [32mK[20;31H\\[20;65H[37m0[m[m [37ms[21;31Hi[22;3H[32ml[22;63H'[1B[37m}[m[m"}
+    , { time: 248178, content: "[1;21H[37ml[1;49H[32m [1;79H[[2;5H [2;39HF[2;61H7[23C [3;71HW[3;81H [4;27H[[7CH[4;47HG[4;57H9[5;5He[m[m [32mN[m[m [32mh[m[m [32m [5;35H[37mQ[5;57Hi[m[m [32m4[m[m [32m [m[m [32m [m[m [32m [6;5H[37mc[6;45H[32m][37Ca[7;45H[37m$[7;81H[32m7[8;13Hn[8;39H [8;81H[37mV[7C[32m [9;13H[37mV[9;43H[32mX[7C8[7CV[10;3H [m[m [32m [m[m [32m [m[m [32md[10;59H[37mt[11;15H[32m_[11;55Hw[11;77Hd[9C\\[m[m [32m5[12;11H][m[m [32m [m[m [37mC[12;55H#[12;69H[32mb[7C[37mW[9Ci[m[m [37m?\r[1B[32mh[13;37HZ[1B[37mc[16;17H[32m)[16;63HR[17;19HE[17;31H [17;49Hm[18;39Hw[18;49H[37m=[35C[32mG[19;39H[37m^[19;63H[32m [20;25H4[20;65H0[m[m [32ms[21;31Hi[21;65H[37mx[m[m [37m\"[22;31HF[23;3H[32m+[23;63H}[1B[37m|[m[m"}
+    , { time: 248219, content: "[1;21H[32ml[7C[37m0[m[m [37mb[53Ck[2;21HB[2;49H[32m [2;79HI[3;5H [3;39H7[3;61H7[23C [4;71Hg[4;81H [5;27HB[7CQ[5;47H_[5;57Hi[6;5Hc[m[m [32m3[m[m [32m2[m[m [32m [6;35H[37m_[6;57He[m[m [32mW[m[m [32m [m[m [32m [m[m [32m [7;5H[37m\"[7;45H[32m$[37C$[8;45H[37m}[8;81H[32mV[9;13HV[9;39H [9;81H[37mu[7C[32m [10;13H[37m6[10;43H[32mf[7C:[7Ct[11;3H [m[m [32m [m[m [32m [m[m [32mx[11;59H[37m3[12;15H[32mC[12;55H#[12;77HW[9Ci[m[m [32m?[13;11HW[m[m [32m [m[m [37m?[13;55H`[13;69H[32mr[7C[37mc[9Ca[m[m [37mL\r[1B[32mm[14;37Hc[1B[37m?[17;17H[32mq[17;63Hx[18;19HL[18;31H [18;49H=[19;39H^[19;49H[37mS[35C[32m-[20;39H[37mC[20;63H[32m [21;25H][21;65Hx[m[m [32m\"[22;31HF[22;65H[37m+[m[m [37mD[23;31H`[24;3H[32m;[24;63H|[1B[37mQ[m[m"}
+    , { time: 248260, content: "[1;15H[32m [m[m [32m [7C [m[m [32m^[m[m [32m0[m[m [32mb[1;53HO[31Ck[2;21HB[7C[37ms[m[m [37m^[53C9[3;21Hz[3;49H[32m [3;79HF[4;5H [4;39HV[4;61HL[23C [5;71H*[5;81H [6;27He[7C_[6;47H\"[6;57He[7;5H\"[m[m [32m.[m[m [32mt[m[m [32m [7;35H[37m9[7;57H{[m[m [32m\\[m[m [32m [m[m [32m [m[m [32m [8;5H[37mb[8;45H[32m}[37C-[9;45H[37mK[9;81H[32mu[10;13H6[10;39H [10;81H[37m7[7C[32m [11;13H[37ml[11;43H[32my[7CQ[7C3[12;3H [m[m [32m [m[m [32m [m[m [32mc[12;59H[37mO[13;15H[32m?[13;55H`[13;77Hc[9Ca[m[m [32mL[14;11Ha[m[m [32m [m[m [37m8[14;55Hh[14;69H[32mJ[7C[37mF[9Cy[m[m [37mR\r[1B[32mk[15;37H?[1B[37mQ[18;17H[32m{[18;63H,[19;19HN[19;31H [19;49HS[20;39HC[20;49H[37mq[35C[32mu[21;39H[37m|[21;63H[32m [22;25H.[22;65H+[m[m [32mD[23;31H`[23;65H[37m/[m[m [37mw[24;31Hm[25;3H[32m}[25;63HQ[1B[37m4[m[m"}
+    , { time: 248301, content: "[H[32m [7C [1;49H[37m8[1;75H[32mh[m[m [32mV[m[m [32m[[m[m [32mI[2;15H [m[m [32m [7C [m[m [32mG[m[m [32ms[m[m [32m^[2;53Hi[31C9[3;21Hz[7C[37mP[m[m [37mb[53CH[4;21Hf[4;49H[32m [4;79H7[5;5H [5;39H2[5;61H$[23C [6;71H1[6;81H [7;27HO[7C9[7;47H4[7;57H{[8;5Hb[m[m [32m?[m[m [32m{[m[m [32m [8;35H[37m{[8;57H^[m[m [32md[m[m [32m [m[m [32m [m[m [32m [9;5H[37mP[9;45H[32mK[37CK[10;45H[37mY[10;81H[32m7[11;13Hl[11;39H [11;81H[37mR[7C[32m [12;13H[37m2[12;43H[32mg[7C2[7CO[13;3H [m[m [32m [m[m [32m [m[m [32my[13;59H[37m;[14;15H[32m8[14;55Hh[14;77HF[9Cy[m[m [32mR[15;11HQ[m[m [32m [m[m [37mJ[15;55Hc[15;69H[32m@[7C[37m][9Cc[m[m [37m_\r[1B[32mF[16;37HQ[1B[37mm[19;17H[32mU[19;63HW[20;19H![20;31H [20;49Hq[21;39H|[21;49H[37m>[35C[32mx[22;39H[37m+[22;63H[32m [23;25Hg[23;65H/[m[m [32mw[24;31Hm[24;65H[37m3[m[m [37m#[25;31H}[26;3H[32mO[26;63H4[1B[37mi[m[m"}
+    , { time: 248342, content: "[1;23H[37m|[1;45H[32m [m[m [32mc[m[m [32m8[1;67H \r[1B [7C [2;49H[37m0[2;75H[32m3[m[m [32mL[m[m [32mI[m[m [32m![3;15H [m[m [32m [7C [m[m [32mt[m[m [32mP[m[m [32mb[3;53HG[31CH[4;21Hf[7C[37m\\[m[m [37mE[53CT[5;21H-[5;49H[32m [5;79H#[6;5H [6;39HJ[6;61Hx[23C [7;71H0[7;81H [8;27HT[7C{[8;47H;[8;57H^[9;5HP[m[m [32mx[m[m [32mD[m[m [32m [9;35H[37mJ[9;57HA[m[m [32mV[m[m [32m [m[m [32m [m[m [32m [10;5H[37mH[10;45H[32mY[37C1[11;45H[37mr[11;81H[32mR[12;13H2[12;39H [12;81H[37m^[7C[32m [13;13H[37my[13;43H[32m5[7Cw[7C;[14;3H [m[m [32m [m[m [32m [m[m [32mR[14;59H[37m@[15;15H[32mJ[15;55Hc[15;77H][9Cc[m[m [32m_[16;11H`[m[m [32m [m[m [37m+[16;55HI[16;69H[32mE[7C[37mb[9CS[m[m [37m^\r[1B[32m8[17;37Hm[1B[37mc[20;17H[32mK[20;63H#[21;19H-[21;31H [21;49H>[22;39H+[22;49H[37mU[35C[32m:[23;39H[37mq[23;63H[32m [24;25H/[24;65H3[m[m [32m#[25;31H}[25;65H[37m%[m[m [37mK[26;31H,[27;3H[32mr[27;63Hi[1B[37m9[m[m"}
+    , { time: 248384, content: "[1;11H[32mf[1;23H|[m[m [32m [m[m [32m [1;41Ht[1;73H[37mk[2;23HY[2;45H[32m [m[m [32m$[m[m [32m0[2;67H \r[1B [7C [3;49H[37mq[3;75H[32md[m[m [32mu[m[m [32mF[m[m [32m$[4;15H [m[m [32m [7C [m[m [32m[[m[m [32m\\[m[m [32mE[4;53H`[31CT[5;21H-[7C[37m}[m[m [37m'[53CZ[6;21H)[6;49H[32m [6;79HP[7;5H [7;39Hc[7;61H-[23C [8;71H([8;81H [9;27HS[7CJ[9;47H|[9;57HA[10;5HH[m[m [32mW[m[m [32md[m[m [32m [10;35H[37m_[10;57HI[m[m [32mt[m[m [32m [m[m [32m [m[m [32m [11;5H[37m([11;45H[32mr[37Ce[12;45H[37m%[12;81H[32m^[13;13Hy[13;39H [13;81H[37mT[7C[32m [14;13H[37mz[14;43H[32m=[7Cx[7C@[15;3H [m[m [32m [m[m [32m [m[m [32mM[15;59H[37mH[16;15H[32m+[16;55HI[16;77Hb[9CS[m[m [32m^[17;11H#[m[m [32m [m[m [37m)[17;55H-[17;69H[32mV[7C[37m=[9C[[m[m [37mu\r[1B[32md[18;37Hc[1B[37m)[21;17H[32m@[21;63HC[22;19Hr[22;31H [22;49HU[23;39Hq[23;49H[37mQ[35C[32mA[24;39H[37m@[24;63H[32m [25;25Hw[25;65H%[m[m [32mK[26;31H,[26;65H[37mM[m[m [37m8[27;31Hc[28;3H[32m8[28;63H9[1B[37mP[m[m"}
+    , { time: 248424, content: "[1;7H[32m [1;33H6[1;73Hk[2;11HI[2;23HY[m[m [32m [m[m [32m [2;41H#[2;73H[37m,[3;23HZ[3;45H[32m [m[m [32mJ[m[m [32mq[3;67H \r[1B [7C [4;49H[37mN[4;75H[32me[m[m [32m=[m[m [32m7[m[m [32mI[5;15H [m[m [32m [7C [m[m [32mB[m[m [32m}[m[m [32m'[5;53HA[31CZ[6;21H)[7C[37m_[m[m [37md[53Cn[7;21HA[7;49H[32m [7;79H)[8;5H [8;39Hg[8;61H^[23C [9;71HQ[9;81H [10;27Ht[7C_[10;47Hu[10;57HI[11;5H([m[m [32ms[m[m [32mx[m[m [32m [11;35H[37m;[11;57H'[m[m [32m3[m[m [32m [m[m [32m [m[m [32m [12;5H[37mf[12;45H[32m%[37Cr[13;45H[37mZ[13;81H[32mT[14;13Hz[14;39H [14;81H[37m.[7C[32m [15;13H[37mz[15;43H[32m*[7C^[7CH[16;3H [m[m [32m [m[m [32m [m[m [32mQ[16;59H[37m@[17;15H[32m)[17;55H-[17;77H=[9C[[m[m [32mu[18;11H\"[m[m [32m [m[m [37mp[18;55Hd[18;69H[32m([7C[37m6[9C-[m[m [37m7\r[1B[32mE[19;37H)[1B[37mI[22;17H[32m.[22;63Ht[23;19H?[23;31H [23;49HQ[24;39H@[24;49H[37m4[35C[32mC[25;39H[37m\"[25;63H[32m [26;25HV[26;65HM[m[m [32m8[27;31Hc[27;65H[37m{[m[m [37m5[28;31H}[29;3H[32mY[29;63HP[1B[37mN[m[m"}
+    , { time: 248464, content: "[H[37mf[m[m [37m][1;43H[32m [7C [2;7H [2;33HQ[2;73H,[3;11Hn[3;23HZ[m[m [32m [m[m [32m [3;41H@[3;73H[37mq[4;23H![4;45H[32m [m[m [32mG[m[m [32mN[4;67H \r[1B [7C [5;49H[37mQ[5;75H[32md[m[m [32m>[m[m [32m#[m[m [32mn[6;15H [m[m [32m [7C [m[m [32me[m[m [32m_[m[m [32md[6;53HQ[31Cn[7;21HA[7C[37m/[m[m [37mz[53Ck[8;21HZ[8;49H[32m [8;79Hr[9;5H [9;39H[[9;61Hn[23C [10;71HY[10;81H [11;27H%[7C;[11;47HN[11;57H'[12;5Hf[m[m [32m>[m[m [32mc[m[m [32m [12;35H[37m*[12;57H([m[m [32mO[m[m [32m [m[m [32m [m[m [32m [13;5H[37mC[13;45H[32mZ[37C#[14;45H[37mx[14;81H[32m.[15;13Hz[15;39H [15;81H[37m8[7C[32m [16;13H[37mw[16;43H[32mo[7C8[7C@[17;3H [m[m [32m [m[m [32m [m[m [32md[17;59H[37ms[18;15H[32mp[18;55Hd[18;77H6[9C-[m[m [32m7[19;11H;[m[m [32m [m[m [37mu[19;55HS[19;69H[32mb[7C[37m5[9CQ[m[m [37mr\r[1B[32m/[20;37HI[1B[37m)[23;17H[32mk[23;63Hi[24;19H%[24;31H [24;49H4[25;39H\"[25;49H[37ms[35C[32m*[26;39H[37m5[26;63H[32m [27;25H+[27;65H{[m[m [32m5[28;31H}[28;65H[37mc[m[m [37m)[29;31Hp[30;3H[32mn[30;63HN[m[m"}
+    , { time: 248506, content: "[H[32mf[m[m [32m][1;59H \r[1B[37m1[m[m [37m)[2;43H[32m [7C [3;7H [3;33H0[3;73Hq[4;11H{[4;23H![m[m [32m [m[m [32m [4;41H<[4;73H[37m-[5;23Hr[5;45H[32m [m[m [32m_[m[m [32mQ[5;67H \r[1B [7C [6;49H[37ma[6;75H[32m;[m[m [32m'[m[m [32mP[m[m [32mN[7;15H [m[m [32m [7C [m[m [32mO[m[m [32m/[m[m [32mz[7;53Hq[31Ck[8;21HZ[7C[37mW[m[m [37m=[53Ch[9;21H:[9;49H[32m [9;79H|[10;5H [10;39HC[10;61H^[23C [11;71HP[11;81H [12;27H%[7C*[12;47H'[12;57H([13;5HC[m[m [32m{[m[m [32my[m[m [32m [13;35H[37m/[13;57H![m[m [32m;[m[m [32m [m[m [32m [m[m [32m [14;5H[37mP[14;45H[32mx[37CS[15;45H[37m%[15;81H[32m8[16;13Hw[16;39H [16;81H[37ml[7C[32m [17;13H[37mr[17;43H[32mZ[7Cx[7Cs[18;3H [m[m [32m [m[m [32m [m[m [32m\"[18;59H[37mC[19;15H[32mu[19;55HS[19;77H5[9CQ[m[m [32mr[20;11HN[m[m [32m [m[m [37m5[20;55Ha[20;69H[32mt[7C[37mi[9Cc[m[m [37mv\r[1B[32m/[21;37H)[1B[37mK[24;17H[32m![24;63H\"[25;19HE[25;31H [25;49Hs[26;39H5[26;49H[37mU[35C[32mS[27;39H[37m#[27;63H[32m [28;25H5[28;65Hc[m[m [32m)[29;31Hp[29;65H[37m>[m[m [37m,[30;31He[m[m"}
+    , { time: 248546, content: "[1;53H[32m [1;77H \r[1B1[m[m [32m)[2;59H \r[1B[37m}[m[m [37mx[3;43H[32m [7C [4;7H [4;33H+[4;73H-[5;11H=[5;23Hr[m[m [32m [m[m [32m [5;41H'[5;73H[37m8[6;23HT[6;45H[32m [m[m [32m\"[m[m [32ma[6;67H \r[1B [7C [7;49H[37m[[7;75H[32mU[m[m [32mr[m[m [32m)[m[m [32m*[8;15H [m[m [32m [7C [m[m [32mT[m[m [32mW[m[m [32m=[8;53HR[31Ch[9;21H:[7C[37mr[m[m [37m|[53C{[10;21H8[10;49H[32m [10;79HM[11;5H [11;39HF[11;61Hb[23C [12;71Hv[12;81H [13;27H7[7C/[13;47HZ[13;57H![14;5HP[m[m [32m_[m[m [32mR[m[m [32m [14;35H[37mD[14;57HD[m[m [32m@[m[m [32m [m[m [32m [m[m [32m [15;5H[37m9[15;45H[32m%[37Cc[16;45H[37my[16;81H[32ml[17;13Hr[17;39H [17;81H[37m{[7C[32m [18;13H[37mR[18;43H[32mq[7C=[7CC[19;3H [m[m [32m [m[m [32m [m[m [32mz[19;59H[37mL[20;15H[32m5[20;55Ha[20;77Hi[9Cc[m[m [32mv[21;11HB[m[m [32m [m[m [37m7[21;55HK[21;69H[32mB[7C[37m+[9Cn[m[m [37m?\r[1B[32m([22;37HK[1B[37m)[25;17H[32m4[25;63H#[26;19H3[26;31H [26;49HU[27;39H#[27;49H[37mN[35C[32mx[28;39H[37m.[28;63H[32m [29;25Hq[29;65H>[m[m [32m,[30;31He[30;65H[37mG[m[m [37m![m[m"}
+    , { time: 248588, content: "[1;5H[32m][7C [m[m [32m [m[m [32m [m[m [32m [1;29H [7C [1;57H [2;53H [2;77H \r[1B}[m[m [32mx[3;59H \r[1B[37m#[m[m [37mL[4;43H[32m [7C [5;7H [5;33Ha[5;73H8[6;11H>[6;23HT[m[m [32m [m[m [32m [6;41Hw[6;73H[37mt[7;23H`[7;45H[32m [m[m [32m4[m[m [32m[[7;67H \r[1B [7C [8;49H[37mF[8;75H[32mp[m[m [32m3[m[m [32mr[m[m [32ms[9;15H [m[m [32m [7C [m[m [32mS[m[m [32mr[m[m [32m|[9;53HH[31C{[10;21H8[7C[37m6[m[m [37m$[53Cl[11;21H\"[11;49H[32m [11;79H5[12;5H [12;39HE[12;61H<[23C [13;71HY[13;81H [14;27H7[7CD[14;47Hw[14;57HD[15;5H9[m[m [32m{[m[m [32mM[m[m [32m [15;35H[37m?[15;57H][m[m [32mH[m[m [32m [m[m [32m [m[m [32m [16;5H[37mr[16;45H[32my[37Cu[17;45H[37mX[17;81H[32m{[18;13HR[18;39H [18;81H[37mY[7C[32m [19;13H[37m[[19;43H[32m5[7C|[7CL[20;3H [m[m [32m [m[m [32m [m[m [32m1[20;59H[37m'[21;15H[32m7[21;55HK[21;77H+[9Cn[m[m [32m?[22;11H?[m[m [32m [m[m [37m\"[22;55HI[22;69H[32m8[7C[37mX[9C-[m[m [37mm\r[1B[32m4[23;37H)[1B[37m}[26;17H[32mA[26;63HX[27;19H$[27;31H [27;49HN[28;39H.[28;49H[37m%[35C[32mn[29;39H[37m:[29;63H[32m [30;25Hw[30;65HG[m[m [32m![m[m"}
+    , { time: 248629, content: "[1;35H[32m [1;61H [m[m [32m [m[m [32mV[17C [m[m [32mk[m[m [32m [2;5Hu[7C [m[m [32m [m[m [32m [m[m [32m [2;29H [7C [2;57H [3;53H [3;77H \r[1B#[m[m [32mL[4;59H \r[1B[37mQ[m[m [37ml[5;43H[32m [7C [6;7H [6;33H3[6;73Ht[7;11H<[7;23H`[m[m [32m [m[m [32m [7;41Hw[7;73H[37mM[8;23H5[8;45H[32m [m[m [32m;[m[m [32mF[8;67H \r[1B [7C [9;49H[37ma[9;75H[32mK[m[m [32m5[m[m [32m|[m[m [32mO[10;15H [m[m [32m [7C [m[m [32mt[m[m [32m6[m[m [32m$[10;53HP[31Cl[11;21H\"[7C[37m%[m[m [37ml[53C,[12;21Hg[12;49H[32m [12;79HH[13;5H [13;39H%[13;61H\"[23C [14;71H4[14;81H [15;27H{[7C?[15;47Hl[15;57H][16;5Hr[m[m [32mc[m[m [32mQ[m[m [32m [16;35H[37m][16;57HE[m[m [32m@[m[m [32m [m[m [32m [m[m [32m [17;5H[37md[17;45H[32mX[37CX[18;45H[37mm[18;81H[32mY[19;13H[[19;39H [19;81H[37m4[7C[32m [20;13H[37mM[20;43H[32mu[7Cx[7C'[21;3H [m[m [32m [m[m [32m [m[m [32m*[21;59H[37m=[22;15H[32m\"[22;55HI[22;77HX[9C-[m[m [32mm[23;11H[[m[m [32m [m[m [37m@[23;55H-[23;69H[32mb[7C[37mH[9C\\[m[m [37m@\r[1B[32mK[24;37H}[1B[37mc[27;17H[32mW[27;63H)[28;19Ht[28;31H [28;49H%[29;39H:[29;49H[37m[[35C[32mt[30;39H[37m7[30;63H[32m [m[m"}
+    , { time: 248670, content: "[1;37H[32m![1;49H [m[m [32m [m[m [32m [m[m [32m [2;35H [2;61H [m[m [32m [m[m [32m*[17C [m[m [32m9[m[m [32m [3;5HZ[7C [m[m [32m [m[m [32m [m[m [32m [3;29H [7C [3;57H [4;53H [4;77H \r[1BQ[m[m [32ml[5;59H \r[1B[37ml[m[m [37m.[6;43H[32m [7C [7;7H [7;33H'[7;73HM[8;11Hc[8;23H5[m[m [32m [m[m [32m [8;41H+[8;73H[37m*[9;23H}[9;45H[32m [m[m [32m|[m[m [32ma[9;67H \r[1B [7C [10;49H[37m([10;75H[32m$[m[m [32mS[m[m [32mM[m[m [32m][11;15H [m[m [32m [7C [m[m [32m%[m[m [32m%[m[m [32ml[11;53H`[31C,[12;21Hg[7C[37mY[m[m [37mU[53CI[13;21H\"[13;49H[32m [13;79HJ[14;5H [14;39H![14;61H&[23C [15;71H([15;81H [16;27HC[7C][16;47HJ[16;57HE[17;5Hd[m[m [32mh[m[m [32md[m[m [32m [17;35H[37mj[17;57H>[m[m [32ms[m[m [32m [m[m [32m [m[m [32m [18;5H[37m4[18;45H[32mm[37CQ[19;45H[37m\\[19;81H[32m4[20;13HM[20;39H [20;81H[37mZ[7C[32m [21;13H[37mu[21;43H[32m:[7CU[7C=[22;3H [m[m [32m [m[m [32m [m[m [32mS[22;59H[37m5[23;15H[32m@[23;55H-[23;77HH[9C\\[m[m [32m@[24;11Hr[m[m [32m [m[m [37m\"[24;55H@[24;69H[32m%[7C[37m'[9C#[m[m [37m[\r[1B[32mQ[25;37Hc[1B[37mF[28;17H[32mt[28;63H2[29;19H![29;31H [29;49H[[30;39H7[30;49H[37m/[35C[32m[[m[m"}
+    , { time: 248711, content: "[1;17H[37m3[m[m [32m [m[m [32ml[m[m [32m [1;69H [m[m [32me[m[m [32mk[m[m [32m [2;37H=[2;49H [m[m [32m [m[m [32m [m[m [32m [3;35H [3;61H [m[m [32m [m[m [32mL[17C [m[m [32mH[m[m [32m [4;5H%[7C [m[m [32m [m[m [32m [m[m [32m [4;29H [7C [4;57H [5;53H [5;77H \r[1Bl[m[m [32m.[6;59H \r[1B[37m%[m[m [37m![7;43H[32m [7C [8;7H [8;33Hn[8;73H*[9;11HS[9;23H}[m[m [32m [m[m [32m [9;41Hw[9;73H[37mY[10;23H\\[10;45H[32m [m[m [32mu[m[m [32m([10;67H \r[1B [7C [11;49H[37mB[11;75H[32mK[m[m [32md[m[m [32m5[m[m [32m$[12;15H [m[m [32m [7C [m[m [32m%[m[m [32mY[m[m [32mU[12;53H![31CI[13;21H\"[7C[37m7[m[m [37ma[53C`[14;21H5[14;49H[32m [14;79Hk[15;5H [15;39H:[15;61H|[23C [16;71HM[16;81H [17;27HE[7Cj[17;47Hy[17;57H>[18;5H4[m[m [32m:[m[m [32m\"[m[m [32m [18;35H[37mq[18;57H/[m[m [32mC[m[m [32m [m[m [32m [m[m [32m [19;5H[37m+[19;45H[32m\\[37C![20;45H[37mt[20;81H[32mZ[21;13Hu[21;39H [21;81H[37mz[7C[32m [22;13H[37mm[22;43H[32mA[7Cr[7C5[23;3H [m[m [32m [m[m [32m [m[m [32m_[23;59H[37m_[24;15H[32m\"[24;55H@[24;77H'[9C#[m[m [32m[[25;11H@[m[m [32m [m[m [37m*[25;55HJ[25;69H[32m'[7C[37m`[9CA[m[m [37m7\r[1B[32m![26;37HF[1B[37m?[29;17H[32mW[29;63HN[30;19H=[30;31H [30;49H/[m[m"}
+    , { time: 248753, content: "[1;17H[32m3[1;79H [2;17H[37m,[m[m [32m [m[m [32mB[m[m [32m [2;69H [m[m [32mf[m[m [32m,[m[m [32m [3;37H2[3;49H [m[m [32m [m[m [32m [m[m [32m [4;35H [4;61H [m[m [32m [m[m [32mn[17C [m[m [32mT[m[m [32m [5;5H][7C [m[m [32m [m[m [32m [m[m [32m [5;29H [7C [5;57H [6;53H [6;77H \r[1B%[m[m [32m![7;59H \r[1B[37mA[m[m [37m*[8;43H[32m [7C [9;7H [9;33H\\[9;73HY[10;11Ho[10;23H\\[m[m [32m [m[m [32m [10;41Ho[10;73H[37m][11;23H8[11;45H[32m [m[m [32mN[m[m [32mB[11;67H \r[1B [7C [12;49H[37m![12;75H[32mx[m[m [32mW[m[m [32mH[m[m [32m$[13;15H [m[m [32m [7C [m[m [32m7[m[m [32m7[m[m [32ma[13;53H/[31C`[14;21H5[7C[37mY[m[m [37mc[53C<[15;21HZ[15;49H[32m [15;79Hm[16;5H [16;39H*[16;61H>[23C [17;71H>[17;81H [18;27H1[7Cq[18;47Hl[18;57H/[19;5H+[m[m [32mC[m[m [32mz[m[m [32m [19;35H[37m][19;57H.[m[m [32mL[m[m [32m [m[m [32m [m[m [32m [20;5H[37mP[20;45H[32mt[37CI[21;45H[37m.[21;81H[32mz[22;13Hm[22;39H [22;81H[37m?[7C[32m [23;13H[37mP[23;43H[32m#[7Ck[7C_[24;3H [m[m [32m [m[m [32m [m[m [32mT[24;59H[37m>[25;15H[32m*[25;55HJ[25;77H`[9CA[m[m [32m7[26;11H8[m[m [32m [m[m [37m1[26;55H7[26;69H[32ma[7C[37mm[9CM[m[m [37m\"\r[1B[32m2[27;37H?[1B[37m8[30;17H[32mP[30;63Hj[m[m"}
+    , { time: 248793, content: "[1;33H[32m [1;43Hv[1;63Hn[2;17H,[2;79H [3;17H[37m^[m[m [32m [m[m [32mz[m[m [32m [3;69H [m[m [32mW[m[m [32mq[m[m [32m [4;37HU[4;49H [m[m [32m [m[m [32m [m[m [32m [5;35H [5;61H [m[m [32m [m[m [32mY[17C [m[m [32mZ[m[m [32m [6;5H1[7C [m[m [32m [m[m [32m [m[m [32m [6;29H [7C [6;57H [7;53H [7;77H \r[1BA[m[m [32m*[8;59H \r[1B[37m|[m[m [37m^[9;43H[32m [7C [10;7H [10;33HU[10;73H][11;11H?[11;23H8[m[m [32m [m[m [32m [11;41HM[11;73H[37mn[12;23HV[12;45H[32m [m[m [32m'[m[m [32m![12;67H \r[1B [7C [13;49H[37mh[13;75H[32m{[m[m [32mc[m[m [32mJ[m[m [32mR[14;15H [m[m [32m [7C [m[m [32m7[m[m [32mY[m[m [32mc[14;53HV[31C<[15;21HZ[7C[37m6[m[m [37mt[53C![16;21Hx[16;49H[32m [16;79Hr[17;5H [17;39H`[17;61Hu[23C [18;71HY[18;81H [19;27Hk[7C][19;47Hu[19;57H.[20;5HP[m[m [32mh[m[m [32m1[m[m [32m [20;35H[37m$[20;57Hs[m[m [32m'[m[m [32m [m[m [32m [m[m [32m [21;5H[37m?[21;45H[32m.[37CR[22;45H[37mN[22;81H[32m?[23;13HP[23;39H [23;81H[37m}[7C[32m [24;13H[37mk[24;43H[32mi[7CU[7C>[25;3H [m[m [32m [m[m [32m [m[m [32m}[25;59H[37m>[26;15H[32m1[26;55H7[26;77Hm[9CM[m[m [32m\"[27;11Hs[m[m [32m [m[m [37m@[27;55Hv[27;69H[32m*[7C[37m.[9C_[m[m [37m$\r[1B[32m*[28;37H8[1B[37mr[m[m"}
+    , { time: 248835, content: "[2;33H[32m [2;43HC[2;63HR[3;17H^[3;79H [4;17H[37m_[m[m [32m [m[m [32mf[m[m [32m [4;69H [m[m [32mg[m[m [32m-[m[m [32m [5;37HC[5;49H [m[m [32m [m[m [32m [m[m [32m [6;35H [6;61H [m[m [32m [m[m [32mj[17C [m[m [32mn[m[m [32m [7;5H8[7C [m[m [32m [m[m [32m [m[m [32m [7;29H [7C [7;57H [8;53H [8;77H \r[1B|[m[m [32m^[9;59H \r[1B[37mN[m[m [37mw[10;43H[32m [7C [11;7H [11;33H][11;73Hn[12;11H`[12;23HV[m[m [32m [m[m [32m [12;41H@[12;73H[37mL[13;23Hf[13;45H[32m [m[m [32mZ[m[m [32mh[13;67H \r[1B [7C [14;49H[37m6[14;75H[32m@[m[m [32mF[m[m [32mk[m[m [32m\"[15;15H [m[m [32m [7C [m[m [32m{[m[m [32m6[m[m [32mt[15;53H\"[31C![16;21Hx[7C[37mI[m[m [37m<[53Cp[17;21Hh[17;49H[32m [17;79H#[18;5H [18;39Hp[18;61H.[23C [19;71HQ[19;81H [20;27Ho[7C$[20;47HC[20;57Hs[21;5H?[m[m [32mn[m[m [32m*[m[m [32m [21;35H[37m$[21;57H=[m[m [32m=[m[m [32m [m[m [32m [m[m [32m [22;5H[37m.[22;45H[32mN[37Ci[23;45H[37mq[23;81H[32m}[24;13Hk[24;39H [24;81H[37m1[7C[32m [25;13H[37ms[25;43H[32mb[7Co[7C>[26;3H [m[m [32m [m[m [32m [m[m [32m}[26;59H[37m_[27;15H[32m@[27;55Hv[27;77H.[9C_[m[m [32m$[28;11HD[m[m [32m [m[m [37mU[28;55H7[28;69H[32m|[7C[37mF[9CW[m[m [37m%\r[1B[32m^[29;37Hr[1B[37m6[m[m"}
+    , { time: 248877, content: "[1;35H[37m#[m[m [32m [1;47H [1;71H [m[m [32mk[m[m [32m [m[m [32m*[11C{[3;33H [3;43H+[3;63H$[4;17H_[4;79H [5;17H[37mF[m[m [32m [m[m [32m-[m[m [32m [5;69H [m[m [32m*[m[m [32m8[m[m [32m [6;37HB[6;49H [m[m [32m [m[m [32m [m[m [32m [7;35H [7;61H [m[m [32m [m[m [32mm[17C [m[m [32mk[m[m [32m [8;5Hc[7C [m[m [32m [m[m [32m [m[m [32m [8;29H [7C [8;57H [9;53H [9;77H \r[1BN[m[m [32mw[10;59H \r[1B[37mN[m[m [37mG[11;43H[32m [7C [12;7H [12;33H5[12;73HL[13;11H/[13;23Hf[m[m [32m [m[m [32m [13;41H8[13;73H[37m3[14;23HW[14;45H[32m [m[m [32mw[m[m [32m6[14;67H \r[1B [7C [15;49H[37mA[15;75H[32m|[m[m [32m][m[m [32mm[m[m [32mj[16;15H [m[m [32m [7C [m[m [32mC[m[m [32mI[m[m [32m<[16;53HS[31Cp[17;21Hh[7C[37m,[m[m [37md[53Cs[18;21HJ[18;49H[32m [18;79H?[19;5H [19;39H$[19;61H-[23C [20;71HD[20;81H [21;27H`[7C$[21;47H/[21;57H=[22;5H.[m[m [32mf[m[m [32mS[m[m [32m [22;35H[37m*[22;57Hs[m[m [32m5[m[m [32m [m[m [32m [m[m [32m [23;5H[37mK[23;45H[32mq[37C?[24;45H[37mn[24;81H[32m1[25;13Hs[25;39H [25;81H[37m=[7C[32m [26;13H[37mI[26;43H[32mq[7CK[7C_[27;3H [m[m [32m [m[m [32m [m[m [32m)[27;59H[37m9[28;15H[32mU[28;55H7[28;77HF[9CW[m[m [32m%[29;11HW[m[m [32m [m[m [37mB[29;55H'[29;69H[32mU[7C[37m{[9C^[m[m [37mu\r[1B[32m[[30;37H6[m[m"}
+    , { time: 248918, content: "[1;5H[32m [1;21H [1;35H#[1;81H [2;35H[37m[[m[m [32m [2;47H [2;71H [m[m [32m,[m[m [32m [m[m [32mF[11Cq[4;33H [4;43Hs[4;63H7[5;17HF[5;79H [6;17H[37m`[m[m [32m [m[m [32m)[m[m [32m [6;69H [m[m [32m1[m[m [32mt[m[m [32m [7;37HU[7;49H [m[m [32m [m[m [32m [m[m [32m [8;35H [8;61H [m[m [32m [m[m [32mP[17C [m[m [32mh[m[m [32m [9;5HI[7C [m[m [32m [m[m [32m [m[m [32m [9;29H [7C [9;57H [10;53H [10;77H \r[1BN[m[m [32mG[11;59H \r[1B[37mT[m[m [37mF[12;43H[32m [7C [13;7H [13;33H7[13;73H3[14;11Hb[14;23HW[m[m [32m [m[m [32m [14;41HR[14;73H[37m2[15;23H5[15;45H[32m [m[m [32ml[m[m [32mA[15;67H \r[1B [7C [16;49H[37mJ[16;75H[32mE[m[m [32mb[m[m [32mr[m[m [32m([17;15H [m[m [32m [7C [m[m [32mE[m[m [32m,[m[m [32md[17;53HE[31Cs[18;21HJ[7C[37mT[m[m [37m;[53C[[19;21Ha[19;49H[32m [19;79H%[20;5H [20;39HH[20;61Hj[23C [21;71Hu[21;81H [22;27HX[7C*[22;47H5[22;57Hs[23;5HK[m[m [32m<[m[m [32m_[m[m [32m [23;35H[37m6[23;57Hn[m[m [32m_[m[m [32m [m[m [32m [m[m [32m [24;5H[37mX[24;45H[32mn[37C][25;45H[37m0[25;81H[32m=[26;13HI[26;39H [26;81H[37m[[7C[32m [27;13H[37mO[27;43H[32m=[7Cx[7C9[28;3H [m[m [32m [m[m [32m [m[m [32m_[28;59H[37mv[29;15H[32mB[29;55H'[29;77H{[9C^[m[m [32mu[30;11H=[m[m [32m [m[m [37m7[30;55HE[30;69H[32m([7C[37mH[9Cu[m[m [37m7[m[m"}
+    , { time: 248959, content: "[1;73H[32m [2;5H [2;21H [2;35H[[2;81H [3;35H[37mh[m[m [32m [3;47H [3;71H [m[m [32mq[m[m [32m [m[m [32m1[11CL[5;33H [5;43H|[5;63Hy[6;17H`[6;79H [7;17H[37mD[m[m [32m [m[m [32mA[m[m [32m [7;69H [m[m [32m0[m[m [32mM[m[m [32m [8;37HZ[8;49H [m[m [32m [m[m [32m [m[m [32m [9;35H [9;61H [m[m [32m [m[m [32mM[17C [m[m [32m{[m[m [32m [10;5H^[7C [m[m [32m [m[m [32m [m[m [32m [10;29H [7C [10;57H [11;53H [11;77H \r[1BT[m[m [32mF[12;59H \r[1B[37m-[m[m [37mH[13;43H[32m [7C [14;7H [14;33HS[14;73H2[15;11Hk[15;23H5[m[m [32m [m[m [32m [15;41HJ[15;73H[37mY[16;23Hq[16;45H[32m [m[m [32mJ[m[m [32mJ[16;67H \r[1B [7C [17;49H[37m+[17;75H[32m+[m[m [32m=[m[m [32m#[m[m [32mt[18;15H [m[m [32m [7C [m[m [32m1[m[m [32mT[m[m [32m;[18;53H\\[31C[[19;21Ha[7C[37mR[m[m [37mh[53CZ[20;21Hd[20;49H[32m [20;79HT[21;5H [21;39H_[21;61HO[23C [22;71Ht[22;81H [23;27Hf[7C6[23;47H\"[23;57Hn[24;5HX[m[m [32m;[m[m [32mT[m[m [32m [24;35H[37m8[24;57Hc[m[m [32m>[m[m [32m [m[m [32m [m[m [32m [25;5H[37m\\[25;45H[32m0[37Cu[26;45H[37mq[26;81H[32m[[27;13HO[27;39H [27;81H[37m[[7C[32m [28;13H[37mM[28;43H[32m&[7CN[7Cv[29;3H [m[m [32m [m[m [32m [m[m [32mx[29;59H[37mC[30;15H[32m7[30;55HE[30;77HH[9Cu[m[m [32m7[m[m"}
+    , { time: 249000, content: "[1;11H[32m [1;53H[37m|[2;73H[32m [3;5H [3;21H [3;35Hh[3;81H [4;35H[37mD[m[m [32m [4;47H [4;71H [m[m [32m-[m[m [32m [m[m [32m][11Ch[6;33H [6;43H'[6;63H\\[7;17HD[7;79H [8;17H[37mu[m[m [32m [m[m [32mZ[m[m [32m [8;69H [m[m [32m([m[m [32m*[m[m [32m [9;37HY[9;49H [m[m [32m [m[m [32m [m[m [32m [10;35H [10;61H [m[m [32m [m[m [32m^[17C [m[m [32ml[m[m [32m [11;5H6[7C [m[m [32m [m[m [32m [m[m [32m [11;29H [7C [11;57H [12;53H [12;77H \r[1B-[m[m [32mH[13;59H \r[1B[37m^[m[m [37m,[14;43H[32m [7C [15;7H [15;33H7[15;73HY[16;11Hh[16;23Hq[m[m [32m [m[m [32m [16;41H@[16;73H[37m1[17;23HU[17;45H[32m [m[m [32my[m[m [32m+[17;67H \r[1B [7C [18;49H[37mv[18;75H[32mU[m[m [32m6[m[m [32m?[m[m [32m=[19;15H [m[m [32m [7C [m[m [32mk[m[m [32mR[m[m [32mh[19;53H{[31CZ[20;21Hd[7C[37mh[m[m [37m_[53CS[21;21Hg[21;49H[32m [21;79He[22;5H [22;39Hr[22;61H.[23C [23;71Hv[23;81H [24;27Hh[7C8[24;47H1[24;57Hc[25;5H\\[m[m [32ms[m[m [32m}[m[m [32m [25;35H[37mE[25;57Hg[m[m [32m>[m[m [32m [m[m [32m [m[m [32m [26;5H[37m1[26;45H[32mq[37CE[27;45H[37mw[27;81H[32m[[28;13HM[28;39H [28;81H[37mE[7C[32m [29;13H[37mR[29;43H[32mh[7CK[7CC[30;3H [m[m [32m [m[m [32m [m[m [32mN[30;59H[37m3[m[m"}
+    , { time: 249041, content: "[1;45H[37m;[7C[32m|[31C [2;11H [2;53H[37mV[3;73H[32m [4;5H [4;21H [4;35HD[4;81H [5;35H[37mj[m[m [32m [5;47H [5;71H [m[m [32m8[m[m [32m [m[m [32mt[11CN[7;33H [7;43HG[7;63HN[8;17Hu[8;79H [9;17H[37mA[m[m [32m [m[m [32m:[m[m [32m [9;69H [m[m [32mQ[m[m [32mY[m[m [32m [10;37Hk[10;49H [m[m [32m [m[m [32m [m[m [32m [11;35H [11;61H [m[m [32m [m[m [32m;[17C [m[m [32m,[m[m [32m [12;5H\\[7C [m[m [32m [m[m [32m [m[m [32m [12;29H [7C [12;57H [13;53H [13;77H \r[1B^[m[m [32m,[14;59H \r[1B[37mi[m[m [37m-[15;43H[32m [7C [16;7H [16;33H$[16;73H1[17;11HF[17;23HU[m[m [32m [m[m [32m [17;41Hs[17;73H[37mN[18;23HH[18;45H[32m [m[m [32ml[m[m [32mv[18;67H \r[1B [7C [19;49H[37m_[19;75H[32m\\[m[m [32m5[m[m [32m%[m[m [32m\"[20;15H [m[m [32m [7C [m[m [32mo[m[m [32mh[m[m [32m_[20;53HH[31CS[21;21Hg[7C[37mn[m[m [37mh[53C#[22;21H>[22;49H[32m [22;79Hu[23;5H [23;39H|[23;61H4[23C [24;71HW[24;81H [25;27HF[7CE[25;47Hl[25;57Hg[26;5H1[m[m [32m3[m[m [32m}[m[m [32m [26;35H[37me[26;57H+[m[m [32m_[m[m [32m [m[m [32m [m[m [32m [27;5H[37m)[27;45H[32mw[37C_[28;45H[37mN[28;81H[32mE[29;13HR[29;39H [29;81H[37mb[7C[32m [30;13H[37m}[30;43H[32mZ[7C![7C3[m[m"}
+    , { time: 249083, content: "[1;41H[32m [m[m [32mv[m[m [32m;[1;67H)[2;45H[37mV[7C[32mV[31C [3;11H [3;53H[37mb[4;73H[32m [5;5H [5;21H [5;35Hj[5;81H [6;35H[37m`[m[m [32m [6;47H [6;71H [m[m [32mt[m[m [32m [m[m [32m8[11Cx[8;33H [8;43H![8;63H/[9;17HA[9;79H [10;17H[37m%[m[m [32m [m[m [32m8[m[m [32m [10;69H [m[m [32mY[m[m [32m][m[m [32m [11;37Hm[11;49H [m[m [32m [m[m [32m [m[m [32m [12;35H [12;61H [m[m [32m [m[m [32mX[17C [m[m [32mI[m[m [32m [13;5HK[7C [m[m [32m [m[m [32m [m[m [32m [13;29H [7C [13;57H [14;53H [14;77H \r[1Bi[m[m [32m-[15;59H \r[1B[37mE[m[m [37mk[16;43H[32m [7C [17;7H [17;33H8[17;73HN[18;11H'[18;23HH[m[m [32m [m[m [32m [18;41Hl[18;73H[37m][19;23H8[19;45H[32m [m[m [32mu[m[m [32m_[19;67H \r[1B [7C [20;49H[37m$[20;75H[32m.[m[m [32mi[m[m [32mT[m[m [32mC[21;15H [m[m [32m [7C [m[m [32m`[m[m [32mn[m[m [32mh[21;53HM[31C#[22;21H>[7C[37m\"[m[m [37mc[53C([23;21Hg[23;49H[32m [23;79HE[24;5H [24;39H([24;61Ha[23C [25;71H6[25;81H [26;27HL[7Ce[26;47HW[26;57H+[27;5H)[m[m [32m3[m[m [32m)[m[m [32m [27;35H[37ma[27;57Hx[m[m [32m9[m[m [32m [m[m [32m [m[m [32m [28;5H[37m:[28;45H[32mN[37CF[29;45H[37m)[29;81H[32mb[30;13H}[30;39H [30;81H[37ma[7C[32m [m[m"}
+    , { time: 249124, content: "[H[32m [1;15H[37m=[1;33HH[1;79H2[m[m [32m [m[m [32mC[2;41H [m[m [32mC[m[m [32mV[2;67H![3;45H[37m0[7C[32mb[31C [4;11H [4;53H[37m|[5;73H[32m [6;5H [6;21H [6;35H`[6;81H [7;35H[37mf[m[m [32m [7;47H [7;71H [m[m [32mM[m[m [32m [m[m [32mt[11C`[9;33H [9;43HT[9;63HM[10;17H%[10;79H [11;17H[37mh[m[m [32m [m[m [32m\"[m[m [32m [11;69H [m[m [32mP[m[m [32mn[m[m [32m [12;37H/[12;49H [m[m [32m [m[m [32m [m[m [32m [13;35H [13;61H [m[m [32m [m[m [32m%[17C [m[m [32m`[m[m [32m [14;5He[7C [m[m [32m [m[m [32m [m[m [32m [14;29H [7C [14;57H [15;53H [15;77H \r[1BE[m[m [32mk[16;59H \r[1B[37m)[m[m [37mf[17;43H[32m [7C [18;7H [18;33Hh[18;73H][19;11He[19;23H8[m[m [32m [m[m [32m [19;41H@[19;73H[37m?[20;23H|[20;45H[32m [m[m [32mC[m[m [32m$[20;67H \r[1B [7C [21;49H[37mu[21;75H[32mh[m[m [32m+[m[m [32me[m[m [32m&[22;15H [m[m [32m [7C [m[m [32mX[m[m [32m\"[m[m [32mc[22;53Hh[31C([23;21Hg[7C[37m9[m[m [37m^[53CX[24;21H_[24;49H[32m [24;79H?[25;5H [25;39H+[25;61Hc[23C [26;71H6[26;81H [27;27Hv[7Ca[27;47HZ[27;57Hx[28;5H:[m[m [32mT[m[m [32m_[m[m [32m [28;35H[37m][28;57HJ[m[m [32mv[m[m [32m [m[m [32m [m[m [32m [29;5H[37m0[29;45H[32m)[37Cy[30;45H[37m8[30;81H[32ma[m[m"}
+    , { time: 249165, content: "[1;15H[32m=[1;33HH[1;51HG[1;77H [m[m [32m2\r[1B [2;15H[37mq[2;33HG[2;79H0[m[m [32m [m[m [32ma[3;41H [m[m [32m+[m[m [32m0[3;67H?[4;45H[37mo[7C[32m|[31C [5;11H [5;53H[37m}[6;73H[32m [7;5H [7;21H [7;35Hf[7;81H [8;35H[37mG[m[m [32m [8;47H [8;71H [m[m [32m*[m[m [32m [m[m [32mx[11C*[10;33H [10;43H/[10;63HN[11;17Hh[11;79H [12;17H[37m'[m[m [32m [m[m [32mg[m[m [32m [12;69H [m[m [32mv[m[m [32mL[m[m [32m [13;37H}[13;49H [m[m [32m [m[m [32m [m[m [32m [14;35H [14;61H [m[m [32m [m[m [32m}[17C [m[m [32m<[m[m [32m [15;5Hw[7C [m[m [32m [m[m [32m [m[m [32m [15;29H [7C [15;57H [16;53H [16;77H \r[1B)[m[m [32mf[17;59H \r[1B[37mO[m[m [37me[18;43H[32m [7C [19;7H [19;33H@[19;73H?[20;11Hs[20;23H|[m[m [32m [m[m [32m [20;41HZ[20;73H[37mp[21;23H@[21;45H[32m [m[m [32m/[m[m [32mu[21;67H \r[1B [7C [22;49H[37mw[22;75H[32mC[m[m [32mX[m[m [32mu[m[m [32mR[23;15H [m[m [32m [7C [m[m [32mf[m[m [32m9[m[m [32m^[23;53HW[31CX[24;21H_[7C[37mX[m[m [37mS[53Co[25;21HX[25;49H[32m [25;79HK[26;5H [26;39HQ[26;61Hb[23C [27;71HC[27;81H [28;27H)[7C][28;47H_[28;57HJ[29;5H0[m[m [32m[[m[m [32mx[m[m [32m [29;35H[37mb[29;57Hv[m[m [32mC[m[m [32m [m[m [32m [m[m [32m [30;5H[37m*[30;45H[32m8[37Cp[m[m"}
+    , { time: 249206, content: "[1;31H[32m [1;43H [1;53H [1;71H[37mB[2;15H[32mq[2;33HG[2;51H5[2;77H [m[m [32m0\r[1B [3;15H[37mJ[3;33H`[3;79Ha[m[m [32m [m[m [32mC[4;41H [m[m [32ms[m[m [32mo[4;67HA[5;45H[37m;[7C[32m}[31C [6;11H [6;53H[37mV[7;73H[32m [8;5H [8;21H [8;35HG[8;81H [9;35H[37mJ[m[m [32m [9;47H [9;71H [m[m [32mY[m[m [32m [m[m [32m@[11CZ[11;33H [11;43H;[11;63Hx[12;17H'[12;79H [13;17H[37mm[m[m [32m [m[m [32m\"[m[m [32m [13;69H [m[m [32mY[m[m [32m3[m[m [32m [14;37Hz[14;49H [m[m [32m [m[m [32m [m[m [32m [15;35H [15;61H [m[m [32m [m[m [32mV[17C [m[m [32m![m[m [32m [16;5HY[7C [m[m [32m [m[m [32m [m[m [32m [16;29H [7C [16;57H [17;53H [17;77H \r[1BO[m[m [32me[18;59H \r[1B[37mR[m[m [37mn[19;43H[32m [7C [20;7H [20;33H:[20;73Hp[21;11H}[21;23H@[m[m [32m [m[m [32m [21;41HU[21;73H[37mG[22;23H{[22;45H[32m [m[m [32m5[m[m [32mw[22;67H \r[1B [7C [23;49H[37m^[23;75H[32m8[m[m [32mH[m[m [32mE[m[m [32m3[24;15H [m[m [32m [7C [m[m [32mh[m[m [32mX[m[m [32mS[24;53H+[31Co[25;21HX[7C[37m;[m[m [37mr[53Ch[26;21Ht[26;49H[32m [26;79HP[27;5H [27;39Hu[27;61H9[23C [28;71HC[28;81H [29;27H;[7Cb[29;47HG[29;57Hv[30;5H*[m[m [32m.[m[m [32mN[m[m [32m [30;35H[37mV[30;57He[m[m [32m3[m[m [32m [m[m [32m [m[m [32m [m[m"}
+    , { time: 249247, content: "[1;59H[37m2[1;71H[32mB[m[m [32m [m[m [37ms[2;31H[32m [2;43H [2;53H [2;71H[37mw[3;15H[32mJ[3;33H`[3;51H=[3;77H [m[m [32ma\r[1B [4;15H[37m![4;33Hc[4;79HV[m[m [32m [m[m [32mV[5;41H [m[m [32m|[m[m [32m;[5;67H6[6;45H[37my[7C[32mV[31C [7;11H [7;53H[37m.[8;73H[32m [9;5H [9;21H [9;35HJ[9;81H [10;35H[37m_[m[m [32m [10;47H [10;71H [m[m [32m][m[m [32m [m[m [32mE[11C?[12;33H [12;43H][12;63HF[13;17Hm[13;79H [14;17H[37mk[m[m [32m [m[m [32m5[m[m [32m [14;69H [m[m [32m4[m[m [32m2[m[m [32m [15;37H;[15;49H [m[m [32m [m[m [32m [m[m [32m [16;35H [16;61H [m[m [32m [m[m [32m*[17C [m[m [32mp[m[m [32m [17;5HQ[7C [m[m [32m [m[m [32m [m[m [32m [17;29H [7C [17;57H [18;53H [18;77H \r[1BR[m[m [32mn[19;59H \r[1B[37mx[m[m [37md[20;43H[32m [7C [21;7H [21;33H`[21;73HG[22;11HM[22;23H{[m[m [32m [m[m [32m [22;41H.[22;73H[37m4[23;23H^[23;45H[32m [m[m [32m\"[m[m [32m^[23;67H \r[1B [7C [24;49H[37m![24;75H[32mW[m[m [32m'[m[m [32m?[m[m [32m`[25;15H [m[m [32m [7C [m[m [32mF[m[m [32m;[m[m [32mr[25;53H6[31Ch[26;21Ht[7C[37mJ[m[m [37mg[53CC[27;21Hs[27;49H[32m [27;79H8[28;5H [28;39H![28;61HP[23C [29;71HW[29;81H [30;27H![7CV[30;47He[30;57He[m[m"}
+    , { time: 249288, content: "[1;27H[37mT[1;39H[32m [1;59H2[1;75Hs[2;59H[37mt[2;71H[32mw[m[m [32m [m[m [37mQ[3;31H[32m [3;43H [3;53H [3;71H[37m<[4;15H[32m![4;33Hc[4;51H7[4;77H [m[m [32mV\r[1B [5;15H[37m7[5;33HK[5;79HV[m[m [32m [m[m [32mh[6;41H [m[m [32m'[m[m [32my[6;67Hg[7;45H[37m0[7C[32m.[31C [8;11H [8;53H[37mc[9;73H[32m [10;5H [10;21H [10;35H_[10;81H [11;35H[37m0[m[m [32m [11;47H [11;71H [m[m [32mn[m[m [32m [m[m [32mt[11CY[13;33H [13;43Ho[13;63H3[14;17Hk[14;79H [15;17H[37mS[m[m [32m [m[m [32mZ[m[m [32m [15;69H [m[m [32m([m[m [32mY[m[m [32m [16;37H0[16;49H [m[m [32m [m[m [32m [m[m [32m [17;35H [17;61H [m[m [32m [m[m [32m3[17C [m[m [32ms[m[m [32m [18;5H>[7C [m[m [32m [m[m [32m [m[m [32m [18;29H [7C [18;57H [19;53H [19;77H \r[1Bx[m[m [32md[20;59H \r[1B[37mP[m[m [37m*[21;43H[32m [7C [22;7H [22;33Hp[22;73H4[23;11Hj[23;23H^[m[m [32m [m[m [32m [23;41H\"[23;73H[37mS[24;23H&[24;45H[32m [m[m [32m1[m[m [32m![24;67H \r[1B [7C [25;49H[37mX[25;75H[32m$[m[m [32m`[m[m [32mK[m[m [32m%[26;15H [m[m [32m [7C [m[m [32mL[m[m [32mJ[m[m [32mg[26;53Hm[31CC[27;21Hs[7C[37m<[m[m [37m{[53C'[28;21HD[28;49H[32m [28;79H<[29;5H [29;39H=[29;61H:[23C [30;71HP[30;81H [m[m"}
+    , { time: 249330, content: "[1;27H[32mT[1B[37m#[2;39H[32m [2;59Ht[2;75HQ[3;59H[37mn[3;71H[32m<[m[m [32m [m[m [37m,[4;31H[32m [4;43H [4;53H [4;71H[37mr[5;15H[32m7[5;33HK[5;51Hk[5;77H [m[m [32mV\r[1B [6;15H[37m1[6;33H7[6;79H/[m[m [32m [m[m [32mB[7;41H [m[m [32mG[m[m [32m0[7;67HQ[8;45H[37m([7C[32mc[31C [9;11H [9;53H[37mX[10;73H[32m [11;5H [11;21H [11;35H0[11;81H [12;35H[37mW[m[m [32m [12;47H [12;71H [m[m [32mL[m[m [32m [m[m [32m2[11CR[14;33H [14;43H=[14;63H+[15;17HS[15;79H [16;17H[37m3[m[m [32m [m[m [32mx[m[m [32m [16;69H [m[m [32mM[m[m [32m1[m[m [32m [17;37H-[17;49H [m[m [32m [m[m [32m [m[m [32m [18;35H [18;61H [m[m [32m [m[m [32m,[17C [m[m [32m[[m[m [32m [19;5H&[7C [m[m [32m [m[m [32m [m[m [32m [19;29H [7C [19;57H [20;53H [20;77H \r[1BP[m[m [32m*[21;59H \r[1B[37m&[m[m [37m\"[22;43H[32m [7C [23;7H [23;33H&[23;73HS[24;11Hv[24;23H&[m[m [32m [m[m [32m [24;41Hi[24;73H[37m2[25;23H2[25;45H[32m [m[m [32ml[m[m [32mX[25;67H \r[1B [7C [26;49H[37m%[26;75H[32mv[m[m [32mm[m[m [32mP[m[m [32mB[27;15H [m[m [32m [7C [m[m [32mv[m[m [32m<[m[m [32m{[27;53HU[31C'[28;21HD[7C[37mB[m[m [37mg[53C|[29;21H3[29;49H[32m [29;79Hl[30;5H [30;39H?[30;61HN[23C [m[m"}
+    , { time: 249371, content: "[1;13H[37mX[1;49HL[1;81H![2;27H[32m#[1B[37m@[3;39H[32m [3;59Hn[3;75H,[4;59H[37m-[4;71H[32mr[m[m [32m [m[m [37m1[5;31H[32m [5;43H [5;53H [5;71H[37m*[6;15H[32m1[6;33H7[6;51Hl[6;77H [m[m [32m/\r[1B [7;15H[37m![7;33Hl[7;79Ht[m[m [32m [m[m [32mb[8;41H [m[m [32m![m[m [32m([8;67HM[9;45H[37mF[7C[32mX[31C [10;11H [10;53H[37m}[11;73H[32m [12;5H [12;21H [12;35HW[12;81H [13;35H[37mg[m[m [32m [13;47H [13;71H [m[m [32m3[m[m [32m [m[m [32mS[11Cv[15;33H [15;43Hv[15;63H8[16;17H3[16;79H [17;17H[37mf[m[m [32m [m[m [32mh[m[m [32m [17;69H [m[m [32m>[m[m [32mN[m[m [32m [18;37H=[18;49H [m[m [32m [m[m [32m [m[m [32m [19;35H [19;61H [m[m [32m [m[m [32mn[17C [m[m [32mZ[m[m [32m [20;5H;[7C [m[m [32m [m[m [32m [m[m [32m [20;29H [7C [20;57H [21;53H [21;77H \r[1B&[m[m [32m\"[22;59H \r[1B[37mB[m[m [37m>[23;43H[32m [7C [24;7H [24;33H;[24;73H2[25;11HX[25;23H2[m[m [32m [m[m [32m [25;41H-[25;73H[37mR[26;23Hk[26;45H[32m [m[m [32mW[m[m [32m%[26;67H \r[1B [7C [27;49H[37ms[27;75H[32ma[m[m [32m.[m[m [32m8[m[m [32mj[28;15H [m[m [32m [7C [m[m [32m)[m[m [32mB[m[m [32mg[28;53H7[31C|[29;21H3[7C[37m2[m[m [37m[[53C=[30;21H][30;49H[32m [30;79H@[m[m"}
+    , { time: 249412, content: "[1;13H[32mX[m[m [32m=[m[m [32m [m[m [32m [m[m [32m [m[m [37m`[1;43HJ[m[m [32m [m[m [32m [m[m [32mL[7C[37mR[1;81H[32m![m[m [32mC[m[m [32m [m[m [37mu[m[m [32m [2;13H[37m6[2;49H,[2;81Hz[3;27H[32m@[1B[37m/[4;39H[32m [4;59H-[4;75H1[5;59H[37mb[5;71H[32m*[m[m [32m [m[m [37m1[6;31H[32m [6;43H [6;53H [6;71H[37mS[7;15H[32m![7;33Hl[7;51H\\[7;77H [m[m [32mt\r[1B [8;15H[37mg[8;33H^[8;79Hl[m[m [32m [m[m [32m}[9;41H [m[m [32mT[m[m [32mF[9;67H#[10;45H[37me[7C[32m}[31C [11;11H [11;53H[37mc[12;73H[32m [13;5H [13;21H [13;35Hg[13;81H [14;35H[37m/[m[m [32m [14;47H [14;71H [m[m [32m2[m[m [32m [m[m [32mM[11Cv[16;33H [16;43HF[16;63Hq[17;17Hf[17;79H [18;17H[37m.[m[m [32m [m[m [32mJ[m[m [32m [18;69H [m[m [32mY[m[m [32m][m[m [32m [19;37H1[19;49H [m[m [32m [m[m [32m [m[m [32m [20;35H [20;61H [m[m [32m [m[m [32m\\[17C [m[m [32mS[m[m [32m [21;5Hy[7C [m[m [32m [m[m [32m [m[m [32m [21;29H [7C [21;57H [22;53H [22;77H \r[1BB[m[m [32m>[23;59H \r[1B[37mX[m[m [37mb[24;43H[32m [7C [25;7H [25;33H=[25;73HR[26;11Hb[26;23Hk[m[m [32m [m[m [32m [26;41H2[26;73H[37m#[27;23HD[27;45H[32m [m[m [32mZ[m[m [32ms[27;67H \r[1B [7C [28;49H[37m`[28;75H[32m`[m[m [32mF[m[m [32m<[m[m [32mY[29;15H [m[m [32m [7C [m[m [32m;[m[m [32m2[m[m [32m[[29;53HD[31C=[30;21H][7C[37m/[m[m [37mK[53C.[m[m"}
+    , { time: 249453, content: "[1;5H[37mz[1;23H[32m`[1;43HJ[1;57HR[29Cu[2;13H6[m[m [32mq[m[m [32m [m[m [32m [m[m [32m [m[m [37m,[2;43H2[m[m [32m [m[m [32m [m[m [32m,[7C[37mF[2;81H[32mz[m[m [32ma[m[m [32m [m[m [37m%[m[m [32m [3;13H[37m:[3;49H/[3;81Ho[4;27H[32m/[1B[37m5[5;39H[32m [5;59Hb[5;75H1[6;59H[37mQ[6;71H[32mS[m[m [32m [m[m [37m2[7;31H[32m [7;43H [7;53H [7;71H[37mF[8;15H[32mg[8;33H^[8;51HD[8;77H [m[m [32ml\r[1B [9;15H[37mX[9;33H\\[9;79H8[m[m [32m [m[m [32mp[10;41H [m[m [32m/[m[m [32me[10;67HO[11;45H[37m=[7C[32mc[31C [12;11H [12;53H[37mZ[13;73H[32m [14;5H [14;21H [14;35H/[14;81H [15;35H[37mC[m[m [32m [15;47H [15;71H [m[m [32mY[m[m [32m [m[m [32mM[11Cp[17;33H [17;43H9[17;63Hm[18;17H.[18;79H [19;17H[37m5[m[m [32m [m[m [32ma[m[m [32m [19;69H [m[m [32mQ[m[m [32m?[m[m [32m [20;37H>[20;49H [m[m [32m [m[m [32m [m[m [32m [21;35H [21;61H [m[m [32m [m[m [32m.[17C [m[m [32m#[m[m [32m [22;5H)[7C [m[m [32m [m[m [32m [m[m [32m [22;29H [7C [22;57H [23;53H [23;77H \r[1BX[m[m [32mb[24;59H \r[1B[37mh[m[m [37m![25;43H[32m [7C [26;7H [26;33H7[26;73H#[27;11HS[27;23HD[m[m [32m [m[m [32m [27;41Ha[27;73H[37mS[28;23H7[28;45H[32m [m[m [32m_[m[m [32m`[28;67H \r[1B [7C [29;49H[37mD[29;75H[32m?[m[m [32m{[m[m [32ml[m[m [32me[30;15H [m[m [32m [7C [m[m [32m![m[m [32m/[m[m [32mK[30;53Hu[31C.[m[m"}
+    , { time: 249494, content: "[1;3H[32m [m[m [32mz[1;69H[37mv[2;5HN[2;23H[32m,[2;43H2[2;57HF[29C%[3;13H:[m[m [32mJ[m[m [32m [m[m [32m [m[m [32m [m[m [37m%[3;43H&[m[m [32m [m[m [32m [m[m [32m/[7C[37ml[3;81H[32mo[m[m [32mC[m[m [32m [m[m [37mI[m[m [32m [4;13H[37mj[4;49HT[4;81H$[5;27H[32m5[1B[37my[6;39H[32m [6;59HQ[6;75H2[7;59H[37m/[7;71H[32mF[m[m [32m [m[m [37mR[8;31H[32m [8;43H [8;53H [8;71H[37m4[9;15H[32mX[9;33H\\[9;51H`[9;77H [m[m [32m8\r[1B [10;15H[37m{[10;33HH[10;79H=[m[m [32m [m[m [32m8[11;41H [m[m [32m;[m[m [32m=[11;67Hs[12;45H[37m/[7C[32mZ[31C [13;11H [13;53H[37mc[14;73H[32m [15;5H [15;21H [15;35HC[15;81H [16;35H[37mU[m[m [32m [16;47H [16;71H [m[m [32m1[m[m [32m [m[m [32m+[11C}[18;33H [18;43H-[18;63Hy[19;17H5[19;79H [20;17H[37mk[m[m [32m [m[m [32md[m[m [32m [20;69H [m[m [32mD[m[m [32mp[m[m [32m [21;37H?[21;49H [m[m [32m [m[m [32m [m[m [32m [22;35H [22;61H [m[m [32m [m[m [32m\\[17C [m[m [32m([m[m [32m [23;5H=[7C [m[m [32m [m[m [32m [m[m [32m [23;29H [7C [23;57H [24;53H [24;77H \r[1Bh[m[m [32m![25;59H \r[1B[37m'[m[m [37m9[26;43H[32m [7C [27;7H [27;33H[[27;73HS[28;11HZ[28;23H7[m[m [32m [m[m [32m [28;41H\"[28;73H[37m.[29;23H:[29;45H[32m [m[m [32mG[m[m [32mD[29;67H \r[1B [7C [30;49H[37mP[30;75H[32m}[m[m [32mH[m[m [32m@[m[m [32mC[m[m"}
+    , { time: 249536, content: "[1;9H[32mk[7C[37mI[7C[32mp[m[m [32mT[m[m [32m [m[m [37m3[1;69H[32mv[2;3H [m[m [32mN[2;69H[37mG[3;5H|[3;23H[32m%[3;43H&[3;57Hl[29CI[4;13Hj[m[m [32m![m[m [32m [m[m [32m [m[m [32m [m[m [37m[[4;43H:[m[m [32m [m[m [32m [m[m [32mT[7C[37m#[4;81H[32m$[m[m [32mV[m[m [32m [m[m [37mF[m[m [32m [5;13H[37m.[5;49H'[5;81HX[6;27H[32my[1B[37m1[7;39H[32m [7;59H/[7;75HR[8;59H[37mH[8;71H[32m4[m[m [32m [m[m [37mf[9;31H[32m [9;43H [9;53H [9;71H[37mC[10;15H[32m{[10;33HH[10;51HG[10;77H [m[m [32m=\r[1B [11;15H[37my[11;33H1[11;79HV[m[m [32m [m[m [32mn[12;41H [m[m [32m][m[m [32m/[12;67H4[13;45H[37m([7C[32mc[31C [14;11H [14;53H[37m5[15;73H[32m [16;5H [16;21H [16;35HU[16;81H [17;35H[37m/[m[m [32m [17;47H [17;71H [m[m [32mN[m[m [32m [m[m [32m+[11Ch[19;33H [19;43HC[19;63H|[20;17Hk[20;79H [21;17H[37mT[m[m [32m [m[m [32mg[m[m [32m [21;69H [m[m [32mu[m[m [32mG[m[m [32m [22;37H}[22;49H [m[m [32m [m[m [32m [m[m [32m [23;35H [23;61H [m[m [32m [m[m [32mo[17C [m[m [32mX[m[m [32m [24;5Hm[7C [m[m [32m [m[m [32m [m[m [32m [24;29H [7C [24;57H [25;53H [25;77H \r[1B'[m[m [32m9[26;59H \r[1B[37mj[m[m [37mf[27;43H[32m [7C [28;7H [28;33Hv[28;73H.[29;11H'[29;23H:[m[m [32m [m[m [32m [29;41Hf[29;73H[37mn[30;23HB[30;45H[32m [m[m [32me[m[m [32mP[30;67H [m[m"}
+    , { time: 249577, content: "[1;17H[32mI[m[m [37m'[1;31H[32m3[1;53H8[1;67H [1;77H\"[2;9Hi[7C[37m>[7C[32m:[m[m [32m#[m[m [32m [m[m [37m[[2;69H[32mG[3;3H [m[m [32m|[3;69H[37mb[4;5H.[4;23H[32m[[4;43H:[4;57H#[29CF[5;13H.[m[m [32m7[m[m [32m [m[m [32m [m[m [32m [m[m [37m_[5;43Hh[m[m [32m [m[m [32m [m[m [32m'[7C[37mi[5;81H[32mX[m[m [32mh[m[m [32m [m[m [37ms[m[m [32m [6;13H[37m^[6;49HB[6;81H^[7;27H[32m1[1B[37mL[8;39H[32m [8;59HH[8;75Hf[9;59H[37mS[9;71H[32mC[m[m [32m [m[m [37m/[10;31H[32m [10;43H [10;53H [10;71H[37mr[11;15H[32my[11;33H1[11;51HD[11;77H [m[m [32mV\r[1B [12;15H[37mw[12;33H)[12;79HJ[m[m [32m [m[m [32mK[13;41H [m[m [32mo[m[m [32m([13;67Hp[14;45H[37m#[7C[32m5[31C [15;11H [15;53H[37ma[16;73H[32m [17;5H [17;21H [17;35H/[17;81H [18;35H[37m%[m[m [32m [18;47H [18;71H [m[m [32m][m[m [32m [m[m [32mI[11C+[20;33H [20;43HT[20;63H?[21;17HT[21;79H [22;17H[37mD[m[m [32m [m[m [32m>[m[m [32m [22;69H [m[m [32mt[m[m [32m4[m[m [32m [23;37HJ[23;49H [m[m [32m [m[m [32m [m[m [32m [24;35H [24;61H [m[m [32m [m[m [32ma[17C [m[m [32mo[m[m [32m [25;5Hf[7C [m[m [32m [m[m [32m [m[m [32m [25;29H [7C [25;57H [26;53H [26;77H \r[1Bj[m[m [32mf[27;59H \r[1B[37mX[m[m [37mY[28;43H[32m [7C [29;7H [29;33H_[29;73Hn[30;11H>[30;23HB[m[m [32m [m[m [32m [30;41HM[30;73H[37mP[m[m"}
+    , { time: 249618, content: "[1;19H[32m'[1;29Hm[7Cd[1;57H [1;81H [m[m [32m [2;17H>[m[m [37mr[2;31H[32m[[2;53H/[2;67H [2;77Hj[3;9Hk[7C[37md[7C[32m;[m[m [32m@[m[m [32m [m[m [37me[3;69H[32mb[4;3H [m[m [32m.[4;69H[37mF[5;5H+[5;23H[32m_[5;43Hh[5;57Hi[29Cs[6;13H^[m[m [32m1[m[m [32m [m[m [32m [m[m [32m [m[m [37mF[6;43H1[m[m [32m [m[m [32m [m[m [32mB[7C[37mk[6;81H[32m^[m[m [32mB[m[m [32m [m[m [37m2[m[m [32m [7;13H[37mQ[7;49HD[7;81H\"[8;27H[32mL[1B[37mG[9;39H[32m [9;59HS[9;75H/[10;59H[37m_[10;71H[32mr[m[m [32m [m[m [37mJ[11;31H[32m [11;43H [11;53H [11;71H[37mt[12;15H[32mw[12;33H)[12;51H#[12;77H [m[m [32mJ\r[1B [13;15H[37m][13;33HQ[13;79HE[m[m [32m [m[m [32m{[14;41H [m[m [32m=[m[m [32m#[14;67H0[15;45H[37m$[7C[32ma[31C [16;11H [16;53H[37mw[17;73H[32m [18;5H [18;21H [18;35H%[18;81H [19;35H[37m<[m[m [32m [19;47H [19;71H [m[m [32m?[m[m [32m [m[m [32mW[11Cg[21;33H [21;43HY[21;63HT[22;17HD[22;79H [23;17H[37mQ[m[m [32m [m[m [32mg[m[m [32m [23;69H [m[m [32mv[m[m [32mS[m[m [32m [24;37Hw[24;49H [m[m [32m [m[m [32m [m[m [32m [25;35H [25;61H [m[m [32m [m[m [32mO[17C [m[m [32mh[m[m [32m [26;5HS[7C [m[m [32m [m[m [32m [m[m [32m [26;29H [7C [26;57H [27;53H [27;77H \r[1BX[m[m [32mY[28;59H \r[1B[37m4[m[m [37mG[29;43H[32m [7C [30;7H [30;33Hv[30;73HP[m[m"}
+    , { time: 249660, content: "[1;5H[32m [2;19Hr[2;29Ha[7C#[2;57H [2;81H [m[m [32m [3;17Hd[m[m [37ma[3;31H[32me[3;53H][3;67H [3;77H][4;9HD[7C[37m*[7C[32m8[m[m [32m/[m[m [32m [m[m [37mD[4;69H[32mF[5;3H [m[m [32m+[5;69H[37mr[6;5H#[6;23H[32mF[6;43H1[6;57Hk[29C2[7;13HQ[m[m [32m![m[m [32m [m[m [32m [m[m [32m [m[m [37ma[7;43Hz[m[m [32m [m[m [32m [m[m [32mD[7C[37m![7;81H[32m\"[m[m [32mb[m[m [32m [m[m [37mx[m[m [32m [8;13H[37m=[8;49Ho[8;81H0[9;27H[32mG[1B[37m&[10;39H[32m [10;59H_[10;75HJ[11;59H[37m_[11;71H[32mt[m[m [32m [m[m [37mJ[12;31H[32m [12;43H [12;53H [12;71H[37m;[13;15H[32m][13;33HQ[13;51HZ[13;77H [m[m [32mE\r[1B [14;15H[37mS[14;33H|[14;79Hd[m[m [32m [m[m [32mf[15;41H [m[m [32mv[m[m [32m$[15;67HH[16;45H[37ms[7C[32mw[31C [17;11H [17;53H[37mH[18;73H[32m [19;5H [19;21H [19;35H<[19;81H [20;35H[37mL[m[m [32m [20;47H [20;71H [m[m [32mp[m[m [32m [m[m [32m\\[11Cq[22;33H [22;43H2[22;63HE[23;17HQ[23;79H [24;17H[37m4[m[m [32m [m[m [32m_[m[m [32m [24;69H [m[m [32mW[m[m [32m2[m[m [32m [25;37HP[25;49H [m[m [32m [m[m [32m [m[m [32m [26;35H [26;61H [m[m [32m [m[m [32m1[17C [m[m [32mC[m[m [32m [27;5Hk[7C [m[m [32m [m[m [32m [m[m [32m [27;29H [7C [27;57H [28;53H [28;77H \r[1B4[m[m [32mG[29;59H \r[1B[37mN[m[m [37m+[30;43H[32m [7C [m[m"}
+    , { time: 249701, content: "[1;7H[32mU[1;61Ha[2;5H [3;19Ha[3;29H?[7Cy[3;57H [3;81H [m[m [32m [4;17H*[m[m [37m@[4;31H[32mD[4;53Hk[4;67H [4;77H}[5;9HU[7C[37md[7C[32ms[m[m [32m5[m[m [32m [m[m [37mT[5;69H[32mr[6;3H [m[m [32m#[6;69H[37mg[7;5HG[7;23H[32ma[7;43Hz[7;57H![29Cx[8;13H=[m[m [32mg[m[m [32m [m[m [32m [m[m [32m [m[m [37m@[8;43Hg[m[m [32m [m[m [32m [m[m [32mo[7C[37m\"[8;81H[32m0[m[m [32m}[m[m [32m [m[m [37mX[m[m [32m [9;13H[37mB[9;49HE[9;81Hp[10;27H[32m&[1B[37mg[11;39H[32m [11;59H_[11;75HJ[12;59H[37m^[12;71H[32m;[m[m [32m [m[m [37my[13;31H[32m [13;43H [13;53H [13;71H[37m^[14;15H[32mS[14;33H|[14;51H*[14;77H [m[m [32md\r[1B [15;15H[37mO[15;33H,[15;79H<[m[m [32m [m[m [32me[16;41H [m[m [32mF[m[m [32ms[16;67H6[17;45H[37m[[7C[32mH[31C [18;11H [18;53H[37m-[19;73H[32m [20;5H [20;21H [20;35HL[20;81H [21;35H[37mO[m[m [32m [21;47H [21;71H [m[m [32mG[m[m [32m [m[m [32m}[11CE[23;33H [23;43HC[23;63HH[24;17H4[24;79H [25;17H[37m7[m[m [32m [m[m [32mX[m[m [32m [25;69H [m[m [32m6[m[m [32mR[m[m [32m [26;37H|[26;49H [m[m [32m [m[m [32m [m[m [32m [27;35H [27;61H [m[m [32m [m[m [32m1[17C [m[m [32m'[m[m [32m [28;5H0[7C [m[m [32m [m[m [32m [m[m [32m [28;29H [7C [28;57H [29;53H [29;77H \r[1BN[m[m [32m+[30;59H [m[m"}
+    , { time: 249742, content: "[1;55H[37m[[7C[32m [1;75H [2;7H>[2;61Hc[3;5H [4;19H@[4;29Hr[7CN[4;57H [4;81H [m[m [32m [5;17Hd[m[m [37mh[5;31H[32mT[5;53Hh[5;67H [5;77HP[6;9Hn[7C[37mJ[7C[32mA[m[m [32my[m[m [32m [m[m [37ms[6;69H[32mg[7;3H [m[m [32mG[7;69H[37mf[8;5Hp[8;23H[32m@[8;43Hg[8;57H\"[29CX[9;13HB[m[m [32mX[m[m [32m [m[m [32m [m[m [32m [m[m [37m7[9;43Hm[m[m [32m [m[m [32m [m[m [32mE[7C[37me[9;81H[32mp[m[m [32mp[m[m [32m [m[m [37m{[m[m [32m [10;13H[37mo[10;49HT[10;81H9[11;27H[32mg[1B[37mi[12;39H[32m [12;59H^[12;75Hy[13;59H[37mp[13;71H[32m^[m[m [32m [m[m [37mh[14;31H[32m [14;43H [14;53H [14;71H[37m)[15;15H[32mO[15;33H,[15;51H<[15;77H [m[m [32m<\r[1B [16;15H[37ma[16;33Hw[16;79H+[m[m [32m [m[m [32m1[17;41H [m[m [32m9[m[m [32m[[17;67HR[18;45H[37mm[7C[32m-[31C [19;11H [19;53H[37mS[20;73H[32m [21;5H [21;21H [21;35HO[21;81H [22;35H[37mF[m[m [32m [22;47H [22;71H [m[m [32m4[m[m [32m [m[m [32m?[11C2[24;33H [24;43H^[24;63H&[25;17H7[25;79H [26;17H[37m6[m[m [32m [m[m [32mt[m[m [32m [26;69H [m[m [32m6[m[m [32m#[m[m [32m [27;37HX[27;49H [m[m [32m [m[m [32m [m[m [32m [28;35H [28;61H [m[m [32m [m[m [32m_[17C [m[m [32m|[m[m [32m [29;5H)[7C [m[m [32m [m[m [32m [m[m [32m [29;29H [7C [29;57H [30;53H [30;77H [m[m"}
+    , { time: 249783, content: "[1;15H[32m [m[m [32mI[m[m [32m [1;47H[37mP[7C[32m[[1B[37m5[7C[32m [2;75H [3;7Hi[3;61H{[4;5H [5;19Hh[5;29Hi[7CM[5;57H [5;81H [m[m [32m [6;17HJ[m[m [37m@[6;31H[32ms[6;53H`[6;67H [6;77Hr[7;9HC[7C[37mv[7C[32m^[m[m [32m1[m[m [32m [m[m [37m\\[7;69H[32mf[8;3H [m[m [32mp[8;69H[37mL[9;5HV[9;23H[32m7[9;43Hm[9;57He[29C{[10;13Ho[m[m [32m{[m[m [32m [m[m [32m [m[m [32m [m[m [37mI[10;43HV[m[m [32m [m[m [32m [m[m [32mT[7C[37m6[10;81H[32m9[m[m [32m8[m[m [32m [m[m [37m1[m[m [32m [11;13H[37m*[11;49H\"[11;81H][12;27H[32mi[1B[37mB[13;39H[32m [13;59Hp[13;75Hh[14;59H[37mH[14;71H[32m)[m[m [32m [m[m [37mp[15;31H[32m [15;43H [15;53H [15;71H[37mr[16;15H[32ma[16;33Hw[16;51H$[16;77H [m[m [32m+\r[1B [17;15H[37mV[17;33Hz[17;79H4[m[m [32m [m[m [32m/[18;41H [m[m [32m-[m[m [32mm[18;67HS[19;45H[37m2[7C[32mS[31C [20;11H [20;53H[37m}[21;73H[32m [22;5H [22;21H [22;35HF[22;81H [23;35H[37mQ[m[m [32m [23;47H [23;71H [m[m [32mS[m[m [32m [m[m [32mP[11C.[25;33H [25;43H.[25;63HV[26;17H6[26;79H [27;17H[37mE[m[m [32m [m[m [32ms[m[m [32m [27;69H [m[m [32mC[m[m [32mS[m[m [32m [28;37H^[28;49H [m[m [32m [m[m [32m [m[m [32m [29;35H [29;61H [m[m [32m [m[m [32mO[17C [m[m [32m=[m[m [32m [30;5HK[7C [m[m [32m [m[m [32m [m[m [32m [30;29H [7C [30;57H [m[m"}
+    , { time: 249825, content: "[1;11H[32mw[1;33H [m[m [32m [1;47HP[m[m [32m [1;65H [2;15H [m[m [32m>[m[m [32m [2;47H[37m1[7C[32m5[1B[37m}[7C[32m [3;75H [4;7Hn[4;61H`[5;5H [6;19H@[6;29H>[7CL[6;57H [6;81H [m[m [32m [7;17Hv[m[m [37m+[7;31H[32m\\[7;53H=[7;67H [7;77H%[8;9Hc[7C[37mx[7C[32m|[m[m [32mL[m[m [32m [m[m [37mw[8;69H[32mL[9;3H [m[m [32mV[9;69H[37mX[10;5H[[10;23H[32mI[10;43HV[10;57H6[29C1[11;13H*[m[m [32my[m[m [32m [m[m [32m [m[m [32m [m[m [37mu[11;43H^[m[m [32m [m[m [32m [m[m [32m\"[7C[37mw[11;81H[32m][m[m [32mn[m[m [32m [m[m [37m/[m[m [32m [12;13H[37mg[12;49HN[12;81H-[13;27H[32mB[1B[37m>[14;39H[32m [14;59HH[14;75Hp[15;59H[37mJ[15;71H[32mr[m[m [32m [m[m [37mF[16;31H[32m [16;43H [16;53H [16;71H[37mC[17;15H[32mV[17;33Hz[17;51Ho[17;77H [m[m [32m4\r[1B [18;15H[37mK[18;33Hs[18;79H3[m[m [32m [m[m [32m1[19;41H [m[m [32mC[m[m [32m2[19;67H_[20;45H[37m3[7C[32m}[31C [21;11H [21;53H[37m\\[22;73H[32m [23;5H [23;21H [23;35HQ[23;81H [24;35H[37mj[m[m [32m [24;47H [24;71H [m[m [32m2[m[m [32m [m[m [32m;[11CJ[26;33H [26;43H=[26;63H_[27;17HE[27;79H [28;17H[37mj[m[m [32m [m[m [32mD[m[m [32m [28;69H [m[m [32mC[m[m [32m.[m[m [32m [29;37H?[29;49H [m[m [32m [m[m [32m [m[m [32m [30;35H [30;61H [m[m [32m [m[m [32mJ[17C [m[m [32m.[m[m [32m [m[m"}
+    , { time: 249866, content: "[H[32mR[1;29H [1;69H [17C [2;11Hm[2;33H [m[m [32m [2;47H1[m[m [32m [2;65H [3;15H [m[m [32md[m[m [32m [3;47H[37mR[7C[32m}[1B[37m'[7C[32m [4;75H [5;7Hv[5;61H?[6;5H [7;19H+[7;29H>[7CR[7;57H [7;81H [m[m [32m [8;17Hx[m[m [37mx[8;31H[32mw[8;53Ha[8;67H [8;77H=[9;9Hn[7C[37m^[7C[32m<[m[m [32mG[m[m [32m [m[m [37mx[9;69H[32mX[10;3H [m[m [32m[[10;69H[37m7[11;5H[[11;23H[32mu[11;43H^[11;57Hw[29C/[12;13Hg[m[m [32mw[m[m [32m [m[m [32m [m[m [32m [m[m [37m[[12;43HB[m[m [32m [m[m [32m [m[m [32mN[7C[37mg[12;81H[32m-[m[m [32mK[m[m [32m [m[m [37m)[m[m [32m [13;13H[37m'[13;49H`[13;81H_[14;27H[32m>[1B[37mE[15;39H[32m [15;59HJ[15;75HF[16;59H[37mF[16;71H[32mC[m[m [32m [m[m [37mm[17;31H[32m [17;43H [17;53H [17;71H[37m*[18;15H[32mK[18;33Hs[18;51HY[18;77H [m[m [32m3\r[1B [19;15H[37m=[19;33Hn[19;79HK[m[m [32m [m[m [32m@[20;41H [m[m [32mT[m[m [32m3[20;67H#[21;45H[37mI[7C[32m\\[31C [22;11H [22;53H[37m*[23;73H[32m [24;5H [24;21H [24;35Hj[24;81H [25;35H[37mz[m[m [32m [25;47H [25;71H [m[m [32mR[m[m [32m [m[m [32mF[11Cx[27;33H [27;43HT[27;63H;[28;17Hj[28;79H [29;17H[37mC[m[m [32m [m[m [32m3[m[m [32m [29;69H [m[m [32mW[m[m [32mn[m[m [32m [30;37H1[30;49H [m[m [32m [m[m [32m [m[m [32m [m[m"}
+    , { time: 249907, content: "[1;23H[32m [1;41H[37mz[1;53H[32m \r[1Bd[2;29H [2;69H [17C [3;11H@[3;33H [m[m [32m [3;47HR[m[m [32m [3;65H [4;15H [m[m [32m*[m[m [32m [4;47H[37m?[7C[32m'[1B[37mD[7C[32m [5;75H [6;7Hr[6;61Ht[7;5H [8;19Hx[8;29Hr[7C&[8;57H [8;81H [m[m [32m [9;17H^[m[m [37m.[9;31H[32mx[9;53HG[9;67H [9;77Hc[10;9HR[7C[37m_[7C[32mW[m[m [32m&[m[m [32m [m[m [37m`[10;69H[32m7[11;3H [m[m [32m[[11;69H[37mX[12;5HD[12;23H[32m[[12;43HB[12;57Hg[29C)[13;13H'[m[m [32m][m[m [32m [m[m [32m [m[m [32m [m[m [37m2[13;43Hr[m[m [32m [m[m [32m [m[m [32m`[7C[37mh[13;81H[32m_[m[m [32m{[m[m [32m [m[m [37mW[m[m [32m [14;13H[37mD[14;49H;[14;81HJ[15;27H[32mE[1B[37md[16;39H[32m [16;59HF[16;75Hm[17;59H[37m'[17;71H[32m*[m[m [32m [m[m [37mA[18;31H[32m [18;43H [18;53H [18;71H[37mg[19;15H[32m=[19;33Hn[19;51H`[19;77H [m[m [32mK\r[1B [20;15H[37mb[20;33Hk[20;79Hw[m[m [32m [m[m [32mh[21;41H [m[m [32mY[m[m [32mI[21;67HJ[22;45H[37m@[7C[32m*[31C [23;11H [23;53H[37m5[24;73H[32m [25;5H [25;21H [25;35Hz[25;81H [26;35H[37mY[m[m [32m [26;47H [26;71H [m[m [32m#[m[m [32m [m[m [32mv[11C7[28;33H [28;43H\\[28;63H([29;17HC[29;79H [30;17H[37mw[m[m [32m [m[m [32m][m[m [32m [30;69H [m[m [32mP[m[m [32mP[m[m [32m [m[m"}
+    , { time: 249948, content: "[1;21H[32m9[1;41Hz[41Cm[2;23H [2;41H[37mm[2;53H[32m \r[1BC[3;29H [3;69H [17C [4;11H_[4;33H [m[m [32m [4;47H?[m[m [32m [4;65H [5;15H [m[m [32md[m[m [32m [5;47H[37mN[7C[32mD[1B[37mq[7C[32m [6;75H [7;7HB[7;61H'[8;5H [9;19H.[9;29Hm[7C\"[9;57H [9;81H [m[m [32m [10;17H_[m[m [37m=[10;31H[32m`[10;53H'[10;67H [10;77Hg[11;9H6[7C[37mS[7C[32mR[m[m [32mg[m[m [32m [m[m [37mH[11;69H[32mX[12;3H [m[m [32mD[12;69H[37m7[13;5H\\[13;23H[32m2[13;43Hr[13;57Hh[29CW[14;13HD[m[m [32mS[m[m [32m [m[m [32m [m[m [32m [m[m [37mi[14;43HW[m[m [32m [m[m [32m [m[m [32m;[7C[37m`[14;81H[32mJ[m[m [32mf[m[m [32m [m[m [37m\"[m[m [32m [15;13H[37ma[15;49H/[15;81Ht[16;27H[32md[1B[37m![17;39H[32m [17;59H'[17;75HA[18;59H[37md[18;71H[32mg[m[m [32m [m[m [37m_[19;31H[32m [19;43H [19;53H [19;71H[37mq[20;15H[32mb[20;33Hk[20;51HO[20;77H [m[m [32mw\r[1B [21;15H[37m1[21;33H)[21;79H6[m[m [32m [m[m [32mo[22;41H [m[m [32m2[m[m [32m@[22;67HE[23;45H[37me[7C[32m5[31C [24;11H [24;53H[37mE[25;73H[32m [26;5H [26;21H [26;35HY[26;81H [27;35H[37m9[m[m [32m [27;47H [27;71H [m[m [32mS[m[m [32m [m[m [32mb[11C&[29;33H [29;43Hc[29;63H?[30;17Hw[30;79H [m[m"}
+    , { time: 249988, content: "[1;17H[32m [1;31H [1;43H [1;53H[37mS[1;67H[32ml[1;81H[37mZ[2;21H[32m%[2;41Hm[41C^[3;23H [3;41H[37mi[3;53H[32m \r[1Bo[4;29H [4;69H [17C [5;11HU[5;33H [m[m [32m [5;47HN[m[m [32m [5;65H [6;15H [m[m [32mJ[m[m [32m [6;47H[37ml[7C[32mq[1B[37mC[7C[32m [7;75H [8;7HZ[8;61Hu[9;5H [10;19H=[10;29Hx[7C|[10;57H [10;81H [m[m [32m [11;17HS[m[m [37m.[11;31H[32mH[11;53Hl[11;67H [11;77Hy[12;9HT[7C[37m$[7C[32mk[m[m [32mi[m[m [32m [m[m [37m,[12;69H[32m7[13;3H [m[m [32m\\[13;69H[37mo[14;5Hn[14;23H[32mi[14;43HW[14;57H`[29C\"[15;13Ha[m[m [32mO[m[m [32m [m[m [32m [m[m [32m [m[m [37mt[15;43Hv[m[m [32m [m[m [32m [m[m [32m/[7C[37mH[15;81H[32mt[m[m [32me[m[m [32m [m[m [37m:[m[m [32m [16;13H[37m*[16;49HY[16;81Hh[17;27H[32m![1B[37mf[18;39H[32m [18;59Hd[18;75H_[19;59H[37mF[19;71H[32mq[m[m [32m [m[m [37mT[20;31H[32m [20;43H [20;53H [20;71H[37mf[21;15H[32m1[21;33H)[21;51H|[21;77H [m[m [32m6\r[1B [22;15H[37m`[22;33H+[22;79HR[m[m [32m [m[m [32ml[23;41H [m[m [32mC[m[m [32me[23;67HK[24;45H[37m![7C[32mE[31C [25;11H [25;53H[37mp[26;73H[32m [27;5H [27;21H [27;35H9[27;81H [28;35H[37m2[m[m [32m [28;47H [28;71H [m[m [32m.[m[m [32m [m[m [32mu[11CI[30;33H [30;43H^[30;63HQ[m[m"}
+    , { time: 250029, content: "[1;27H[32m [1;53HS[m[m [32m[[m[m [32m [m[m [32m [1;81HZ[2;17H [2;31H [2;43H [2;53H[37mF[2;67H[32mG[2;81H[37mM[3;21H[32m.[3;41Hi[41CB[4;23H [4;41H[37m\"[4;53H[32m \r[1Bo[5;29H [5;69H [17C [6;11H/[6;33H [m[m [32m [6;47Hl[m[m [32m [6;65H [7;15H [m[m [32mv[m[m [32m [7;47H[37md[7C[32mC[1B[37m'[7C[32m [8;75H [9;7H7[9;61HM[10;5H [11;19H.[11;29Hg[7Ch[11;57H [11;81H [m[m [32m [12;17H$[m[m [37m/[12;31H[32m,[12;53Hj[12;67H [12;77H@[13;9Hb[7C[37m$[7C[32mj[m[m [32mB[m[m [32m [m[m [37m5[13;69H[32mo[14;3H [m[m [32mn[14;69H[37mb[15;5Hl[15;23H[32mt[15;43Hv[15;57HH[29C:[16;13H*[m[m [32ma[m[m [32m [m[m [32m [m[m [32m [m[m [37my[16;43HE[m[m [32m [m[m [32m [m[m [32mY[7C[37mX[16;81H[32mh[m[m [32m1[m[m [32m [m[m [37mP[m[m [32m [17;13H[37m\\[17;49H3[17;81H<[18;27H[32mf[1B[37m7[19;39H[32m [19;59HF[19;75HT[20;59H[37mJ[20;71H[32mf[m[m [32m [m[m [37mC[21;31H[32m [21;43H [21;53H [21;71H[37m)[22;15H[32m`[22;33H+[22;51HJ[22;77H [m[m [32mR\r[1B [23;15H[37m([23;33H'[23;79HF[m[m [32m [m[m [32m7[24;41H [m[m [32m^[m[m [32m![24;67H6[25;45H[37m:[7C[32mp[31C [26;11H [26;53H[37m2[27;73H[32m [28;5H [28;21H [28;35H2[28;81H [29;35H[37mN[m[m [32m [29;47H [29;71H [m[m [32mn[m[m [32m [m[m [32m1[11C)[m[m"}
+    , { time: 250070, content: "[1;13H[32m [1;77H [m[m [32m [2;27H [2;53HF[m[m [32m5[m[m [32m [m[m [32m [2;81HM[3;17H [3;31H [3;43H [3;53H[37mL[3;67H[32mA[3;81H[37mN[4;21H[32ms[4;41H\"[41Cw[5;23H [5;41H[37md[5;53H[32m \r[1BL[6;29H [6;69H [17C [7;11HV[7;33H [m[m [32m [7;47Hd[m[m [32m [7;65H [8;15H [m[m [32mx[m[m [32m [8;47H[37m)[7C[32m'[1B[37mk[7C[32m [9;75H [10;7HV[10;61Ht[11;5H [12;19H/[12;29Hc[7Cq[12;57H [12;81H [m[m [32m [13;17H$[m[m [37m,[13;31H[32m5[13;53H^[13;67H [13;77HC[14;9H4[7C[37m:[7C[32mu[m[m [32m>[m[m [32m [m[m [37mM[14;69H[32mb[15;3H [m[m [32ml[15;69H[37mJ[16;5HV[16;23H[32my[16;43HE[16;57HX[29CP[17;13H\\[m[m [32mV[m[m [32m [m[m [32m [m[m [32m [m[m [37m_[17;43Hr[m[m [32m [m[m [32m [m[m [32m3[7C[37mu[17;81H[32m<[m[m [32m/[m[m [32m [m[m [37mw[m[m [32m [18;13H[37my[18;49H4[18;81Hr[19;27H[32m7[1B[37m'[20;39H[32m [20;59HJ[20;75HC[21;59H[37ms[21;71H[32m)[m[m [32m [m[m [37m\"[22;31H[32m [22;43H [22;53H [22;71H[37mR[23;15H[32m([23;33H'[23;51H+[23;77H [m[m [32mF\r[1B [24;15H[37mL[24;33HN[24;79H;[m[m [32m [m[m [32mC[25;41H [m[m [32m.[m[m [32m:[25;67HL[26;45H[37mz[7C[32m2[31C [27;11H [27;53H[37mF[28;73H[32m [29;5H [29;21H [29;35HN[29;81H [30;35H[37m3[m[m [32m [30;47H [30;71H [m[m [32mP[m[m [32m [m[m [32m}[11C[[m[m"}
+    , { time: 250111, content: "[1;9H[32m [1;33Hh[2;13H [2;77H [m[m [32m [3;27H [3;53HL[m[m [32m}[m[m [32m [m[m [32m [3;81HN[4;17H [4;31H [4;43H [4;53H[37m{[4;67H[32mT[4;81H[37m#[5;21H[32me[5;41Hd[41Cm[6;23H [6;41H[37m-[6;53H[32m \r[1Bm[7;29H [7;69H [17C [8;11H+[8;33H [m[m [32m [8;47H)[m[m [32m [8;65H [9;15H [m[m [32m^[m[m [32m [9;47H[37m[[7C[32mk[1B[37mk[7C[32m [10;75H [11;7Hk[11;61HL[12;5H [13;19H,[13;29HJ[7CJ[13;57H [13;81H [m[m [32m [14;17H:[m[m [37mp[14;31H[32mM[14;53H#[14;67H [14;77Hm[15;9Ha[7C[37m3[7C[32mQ[m[m [32mE[m[m [32m [m[m [37mF[15;69H[32mJ[16;3H [m[m [32mV[16;69H[37m)[17;5HG[17;23H[32m_[17;43Hr[17;57Hu[29Cw[18;13Hy[m[m [32mK[m[m [32m [m[m [32m [m[m [32m [m[m [37m_[18;43H8[m[m [32m [m[m [32m [m[m [32m4[7C[37mJ[18;81H[32mr[m[m [32m1[m[m [32m [m[m [37mt[m[m [32m [19;13H[37m_[19;49H,[19;81Hw[20;27H[32m'[1B[37m+[21;39H[32m [21;59Hs[21;75H\"[22;59H[37m$[22;71H[32mR[m[m [32m [m[m [37mR[23;31H[32m [23;43H [23;53H [23;71H[37me[24;15H[32mL[24;33HN[24;51H\\[24;77H [m[m [32m;\r[1B [25;15H[37m[[25;33H8[25;79HD[m[m [32m [m[m [32mH[26;41H [m[m [32m=[m[m [32mz[26;67Hb[27;45H[37mb[7C[32mF[31C [28;11H [28;53H[37m7[29;73H[32m [30;5H [30;21H [30;35H3[30;81H [m[m"}
+    , { time: 250153, content: "[H[32m [m[m [32m [m[m [32m [m[m [32m [1;51H [m[m [32mS[m[m [32m[[m[m [37m-[m[m [32m [m[m [32ma[m[m [37m>[2;9H[32m [2;33HE[3;13H [3;77H [m[m [32m [4;27H [4;53H{[m[m [32m'[m[m [32m [m[m [32m [4;81H#[5;17H [5;31H [5;43H [5;53H[37me[5;67H[32mp[5;81H[37mk[6;21H[32m\\[6;41H-[41CP[7;23H [7;41H[37mp[7;53H[32m \r[1B.[8;29H [8;69H [17C [9;11HF[9;33H [m[m [32m [9;47H[[m[m [32m [9;65H [10;15H [m[m [32m_[m[m [32m [10;47H[37mx[7C[32mk[1B[37m^[7C[32m [11;75H [12;7H@[12;61HP[13;5H [14;19Hp[14;29Hg[7CA[14;57H [14;81H [m[m [32m [15;17H3[m[m [37mL[15;31H[32mF[15;53Hl[15;67H [15;77H<[16;9Hu[7C[37m[[7C[32m([m[m [32md[m[m [32m [m[m [37m>[16;69H[32m)[17;3H [m[m [32mG[17;69H[37mu[18;5H.[18;23H[32m_[18;43H8[18;57HJ[29Ct[19;13H_[m[m [32m=[m[m [32m [m[m [32m [m[m [32m [m[m [37mf[19;43Hd[m[m [32m [m[m [32m [m[m [32m,[7C[37mq[19;81H[32mw[m[m [32m@[m[m [32m [m[m [37m&[m[m [32m [20;13H[37mi[20;49HI[20;81H.[21;27H[32m+[1B[37mZ[22;39H[32m [22;59H$[22;75HR[23;59H[37m^[23;71H[32me[m[m [32m [m[m [37mM[24;31H[32m [24;43H [24;53H [24;71H[37mY[25;15H[32m[[25;33H8[25;51HT[25;77H [m[m [32mD\r[1B [26;15H[37m$[26;33H3[26;79Hi[m[m [32m [m[m [32mm[27;41H [m[m [32mT[m[m [32mb[27;67H0[28;45H[37m#[7C[32m7[31C [29;11H [29;53H[37mW[30;73H[32m [m[m"}
+    , { time: 250193, content: "[1;57H[32m-[m[m [32m [m[m [32ma[m[m [32m>\r[1B [m[m [32m [m[m [32m [m[m [32m [2;51H [m[m [32mF[m[m [32m5[m[m [37mB[m[m [32m [m[m [32mc[m[m [37m$[3;9H[32m [3;33HD[4;13H [4;77H [m[m [32m [5;27H [5;53He[m[m [32mD[m[m [32m [m[m [32m [5;81Hk[6;17H [6;31H [6;43H [6;53H[37mq[6;67H[32mm[6;81H[37mC[7;21H[32m([7;41Hp[41C}[8;23H [8;41H[37ma[8;53H[32m \r[1Bv[9;29H [9;69H [17C [10;11Hw[10;33H [m[m [32m [10;47Hx[m[m [32m [10;65H [11;15H [m[m [32mS[m[m [32m [11;47H[37mX[7C[32m^[1B[37m![7C[32m [12;75H [13;7Hj[13;61H;[14;5H [15;19HL[15;29HR[7CP[15;57H [15;81H [m[m [32m [16;17H[[m[m [37my[16;31H[32m>[16;53Hr[16;67H [16;77Hq[17;9He[7C[37mv[7C[32mm[m[m [32m![m[m [32m [m[m [37mH[17;69H[32mu[18;3H [m[m [32m.[18;69H[37m{[19;5HC[19;23H[32mf[19;43Hd[19;57Hq[29C&[20;13Hi[m[m [32mb[m[m [32m [m[m [32m [m[m [32m [m[m [37m#[20;43HP[m[m [32m [m[m [32m [m[m [32mI[7C[37ma[20;81H[32m.[m[m [32mh[m[m [32m [m[m [37mG[m[m [32m [21;13H[37mH[21;49H*[21;81Hs[22;27H[32mZ[1B[37mc[23;39H[32m [23;59H^[23;75HM[24;59H[37m&[24;71H[32mY[m[m [32m [m[m [37m>[25;31H[32m [25;43H [25;53H [25;71H[37m7[26;15H[32m$[26;33H3[26;51H*[26;77H [m[m [32mi\r[1B [27;15H[37m?[27;33H^[27;79H3[m[m [32m [m[m [32m([28;41H [m[m [32m\\[m[m [32m#[28;67H}[29;45H[37m][7C[32mW[31C [30;11H [30;53H[37mt[m[m"}
+    , { time: 250234, content: "[1;9H[37md[m[m [32m [1;73H[37ms[2;57H[32mB[m[m [32m [m[m [32mc[m[m [32m$\r[1B [m[m [32m [m[m [32m [m[m [32m [3;51H [m[m [32mL[m[m [32m}[m[m [37m?[m[m [32m [m[m [32m{[m[m [37ms[4;9H[32m [4;33H-[5;13H [5;77H [m[m [32m [6;27H [6;53Hq[m[m [32mq[m[m [32m [m[m [32m [6;81HC[7;17H [7;31H [7;43H [7;53H[37mq[7;67H[32m^[7;81H[37m-[8;21H[32mq[8;41Ha[41C.[9;23H [9;41H[37mH[9;53H[32m \r[1BG[10;29H [10;69H [17C [11;11HZ[11;33H [m[m [32m [11;47HX[m[m [32m [11;65H [12;15H [m[m [32m$[m[m [32m [12;47H[37mj[7C[32m![1B[37m8[7C[32m [13;75H [14;7H%[14;61HI[15;5H [16;19Hy[16;29H4[7C`[16;57H [16;81H [m[m [32m [17;17Hv[m[m [37mV[17;31H[32mH[17;53H=[17;67H [17;77Hr[18;9H][7C[37mP[7C[32mZ[m[m [32mf[m[m [32m [m[m [37mI[18;69H[32m{[19;3H [m[m [32mC[19;69H[37mP[20;5HK[20;23H[32m#[20;43HP[20;57Ha[29CG[21;13HH[m[m [32m1[m[m [32m [m[m [32m [m[m [32m [m[m [37m1[21;43H$[m[m [32m [m[m [32m [m[m [32m*[7C[37mA[21;81H[32ms[m[m [32mo[m[m [32m [m[m [37mz[m[m [32m [22;13H[37mX[22;49Hv[22;81H=[23;27H[32mc[1B[37m.[24;39H[32m [24;59H&[24;75H>[25;59H[37m.[25;71H[32m7[m[m [32m [m[m [37mw[26;31H[32m [26;43H [26;53H [26;71H[37m:[27;15H[32m?[27;33H^[27;51Ho[27;77H [m[m [32m3\r[1B [28;15H[37mP[28;33H1[28;79H![m[m [32m [m[m [32m<[29;41H [m[m [32mc[m[m [32m][29;67H/[30;45H[37mp[7C[32mt[31C [m[m"}
 ];
 
+var terminalText = "";
+
 //Markers
-var m1;
+var m1, c = "", regexRollback;
 
 for(var i=0; i<stdouts.length; i++) {
     m1 = {
         time: stdouts[i]['time'],
         content: stdouts[i]['content'],
         forward: function(){
-          console.log("do action");
+          console.log("do action Time: "+this.time);
           term.write(this.content);
+          terminalText += this.content;
         },    
-        backward: function(){ console.log("Undo action"); },    
+        backward: function(){ 
+          console.log("Undo action Time: "+this.time);
+          c = this.content.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+          regexRollback = new RegExp(c+'$');
+          terminalText = terminalText.replace(regexRollback,'');
+          term.reset();
+          term.write(terminalText);
+        }
     }
 
     t.markers.push(m1);
 }
 
-t.play();
+//t.play();

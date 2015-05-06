@@ -1,10 +1,12 @@
 var term;
 window.addEventListener('load', function() {
+    var hdr = document.querySelector('#terminal .hdr span');
     term = new Terminal({
-      cols: 80,
-      rows: 24,
+      cols: 90,
+      rows: 30,
       screenKeys: true
     });
+  
 
     term.on('data', function(data) {
       //socket.emit('data', data);
@@ -14,9 +16,10 @@ window.addEventListener('load', function() {
 
     term.on('title', function(title) {
       document.title = title;
+      hdr.innerText = title;
     });
 
-    term.open(document.getElementById('terminal'));
+    term.open(document.querySelector('#terminal .bdy .content'));
 
     //term.write('\x1b[31mWelcome to term.js!\x1b[m\r\n');
 
