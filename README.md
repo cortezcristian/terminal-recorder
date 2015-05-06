@@ -1,4 +1,4 @@
-terminal-recorder
+terminal-recorder [![Dependencies](https://david-dm.org/cortezcristian/terminal-recorder.png)](https://david-dm.org/cortezcristian/terminal-recorder)
 ============
 
 [![NPM](https://nodei.co/npm-dl/terminal-recorder.png?months=6&height=3)](https://nodei.co/npm/terminal-recorder/)
