@@ -50,11 +50,14 @@ span.terminal-cursor {
 }
 
 .mod-console .bdy {
+    /*
     background: #3f2337;
     background: linear-gradient(to bottom,#3f2337 1%,#3f2337 5%,#502e46 37%,#56344c 99%);
+    */
     -webkit-box-shadow: 2px 3px 2px 0 rgba(0,0,0,0.8);
     box-shadow: 2px 3px 2px 0 rgba(0,0,0,0.8);
     min-height: 400px;
+    background: #000;
 }
 
 #controls {
