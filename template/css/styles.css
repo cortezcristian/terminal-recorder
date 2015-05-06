@@ -71,7 +71,7 @@ span.terminal-cursor {
 }
 
 #controls li.slide-con {
-    width: 680px;
+    width: 670px;
     float: left;
     padding: 10px 0 10px 14px;
 }
@@ -89,6 +89,17 @@ span.terminal-cursor {
 #controls a.ui-icon {
     float: left;
     margin: 4px;
+    background: none!important;
+    color: #000;
+}
+
+#controls a.ui-iconx {
+    display: inline-block;
+    padding: 4px 7px;
+    background: none!important;
+    font-size: 14px;
+    width: 18px;
+    text-align: center;
 }
 
 .hide {
