@@ -33,10 +33,10 @@
   },
   "dependencies": {
     "keypress": "~0.2.1",
-    "pty.js": "~0.2.4",
-    "handlebars": "~2.0.0",
-    "commander": "~2.5.1",
-    "ncp": "~1.0.1",
-    "colors": "~1.0.3"
+    "pty.js": "~0.2.6",
+    "handlebars": "~3.0.3",
+    "commander": "~2.8.1",
+    "ncp": "~2.0.0",
+    "colors": "~1.1.0"
   }
 }
