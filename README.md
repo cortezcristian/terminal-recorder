@@ -17,7 +17,7 @@ Terminal recorder allows you to record your bash session, and export it to html 
 [![NPM](https://nodei.co/npm/terminal-recorder.png?compact=true)](https://nodei.co/npm/terminal-recorder/)
 
 ```bash
-$ [sudo] npm install -g terminal-recorder 
+$ [sudo] npm install -g terminal-recorder
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ $ terminal-recorder --help
 
     -h, --help            output usage information
     -V, --version         output the version number
-    -o, --outpath [path]  Add the specified [path] to place the folder 
+    -o, --outpath [path]  Add the specified [path] to place the folder
                             that will contain the recorded html files
 
 # Start recording
@@ -93,10 +93,6 @@ Start typing in the second console, and look how the first one is mimicking your
 ## Known issues
 
 * Record all keys, including passwords. So be careful with that.
-* OSX `pty.js` is not working ok on Mac because of a header misconfiguration. More info:
-  - https://github.com/chjj/pty.js#todo
-  - http://stackoverflow.com/a/24981514/467034
-  - https://github.com/chjj/pty.js/issues/93
 
 ## Cool Stuff
 Cool things that you can do:
