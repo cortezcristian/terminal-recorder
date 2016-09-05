@@ -79,7 +79,7 @@ process.on('uncaughtException', function(err) {
 
 
 console.log("----------------- Welcome to terminal-recorder ----------------------".grey);
-console.log("[Warning] We are saving all your keystrokes, donnot enter any password".red);
+console.log("[Warning] We are saving all your keystrokes, do not enter any password".red);
 console.log("Remember: Hit ctrl+c to quit".grey);
 console.log("---------------------------------------------------------------------".grey);
 //console.log("title", process.title);
