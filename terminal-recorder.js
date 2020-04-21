@@ -26,14 +26,14 @@ var dirString = path.dirname(fs.realpathSync(__filename));
 fs.mkdir(folderout+'/'+fname, function(err){
     ncp(dirString+'/template/', folderdest, function (err) {
         //console.log('copied');
-    
+
     });
 });
 
 var stdin = process.stdin,
     keypress = require('keypress'),
     Handlebars = require('handlebars'),
-    pty = require('pty.js');
+    pty = require('node-pty');
 
 var end, start = new Date(), milestones = [];
 
@@ -62,7 +62,7 @@ var createTemplate = function(cb){
     var template = Handlebars.compile(source);
     var data = {
         totaltime: milestones[milestones.length-1]['time'],
-        marks: milestones    
+        marks: milestones
     }
     var result = template(data);
     fs.writeFile(tpldest, result, function(err){
@@ -109,7 +109,7 @@ term.on('data', function(data) {
   log(data, function (err) {
     createMilestone(data, function(){
         process.stdout.write(data);
-    }); 
+    });
   });
 });
 
@@ -117,8 +117,14 @@ term.on('data', function(data) {
 
 keypress(process.stdin);
 
+var interacted = false;
+
 // on any data into stdin
 stdin.on( 'keypress', function( ch, key ){
+  if (!interacted) {
+    interacted = true;
+    term.write('clear\r');
+  }
   // ctrl-c ( end of text )
   if ( ch === '\u0003' ) {
     //console.log(milestones);
