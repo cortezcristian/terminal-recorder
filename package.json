@@ -32,10 +32,11 @@
     "url": "https://github.com/cortezcristian/terminal-recorder/issues"
   },
   "dependencies": {
-    "keypress": "~0.2.1",
-    "handlebars": "~4.0.5",
+    "colors": "~1.1.0",
     "commander": "~2.9.0",
+    "handlebars": "~4.0.5",
+    "keypress": "~0.2.1",
     "ncp": "~2.0.0",
-    "colors": "~1.1.0"
+    "node-pty": "^0.9.0"
   }
 }
