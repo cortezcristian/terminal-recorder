@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "keypress": "~0.2.1",
-    "pty.js": "~0.3",
     "handlebars": "~4.0.5",
     "commander": "~2.9.0",
     "ncp": "~2.0.0",
